@@ -17,6 +17,8 @@
 		FFCD60452C2D9195007785FF /* Pretendard-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FFCD60412C2D9195007785FF /* Pretendard-ExtraBold.ttf */; };
 		FFCD60462C2D9195007785FF /* Pretendard-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FFCD60422C2D9195007785FF /* Pretendard-Bold.ttf */; };
 		FFCD60472C2D9195007785FF /* Pretendard-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FFCD60432C2D9195007785FF /* Pretendard-Medium.ttf */; };
+		FFCD604A2C2D9290007785FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFCD60482C2D9290007785FF /* Assets.xcassets */; };
+		FFCD604B2C2D9290007785FF /* Colorsets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFCD60492C2D9290007785FF /* Colorsets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		FFCD60412C2D9195007785FF /* Pretendard-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraBold.ttf"; sourceTree = "<group>"; };
 		FFCD60422C2D9195007785FF /* Pretendard-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.ttf"; sourceTree = "<group>"; };
 		FFCD60432C2D9195007785FF /* Pretendard-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.ttf"; sourceTree = "<group>"; };
+		FFCD60482C2D9290007785FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FFCD60492C2D9290007785FF /* Colorsets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colorsets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,8 @@
 		FFCD603D2C2D911D007785FF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FFCD60482C2D9290007785FF /* Assets.xcassets */,
+				FFCD60492C2D9290007785FF /* Colorsets.xcassets */,
 				FFCD603E2C2D913D007785FF /* Fonts */,
 			);
 			path = Resources;
@@ -159,6 +165,8 @@
 				FFCD60332C21D9F3007785FF /* Assets.xcassets in Resources */,
 				FFCD60462C2D9195007785FF /* Pretendard-Bold.ttf in Resources */,
 				FFCD60472C2D9195007785FF /* Pretendard-Medium.ttf in Resources */,
+				FFCD604A2C2D9290007785FF /* Assets.xcassets in Resources */,
+				FFCD604B2C2D9290007785FF /* Colorsets.xcassets in Resources */,
 				FFCD60312C21D9F2007785FF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
