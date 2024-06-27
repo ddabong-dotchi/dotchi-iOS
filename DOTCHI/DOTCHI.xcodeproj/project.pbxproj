@@ -11,7 +11,6 @@
 		FFCD602C2C21D9F2007785FF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD602B2C21D9F2007785FF /* SceneDelegate.swift */; };
 		FFCD602E2C21D9F2007785FF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD602D2C21D9F2007785FF /* ViewController.swift */; };
 		FFCD60312C21D9F2007785FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFCD602F2C21D9F2007785FF /* Main.storyboard */; };
-		FFCD60332C21D9F3007785FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFCD60322C21D9F3007785FF /* Assets.xcassets */; };
 		FFCD60362C21D9F3007785FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFCD60342C21D9F3007785FF /* LaunchScreen.storyboard */; };
 		FFCD60442C2D9195007785FF /* Pretendard-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FFCD60402C2D9195007785FF /* Pretendard-SemiBold.ttf */; };
 		FFCD60452C2D9195007785FF /* Pretendard-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FFCD60412C2D9195007785FF /* Pretendard-ExtraBold.ttf */; };
@@ -19,6 +18,13 @@
 		FFCD60472C2D9195007785FF /* Pretendard-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FFCD60432C2D9195007785FF /* Pretendard-Medium.ttf */; };
 		FFCD604A2C2D9290007785FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFCD60482C2D9290007785FF /* Assets.xcassets */; };
 		FFCD604B2C2D9290007785FF /* Colorsets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFCD60492C2D9290007785FF /* Colorsets.xcassets */; };
+		FFCD60522C2D9482007785FF /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD60512C2D9482007785FF /* SplashViewController.swift */; };
+		FFCD60562C2D9501007785FF /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD60552C2D9501007785FF /* UIFont+.swift */; };
+		FFCD60582C2D9515007785FF /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD60572C2D9515007785FF /* UIColor+.swift */; };
+		FFCD605B2C2D953F007785FF /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD605A2C2D953F007785FF /* BaseViewController.swift */; };
+		FFCD605E2C2D9565007785FF /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FFCD605D2C2D9565007785FF /* SnapKit */; };
+		FFCD60602C2D9565007785FF /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = FFCD605F2C2D9565007785FF /* SnapKit-Dynamic */; };
+		FFCD60622C2D95AA007785FF /* BaseUINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD60612C2D95AA007785FF /* BaseUINavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +33,6 @@
 		FFCD602B2C21D9F2007785FF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		FFCD602D2C21D9F2007785FF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FFCD60302C21D9F2007785FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		FFCD60322C21D9F3007785FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FFCD60352C21D9F3007785FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FFCD60372C21D9F3007785FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FFCD60402C2D9195007785FF /* Pretendard-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.ttf"; sourceTree = "<group>"; };
@@ -36,6 +41,11 @@
 		FFCD60432C2D9195007785FF /* Pretendard-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.ttf"; sourceTree = "<group>"; };
 		FFCD60482C2D9290007785FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FFCD60492C2D9290007785FF /* Colorsets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colorsets.xcassets; sourceTree = "<group>"; };
+		FFCD60512C2D9482007785FF /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		FFCD60552C2D9501007785FF /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
+		FFCD60572C2D9515007785FF /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		FFCD605A2C2D953F007785FF /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		FFCD60612C2D95AA007785FF /* BaseUINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUINavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +53,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFCD605E2C2D9565007785FF /* SnapKit in Frameworks */,
+				FFCD60602C2D9565007785FF /* SnapKit-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,13 +80,13 @@
 		FFCD60282C21D9F2007785FF /* DOTCHI */ = {
 			isa = PBXGroup;
 			children = (
+				FFCD60532C2D94E9007785FF /* Global */,
+				FFCD604C2C2D9406007785FF /* Sources */,
 				FFCD603D2C2D911D007785FF /* Resources */,
 				FFCD60292C21D9F2007785FF /* AppDelegate.swift */,
 				FFCD602B2C21D9F2007785FF /* SceneDelegate.swift */,
 				FFCD602D2C21D9F2007785FF /* ViewController.swift */,
 				FFCD602F2C21D9F2007785FF /* Main.storyboard */,
-				FFCD60322C21D9F3007785FF /* Assets.xcassets */,
-				FFCD60342C21D9F3007785FF /* LaunchScreen.storyboard */,
 				FFCD60372C21D9F3007785FF /* Info.plist */,
 			);
 			path = DOTCHI;
@@ -101,6 +113,74 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		FFCD604C2C2D9406007785FF /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				FFCD604D2C2D940F007785FF /* Screens */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		FFCD604D2C2D940F007785FF /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				FFCD60502C2D9468007785FF /* Home */,
+				FFCD604F2C2D9463007785FF /* Splash */,
+				FFCD604E2C2D9446007785FF /* Onboarding */,
+				FFCD60342C21D9F3007785FF /* LaunchScreen.storyboard */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		FFCD604E2C2D9446007785FF /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		FFCD604F2C2D9463007785FF /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				FFCD60512C2D9482007785FF /* SplashViewController.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		FFCD60502C2D9468007785FF /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		FFCD60532C2D94E9007785FF /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				FFCD60592C2D9536007785FF /* Bases */,
+				FFCD60542C2D94F6007785FF /* Extensions */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		FFCD60542C2D94F6007785FF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FFCD60552C2D9501007785FF /* UIFont+.swift */,
+				FFCD60572C2D9515007785FF /* UIColor+.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FFCD60592C2D9536007785FF /* Bases */ = {
+			isa = PBXGroup;
+			children = (
+				FFCD605A2C2D953F007785FF /* BaseViewController.swift */,
+				FFCD60612C2D95AA007785FF /* BaseUINavigationController.swift */,
+			);
+			path = Bases;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -117,6 +197,10 @@
 			dependencies = (
 			);
 			name = DOTCHI;
+			packageProductDependencies = (
+				FFCD605D2C2D9565007785FF /* SnapKit */,
+				FFCD605F2C2D9565007785FF /* SnapKit-Dynamic */,
+			);
 			productName = DOTCHI;
 			productReference = FFCD60262C21D9F2007785FF /* DOTCHI.app */;
 			productType = "com.apple.product-type.application";
@@ -145,6 +229,9 @@
 				Base,
 			);
 			mainGroup = FFCD601D2C21D9F2007785FF;
+			packageReferences = (
+				FFCD605C2C2D9565007785FF /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = FFCD60272C21D9F2007785FF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -162,7 +249,6 @@
 				FFCD60442C2D9195007785FF /* Pretendard-SemiBold.ttf in Resources */,
 				FFCD60362C21D9F3007785FF /* LaunchScreen.storyboard in Resources */,
 				FFCD60452C2D9195007785FF /* Pretendard-ExtraBold.ttf in Resources */,
-				FFCD60332C21D9F3007785FF /* Assets.xcassets in Resources */,
 				FFCD60462C2D9195007785FF /* Pretendard-Bold.ttf in Resources */,
 				FFCD60472C2D9195007785FF /* Pretendard-Medium.ttf in Resources */,
 				FFCD604A2C2D9290007785FF /* Assets.xcassets in Resources */,
@@ -178,9 +264,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFCD60622C2D95AA007785FF /* BaseUINavigationController.swift in Sources */,
 				FFCD602E2C21D9F2007785FF /* ViewController.swift in Sources */,
 				FFCD602A2C21D9F2007785FF /* AppDelegate.swift in Sources */,
+				FFCD60562C2D9501007785FF /* UIFont+.swift in Sources */,
 				FFCD602C2C21D9F2007785FF /* SceneDelegate.swift in Sources */,
+				FFCD60522C2D9482007785FF /* SplashViewController.swift in Sources */,
+				FFCD605B2C2D953F007785FF /* BaseViewController.swift in Sources */,
+				FFCD60582C2D9515007785FF /* UIColor+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +500,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FFCD605C2C2D9565007785FF /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FFCD605D2C2D9565007785FF /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FFCD605C2C2D9565007785FF /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		FFCD605F2C2D9565007785FF /* SnapKit-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FFCD605C2C2D9565007785FF /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = "SnapKit-Dynamic";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FFCD601E2C21D9F2007785FF /* Project object */;
 }
