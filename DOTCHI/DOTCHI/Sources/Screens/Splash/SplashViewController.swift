@@ -27,6 +27,12 @@ final class SplashViewController: BaseViewController {
         self.setLayout()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.presentNextViewController()
+    }
+    
     // MARK: Methods
     
     private func setUI() {
@@ -47,13 +53,9 @@ final class SplashViewController: BaseViewController {
 //        }
 //    }
 //    
-//    private func presentNextViewController(isProfileCompleted: Bool) {
-//        if isProfileCompleted {
-//            self.present(GamTabBarController(), animated: true)
-//        } else {
-//            self.present(BaseNavigationController(rootViewController: SignUpUsernameViewController()), animated: true)
-//        }
-//    }
+    private func presentNextViewController() {
+        self.present(DotchiUITabBarController(), animated: true)
+    }
 
 }
 
