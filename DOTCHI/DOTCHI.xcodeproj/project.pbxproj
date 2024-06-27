@@ -13,6 +13,10 @@
 		FFCD60312C21D9F2007785FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFCD602F2C21D9F2007785FF /* Main.storyboard */; };
 		FFCD60332C21D9F3007785FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFCD60322C21D9F3007785FF /* Assets.xcassets */; };
 		FFCD60362C21D9F3007785FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFCD60342C21D9F3007785FF /* LaunchScreen.storyboard */; };
+		FFCD60442C2D9195007785FF /* Pretendard-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FFCD60402C2D9195007785FF /* Pretendard-SemiBold.ttf */; };
+		FFCD60452C2D9195007785FF /* Pretendard-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FFCD60412C2D9195007785FF /* Pretendard-ExtraBold.ttf */; };
+		FFCD60462C2D9195007785FF /* Pretendard-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FFCD60422C2D9195007785FF /* Pretendard-Bold.ttf */; };
+		FFCD60472C2D9195007785FF /* Pretendard-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FFCD60432C2D9195007785FF /* Pretendard-Medium.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		FFCD60322C21D9F3007785FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FFCD60352C21D9F3007785FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FFCD60372C21D9F3007785FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FFCD60402C2D9195007785FF /* Pretendard-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.ttf"; sourceTree = "<group>"; };
+		FFCD60412C2D9195007785FF /* Pretendard-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraBold.ttf"; sourceTree = "<group>"; };
+		FFCD60422C2D9195007785FF /* Pretendard-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.ttf"; sourceTree = "<group>"; };
+		FFCD60432C2D9195007785FF /* Pretendard-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +64,7 @@
 		FFCD60282C21D9F2007785FF /* DOTCHI */ = {
 			isa = PBXGroup;
 			children = (
+				FFCD603D2C2D911D007785FF /* Resources */,
 				FFCD60292C21D9F2007785FF /* AppDelegate.swift */,
 				FFCD602B2C21D9F2007785FF /* SceneDelegate.swift */,
 				FFCD602D2C21D9F2007785FF /* ViewController.swift */,
@@ -65,6 +74,25 @@
 				FFCD60372C21D9F3007785FF /* Info.plist */,
 			);
 			path = DOTCHI;
+			sourceTree = "<group>";
+		};
+		FFCD603D2C2D911D007785FF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FFCD603E2C2D913D007785FF /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		FFCD603E2C2D913D007785FF /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				FFCD60422C2D9195007785FF /* Pretendard-Bold.ttf */,
+				FFCD60412C2D9195007785FF /* Pretendard-ExtraBold.ttf */,
+				FFCD60432C2D9195007785FF /* Pretendard-Medium.ttf */,
+				FFCD60402C2D9195007785FF /* Pretendard-SemiBold.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,8 +153,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFCD60442C2D9195007785FF /* Pretendard-SemiBold.ttf in Resources */,
 				FFCD60362C21D9F3007785FF /* LaunchScreen.storyboard in Resources */,
+				FFCD60452C2D9195007785FF /* Pretendard-ExtraBold.ttf in Resources */,
 				FFCD60332C21D9F3007785FF /* Assets.xcassets in Resources */,
+				FFCD60462C2D9195007785FF /* Pretendard-Bold.ttf in Resources */,
+				FFCD60472C2D9195007785FF /* Pretendard-Medium.ttf in Resources */,
 				FFCD60312C21D9F2007785FF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
