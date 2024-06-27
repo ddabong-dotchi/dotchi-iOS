@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		FFCD602A2C21D9F2007785FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD60292C21D9F2007785FF /* AppDelegate.swift */; };
 		FFCD602C2C21D9F2007785FF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD602B2C21D9F2007785FF /* SceneDelegate.swift */; };
-		FFCD602E2C21D9F2007785FF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD602D2C21D9F2007785FF /* ViewController.swift */; };
-		FFCD60312C21D9F2007785FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFCD602F2C21D9F2007785FF /* Main.storyboard */; };
 		FFCD60362C21D9F3007785FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFCD60342C21D9F3007785FF /* LaunchScreen.storyboard */; };
 		FFCD60442C2D9195007785FF /* Pretendard-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FFCD60402C2D9195007785FF /* Pretendard-SemiBold.ttf */; };
 		FFCD60452C2D9195007785FF /* Pretendard-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FFCD60412C2D9195007785FF /* Pretendard-ExtraBold.ttf */; };
@@ -25,14 +23,44 @@
 		FFCD605E2C2D9565007785FF /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FFCD605D2C2D9565007785FF /* SnapKit */; };
 		FFCD60602C2D9565007785FF /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = FFCD605F2C2D9565007785FF /* SnapKit-Dynamic */; };
 		FFCD60622C2D95AA007785FF /* BaseUINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD60612C2D95AA007785FF /* BaseUINavigationController.swift */; };
+		FFCD60652C2D96D8007785FF /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD60642C2D96D8007785FF /* UIViewController+.swift */; };
+		FFCD60672C2D96F8007785FF /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD60662C2D96F8007785FF /* UIView+.swift */; };
+		FFCD60692C2D9718007785FF /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD60682C2D9718007785FF /* UIButton+.swift */; };
+		FFCD606B2C2D9728007785FF /* FontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD606A2C2D9728007785FF /* FontManager.swift */; };
+		FFCD606D2C2D9742007785FF /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD606C2C2D9742007785FF /* UILabel+.swift */; };
+		FFCD606F2C2D975A007785FF /* UICollectionView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD606E2C2D975A007785FF /* UICollectionView+.swift */; };
+		FFCD60712C2D976E007785FF /* Adjusted+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD60702C2D976E007785FF /* Adjusted+.swift */; };
+		FFCD60732C2D977F007785FF /* UIImageView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD60722C2D977F007785FF /* UIImageView+.swift */; };
+		FFCD60752C2D9792007785FF /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD60742C2D9792007785FF /* UIStackView+.swift */; };
+		FFCD60772C2D97AA007785FF /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD60762C2D97AA007785FF /* UITextField+.swift */; };
+		FFCD60792C2D97C3007785FF /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD60782C2D97C3007785FF /* String+.swift */; };
+		FFCD607B2C2D97D1007785FF /* UITableView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD607A2C2D97D1007785FF /* UITableView+.swift */; };
+		FFCD607D2C2D97E1007785FF /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD607C2C2D97E1007785FF /* UIImage+.swift */; };
+		FFCD607F2C2D97FB007785FF /* UserDefaults+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD607E2C2D97FB007785FF /* UserDefaults+.swift */; };
+		FFCD60812C2D980F007785FF /* UINavigationController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD60802C2D980F007785FF /* UINavigationController+.swift */; };
+		FFCD60832C2D9832007785FF /* Encodable+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD60822C2D9832007785FF /* Encodable+.swift */; };
+		FFCD60852C2D9860007785FF /* ClassNameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD60842C2D9860007785FF /* ClassNameProtocol.swift */; };
+		FFCD60882C2D9884007785FF /* UIViewControllerToSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD60872C2D9884007785FF /* UIViewControllerToSwiftUI.swift */; };
+		FFCD608B2C2D98A5007785FF /* ImageCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD608A2C2D98A5007785FF /* ImageCacheManager.swift */; };
+		FFCD608D2C2D98B1007785FF /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD608C2C2D98B1007785FF /* UserInfo.swift */; };
+		FFCD608F2C2D98BF007785FF /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD608E2C2D98BF007785FF /* UserDefaultsManager.swift */; };
+		FFCD60922C2D98F7007785FF /* LuckyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD60912C2D98F7007785FF /* LuckyType.swift */; };
+		FFCD60942C2D990D007785FF /* CardSortType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD60932C2D990D007785FF /* CardSortType.swift */; };
+		FFCD60962C2D9915007785FF /* CardHeadType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD60952C2D9915007785FF /* CardHeadType.swift */; };
+		FFCD60982C2D991A007785FF /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD60972C2D991A007785FF /* Messages.swift */; };
+		FFCD609A2C2D9920007785FF /* KeychainKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD60992C2D9920007785FF /* KeychainKeys.swift */; };
+		FFCD60B22C2D9AA7007785FF /* RxGesture in Frameworks */ = {isa = PBXBuildFile; productRef = FFCD60B12C2D9AA7007785FF /* RxGesture */; };
+		FFCD60B52C2D9B10007785FF /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FFCD60B42C2D9B10007785FF /* KeychainSwift */; };
+		FFCD60B82C2D9B29007785FF /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = FFCD60B72C2D9B29007785FF /* CombineMoya */; };
+		FFCD60BA2C2D9B29007785FF /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = FFCD60B92C2D9B29007785FF /* Moya */; };
+		FFCD60BC2C2D9B29007785FF /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = FFCD60BB2C2D9B29007785FF /* ReactiveMoya */; };
+		FFCD60BE2C2D9B29007785FF /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = FFCD60BD2C2D9B29007785FF /* RxMoya */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FFCD60262C21D9F2007785FF /* DOTCHI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DOTCHI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFCD60292C21D9F2007785FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFCD602B2C21D9F2007785FF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FFCD602D2C21D9F2007785FF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		FFCD60302C21D9F2007785FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FFCD60352C21D9F3007785FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FFCD60372C21D9F3007785FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FFCD60402C2D9195007785FF /* Pretendard-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.ttf"; sourceTree = "<group>"; };
@@ -46,6 +74,32 @@
 		FFCD60572C2D9515007785FF /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		FFCD605A2C2D953F007785FF /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		FFCD60612C2D95AA007785FF /* BaseUINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUINavigationController.swift; sourceTree = "<group>"; };
+		FFCD60642C2D96D8007785FF /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
+		FFCD60662C2D96F8007785FF /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		FFCD60682C2D9718007785FF /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
+		FFCD606A2C2D9728007785FF /* FontManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontManager.swift; sourceTree = "<group>"; };
+		FFCD606C2C2D9742007785FF /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
+		FFCD606E2C2D975A007785FF /* UICollectionView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+.swift"; sourceTree = "<group>"; };
+		FFCD60702C2D976E007785FF /* Adjusted+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Adjusted+.swift"; sourceTree = "<group>"; };
+		FFCD60722C2D977F007785FF /* UIImageView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+.swift"; sourceTree = "<group>"; };
+		FFCD60742C2D9792007785FF /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
+		FFCD60762C2D97AA007785FF /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
+		FFCD60782C2D97C3007785FF /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
+		FFCD607A2C2D97D1007785FF /* UITableView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+.swift"; sourceTree = "<group>"; };
+		FFCD607C2C2D97E1007785FF /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
+		FFCD607E2C2D97FB007785FF /* UserDefaults+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+.swift"; sourceTree = "<group>"; };
+		FFCD60802C2D980F007785FF /* UINavigationController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+.swift"; sourceTree = "<group>"; };
+		FFCD60822C2D9832007785FF /* Encodable+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+.swift"; sourceTree = "<group>"; };
+		FFCD60842C2D9860007785FF /* ClassNameProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassNameProtocol.swift; sourceTree = "<group>"; };
+		FFCD60872C2D9884007785FF /* UIViewControllerToSwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerToSwiftUI.swift; sourceTree = "<group>"; };
+		FFCD608A2C2D98A5007785FF /* ImageCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheManager.swift; sourceTree = "<group>"; };
+		FFCD608C2C2D98B1007785FF /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		FFCD608E2C2D98BF007785FF /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		FFCD60912C2D98F7007785FF /* LuckyType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuckyType.swift; sourceTree = "<group>"; };
+		FFCD60932C2D990D007785FF /* CardSortType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSortType.swift; sourceTree = "<group>"; };
+		FFCD60952C2D9915007785FF /* CardHeadType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardHeadType.swift; sourceTree = "<group>"; };
+		FFCD60972C2D991A007785FF /* Messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
+		FFCD60992C2D9920007785FF /* KeychainKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainKeys.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +107,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFCD60B22C2D9AA7007785FF /* RxGesture in Frameworks */,
+				FFCD60BC2C2D9B29007785FF /* ReactiveMoya in Frameworks */,
 				FFCD605E2C2D9565007785FF /* SnapKit in Frameworks */,
+				FFCD60BE2C2D9B29007785FF /* RxMoya in Frameworks */,
+				FFCD60B82C2D9B29007785FF /* CombineMoya in Frameworks */,
+				FFCD60BA2C2D9B29007785FF /* Moya in Frameworks */,
+				FFCD60B52C2D9B10007785FF /* KeychainSwift in Frameworks */,
 				FFCD60602C2D9565007785FF /* SnapKit-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -85,8 +145,6 @@
 				FFCD603D2C2D911D007785FF /* Resources */,
 				FFCD60292C21D9F2007785FF /* AppDelegate.swift */,
 				FFCD602B2C21D9F2007785FF /* SceneDelegate.swift */,
-				FFCD602D2C21D9F2007785FF /* ViewController.swift */,
-				FFCD602F2C21D9F2007785FF /* Main.storyboard */,
 				FFCD60372C21D9F3007785FF /* Info.plist */,
 			);
 			path = DOTCHI;
@@ -157,6 +215,10 @@
 		FFCD60532C2D94E9007785FF /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				FFCD60902C2D98E9007785FF /* Enums */,
+				FFCD60892C2D988D007785FF /* Singletons */,
+				FFCD60862C2D987B007785FF /* Structs */,
+				FFCD60632C2D96BA007785FF /* Protocols */,
 				FFCD60592C2D9536007785FF /* Bases */,
 				FFCD60542C2D94F6007785FF /* Extensions */,
 			);
@@ -166,8 +228,24 @@
 		FFCD60542C2D94F6007785FF /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				FFCD60642C2D96D8007785FF /* UIViewController+.swift */,
 				FFCD60552C2D9501007785FF /* UIFont+.swift */,
 				FFCD60572C2D9515007785FF /* UIColor+.swift */,
+				FFCD60662C2D96F8007785FF /* UIView+.swift */,
+				FFCD60682C2D9718007785FF /* UIButton+.swift */,
+				FFCD606A2C2D9728007785FF /* FontManager.swift */,
+				FFCD606C2C2D9742007785FF /* UILabel+.swift */,
+				FFCD606E2C2D975A007785FF /* UICollectionView+.swift */,
+				FFCD60702C2D976E007785FF /* Adjusted+.swift */,
+				FFCD60722C2D977F007785FF /* UIImageView+.swift */,
+				FFCD60742C2D9792007785FF /* UIStackView+.swift */,
+				FFCD60762C2D97AA007785FF /* UITextField+.swift */,
+				FFCD60782C2D97C3007785FF /* String+.swift */,
+				FFCD607A2C2D97D1007785FF /* UITableView+.swift */,
+				FFCD607C2C2D97E1007785FF /* UIImage+.swift */,
+				FFCD607E2C2D97FB007785FF /* UserDefaults+.swift */,
+				FFCD60802C2D980F007785FF /* UINavigationController+.swift */,
+				FFCD60822C2D9832007785FF /* Encodable+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -179,6 +257,44 @@
 				FFCD60612C2D95AA007785FF /* BaseUINavigationController.swift */,
 			);
 			path = Bases;
+			sourceTree = "<group>";
+		};
+		FFCD60632C2D96BA007785FF /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				FFCD60842C2D9860007785FF /* ClassNameProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		FFCD60862C2D987B007785FF /* Structs */ = {
+			isa = PBXGroup;
+			children = (
+				FFCD60872C2D9884007785FF /* UIViewControllerToSwiftUI.swift */,
+			);
+			path = Structs;
+			sourceTree = "<group>";
+		};
+		FFCD60892C2D988D007785FF /* Singletons */ = {
+			isa = PBXGroup;
+			children = (
+				FFCD608A2C2D98A5007785FF /* ImageCacheManager.swift */,
+				FFCD608C2C2D98B1007785FF /* UserInfo.swift */,
+				FFCD608E2C2D98BF007785FF /* UserDefaultsManager.swift */,
+			);
+			path = Singletons;
+			sourceTree = "<group>";
+		};
+		FFCD60902C2D98E9007785FF /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				FFCD60912C2D98F7007785FF /* LuckyType.swift */,
+				FFCD60932C2D990D007785FF /* CardSortType.swift */,
+				FFCD60952C2D9915007785FF /* CardHeadType.swift */,
+				FFCD60972C2D991A007785FF /* Messages.swift */,
+				FFCD60992C2D9920007785FF /* KeychainKeys.swift */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,6 +316,12 @@
 			packageProductDependencies = (
 				FFCD605D2C2D9565007785FF /* SnapKit */,
 				FFCD605F2C2D9565007785FF /* SnapKit-Dynamic */,
+				FFCD60B12C2D9AA7007785FF /* RxGesture */,
+				FFCD60B42C2D9B10007785FF /* KeychainSwift */,
+				FFCD60B72C2D9B29007785FF /* CombineMoya */,
+				FFCD60B92C2D9B29007785FF /* Moya */,
+				FFCD60BB2C2D9B29007785FF /* ReactiveMoya */,
+				FFCD60BD2C2D9B29007785FF /* RxMoya */,
 			);
 			productName = DOTCHI;
 			productReference = FFCD60262C21D9F2007785FF /* DOTCHI.app */;
@@ -231,6 +353,9 @@
 			mainGroup = FFCD601D2C21D9F2007785FF;
 			packageReferences = (
 				FFCD605C2C2D9565007785FF /* XCRemoteSwiftPackageReference "SnapKit" */,
+				FFCD60B02C2D9AA7007785FF /* XCRemoteSwiftPackageReference "RxGesture" */,
+				FFCD60B32C2D9B10007785FF /* XCRemoteSwiftPackageReference "keychain-swift" */,
+				FFCD60B62C2D9B29007785FF /* XCRemoteSwiftPackageReference "Moya" */,
 			);
 			productRefGroup = FFCD60272C21D9F2007785FF /* Products */;
 			projectDirPath = "";
@@ -253,7 +378,6 @@
 				FFCD60472C2D9195007785FF /* Pretendard-Medium.ttf in Resources */,
 				FFCD604A2C2D9290007785FF /* Assets.xcassets in Resources */,
 				FFCD604B2C2D9290007785FF /* Colorsets.xcassets in Resources */,
-				FFCD60312C21D9F2007785FF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,12 +389,37 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFCD60622C2D95AA007785FF /* BaseUINavigationController.swift in Sources */,
-				FFCD602E2C21D9F2007785FF /* ViewController.swift in Sources */,
+				FFCD60812C2D980F007785FF /* UINavigationController+.swift in Sources */,
+				FFCD60832C2D9832007785FF /* Encodable+.swift in Sources */,
+				FFCD60652C2D96D8007785FF /* UIViewController+.swift in Sources */,
+				FFCD606D2C2D9742007785FF /* UILabel+.swift in Sources */,
+				FFCD60982C2D991A007785FF /* Messages.swift in Sources */,
+				FFCD609A2C2D9920007785FF /* KeychainKeys.swift in Sources */,
+				FFCD60732C2D977F007785FF /* UIImageView+.swift in Sources */,
+				FFCD60792C2D97C3007785FF /* String+.swift in Sources */,
 				FFCD602A2C21D9F2007785FF /* AppDelegate.swift in Sources */,
+				FFCD60882C2D9884007785FF /* UIViewControllerToSwiftUI.swift in Sources */,
+				FFCD60672C2D96F8007785FF /* UIView+.swift in Sources */,
+				FFCD608B2C2D98A5007785FF /* ImageCacheManager.swift in Sources */,
+				FFCD608D2C2D98B1007785FF /* UserInfo.swift in Sources */,
 				FFCD60562C2D9501007785FF /* UIFont+.swift in Sources */,
+				FFCD60922C2D98F7007785FF /* LuckyType.swift in Sources */,
 				FFCD602C2C21D9F2007785FF /* SceneDelegate.swift in Sources */,
+				FFCD60712C2D976E007785FF /* Adjusted+.swift in Sources */,
+				FFCD60942C2D990D007785FF /* CardSortType.swift in Sources */,
+				FFCD60692C2D9718007785FF /* UIButton+.swift in Sources */,
 				FFCD60522C2D9482007785FF /* SplashViewController.swift in Sources */,
+				FFCD607B2C2D97D1007785FF /* UITableView+.swift in Sources */,
 				FFCD605B2C2D953F007785FF /* BaseViewController.swift in Sources */,
+				FFCD607D2C2D97E1007785FF /* UIImage+.swift in Sources */,
+				FFCD606B2C2D9728007785FF /* FontManager.swift in Sources */,
+				FFCD606F2C2D975A007785FF /* UICollectionView+.swift in Sources */,
+				FFCD608F2C2D98BF007785FF /* UserDefaultsManager.swift in Sources */,
+				FFCD60852C2D9860007785FF /* ClassNameProtocol.swift in Sources */,
+				FFCD60962C2D9915007785FF /* CardHeadType.swift in Sources */,
+				FFCD607F2C2D97FB007785FF /* UserDefaults+.swift in Sources */,
+				FFCD60772C2D97AA007785FF /* UITextField+.swift in Sources */,
+				FFCD60752C2D9792007785FF /* UIStackView+.swift in Sources */,
 				FFCD60582C2D9515007785FF /* UIColor+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,14 +427,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		FFCD602F2C21D9F2007785FF /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FFCD60302C21D9F2007785FF /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		FFCD60342C21D9F3007785FF /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -300,6 +441,7 @@
 		FFCD60382C21D9F3007785FF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -363,6 +505,7 @@
 		FFCD60392C21D9F3007785FF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -429,7 +572,6 @@
 				INFOPLIST_KEY_CFBundleDisplayName = DOTCHI;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -460,7 +602,6 @@
 				INFOPLIST_KEY_CFBundleDisplayName = DOTCHI;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -510,6 +651,30 @@
 				minimumVersion = 5.7.1;
 			};
 		};
+		FFCD60B02C2D9AA7007785FF /* XCRemoteSwiftPackageReference "RxGesture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxGesture.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.4;
+			};
+		};
+		FFCD60B32C2D9B10007785FF /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/keychain-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 24.0.0;
+			};
+		};
+		FFCD60B62C2D9B29007785FF /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -522,6 +687,36 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FFCD605C2C2D9565007785FF /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = "SnapKit-Dynamic";
+		};
+		FFCD60B12C2D9AA7007785FF /* RxGesture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FFCD60B02C2D9AA7007785FF /* XCRemoteSwiftPackageReference "RxGesture" */;
+			productName = RxGesture;
+		};
+		FFCD60B42C2D9B10007785FF /* KeychainSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FFCD60B32C2D9B10007785FF /* XCRemoteSwiftPackageReference "keychain-swift" */;
+			productName = KeychainSwift;
+		};
+		FFCD60B72C2D9B29007785FF /* CombineMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FFCD60B62C2D9B29007785FF /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = CombineMoya;
+		};
+		FFCD60B92C2D9B29007785FF /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FFCD60B62C2D9B29007785FF /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		FFCD60BB2C2D9B29007785FF /* ReactiveMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FFCD60B62C2D9B29007785FF /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = ReactiveMoya;
+		};
+		FFCD60BD2C2D9B29007785FF /* RxMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FFCD60B62C2D9B29007785FF /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = RxMoya;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
