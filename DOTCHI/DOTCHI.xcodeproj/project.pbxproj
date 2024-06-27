@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF4BF6A92C2DACCB00B6DEB2 /* MakeDotchiPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4BF6A82C2DACCB00B6DEB2 /* MakeDotchiPhotoViewController.swift */; };
+		FF4BF6AC2C2DB15500B6DEB2 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FF4BF6AB2C2DB15500B6DEB2 /* SnapKit */; };
+		FF4BF6AF2C2DB39300B6DEB2 /* MyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4BF6AE2C2DB39300B6DEB2 /* MyView.swift */; };
 		FFCD602A2C21D9F2007785FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD60292C21D9F2007785FF /* AppDelegate.swift */; };
 		FFCD602C2C21D9F2007785FF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD602B2C21D9F2007785FF /* SceneDelegate.swift */; };
 		FFCD60362C21D9F3007785FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFCD60342C21D9F3007785FF /* LaunchScreen.storyboard */; };
@@ -20,8 +23,6 @@
 		FFCD60562C2D9501007785FF /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD60552C2D9501007785FF /* UIFont+.swift */; };
 		FFCD60582C2D9515007785FF /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD60572C2D9515007785FF /* UIColor+.swift */; };
 		FFCD605B2C2D953F007785FF /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD605A2C2D953F007785FF /* BaseViewController.swift */; };
-		FFCD605E2C2D9565007785FF /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FFCD605D2C2D9565007785FF /* SnapKit */; };
-		FFCD60602C2D9565007785FF /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = FFCD605F2C2D9565007785FF /* SnapKit-Dynamic */; };
 		FFCD60622C2D95AA007785FF /* BaseUINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD60612C2D95AA007785FF /* BaseUINavigationController.swift */; };
 		FFCD60652C2D96D8007785FF /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD60642C2D96D8007785FF /* UIViewController+.swift */; };
 		FFCD60672C2D96F8007785FF /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD60662C2D96F8007785FF /* UIView+.swift */; };
@@ -56,9 +57,12 @@
 		FFCD60BC2C2D9B29007785FF /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = FFCD60BB2C2D9B29007785FF /* ReactiveMoya */; };
 		FFCD60BE2C2D9B29007785FF /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = FFCD60BD2C2D9B29007785FF /* RxMoya */; };
 		FFCD60C12C2D9DBC007785FF /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = FFCD60C02C2D9DBC007785FF /* Lottie */; };
+		FFCD60C52C2D9E66007785FF /* DotchiUITabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD60C42C2D9E66007785FF /* DotchiUITabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FF4BF6A82C2DACCB00B6DEB2 /* MakeDotchiPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeDotchiPhotoViewController.swift; sourceTree = "<group>"; };
+		FF4BF6AE2C2DB39300B6DEB2 /* MyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyView.swift; sourceTree = "<group>"; };
 		FFCD60262C21D9F2007785FF /* DOTCHI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DOTCHI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFCD60292C21D9F2007785FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFCD602B2C21D9F2007785FF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +105,7 @@
 		FFCD60952C2D9915007785FF /* CardHeadType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardHeadType.swift; sourceTree = "<group>"; };
 		FFCD60972C2D991A007785FF /* Messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
 		FFCD60992C2D9920007785FF /* KeychainKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainKeys.swift; sourceTree = "<group>"; };
+		FFCD60C42C2D9E66007785FF /* DotchiUITabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotchiUITabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,20 +114,35 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFCD60B22C2D9AA7007785FF /* RxGesture in Frameworks */,
+				FF4BF6AC2C2DB15500B6DEB2 /* SnapKit in Frameworks */,
 				FFCD60BC2C2D9B29007785FF /* ReactiveMoya in Frameworks */,
 				FFCD60C12C2D9DBC007785FF /* Lottie in Frameworks */,
-				FFCD605E2C2D9565007785FF /* SnapKit in Frameworks */,
 				FFCD60BE2C2D9B29007785FF /* RxMoya in Frameworks */,
 				FFCD60B82C2D9B29007785FF /* CombineMoya in Frameworks */,
 				FFCD60BA2C2D9B29007785FF /* Moya in Frameworks */,
 				FFCD60B52C2D9B10007785FF /* KeychainSwift in Frameworks */,
-				FFCD60602C2D9565007785FF /* SnapKit-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FF4BF6A72C2DAC9500B6DEB2 /* Make */ = {
+			isa = PBXGroup;
+			children = (
+				FF4BF6A82C2DACCB00B6DEB2 /* MakeDotchiPhotoViewController.swift */,
+			);
+			path = Make;
+			sourceTree = "<group>";
+		};
+		FF4BF6AD2C2DB38900B6DEB2 /* My */ = {
+			isa = PBXGroup;
+			children = (
+				FF4BF6AE2C2DB39300B6DEB2 /* MyView.swift */,
+			);
+			path = My;
+			sourceTree = "<group>";
+		};
 		FFCD601D2C21D9F2007785FF = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +196,7 @@
 		FFCD604C2C2D9406007785FF /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				FFCD60C22C2D9E36007785FF /* Components */,
 				FFCD604D2C2D940F007785FF /* Screens */,
 			);
 			path = Sources;
@@ -184,6 +205,8 @@
 		FFCD604D2C2D940F007785FF /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				FF4BF6AD2C2DB38900B6DEB2 /* My */,
+				FF4BF6A72C2DAC9500B6DEB2 /* Make */,
 				FFCD60502C2D9468007785FF /* Home */,
 				FFCD604F2C2D9463007785FF /* Splash */,
 				FFCD604E2C2D9446007785FF /* Onboarding */,
@@ -299,6 +322,22 @@
 			path = Enums;
 			sourceTree = "<group>";
 		};
+		FFCD60C22C2D9E36007785FF /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				FFCD60C32C2D9E3E007785FF /* UITabBarViewController */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		FFCD60C32C2D9E3E007785FF /* UITabBarViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FFCD60C42C2D9E66007785FF /* DotchiUITabBarController.swift */,
+			);
+			path = UITabBarViewController;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -316,8 +355,6 @@
 			);
 			name = DOTCHI;
 			packageProductDependencies = (
-				FFCD605D2C2D9565007785FF /* SnapKit */,
-				FFCD605F2C2D9565007785FF /* SnapKit-Dynamic */,
 				FFCD60B12C2D9AA7007785FF /* RxGesture */,
 				FFCD60B42C2D9B10007785FF /* KeychainSwift */,
 				FFCD60B72C2D9B29007785FF /* CombineMoya */,
@@ -325,6 +362,7 @@
 				FFCD60BB2C2D9B29007785FF /* ReactiveMoya */,
 				FFCD60BD2C2D9B29007785FF /* RxMoya */,
 				FFCD60C02C2D9DBC007785FF /* Lottie */,
+				FF4BF6AB2C2DB15500B6DEB2 /* SnapKit */,
 			);
 			productName = DOTCHI;
 			productReference = FFCD60262C21D9F2007785FF /* DOTCHI.app */;
@@ -355,11 +393,11 @@
 			);
 			mainGroup = FFCD601D2C21D9F2007785FF;
 			packageReferences = (
-				FFCD605C2C2D9565007785FF /* XCRemoteSwiftPackageReference "SnapKit" */,
 				FFCD60B02C2D9AA7007785FF /* XCRemoteSwiftPackageReference "RxGesture" */,
 				FFCD60B32C2D9B10007785FF /* XCRemoteSwiftPackageReference "keychain-swift" */,
 				FFCD60B62C2D9B29007785FF /* XCRemoteSwiftPackageReference "Moya" */,
 				FFCD60BF2C2D9DBC007785FF /* XCRemoteSwiftPackageReference "lottie-spm" */,
+				FF4BF6AA2C2DB15500B6DEB2 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = FFCD60272C21D9F2007785FF /* Products */;
 			projectDirPath = "";
@@ -404,6 +442,8 @@
 				FFCD602A2C21D9F2007785FF /* AppDelegate.swift in Sources */,
 				FFCD60882C2D9884007785FF /* UIViewControllerToSwiftUI.swift in Sources */,
 				FFCD60672C2D96F8007785FF /* UIView+.swift in Sources */,
+				FF4BF6AF2C2DB39300B6DEB2 /* MyView.swift in Sources */,
+				FFCD60C52C2D9E66007785FF /* DotchiUITabBarController.swift in Sources */,
 				FFCD608B2C2D98A5007785FF /* ImageCacheManager.swift in Sources */,
 				FFCD608D2C2D98B1007785FF /* UserInfo.swift in Sources */,
 				FFCD60562C2D9501007785FF /* UIFont+.swift in Sources */,
@@ -425,6 +465,7 @@
 				FFCD60772C2D97AA007785FF /* UITextField+.swift in Sources */,
 				FFCD60752C2D9792007785FF /* UIStackView+.swift in Sources */,
 				FFCD60582C2D9515007785FF /* UIColor+.swift in Sources */,
+				FF4BF6A92C2DACCB00B6DEB2 /* MakeDotchiPhotoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -647,7 +688,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		FFCD605C2C2D9565007785FF /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+		FF4BF6AA2C2DB15500B6DEB2 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
 			requirement = {
@@ -690,15 +731,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		FFCD605D2C2D9565007785FF /* SnapKit */ = {
+		FF4BF6AB2C2DB15500B6DEB2 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FFCD605C2C2D9565007785FF /* XCRemoteSwiftPackageReference "SnapKit" */;
+			package = FF4BF6AA2C2DB15500B6DEB2 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
-		};
-		FFCD605F2C2D9565007785FF /* SnapKit-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FFCD605C2C2D9565007785FF /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = "SnapKit-Dynamic";
 		};
 		FFCD60B12C2D9AA7007785FF /* RxGesture */ = {
 			isa = XCSwiftPackageProductDependency;
