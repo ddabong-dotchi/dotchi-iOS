@@ -16,6 +16,7 @@
 		FF4BF6B82C2DB66F00B6DEB2 /* MakeDotchiEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4BF6B72C2DB66F00B6DEB2 /* MakeDotchiEntity.swift */; };
 		FF4BF6BA2C2DB68000B6DEB2 /* CommentEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4BF6B92C2DB68000B6DEB2 /* CommentEntity.swift */; };
 		FF4BF6BC2C2DB69300B6DEB2 /* CardBackEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4BF6BB2C2DB69300B6DEB2 /* CardBackEntity.swift */; };
+		FF4BF6BF2C2DB6F900B6DEB2 /* NetworkLoggerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4BF6BE2C2DB6F900B6DEB2 /* NetworkLoggerPlugin.swift */; };
 		FFCD602A2C21D9F2007785FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD60292C21D9F2007785FF /* AppDelegate.swift */; };
 		FFCD602C2C21D9F2007785FF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD602B2C21D9F2007785FF /* SceneDelegate.swift */; };
 		FFCD60362C21D9F3007785FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFCD60342C21D9F3007785FF /* LaunchScreen.storyboard */; };
@@ -75,6 +76,7 @@
 		FF4BF6B72C2DB66F00B6DEB2 /* MakeDotchiEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeDotchiEntity.swift; sourceTree = "<group>"; };
 		FF4BF6B92C2DB68000B6DEB2 /* CommentEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentEntity.swift; sourceTree = "<group>"; };
 		FF4BF6BB2C2DB69300B6DEB2 /* CardBackEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBackEntity.swift; sourceTree = "<group>"; };
+		FF4BF6BE2C2DB6F900B6DEB2 /* NetworkLoggerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLoggerPlugin.swift; sourceTree = "<group>"; };
 		FFCD60262C21D9F2007785FF /* DOTCHI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DOTCHI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFCD60292C21D9F2007785FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFCD602B2C21D9F2007785FF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -168,6 +170,14 @@
 			path = Entities;
 			sourceTree = "<group>";
 		};
+		FF4BF6BD2C2DB6E800B6DEB2 /* Networks */ = {
+			isa = PBXGroup;
+			children = (
+				FF4BF6BE2C2DB6F900B6DEB2 /* NetworkLoggerPlugin.swift */,
+			);
+			path = Networks;
+			sourceTree = "<group>";
+		};
 		FFCD601D2C21D9F2007785FF = {
 			isa = PBXGroup;
 			children = (
@@ -188,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				FFCD60532C2D94E9007785FF /* Global */,
+				FF4BF6BD2C2DB6E800B6DEB2 /* Networks */,
 				FFCD604C2C2D9406007785FF /* Sources */,
 				FFCD603D2C2D911D007785FF /* Resources */,
 				FFCD60292C21D9F2007785FF /* AppDelegate.swift */,
@@ -469,6 +480,7 @@
 				FFCD60792C2D97C3007785FF /* String+.swift in Sources */,
 				FFCD602A2C21D9F2007785FF /* AppDelegate.swift in Sources */,
 				FFCD60882C2D9884007785FF /* UIViewControllerToSwiftUI.swift in Sources */,
+				FF4BF6BF2C2DB6F900B6DEB2 /* NetworkLoggerPlugin.swift in Sources */,
 				FFCD60672C2D96F8007785FF /* UIView+.swift in Sources */,
 				FF4BF6AF2C2DB39300B6DEB2 /* MyView.swift in Sources */,
 				FFCD60C52C2D9E66007785FF /* DotchiUITabBarController.swift in Sources */,
