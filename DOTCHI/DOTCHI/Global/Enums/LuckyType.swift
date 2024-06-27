@@ -66,8 +66,6 @@ extension LuckyType {
             return Color.dotchiBlue
         case .love:
             return Color.dotchiPink
-        default:
-            return Color.dotchiWhite
         }
     }
     
@@ -81,8 +79,6 @@ extension LuckyType {
             return Color.dotchiDeepBlue
         case .love:
             return Color.dotchiDeepPink
-        default:
-            return Color.dotchiWhite
         }
     }
     
