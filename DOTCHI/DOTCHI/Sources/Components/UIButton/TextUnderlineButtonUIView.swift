@@ -20,7 +20,7 @@ final class TextUnderlineButtonUIView: UIView {
     
     private let underlineView: UIView = {
         let view: UIView = UIView()
-        view.backgroundColor = .white 
+        view.backgroundColor = .white
         return view
     }()
     
