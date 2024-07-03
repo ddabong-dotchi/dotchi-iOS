@@ -63,7 +63,6 @@ final class DotchiUITabBarController: UITabBarController {
         self.delegate = self
         
         let homeTab = self.makeTabBarItem(
-            viewController: BaseUINavigationController(rootViewController: BaseViewController()),
             title: "홈",
             image: .icnHome,
             selectedImage: .icnHomeSelected
