@@ -22,6 +22,7 @@
 		FFC7BB702C3460BF000EA7B5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7BB6F2C3460BF000EA7B5 /* HomeViewController.swift */; };
 		FFC7BB732C35A770000EA7B5 /* TextUnderlineButtonUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7BB722C35A770000EA7B5 /* TextUnderlineButtonUIView.swift */; };
 		FFC7BB762C35ADD4000EA7B5 /* SigninUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7BB752C35ADD4000EA7B5 /* SigninUITextField.swift */; };
+		FFC7BB792C35B905000EA7B5 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FFC7BB782C35B905000EA7B5 /* IQKeyboardManagerSwift */; };
 		FFCD602A2C21D9F2007785FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD60292C21D9F2007785FF /* AppDelegate.swift */; };
 		FFCD602C2C21D9F2007785FF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD602B2C21D9F2007785FF /* SceneDelegate.swift */; };
 		FFCD60362C21D9F3007785FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFCD60342C21D9F3007785FF /* LaunchScreen.storyboard */; };
@@ -142,6 +143,7 @@
 				FFCD60BC2C2D9B29007785FF /* ReactiveMoya in Frameworks */,
 				FFCD60C12C2D9DBC007785FF /* Lottie in Frameworks */,
 				FFCD60BE2C2D9B29007785FF /* RxMoya in Frameworks */,
+				FFC7BB792C35B905000EA7B5 /* IQKeyboardManagerSwift in Frameworks */,
 				FFCD60B82C2D9B29007785FF /* CombineMoya in Frameworks */,
 				FFCD60BA2C2D9B29007785FF /* Moya in Frameworks */,
 				FFCD60B52C2D9B10007785FF /* KeychainSwift in Frameworks */,
@@ -447,6 +449,7 @@
 				FFCD60BD2C2D9B29007785FF /* RxMoya */,
 				FFCD60C02C2D9DBC007785FF /* Lottie */,
 				FF4BF6AB2C2DB15500B6DEB2 /* SnapKit */,
+				FFC7BB782C35B905000EA7B5 /* IQKeyboardManagerSwift */,
 			);
 			productName = DOTCHI;
 			productReference = FFCD60262C21D9F2007785FF /* DOTCHI.app */;
@@ -482,6 +485,7 @@
 				FFCD60B62C2D9B29007785FF /* XCRemoteSwiftPackageReference "Moya" */,
 				FFCD60BF2C2D9DBC007785FF /* XCRemoteSwiftPackageReference "lottie-spm" */,
 				FF4BF6AA2C2DB15500B6DEB2 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				FFC7BB772C35B905000EA7B5 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 			);
 			productRefGroup = FFCD60272C21D9F2007785FF /* Products */;
 			projectDirPath = "";
@@ -792,6 +796,14 @@
 				minimumVersion = 5.7.1;
 			};
 		};
+		FFC7BB772C35B905000EA7B5 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.3;
+			};
+		};
 		FFCD60B02C2D9AA7007785FF /* XCRemoteSwiftPackageReference "RxGesture" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/RxSwiftCommunity/RxGesture.git";
@@ -831,6 +843,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FF4BF6AA2C2DB15500B6DEB2 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		FFC7BB782C35B905000EA7B5 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FFC7BB772C35B905000EA7B5 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
 		};
 		FFCD60B12C2D9AA7007785FF /* RxGesture */ = {
 			isa = XCSwiftPackageProductDependency;
