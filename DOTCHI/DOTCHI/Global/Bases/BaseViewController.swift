@@ -66,6 +66,18 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
         self.view.addGestureRecognizer(tap)
     }
     
+    func hideTabBar() {
+        if let tabBarController = self.tabBarController as? DotchiUITabBarController {
+            tabBarController.hideTabBar()
+        }
+    }
+    
+    func showTabBar() {
+        if let tabBarController = self.tabBarController as? DotchiUITabBarController {
+            tabBarController.showTabBar()
+        }
+    }
+    
 //    func showNetworkErrorAlert() {
 //        self.makeAlert(title: Message.networkError.text)
 //    }
