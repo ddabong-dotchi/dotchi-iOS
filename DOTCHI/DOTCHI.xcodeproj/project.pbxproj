@@ -23,6 +23,7 @@
 		FFC7BB732C35A770000EA7B5 /* TextUnderlineButtonUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7BB722C35A770000EA7B5 /* TextUnderlineButtonUIView.swift */; };
 		FFC7BB762C35ADD4000EA7B5 /* SigninUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7BB752C35ADD4000EA7B5 /* SigninUITextField.swift */; };
 		FFC7BB792C35B905000EA7B5 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FFC7BB782C35B905000EA7B5 /* IQKeyboardManagerSwift */; };
+		FFC7BB7B2C35BA89000EA7B5 /* DoneUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7BB7A2C35BA89000EA7B5 /* DoneUIButton.swift */; };
 		FFCD602A2C21D9F2007785FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD60292C21D9F2007785FF /* AppDelegate.swift */; };
 		FFCD602C2C21D9F2007785FF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD602B2C21D9F2007785FF /* SceneDelegate.swift */; };
 		FFCD60362C21D9F3007785FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFCD60342C21D9F3007785FF /* LaunchScreen.storyboard */; };
@@ -88,6 +89,7 @@
 		FFC7BB6F2C3460BF000EA7B5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FFC7BB722C35A770000EA7B5 /* TextUnderlineButtonUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextUnderlineButtonUIView.swift; sourceTree = "<group>"; };
 		FFC7BB752C35ADD4000EA7B5 /* SigninUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninUITextField.swift; sourceTree = "<group>"; };
+		FFC7BB7A2C35BA89000EA7B5 /* DoneUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneUIButton.swift; sourceTree = "<group>"; };
 		FFCD60262C21D9F2007785FF /* DOTCHI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DOTCHI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFCD60292C21D9F2007785FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFCD602B2C21D9F2007785FF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				FFC7BB722C35A770000EA7B5 /* TextUnderlineButtonUIView.swift */,
+				FFC7BB7A2C35BA89000EA7B5 /* DoneUIButton.swift */,
 			);
 			path = UIButton;
 			sourceTree = "<group>";
@@ -522,6 +525,7 @@
 				FFC7BB762C35ADD4000EA7B5 /* SigninUITextField.swift in Sources */,
 				FFCD60812C2D980F007785FF /* UINavigationController+.swift in Sources */,
 				FFCD60832C2D9832007785FF /* Encodable+.swift in Sources */,
+				FFC7BB7B2C35BA89000EA7B5 /* DoneUIButton.swift in Sources */,
 				FFCD60652C2D96D8007785FF /* UIViewController+.swift in Sources */,
 				FFCD606D2C2D9742007785FF /* UILabel+.swift in Sources */,
 				FFCD60982C2D991A007785FF /* Messages.swift in Sources */,
