@@ -12,7 +12,7 @@ final class TextUnderlineButtonUIView: UIView {
     
     // MARK: Properties
     
-    private let button: UIButton = {
+    let button: UIButton = {
         let button: UIButton = UIButton(type: .system)
         button.setBackgroundColor(.clear, for: .normal)
         return button
