@@ -110,6 +110,7 @@ final class SigninViewController: BaseViewController {
         
         self.setLayout()
         self.setTextField()
+        self.setContactButtonAction()
     }
     
     // MARK: Methods
@@ -135,6 +136,11 @@ final class SigninViewController: BaseViewController {
             .disposed(by: self.disposeBag)
     }
     
+    private func setContactButtonAction() {
+        self.contactButton.button.setAction {
+            self.sendForgetPasswordMail()
+        }
+    }
 }
 
 // MARK: - UITextFieldDelegate
