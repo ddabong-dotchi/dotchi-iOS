@@ -26,6 +26,9 @@
 		FFC7BB7B2C35BA89000EA7B5 /* DoneUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7BB7A2C35BA89000EA7B5 /* DoneUIButton.swift */; };
 		FFC7BB7E2C3D8A38000EA7B5 /* SignupUserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7BB7D2C3D8A38000EA7B5 /* SignupUserInfoViewController.swift */; };
 		FFC7BB802C3D8D62000EA7B5 /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7BB7F2C3D8D62000EA7B5 /* AppInfo.swift */; };
+		FFC7BB852C3D943E000EA7B5 /* BaseResponseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7BB842C3D943E000EA7B5 /* BaseResponseType.swift */; };
+		FFC7BB872C3D9562000EA7B5 /* DotchiMoyaProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7BB862C3D9562000EA7B5 /* DotchiMoyaProvider.swift */; };
+		FFC7BB892C3D956F000EA7B5 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7BB882C3D956F000EA7B5 /* NetworkResult.swift */; };
 		FFCD602A2C21D9F2007785FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD60292C21D9F2007785FF /* AppDelegate.swift */; };
 		FFCD602C2C21D9F2007785FF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD602B2C21D9F2007785FF /* SceneDelegate.swift */; };
 		FFCD60362C21D9F3007785FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFCD60342C21D9F3007785FF /* LaunchScreen.storyboard */; };
@@ -94,6 +97,9 @@
 		FFC7BB7A2C35BA89000EA7B5 /* DoneUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneUIButton.swift; sourceTree = "<group>"; };
 		FFC7BB7D2C3D8A38000EA7B5 /* SignupUserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupUserInfoViewController.swift; sourceTree = "<group>"; };
 		FFC7BB7F2C3D8D62000EA7B5 /* AppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
+		FFC7BB842C3D943E000EA7B5 /* BaseResponseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponseType.swift; sourceTree = "<group>"; };
+		FFC7BB862C3D9562000EA7B5 /* DotchiMoyaProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotchiMoyaProvider.swift; sourceTree = "<group>"; };
+		FFC7BB882C3D956F000EA7B5 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
 		FFCD60262C21D9F2007785FF /* DOTCHI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DOTCHI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFCD60292C21D9F2007785FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFCD602B2C21D9F2007785FF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -191,6 +197,9 @@
 		FF4BF6BD2C2DB6E800B6DEB2 /* Networks */ = {
 			isa = PBXGroup;
 			children = (
+				FFC7BB832C3D9423000EA7B5 /* Services */,
+				FFC7BB822C3D941B000EA7B5 /* Routers */,
+				FFC7BB812C3D93FE000EA7B5 /* DTO */,
 				FF4BF6C02C2DB71D00B6DEB2 /* Essentials */,
 				FF4BF6BE2C2DB6F900B6DEB2 /* NetworkLoggerPlugin.swift */,
 			);
@@ -201,6 +210,8 @@
 			isa = PBXGroup;
 			children = (
 				FF4BF6C12C2DB72700B6DEB2 /* APIConstants.swift */,
+				FFC7BB862C3D9562000EA7B5 /* DotchiMoyaProvider.swift */,
+				FFC7BB882C3D956F000EA7B5 /* NetworkResult.swift */,
 			);
 			path = Essentials;
 			sourceTree = "<group>";
@@ -236,6 +247,28 @@
 				FFC7BB7D2C3D8A38000EA7B5 /* SignupUserInfoViewController.swift */,
 			);
 			path = Signup;
+			sourceTree = "<group>";
+		};
+		FFC7BB812C3D93FE000EA7B5 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		FFC7BB822C3D941B000EA7B5 /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Routers;
+			sourceTree = "<group>";
+		};
+		FFC7BB832C3D9423000EA7B5 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FFC7BB842C3D943E000EA7B5 /* BaseResponseType.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		FFCD601D2C21D9F2007785FF = {
@@ -538,10 +571,12 @@
 				FFCD60622C2D95AA007785FF /* BaseUINavigationController.swift in Sources */,
 				FFC7BB762C35ADD4000EA7B5 /* SigninUITextField.swift in Sources */,
 				FFCD60812C2D980F007785FF /* UINavigationController+.swift in Sources */,
+				FFC7BB892C3D956F000EA7B5 /* NetworkResult.swift in Sources */,
 				FFCD60832C2D9832007785FF /* Encodable+.swift in Sources */,
 				FFC7BB7B2C35BA89000EA7B5 /* DoneUIButton.swift in Sources */,
 				FFCD60652C2D96D8007785FF /* UIViewController+.swift in Sources */,
 				FFCD606D2C2D9742007785FF /* UILabel+.swift in Sources */,
+				FFC7BB872C3D9562000EA7B5 /* DotchiMoyaProvider.swift in Sources */,
 				FFCD60982C2D991A007785FF /* Messages.swift in Sources */,
 				FFCD609A2C2D9920007785FF /* KeychainKeys.swift in Sources */,
 				FF4BF6B22C2DB63900B6DEB2 /* CardEntity.swift in Sources */,
@@ -580,6 +615,7 @@
 				FFCD60852C2D9860007785FF /* ClassNameProtocol.swift in Sources */,
 				FFCD60962C2D9915007785FF /* CardHeadType.swift in Sources */,
 				FFCD607F2C2D97FB007785FF /* UserDefaults+.swift in Sources */,
+				FFC7BB852C3D943E000EA7B5 /* BaseResponseType.swift in Sources */,
 				FF4BF6BC2C2DB69300B6DEB2 /* CardBackEntity.swift in Sources */,
 				FFCD60772C2D97AA007785FF /* UITextField+.swift in Sources */,
 				FFC7BB802C3D8D62000EA7B5 /* AppInfo.swift in Sources */,
