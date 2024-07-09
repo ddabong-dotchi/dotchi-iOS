@@ -24,6 +24,8 @@
 		FFC7BB762C35ADD4000EA7B5 /* SigninUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7BB752C35ADD4000EA7B5 /* SigninUITextField.swift */; };
 		FFC7BB792C35B905000EA7B5 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FFC7BB782C35B905000EA7B5 /* IQKeyboardManagerSwift */; };
 		FFC7BB7B2C35BA89000EA7B5 /* DoneUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7BB7A2C35BA89000EA7B5 /* DoneUIButton.swift */; };
+		FFC7BB7E2C3D8A38000EA7B5 /* SignupUserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7BB7D2C3D8A38000EA7B5 /* SignupUserInfoViewController.swift */; };
+		FFC7BB802C3D8D62000EA7B5 /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7BB7F2C3D8D62000EA7B5 /* AppInfo.swift */; };
 		FFCD602A2C21D9F2007785FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD60292C21D9F2007785FF /* AppDelegate.swift */; };
 		FFCD602C2C21D9F2007785FF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD602B2C21D9F2007785FF /* SceneDelegate.swift */; };
 		FFCD60362C21D9F3007785FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFCD60342C21D9F3007785FF /* LaunchScreen.storyboard */; };
@@ -90,6 +92,8 @@
 		FFC7BB722C35A770000EA7B5 /* TextUnderlineButtonUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextUnderlineButtonUIView.swift; sourceTree = "<group>"; };
 		FFC7BB752C35ADD4000EA7B5 /* SigninUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninUITextField.swift; sourceTree = "<group>"; };
 		FFC7BB7A2C35BA89000EA7B5 /* DoneUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneUIButton.swift; sourceTree = "<group>"; };
+		FFC7BB7D2C3D8A38000EA7B5 /* SignupUserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupUserInfoViewController.swift; sourceTree = "<group>"; };
+		FFC7BB7F2C3D8D62000EA7B5 /* AppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
 		FFCD60262C21D9F2007785FF /* DOTCHI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DOTCHI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFCD60292C21D9F2007785FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFCD602B2C21D9F2007785FF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -226,6 +230,14 @@
 			path = UITextField;
 			sourceTree = "<group>";
 		};
+		FFC7BB7C2C3D88A6000EA7B5 /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+				FFC7BB7D2C3D8A38000EA7B5 /* SignupUserInfoViewController.swift */,
+			);
+			path = Signup;
+			sourceTree = "<group>";
+		};
 		FFCD601D2C21D9F2007785FF = {
 			isa = PBXGroup;
 			children = (
@@ -290,6 +302,7 @@
 		FFCD604D2C2D940F007785FF /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				FFC7BB7C2C3D88A6000EA7B5 /* Signup */,
 				FFC7BB6C2C345EAC000EA7B5 /* Signin */,
 				FF4BF6AD2C2DB38900B6DEB2 /* My */,
 				FF4BF6A72C2DAC9500B6DEB2 /* Make */,
@@ -393,6 +406,7 @@
 				FFCD608A2C2D98A5007785FF /* ImageCacheManager.swift */,
 				FFCD608C2C2D98B1007785FF /* UserInfo.swift */,
 				FFCD608E2C2D98BF007785FF /* UserDefaultsManager.swift */,
+				FFC7BB7F2C3D8D62000EA7B5 /* AppInfo.swift */,
 			);
 			path = Singletons;
 			sourceTree = "<group>";
@@ -532,6 +546,7 @@
 				FFCD609A2C2D9920007785FF /* KeychainKeys.swift in Sources */,
 				FF4BF6B22C2DB63900B6DEB2 /* CardEntity.swift in Sources */,
 				FF4BF6BA2C2DB68000B6DEB2 /* CommentEntity.swift in Sources */,
+				FFC7BB7E2C3D8A38000EA7B5 /* SignupUserInfoViewController.swift in Sources */,
 				FFCD60732C2D977F007785FF /* UIImageView+.swift in Sources */,
 				FFCD60792C2D97C3007785FF /* String+.swift in Sources */,
 				FFCD602A2C21D9F2007785FF /* AppDelegate.swift in Sources */,
@@ -567,6 +582,7 @@
 				FFCD607F2C2D97FB007785FF /* UserDefaults+.swift in Sources */,
 				FF4BF6BC2C2DB69300B6DEB2 /* CardBackEntity.swift in Sources */,
 				FFCD60772C2D97AA007785FF /* UITextField+.swift in Sources */,
+				FFC7BB802C3D8D62000EA7B5 /* AppInfo.swift in Sources */,
 				FFCD60752C2D9792007785FF /* UIStackView+.swift in Sources */,
 				FFCD60582C2D9515007785FF /* UIColor+.swift in Sources */,
 				FF4BF6A92C2DACCB00B6DEB2 /* MakeDotchiPhotoViewController.swift in Sources */,
