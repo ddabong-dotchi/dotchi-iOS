@@ -110,7 +110,9 @@ final class SigninViewController: BaseViewController {
         
         self.setLayout()
         self.setTextField()
+        self.setSignupButtonAction()
         self.setContactButtonAction()
+        self.setSigninButtonAction()
     }
     
     // MARK: Methods
@@ -136,9 +138,21 @@ final class SigninViewController: BaseViewController {
             .disposed(by: self.disposeBag)
     }
     
+    private func setSignupButtonAction() {
+        self.signupButton.button.setAction {
+            self.present(BaseUINavigationController(rootViewController: SignupUserInfoViewController()), animated: true)
+        }
+    }
+    
     private func setContactButtonAction() {
         self.contactButton.button.setAction {
             self.sendForgetPasswordMail()
+        }
+    }
+    
+    private func setSigninButtonAction() {
+        self.signinButton.setAction {
+            self.requestSignin()
         }
     }
 }
@@ -153,6 +167,15 @@ extension SigninViewController: UITextFieldDelegate {
         } else {
             self.passwordTextField.endEditing(true)
         }
+    }
+}
+
+// MARK: - Network
+
+extension SigninViewController {
+    
+    private func requestSignin() {
+        
     }
 }
 
