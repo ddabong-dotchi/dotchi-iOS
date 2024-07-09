@@ -56,7 +56,7 @@ final class SigninViewController: BaseViewController {
     
     private let usernameTextField: SigninUITextField = {
         let textField: SigninUITextField = SigninUITextField()
-        textField.placeholder = Text.usernamePlaceholder
+        textField.setDotchiPlaceholder(Text.usernamePlaceholder)
         textField.textContentType = .username
         textField.returnKeyType = .next
         return textField
@@ -64,7 +64,7 @@ final class SigninViewController: BaseViewController {
     
     private let passwordTextField: SigninUITextField = {
         let textField: SigninUITextField = SigninUITextField()
-        textField.placeholder = Text.passwordPlaceholder
+        textField.setDotchiPlaceholder(Text.passwordPlaceholder)
         textField.textContentType = .password
         textField.isSecureTextEntry = true
         textField.returnKeyType = .done
