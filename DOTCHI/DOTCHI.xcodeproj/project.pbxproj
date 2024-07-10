@@ -36,6 +36,7 @@
 		FFC7BB962C3EE055000EA7B5 /* ServiceEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7BB952C3EE055000EA7B5 /* ServiceEnvironment.swift */; };
 		FFC7BB982C3EE073000EA7B5 /* Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = FFC7BB972C3EE073000EA7B5 /* Debug.xcconfig */; };
 		FFC7BB9A2C3EE08F000EA7B5 /* Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = FFC7BB992C3EE08F000EA7B5 /* Release.xcconfig */; };
+		FFC7BB9D2C3EE151000EA7B5 /* SigninResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7BB9C2C3EE151000EA7B5 /* SigninResponseDTO.swift */; };
 		FFCD602A2C21D9F2007785FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD60292C21D9F2007785FF /* AppDelegate.swift */; };
 		FFCD602C2C21D9F2007785FF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD602B2C21D9F2007785FF /* SceneDelegate.swift */; };
 		FFCD60362C21D9F3007785FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFCD60342C21D9F3007785FF /* LaunchScreen.storyboard */; };
@@ -114,6 +115,7 @@
 		FFC7BB952C3EE055000EA7B5 /* ServiceEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceEnvironment.swift; sourceTree = "<group>"; };
 		FFC7BB972C3EE073000EA7B5 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		FFC7BB992C3EE08F000EA7B5 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		FFC7BB9C2C3EE151000EA7B5 /* SigninResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninResponseDTO.swift; sourceTree = "<group>"; };
 		FFCD60262C21D9F2007785FF /* DOTCHI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DOTCHI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFCD60292C21D9F2007785FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFCD602B2C21D9F2007785FF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -292,6 +294,7 @@
 		FFC7BB8E2C3EDFA2000EA7B5 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				FFC7BB9B2C3EE148000EA7B5 /* Response */,
 				FFC7BB932C3EDFE4000EA7B5 /* Request */,
 			);
 			path = Auth;
@@ -313,6 +316,14 @@
 				FFC7BB992C3EE08F000EA7B5 /* Release.xcconfig */,
 			);
 			path = Supports;
+			sourceTree = "<group>";
+		};
+		FFC7BB9B2C3EE148000EA7B5 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				FFC7BB9C2C3EE151000EA7B5 /* SigninResponseDTO.swift */,
+			);
+			path = Response;
 			sourceTree = "<group>";
 		};
 		FFCD601D2C21D9F2007785FF = {
@@ -663,6 +674,7 @@
 				FFC7BB902C3EDFAC000EA7B5 /* SigninRequestDTO.swift in Sources */,
 				FFC7BB8B2C3D95BA000EA7B5 /* BaseService.swift in Sources */,
 				FFCD608F2C2D98BF007785FF /* UserDefaultsManager.swift in Sources */,
+				FFC7BB9D2C3EE151000EA7B5 /* SigninResponseDTO.swift in Sources */,
 				FFCD60852C2D9860007785FF /* ClassNameProtocol.swift in Sources */,
 				FFCD60962C2D9915007785FF /* CardHeadType.swift in Sources */,
 				FFCD607F2C2D97FB007785FF /* UserDefaults+.swift in Sources */,

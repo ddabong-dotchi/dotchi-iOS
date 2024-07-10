@@ -8,6 +8,7 @@
 import UIKit
 import SnapKit
 import MessageUI
+import KeychainSwift
 
 class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
     
@@ -17,7 +18,7 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
     
     // MARK: UIComponents
     
-    
+    lazy private var keychainManager: KeychainSwift = KeychainSwift()
     
     // MARK: Properties
     
@@ -79,9 +80,24 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
         }
     }
     
-//    func showNetworkErrorAlert() {
-//        self.makeAlert(title: Message.networkError.text)
-//    }
+    func showNetworkErrorAlert() {
+        self.makeAlert(title: Messages.networkError.text)
+    }
+    
+    func setUserInfo(data: SigninResponseDTO) {
+        UserInfo.shared.accessToken = data.accessToken
+        UserInfo.shared.refreshToken = data.refreshToken
+        
+        self.setUserDataToKeychain(data: data)
+    }
+    
+    private func setUserDataToKeychain(data: SigninResponseDTO) {
+        self.keychainManager.set(data.accessToken, forKey: KeychainKeys.accessToken.rawValue)
+        self.keychainManager.set(data.refreshToken, forKey: KeychainKeys.refreshToken.rawValue)
+//        self.keychainManager.set("\(data.memberID)", forKey: KeychainKeys.userID.rawValue)
+//        self.keychainManager.set(data.memberName, forKey: KeychainKeys.username.rawValue)
+//        self.keychainManager.set(data.memberImageURL, forKey: KeychainKeys.profileImageUrl.rawValue)
+    }
     
     /// 신고 사유 선택 action sheet
 //    func reportActionSheet(userId: Int) -> UIAlertController {

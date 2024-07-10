@@ -152,8 +152,19 @@ final class SigninViewController: BaseViewController {
     
     private func setSigninButtonAction() {
         self.signinButton.setAction {
-            self.requestSignin()
+            if let userID = self.usernameTextField.text,
+            let password = self.passwordTextField.text {
+                let data: SigninRequestDTO = .init(userID: userID, password: password)
+                self.requestSignin(data: data) { response in
+                    self.setUserInfo(data: response)
+                    self.presentHomeViewController()
+                }
+            }
         }
+    }
+    
+    private func presentHomeViewController() {
+        self.present(DotchiUITabBarController(), animated: true)
     }
 }
 
@@ -174,8 +185,17 @@ extension SigninViewController: UITextFieldDelegate {
 
 extension SigninViewController {
     
-    private func requestSignin() {
-        
+    private func requestSignin(data: SigninRequestDTO, completion: @escaping (SigninResponseDTO) -> (Void)) {
+        AuthService.shared.requestSignin(data: data) { networkResult in
+            switch networkResult {
+            case .success(let responseData):
+                if let result = responseData as? SigninResponseDTO {
+                    completion(result)
+                }
+            default:
+                self.showNetworkErrorAlert()
+            }
+        }
     }
 }
 
