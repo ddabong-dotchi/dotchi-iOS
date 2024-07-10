@@ -29,6 +29,13 @@
 		FFC7BB852C3D943E000EA7B5 /* BaseResponseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7BB842C3D943E000EA7B5 /* BaseResponseType.swift */; };
 		FFC7BB872C3D9562000EA7B5 /* DotchiMoyaProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7BB862C3D9562000EA7B5 /* DotchiMoyaProvider.swift */; };
 		FFC7BB892C3D956F000EA7B5 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7BB882C3D956F000EA7B5 /* NetworkResult.swift */; };
+		FFC7BB8B2C3D95BA000EA7B5 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7BB8A2C3D95BA000EA7B5 /* BaseService.swift */; };
+		FFC7BB8D2C3EDF95000EA7B5 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7BB8C2C3EDF95000EA7B5 /* AuthService.swift */; };
+		FFC7BB902C3EDFAC000EA7B5 /* SigninRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7BB8F2C3EDFAC000EA7B5 /* SigninRequestDTO.swift */; };
+		FFC7BB922C3EDFCB000EA7B5 /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7BB912C3EDFCB000EA7B5 /* AuthRouter.swift */; };
+		FFC7BB962C3EE055000EA7B5 /* ServiceEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7BB952C3EE055000EA7B5 /* ServiceEnvironment.swift */; };
+		FFC7BB982C3EE073000EA7B5 /* Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = FFC7BB972C3EE073000EA7B5 /* Debug.xcconfig */; };
+		FFC7BB9A2C3EE08F000EA7B5 /* Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = FFC7BB992C3EE08F000EA7B5 /* Release.xcconfig */; };
 		FFCD602A2C21D9F2007785FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD60292C21D9F2007785FF /* AppDelegate.swift */; };
 		FFCD602C2C21D9F2007785FF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD602B2C21D9F2007785FF /* SceneDelegate.swift */; };
 		FFCD60362C21D9F3007785FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFCD60342C21D9F3007785FF /* LaunchScreen.storyboard */; };
@@ -100,6 +107,13 @@
 		FFC7BB842C3D943E000EA7B5 /* BaseResponseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponseType.swift; sourceTree = "<group>"; };
 		FFC7BB862C3D9562000EA7B5 /* DotchiMoyaProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotchiMoyaProvider.swift; sourceTree = "<group>"; };
 		FFC7BB882C3D956F000EA7B5 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
+		FFC7BB8A2C3D95BA000EA7B5 /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
+		FFC7BB8C2C3EDF95000EA7B5 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		FFC7BB8F2C3EDFAC000EA7B5 /* SigninRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninRequestDTO.swift; sourceTree = "<group>"; };
+		FFC7BB912C3EDFCB000EA7B5 /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
+		FFC7BB952C3EE055000EA7B5 /* ServiceEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceEnvironment.swift; sourceTree = "<group>"; };
+		FFC7BB972C3EE073000EA7B5 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		FFC7BB992C3EE08F000EA7B5 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		FFCD60262C21D9F2007785FF /* DOTCHI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DOTCHI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFCD60292C21D9F2007785FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFCD602B2C21D9F2007785FF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -209,6 +223,7 @@
 		FF4BF6C02C2DB71D00B6DEB2 /* Essentials */ = {
 			isa = PBXGroup;
 			children = (
+				FFC7BB842C3D943E000EA7B5 /* BaseResponseType.swift */,
 				FF4BF6C12C2DB72700B6DEB2 /* APIConstants.swift */,
 				FFC7BB862C3D9562000EA7B5 /* DotchiMoyaProvider.swift */,
 				FFC7BB882C3D956F000EA7B5 /* NetworkResult.swift */,
@@ -252,6 +267,7 @@
 		FFC7BB812C3D93FE000EA7B5 /* DTO */ = {
 			isa = PBXGroup;
 			children = (
+				FFC7BB8E2C3EDFA2000EA7B5 /* Auth */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -259,6 +275,7 @@
 		FFC7BB822C3D941B000EA7B5 /* Routers */ = {
 			isa = PBXGroup;
 			children = (
+				FFC7BB912C3EDFCB000EA7B5 /* AuthRouter.swift */,
 			);
 			path = Routers;
 			sourceTree = "<group>";
@@ -266,9 +283,36 @@
 		FFC7BB832C3D9423000EA7B5 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				FFC7BB842C3D943E000EA7B5 /* BaseResponseType.swift */,
+				FFC7BB8A2C3D95BA000EA7B5 /* BaseService.swift */,
+				FFC7BB8C2C3EDF95000EA7B5 /* AuthService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		FFC7BB8E2C3EDFA2000EA7B5 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				FFC7BB932C3EDFE4000EA7B5 /* Request */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		FFC7BB932C3EDFE4000EA7B5 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				FFC7BB8F2C3EDFAC000EA7B5 /* SigninRequestDTO.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		FFC7BB942C3EE049000EA7B5 /* Supports */ = {
+			isa = PBXGroup;
+			children = (
+				FFC7BB952C3EE055000EA7B5 /* ServiceEnvironment.swift */,
+				FFC7BB972C3EE073000EA7B5 /* Debug.xcconfig */,
+				FFC7BB992C3EE08F000EA7B5 /* Release.xcconfig */,
+			);
+			path = Supports;
 			sourceTree = "<group>";
 		};
 		FFCD601D2C21D9F2007785FF = {
@@ -290,6 +334,7 @@
 		FFCD60282C21D9F2007785FF /* DOTCHI */ = {
 			isa = PBXGroup;
 			children = (
+				FFC7BB942C3EE049000EA7B5 /* Supports */,
 				FFCD60532C2D94E9007785FF /* Global */,
 				FF4BF6BD2C2DB6E800B6DEB2 /* Networks */,
 				FFCD604C2C2D9406007785FF /* Sources */,
@@ -553,8 +598,10 @@
 			files = (
 				FFCD60442C2D9195007785FF /* Pretendard-SemiBold.ttf in Resources */,
 				FFCD60362C21D9F3007785FF /* LaunchScreen.storyboard in Resources */,
+				FFC7BB9A2C3EE08F000EA7B5 /* Release.xcconfig in Resources */,
 				FFCD60452C2D9195007785FF /* Pretendard-ExtraBold.ttf in Resources */,
 				FFCD60462C2D9195007785FF /* Pretendard-Bold.ttf in Resources */,
+				FFC7BB982C3EE073000EA7B5 /* Debug.xcconfig in Resources */,
 				FFCD60472C2D9195007785FF /* Pretendard-Medium.ttf in Resources */,
 				FFCD604A2C2D9290007785FF /* Assets.xcassets in Resources */,
 				FFCD604B2C2D9290007785FF /* Colorsets.xcassets in Resources */,
@@ -578,9 +625,11 @@
 				FFCD606D2C2D9742007785FF /* UILabel+.swift in Sources */,
 				FFC7BB872C3D9562000EA7B5 /* DotchiMoyaProvider.swift in Sources */,
 				FFCD60982C2D991A007785FF /* Messages.swift in Sources */,
+				FFC7BB922C3EDFCB000EA7B5 /* AuthRouter.swift in Sources */,
 				FFCD609A2C2D9920007785FF /* KeychainKeys.swift in Sources */,
 				FF4BF6B22C2DB63900B6DEB2 /* CardEntity.swift in Sources */,
 				FF4BF6BA2C2DB68000B6DEB2 /* CommentEntity.swift in Sources */,
+				FFC7BB962C3EE055000EA7B5 /* ServiceEnvironment.swift in Sources */,
 				FFC7BB7E2C3D8A38000EA7B5 /* SignupUserInfoViewController.swift in Sources */,
 				FFCD60732C2D977F007785FF /* UIImageView+.swift in Sources */,
 				FFCD60792C2D97C3007785FF /* String+.swift in Sources */,
@@ -611,6 +660,8 @@
 				FFCD607D2C2D97E1007785FF /* UIImage+.swift in Sources */,
 				FFCD606B2C2D9728007785FF /* FontManager.swift in Sources */,
 				FFCD606F2C2D975A007785FF /* UICollectionView+.swift in Sources */,
+				FFC7BB902C3EDFAC000EA7B5 /* SigninRequestDTO.swift in Sources */,
+				FFC7BB8B2C3D95BA000EA7B5 /* BaseService.swift in Sources */,
 				FFCD608F2C2D98BF007785FF /* UserDefaultsManager.swift in Sources */,
 				FFCD60852C2D9860007785FF /* ClassNameProtocol.swift in Sources */,
 				FFCD60962C2D9915007785FF /* CardHeadType.swift in Sources */,
@@ -622,6 +673,7 @@
 				FFCD60752C2D9792007785FF /* UIStackView+.swift in Sources */,
 				FFCD60582C2D9515007785FF /* UIColor+.swift in Sources */,
 				FF4BF6A92C2DACCB00B6DEB2 /* MakeDotchiPhotoViewController.swift in Sources */,
+				FFC7BB8D2C3EDF95000EA7B5 /* AuthService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
