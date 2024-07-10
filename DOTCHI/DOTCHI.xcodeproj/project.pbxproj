@@ -705,6 +705,7 @@
 /* Begin XCBuildConfiguration section */
 		FFCD60382C21D9F3007785FF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FFC7BB972C3EE073000EA7B5 /* Debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -769,6 +770,7 @@
 		};
 		FFCD60392C21D9F3007785FF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FFC7BB992C3EE08F000EA7B5 /* Release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -826,6 +828,7 @@
 		};
 		FFCD603B2C21D9F3007785FF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FFC7BB972C3EE073000EA7B5 /* Debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -856,6 +859,7 @@
 		};
 		FFCD603C2C21D9F3007785FF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FFC7BB992C3EE08F000EA7B5 /* Release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
