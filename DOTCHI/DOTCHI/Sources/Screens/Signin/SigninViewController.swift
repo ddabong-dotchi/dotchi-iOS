@@ -152,9 +152,9 @@ final class SigninViewController: BaseViewController {
     
     private func setSigninButtonAction() {
         self.signinButton.setAction {
-            if let userID = self.usernameTextField.text,
+            if let username = self.usernameTextField.text,
             let password = self.passwordTextField.text {
-                let data: SigninRequestDTO = .init(userID: userID, password: password)
+                let data: SigninRequestDTO = .init(username: username, password: password)
                 self.requestSignin(data: data) { response in
                     self.setUserInfo(data: response)
                     self.presentHomeViewController()
