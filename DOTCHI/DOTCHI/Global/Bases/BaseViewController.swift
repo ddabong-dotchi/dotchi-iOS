@@ -7,6 +7,8 @@
 
 import UIKit
 import SnapKit
+import MessageUI
+import KeychainSwift
 
 class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
     
@@ -16,7 +18,7 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
     
     // MARK: UIComponents
     
-    
+    lazy private var keychainManager: KeychainSwift = KeychainSwift()
     
     // MARK: Properties
     
@@ -66,9 +68,50 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
         self.view.addGestureRecognizer(tap)
     }
     
-//    func showNetworkErrorAlert() {
-//        self.makeAlert(title: Message.networkError.text)
-//    }
+    func hideTabBar() {
+        if let tabBarController = self.tabBarController as? DotchiUITabBarController {
+            tabBarController.hideTabBar()
+        }
+    }
+    
+    func showTabBar() {
+        if let tabBarController = self.tabBarController as? DotchiUITabBarController {
+            tabBarController.showTabBar()
+        }
+    }
+    
+    func showNetworkErrorAlert() {
+        self.makeAlert(title: Messages.networkError.text)
+    }
+    
+    func setUserInfo(data: SigninResponseDTO) {
+        UserInfo.shared.accessToken = data.accessToken
+        UserInfo.shared.refreshToken = data.refreshToken
+        
+        self.setUserDataToKeychain(data: data)
+    }
+    
+    private func setUserDataToKeychain(data: SigninResponseDTO) {
+        self.keychainManager.set(data.accessToken, forKey: KeychainKeys.accessToken.rawValue)
+        self.keychainManager.set(data.refreshToken, forKey: KeychainKeys.refreshToken.rawValue)
+//        self.keychainManager.set("\(data.memberID)", forKey: KeychainKeys.userID.rawValue)
+//        self.keychainManager.set(data.memberName, forKey: KeychainKeys.username.rawValue)
+//        self.keychainManager.set(data.memberImageURL, forKey: KeychainKeys.profileImageUrl.rawValue)
+    }
+    
+    func setSigninDataToKeychain(username: String, password: String) {
+        self.keychainManager.set(username, forKey: KeychainKeys.username.rawValue)
+        self.keychainManager.set(password, forKey: KeychainKeys.password.rawValue)
+    }
+    
+    func getSigninDataFromKeychain() -> SigninRequestDTO {
+        let username: String = self.keychainManager.get(KeychainKeys.username.rawValue) ?? ""
+        let password: String = self.keychainManager.get(KeychainKeys.password.rawValue) ?? ""
+        
+        let data: SigninRequestDTO = SigninRequestDTO(username: username, password: password)
+        
+        return data
+    }
     
     /// 신고 사유 선택 action sheet
 //    func reportActionSheet(userId: Int) -> UIAlertController {
@@ -104,6 +147,71 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
 //        
 //        return reportActionSheet
 //    }
+}
+
+// MARK: - MFMailComposeViewControllerDelegate
+
+extension BaseViewController: MFMailComposeViewControllerDelegate {
+    
+    func sendForgetPasswordMail() {
+        if MFMailComposeViewController.canSendMail() {
+            let compseVC = MFMailComposeViewController()
+            compseVC.mailComposeDelegate = self
+            
+            compseVC.setToRecipients(["ddabongdotchi@gmail.com"])
+            compseVC.setSubject("[따봉도치] 비밀번호를 잊었어요! 🥲")
+            compseVC.setMessageBody(
+"""
+안녕하세요.
+서비스를 이용해 주셔서 감사해요.
+비밀번호를 변경할 수 있는 링크를 전송해 주신 메일로 회신해 드리겠습니다.
+——————————————————————————
+User: \(String(describing: UserInfo.shared.userID))
+App Version: \(AppInfo.shared.currentAppVersion())
+Device: \(self.deviceModelName())
+OS Version: \(UIDevice.current.systemVersion)
+"""
+                , isHTML: false)
+            
+            self.present(compseVC, animated: true, completion: nil)
+            
+        } else {
+            self.makeAlert(title: Messages.unabledMailApp.text)
+        }
+    }
+    
+    private func deviceModelName() -> String {
+        
+        /// 시뮬레이터 확인
+        var modelName = ProcessInfo.processInfo.environment["SIMULATOR_DEVICE_NAME"] ?? ""
+        if modelName.isEmpty == false && modelName.count > 0 {
+            return modelName
+        }
+        
+        /// 실제 디바이스 확인
+        let device = UIDevice.current
+        let selName = "_\("deviceInfo")ForKey:"
+        let selector = NSSelectorFromString(selName)
+        
+        if device.responds(to: selector) {
+            modelName = String(describing: device.perform(selector, with: "marketing-name").takeRetainedValue())
+        }
+        return modelName
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true) {
+            switch result {
+            case .cancelled, .saved: return
+            case .sent:
+                self.makeAlert(title: Messages.completedSendContactMail.text)
+            case .failed:
+                self.makeAlert(title: Messages.failedSendContactMail.text)
+            @unknown default:
+                self.makeAlert(title: Messages.networkError.text)
+            }
+        }
+    }
 }
 
 // MARK: - Network

@@ -30,7 +30,7 @@ final class SplashViewController: BaseViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        self.presentNextViewController()
+        self.autoSignIn()
     }
     
     // MARK: Methods
@@ -39,24 +39,43 @@ final class SplashViewController: BaseViewController {
         self.view.backgroundColor = .dotchiBlack
     }
     
-//    private func autoSignIn() {
-//        // TODO: FCM
-////        let deviceToken: String = UserInfo.shared.deviceToken
-//        
-//        let tokenData: RefreshTokenRequestDTO = .init(
-//            accessToken: UserDefaultsManager.accessToken ?? "",
-//            refreshToken: UserDefaultsManager.refreshToken ?? ""
-//        )
-//        
-//        self.requestRefreshToken(data: tokenData) { isProfileCompleted in
-//            self.presentNextViewController(isProfileCompleted: isProfileCompleted)
-//        }
-//    }
-//    
-    private func presentNextViewController() {
+    private func autoSignIn() {
+        // TODO: FCM
+//        let deviceToken: String = UserInfo.shared.deviceToken
+        
+        let signinRequestData: SigninRequestDTO = self.getSigninDataFromKeychain()
+        
+        self.requestSignin(data: signinRequestData) { response in
+            self.setUserInfo(data: response)
+            self.presentHomeViewController()
+        }
+    }
+    
+    private func presentHomeViewController() {
         self.present(DotchiUITabBarController(), animated: true)
     }
+    
+    private func presentSigninViewController() {
+        self.present(SigninViewController(), animated: true)
+    }
+}
 
+// MARK: - Network
+
+extension SplashViewController {
+    
+    private func requestSignin(data: SigninRequestDTO, completion: @escaping (SigninResponseDTO) -> (Void)) {
+        AuthService.shared.requestSignin(data: data) { networkResult in
+            switch networkResult {
+            case .success(let responseData):
+                if let result = responseData as? SigninResponseDTO {
+                    completion(result)
+                }
+            default:
+                self.presentSigninViewController()
+            }
+        }
+    }
 }
 
 // MARK: - UI

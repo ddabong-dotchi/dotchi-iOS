@@ -10,6 +10,9 @@ import Foundation
 enum Messages {
     case networkError
     case completedReport
+    case unabledMailApp
+    case completedSendContactMail
+    case failedSendContactMail
 }
 
 extension Messages {
@@ -24,6 +27,15 @@ extension Messages {
 """
         case .completedReport:
             return "신고가 접수되었습니다."
+            
+        case .unabledMailApp:
+            return "Mail 앱을 사용할 수 없습니다. 기기에 Mail 앱이 설치되어 있는지 확인해 주세요."
+            
+        case .completedSendContactMail:
+            return "메일 전송이 완료되었습니다."
+            
+        case .failedSendContactMail:
+            return "메일 전송에 실패하였습니다. 다시 시도해 주세요."
         }
     }
 }

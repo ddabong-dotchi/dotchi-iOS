@@ -18,6 +18,25 @@
 		FF4BF6BC2C2DB69300B6DEB2 /* CardBackEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4BF6BB2C2DB69300B6DEB2 /* CardBackEntity.swift */; };
 		FF4BF6BF2C2DB6F900B6DEB2 /* NetworkLoggerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4BF6BE2C2DB6F900B6DEB2 /* NetworkLoggerPlugin.swift */; };
 		FF4BF6C22C2DB72700B6DEB2 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4BF6C12C2DB72700B6DEB2 /* APIConstants.swift */; };
+		FFC7BB6E2C345EBC000EA7B5 /* SigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7BB6D2C345EBC000EA7B5 /* SigninViewController.swift */; };
+		FFC7BB702C3460BF000EA7B5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7BB6F2C3460BF000EA7B5 /* HomeViewController.swift */; };
+		FFC7BB732C35A770000EA7B5 /* TextUnderlineButtonUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7BB722C35A770000EA7B5 /* TextUnderlineButtonUIView.swift */; };
+		FFC7BB762C35ADD4000EA7B5 /* SigninUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7BB752C35ADD4000EA7B5 /* SigninUITextField.swift */; };
+		FFC7BB792C35B905000EA7B5 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FFC7BB782C35B905000EA7B5 /* IQKeyboardManagerSwift */; };
+		FFC7BB7B2C35BA89000EA7B5 /* DoneUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7BB7A2C35BA89000EA7B5 /* DoneUIButton.swift */; };
+		FFC7BB7E2C3D8A38000EA7B5 /* SignupUserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7BB7D2C3D8A38000EA7B5 /* SignupUserInfoViewController.swift */; };
+		FFC7BB802C3D8D62000EA7B5 /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7BB7F2C3D8D62000EA7B5 /* AppInfo.swift */; };
+		FFC7BB852C3D943E000EA7B5 /* BaseResponseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7BB842C3D943E000EA7B5 /* BaseResponseType.swift */; };
+		FFC7BB872C3D9562000EA7B5 /* DotchiMoyaProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7BB862C3D9562000EA7B5 /* DotchiMoyaProvider.swift */; };
+		FFC7BB892C3D956F000EA7B5 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7BB882C3D956F000EA7B5 /* NetworkResult.swift */; };
+		FFC7BB8B2C3D95BA000EA7B5 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7BB8A2C3D95BA000EA7B5 /* BaseService.swift */; };
+		FFC7BB8D2C3EDF95000EA7B5 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7BB8C2C3EDF95000EA7B5 /* AuthService.swift */; };
+		FFC7BB902C3EDFAC000EA7B5 /* SigninRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7BB8F2C3EDFAC000EA7B5 /* SigninRequestDTO.swift */; };
+		FFC7BB922C3EDFCB000EA7B5 /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7BB912C3EDFCB000EA7B5 /* AuthRouter.swift */; };
+		FFC7BB962C3EE055000EA7B5 /* ServiceEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7BB952C3EE055000EA7B5 /* ServiceEnvironment.swift */; };
+		FFC7BB982C3EE073000EA7B5 /* Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = FFC7BB972C3EE073000EA7B5 /* Debug.xcconfig */; };
+		FFC7BB9A2C3EE08F000EA7B5 /* Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = FFC7BB992C3EE08F000EA7B5 /* Release.xcconfig */; };
+		FFC7BB9D2C3EE151000EA7B5 /* SigninResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7BB9C2C3EE151000EA7B5 /* SigninResponseDTO.swift */; };
 		FFCD602A2C21D9F2007785FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD60292C21D9F2007785FF /* AppDelegate.swift */; };
 		FFCD602C2C21D9F2007785FF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD602B2C21D9F2007785FF /* SceneDelegate.swift */; };
 		FFCD60362C21D9F3007785FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFCD60342C21D9F3007785FF /* LaunchScreen.storyboard */; };
@@ -79,6 +98,24 @@
 		FF4BF6BB2C2DB69300B6DEB2 /* CardBackEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBackEntity.swift; sourceTree = "<group>"; };
 		FF4BF6BE2C2DB6F900B6DEB2 /* NetworkLoggerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLoggerPlugin.swift; sourceTree = "<group>"; };
 		FF4BF6C12C2DB72700B6DEB2 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
+		FFC7BB6D2C345EBC000EA7B5 /* SigninViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewController.swift; sourceTree = "<group>"; };
+		FFC7BB6F2C3460BF000EA7B5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		FFC7BB722C35A770000EA7B5 /* TextUnderlineButtonUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextUnderlineButtonUIView.swift; sourceTree = "<group>"; };
+		FFC7BB752C35ADD4000EA7B5 /* SigninUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninUITextField.swift; sourceTree = "<group>"; };
+		FFC7BB7A2C35BA89000EA7B5 /* DoneUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneUIButton.swift; sourceTree = "<group>"; };
+		FFC7BB7D2C3D8A38000EA7B5 /* SignupUserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupUserInfoViewController.swift; sourceTree = "<group>"; };
+		FFC7BB7F2C3D8D62000EA7B5 /* AppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
+		FFC7BB842C3D943E000EA7B5 /* BaseResponseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponseType.swift; sourceTree = "<group>"; };
+		FFC7BB862C3D9562000EA7B5 /* DotchiMoyaProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotchiMoyaProvider.swift; sourceTree = "<group>"; };
+		FFC7BB882C3D956F000EA7B5 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
+		FFC7BB8A2C3D95BA000EA7B5 /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
+		FFC7BB8C2C3EDF95000EA7B5 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		FFC7BB8F2C3EDFAC000EA7B5 /* SigninRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninRequestDTO.swift; sourceTree = "<group>"; };
+		FFC7BB912C3EDFCB000EA7B5 /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
+		FFC7BB952C3EE055000EA7B5 /* ServiceEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceEnvironment.swift; sourceTree = "<group>"; };
+		FFC7BB972C3EE073000EA7B5 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		FFC7BB992C3EE08F000EA7B5 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		FFC7BB9C2C3EE151000EA7B5 /* SigninResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninResponseDTO.swift; sourceTree = "<group>"; };
 		FFCD60262C21D9F2007785FF /* DOTCHI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DOTCHI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFCD60292C21D9F2007785FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFCD602B2C21D9F2007785FF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -134,6 +171,7 @@
 				FFCD60BC2C2D9B29007785FF /* ReactiveMoya in Frameworks */,
 				FFCD60C12C2D9DBC007785FF /* Lottie in Frameworks */,
 				FFCD60BE2C2D9B29007785FF /* RxMoya in Frameworks */,
+				FFC7BB792C35B905000EA7B5 /* IQKeyboardManagerSwift in Frameworks */,
 				FFCD60B82C2D9B29007785FF /* CombineMoya in Frameworks */,
 				FFCD60BA2C2D9B29007785FF /* Moya in Frameworks */,
 				FFCD60B52C2D9B10007785FF /* KeychainSwift in Frameworks */,
@@ -175,6 +213,9 @@
 		FF4BF6BD2C2DB6E800B6DEB2 /* Networks */ = {
 			isa = PBXGroup;
 			children = (
+				FFC7BB832C3D9423000EA7B5 /* Services */,
+				FFC7BB822C3D941B000EA7B5 /* Routers */,
+				FFC7BB812C3D93FE000EA7B5 /* DTO */,
 				FF4BF6C02C2DB71D00B6DEB2 /* Essentials */,
 				FF4BF6BE2C2DB6F900B6DEB2 /* NetworkLoggerPlugin.swift */,
 			);
@@ -184,9 +225,105 @@
 		FF4BF6C02C2DB71D00B6DEB2 /* Essentials */ = {
 			isa = PBXGroup;
 			children = (
+				FFC7BB842C3D943E000EA7B5 /* BaseResponseType.swift */,
 				FF4BF6C12C2DB72700B6DEB2 /* APIConstants.swift */,
+				FFC7BB862C3D9562000EA7B5 /* DotchiMoyaProvider.swift */,
+				FFC7BB882C3D956F000EA7B5 /* NetworkResult.swift */,
 			);
 			path = Essentials;
+			sourceTree = "<group>";
+		};
+		FFC7BB6C2C345EAC000EA7B5 /* Signin */ = {
+			isa = PBXGroup;
+			children = (
+				FFC7BB6D2C345EBC000EA7B5 /* SigninViewController.swift */,
+			);
+			path = Signin;
+			sourceTree = "<group>";
+		};
+		FFC7BB712C359E19000EA7B5 /* UIButton */ = {
+			isa = PBXGroup;
+			children = (
+				FFC7BB722C35A770000EA7B5 /* TextUnderlineButtonUIView.swift */,
+				FFC7BB7A2C35BA89000EA7B5 /* DoneUIButton.swift */,
+			);
+			path = UIButton;
+			sourceTree = "<group>";
+		};
+		FFC7BB742C35AD66000EA7B5 /* UITextField */ = {
+			isa = PBXGroup;
+			children = (
+				FFC7BB752C35ADD4000EA7B5 /* SigninUITextField.swift */,
+			);
+			path = UITextField;
+			sourceTree = "<group>";
+		};
+		FFC7BB7C2C3D88A6000EA7B5 /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+				FFC7BB7D2C3D8A38000EA7B5 /* SignupUserInfoViewController.swift */,
+			);
+			path = Signup;
+			sourceTree = "<group>";
+		};
+		FFC7BB812C3D93FE000EA7B5 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				FFC7BB8E2C3EDFA2000EA7B5 /* Auth */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		FFC7BB822C3D941B000EA7B5 /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				FFC7BB912C3EDFCB000EA7B5 /* AuthRouter.swift */,
+			);
+			path = Routers;
+			sourceTree = "<group>";
+		};
+		FFC7BB832C3D9423000EA7B5 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FFC7BB8A2C3D95BA000EA7B5 /* BaseService.swift */,
+				FFC7BB8C2C3EDF95000EA7B5 /* AuthService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		FFC7BB8E2C3EDFA2000EA7B5 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				FFC7BB9B2C3EE148000EA7B5 /* Response */,
+				FFC7BB932C3EDFE4000EA7B5 /* Request */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		FFC7BB932C3EDFE4000EA7B5 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				FFC7BB8F2C3EDFAC000EA7B5 /* SigninRequestDTO.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		FFC7BB942C3EE049000EA7B5 /* Supports */ = {
+			isa = PBXGroup;
+			children = (
+				FFC7BB952C3EE055000EA7B5 /* ServiceEnvironment.swift */,
+				FFC7BB972C3EE073000EA7B5 /* Debug.xcconfig */,
+				FFC7BB992C3EE08F000EA7B5 /* Release.xcconfig */,
+			);
+			path = Supports;
+			sourceTree = "<group>";
+		};
+		FFC7BB9B2C3EE148000EA7B5 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				FFC7BB9C2C3EE151000EA7B5 /* SigninResponseDTO.swift */,
+			);
+			path = Response;
 			sourceTree = "<group>";
 		};
 		FFCD601D2C21D9F2007785FF = {
@@ -208,6 +345,7 @@
 		FFCD60282C21D9F2007785FF /* DOTCHI */ = {
 			isa = PBXGroup;
 			children = (
+				FFC7BB942C3EE049000EA7B5 /* Supports */,
 				FFCD60532C2D94E9007785FF /* Global */,
 				FF4BF6BD2C2DB6E800B6DEB2 /* Networks */,
 				FFCD604C2C2D9406007785FF /* Sources */,
@@ -253,6 +391,8 @@
 		FFCD604D2C2D940F007785FF /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				FFC7BB7C2C3D88A6000EA7B5 /* Signup */,
+				FFC7BB6C2C345EAC000EA7B5 /* Signin */,
 				FF4BF6AD2C2DB38900B6DEB2 /* My */,
 				FF4BF6A72C2DAC9500B6DEB2 /* Make */,
 				FFCD60502C2D9468007785FF /* Home */,
@@ -281,6 +421,7 @@
 		FFCD60502C2D9468007785FF /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				FFC7BB6F2C3460BF000EA7B5 /* HomeViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -354,6 +495,7 @@
 				FFCD608A2C2D98A5007785FF /* ImageCacheManager.swift */,
 				FFCD608C2C2D98B1007785FF /* UserInfo.swift */,
 				FFCD608E2C2D98BF007785FF /* UserDefaultsManager.swift */,
+				FFC7BB7F2C3D8D62000EA7B5 /* AppInfo.swift */,
 			);
 			path = Singletons;
 			sourceTree = "<group>";
@@ -373,6 +515,8 @@
 		FFCD60C22C2D9E36007785FF /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				FFC7BB742C35AD66000EA7B5 /* UITextField */,
+				FFC7BB712C359E19000EA7B5 /* UIButton */,
 				FFCD60C32C2D9E3E007785FF /* UITabBarViewController */,
 			);
 			path = Components;
@@ -411,6 +555,7 @@
 				FFCD60BD2C2D9B29007785FF /* RxMoya */,
 				FFCD60C02C2D9DBC007785FF /* Lottie */,
 				FF4BF6AB2C2DB15500B6DEB2 /* SnapKit */,
+				FFC7BB782C35B905000EA7B5 /* IQKeyboardManagerSwift */,
 			);
 			productName = DOTCHI;
 			productReference = FFCD60262C21D9F2007785FF /* DOTCHI.app */;
@@ -446,6 +591,7 @@
 				FFCD60B62C2D9B29007785FF /* XCRemoteSwiftPackageReference "Moya" */,
 				FFCD60BF2C2D9DBC007785FF /* XCRemoteSwiftPackageReference "lottie-spm" */,
 				FF4BF6AA2C2DB15500B6DEB2 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				FFC7BB772C35B905000EA7B5 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 			);
 			productRefGroup = FFCD60272C21D9F2007785FF /* Products */;
 			projectDirPath = "";
@@ -463,8 +609,10 @@
 			files = (
 				FFCD60442C2D9195007785FF /* Pretendard-SemiBold.ttf in Resources */,
 				FFCD60362C21D9F3007785FF /* LaunchScreen.storyboard in Resources */,
+				FFC7BB9A2C3EE08F000EA7B5 /* Release.xcconfig in Resources */,
 				FFCD60452C2D9195007785FF /* Pretendard-ExtraBold.ttf in Resources */,
 				FFCD60462C2D9195007785FF /* Pretendard-Bold.ttf in Resources */,
+				FFC7BB982C3EE073000EA7B5 /* Debug.xcconfig in Resources */,
 				FFCD60472C2D9195007785FF /* Pretendard-Medium.ttf in Resources */,
 				FFCD604A2C2D9290007785FF /* Assets.xcassets in Resources */,
 				FFCD604B2C2D9290007785FF /* Colorsets.xcassets in Resources */,
@@ -479,14 +627,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFCD60622C2D95AA007785FF /* BaseUINavigationController.swift in Sources */,
+				FFC7BB762C35ADD4000EA7B5 /* SigninUITextField.swift in Sources */,
 				FFCD60812C2D980F007785FF /* UINavigationController+.swift in Sources */,
+				FFC7BB892C3D956F000EA7B5 /* NetworkResult.swift in Sources */,
 				FFCD60832C2D9832007785FF /* Encodable+.swift in Sources */,
+				FFC7BB7B2C35BA89000EA7B5 /* DoneUIButton.swift in Sources */,
 				FFCD60652C2D96D8007785FF /* UIViewController+.swift in Sources */,
 				FFCD606D2C2D9742007785FF /* UILabel+.swift in Sources */,
+				FFC7BB872C3D9562000EA7B5 /* DotchiMoyaProvider.swift in Sources */,
 				FFCD60982C2D991A007785FF /* Messages.swift in Sources */,
+				FFC7BB922C3EDFCB000EA7B5 /* AuthRouter.swift in Sources */,
 				FFCD609A2C2D9920007785FF /* KeychainKeys.swift in Sources */,
 				FF4BF6B22C2DB63900B6DEB2 /* CardEntity.swift in Sources */,
 				FF4BF6BA2C2DB68000B6DEB2 /* CommentEntity.swift in Sources */,
+				FFC7BB962C3EE055000EA7B5 /* ServiceEnvironment.swift in Sources */,
+				FFC7BB7E2C3D8A38000EA7B5 /* SignupUserInfoViewController.swift in Sources */,
 				FFCD60732C2D977F007785FF /* UIImageView+.swift in Sources */,
 				FFCD60792C2D97C3007785FF /* String+.swift in Sources */,
 				FFCD602A2C21D9F2007785FF /* AppDelegate.swift in Sources */,
@@ -497,6 +652,7 @@
 				FF4BF6AF2C2DB39300B6DEB2 /* MyView.swift in Sources */,
 				FFCD60C52C2D9E66007785FF /* DotchiUITabBarController.swift in Sources */,
 				FF4BF6B82C2DB66F00B6DEB2 /* MakeDotchiEntity.swift in Sources */,
+				FFC7BB732C35A770000EA7B5 /* TextUnderlineButtonUIView.swift in Sources */,
 				FF4BF6B62C2DB65B00B6DEB2 /* CardFrontEntity.swift in Sources */,
 				FFCD608B2C2D98A5007785FF /* ImageCacheManager.swift in Sources */,
 				FFCD608D2C2D98B1007785FF /* UserInfo.swift in Sources */,
@@ -504,8 +660,10 @@
 				FFCD60922C2D98F7007785FF /* LuckyType.swift in Sources */,
 				FF4BF6B42C2DB64A00B6DEB2 /* CardUserEntity.swift in Sources */,
 				FFCD602C2C21D9F2007785FF /* SceneDelegate.swift in Sources */,
+				FFC7BB6E2C345EBC000EA7B5 /* SigninViewController.swift in Sources */,
 				FFCD60712C2D976E007785FF /* Adjusted+.swift in Sources */,
 				FFCD60942C2D990D007785FF /* CardSortType.swift in Sources */,
+				FFC7BB702C3460BF000EA7B5 /* HomeViewController.swift in Sources */,
 				FFCD60692C2D9718007785FF /* UIButton+.swift in Sources */,
 				FFCD60522C2D9482007785FF /* SplashViewController.swift in Sources */,
 				FFCD607B2C2D97D1007785FF /* UITableView+.swift in Sources */,
@@ -513,15 +671,21 @@
 				FFCD607D2C2D97E1007785FF /* UIImage+.swift in Sources */,
 				FFCD606B2C2D9728007785FF /* FontManager.swift in Sources */,
 				FFCD606F2C2D975A007785FF /* UICollectionView+.swift in Sources */,
+				FFC7BB902C3EDFAC000EA7B5 /* SigninRequestDTO.swift in Sources */,
+				FFC7BB8B2C3D95BA000EA7B5 /* BaseService.swift in Sources */,
 				FFCD608F2C2D98BF007785FF /* UserDefaultsManager.swift in Sources */,
+				FFC7BB9D2C3EE151000EA7B5 /* SigninResponseDTO.swift in Sources */,
 				FFCD60852C2D9860007785FF /* ClassNameProtocol.swift in Sources */,
 				FFCD60962C2D9915007785FF /* CardHeadType.swift in Sources */,
 				FFCD607F2C2D97FB007785FF /* UserDefaults+.swift in Sources */,
+				FFC7BB852C3D943E000EA7B5 /* BaseResponseType.swift in Sources */,
 				FF4BF6BC2C2DB69300B6DEB2 /* CardBackEntity.swift in Sources */,
 				FFCD60772C2D97AA007785FF /* UITextField+.swift in Sources */,
+				FFC7BB802C3D8D62000EA7B5 /* AppInfo.swift in Sources */,
 				FFCD60752C2D9792007785FF /* UIStackView+.swift in Sources */,
 				FFCD60582C2D9515007785FF /* UIColor+.swift in Sources */,
 				FF4BF6A92C2DACCB00B6DEB2 /* MakeDotchiPhotoViewController.swift in Sources */,
+				FFC7BB8D2C3EDF95000EA7B5 /* AuthService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -541,6 +705,7 @@
 /* Begin XCBuildConfiguration section */
 		FFCD60382C21D9F3007785FF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FFC7BB972C3EE073000EA7B5 /* Debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -605,6 +770,7 @@
 		};
 		FFCD60392C21D9F3007785FF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FFC7BB992C3EE08F000EA7B5 /* Release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -662,6 +828,7 @@
 		};
 		FFCD603B2C21D9F3007785FF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FFC7BB972C3EE073000EA7B5 /* Debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -692,6 +859,7 @@
 		};
 		FFCD603C2C21D9F3007785FF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FFC7BB992C3EE08F000EA7B5 /* Release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -752,6 +920,14 @@
 				minimumVersion = 5.7.1;
 			};
 		};
+		FFC7BB772C35B905000EA7B5 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.3;
+			};
+		};
 		FFCD60B02C2D9AA7007785FF /* XCRemoteSwiftPackageReference "RxGesture" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/RxSwiftCommunity/RxGesture.git";
@@ -791,6 +967,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FF4BF6AA2C2DB15500B6DEB2 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		FFC7BB782C35B905000EA7B5 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FFC7BB772C35B905000EA7B5 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
 		};
 		FFCD60B12C2D9AA7007785FF /* RxGesture */ = {
 			isa = XCSwiftPackageProductDependency;

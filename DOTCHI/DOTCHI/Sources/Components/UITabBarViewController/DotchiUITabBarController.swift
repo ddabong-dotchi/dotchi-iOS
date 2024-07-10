@@ -63,7 +63,6 @@ final class DotchiUITabBarController: UITabBarController {
         self.delegate = self
         
         let homeTab = self.makeTabBarItem(
-            viewController: BaseUINavigationController(rootViewController: BaseViewController()),
             title: "홈",
             image: .icnHome,
             selectedImage: .icnHomeSelected
@@ -95,12 +94,12 @@ final class DotchiUITabBarController: UITabBarController {
         self.setViewControllers(tabs, animated: false)
     }
     
-    func hideTabbar() {
+    func hideTabBar() {
         self.tabBar.isHidden = true
         self.backgroundView.isHidden = true
     }
     
-    func showTabbar() {
+    func showTabBar() {
         self.tabBar.isHidden = false
         self.backgroundView.isHidden = false
     }

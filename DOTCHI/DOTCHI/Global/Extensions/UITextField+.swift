@@ -38,10 +38,10 @@ extension UITextField {
         }
     }
     
-    func setDotchiPlaceholder(_ text: String) {
+    func setDotchiPlaceholder(_ text: String, color: UIColor = .dotchiBlack40) {
         self.attributedPlaceholder = NSAttributedString(
             string: text,
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor.dotchiWhite.withAlphaComponent(0.3)]
+            attributes: [NSAttributedString.Key.foregroundColor: color]
         )
     }
 }
