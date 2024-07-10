@@ -99,6 +99,20 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
 //        self.keychainManager.set(data.memberImageURL, forKey: KeychainKeys.profileImageUrl.rawValue)
     }
     
+    func setSigninDataToKeychain(username: String, password: String) {
+        self.keychainManager.set(username, forKey: KeychainKeys.username.rawValue)
+        self.keychainManager.set(password, forKey: KeychainKeys.password.rawValue)
+    }
+    
+    func getSigninDataFromKeychain() -> SigninRequestDTO {
+        let username: String = self.keychainManager.get(KeychainKeys.username.rawValue) ?? ""
+        let password: String = self.keychainManager.get(KeychainKeys.password.rawValue) ?? ""
+        
+        let data: SigninRequestDTO = SigninRequestDTO(username: username, password: password)
+        
+        return data
+    }
+    
     /// 신고 사유 선택 action sheet
 //    func reportActionSheet(userId: Int) -> UIAlertController {
 //        let reportActionSheet: UIAlertController = UIAlertController(
