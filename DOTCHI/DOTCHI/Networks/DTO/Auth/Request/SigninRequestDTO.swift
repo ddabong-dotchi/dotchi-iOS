@@ -8,6 +8,6 @@
 import Foundation
 
 struct SigninRequestDTO: Encodable {
-    let userID: String
+    let username: String
     let password: String
 }
