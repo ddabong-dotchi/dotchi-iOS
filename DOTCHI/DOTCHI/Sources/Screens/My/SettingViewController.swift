@@ -43,6 +43,16 @@ class SettingViewController: BaseViewController {
         fetchMyData()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        hideTabBar()
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        showTabBar()
+    }
+    
     private func setupNavigationBar() {
         navigationItem.title = "설정"
         navigationController?.navigationBar.titleTextAttributes = [
@@ -192,7 +202,7 @@ class SettingViewController: BaseViewController {
         }
         
         nameLabel.snp.makeConstraints { make in
-            make.top.equalTo(profileImageView.snp.bottom).offset(15)
+            make.top.equalTo(profileImageView.snp.bottom).offset(20)
             make.centerX.equalToSuperview()
         }
         
