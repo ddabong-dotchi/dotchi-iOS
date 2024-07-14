@@ -7,9 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E9727462C3C3C6F00252CA6 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9727452C3C3C6F00252CA6 /* SettingViewController.swift */; };
+		1E97274A2C3DA24100252CA6 /* ProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9727492C3DA24100252CA6 /* ProfileEditViewController.swift */; };
+		1E9727582C43924F00252CA6 /* UserRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9727572C43924F00252CA6 /* UserRouter.swift */; };
+		1E97275C2C43986B00252CA6 /* UserResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E97275B2C43986B00252CA6 /* UserResponseDTO.swift */; };
+		1E97275E2C43996D00252CA6 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E97275D2C43996D00252CA6 /* UserService.swift */; };
+		1E9727602C43AE2D00252CA6 /* MyCardResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E97275F2C43AE2D00252CA6 /* MyCardResponseDTO.swift */; };
 		FF4BF6A92C2DACCB00B6DEB2 /* MakeDotchiPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4BF6A82C2DACCB00B6DEB2 /* MakeDotchiPhotoViewController.swift */; };
 		FF4BF6AC2C2DB15500B6DEB2 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FF4BF6AB2C2DB15500B6DEB2 /* SnapKit */; };
-		FF4BF6AF2C2DB39300B6DEB2 /* MyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4BF6AE2C2DB39300B6DEB2 /* MyView.swift */; };
+		FF4BF6AF2C2DB39300B6DEB2 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4BF6AE2C2DB39300B6DEB2 /* MyViewController.swift */; };
 		FF4BF6B22C2DB63900B6DEB2 /* CardEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4BF6B12C2DB63900B6DEB2 /* CardEntity.swift */; };
 		FF4BF6B42C2DB64A00B6DEB2 /* CardUserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4BF6B32C2DB64A00B6DEB2 /* CardUserEntity.swift */; };
 		FF4BF6B62C2DB65B00B6DEB2 /* CardFrontEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4BF6B52C2DB65B00B6DEB2 /* CardFrontEntity.swift */; };
@@ -54,7 +60,6 @@
 		FFCD60652C2D96D8007785FF /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD60642C2D96D8007785FF /* UIViewController+.swift */; };
 		FFCD60672C2D96F8007785FF /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD60662C2D96F8007785FF /* UIView+.swift */; };
 		FFCD60692C2D9718007785FF /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD60682C2D9718007785FF /* UIButton+.swift */; };
-		FFCD606B2C2D9728007785FF /* FontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD606A2C2D9728007785FF /* FontManager.swift */; };
 		FFCD606D2C2D9742007785FF /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD606C2C2D9742007785FF /* UILabel+.swift */; };
 		FFCD606F2C2D975A007785FF /* UICollectionView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD606E2C2D975A007785FF /* UICollectionView+.swift */; };
 		FFCD60712C2D976E007785FF /* Adjusted+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD60702C2D976E007785FF /* Adjusted+.swift */; };
@@ -88,8 +93,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1E9727452C3C3C6F00252CA6 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		1E9727492C3DA24100252CA6 /* ProfileEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditViewController.swift; sourceTree = "<group>"; };
+		1E9727572C43924F00252CA6 /* UserRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRouter.swift; sourceTree = "<group>"; };
+		1E97275B2C43986B00252CA6 /* UserResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponseDTO.swift; sourceTree = "<group>"; };
+		1E97275D2C43996D00252CA6 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		1E97275F2C43AE2D00252CA6 /* MyCardResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardResponseDTO.swift; sourceTree = "<group>"; };
 		FF4BF6A82C2DACCB00B6DEB2 /* MakeDotchiPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeDotchiPhotoViewController.swift; sourceTree = "<group>"; };
-		FF4BF6AE2C2DB39300B6DEB2 /* MyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyView.swift; sourceTree = "<group>"; };
+		FF4BF6AE2C2DB39300B6DEB2 /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
 		FF4BF6B12C2DB63900B6DEB2 /* CardEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardEntity.swift; sourceTree = "<group>"; };
 		FF4BF6B32C2DB64A00B6DEB2 /* CardUserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardUserEntity.swift; sourceTree = "<group>"; };
 		FF4BF6B52C2DB65B00B6DEB2 /* CardFrontEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFrontEntity.swift; sourceTree = "<group>"; };
@@ -135,7 +146,6 @@
 		FFCD60642C2D96D8007785FF /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		FFCD60662C2D96F8007785FF /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		FFCD60682C2D9718007785FF /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
-		FFCD606A2C2D9728007785FF /* FontManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontManager.swift; sourceTree = "<group>"; };
 		FFCD606C2C2D9742007785FF /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
 		FFCD606E2C2D975A007785FF /* UICollectionView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+.swift"; sourceTree = "<group>"; };
 		FFCD60702C2D976E007785FF /* Adjusted+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Adjusted+.swift"; sourceTree = "<group>"; };
@@ -181,6 +191,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E9727592C43982300252CA6 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				1E97275A2C43983700252CA6 /* Response */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		1E97275A2C43983700252CA6 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				1E97275B2C43986B00252CA6 /* UserResponseDTO.swift */,
+				1E97275F2C43AE2D00252CA6 /* MyCardResponseDTO.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
 		FF4BF6A72C2DAC9500B6DEB2 /* Make */ = {
 			isa = PBXGroup;
 			children = (
@@ -192,7 +219,9 @@
 		FF4BF6AD2C2DB38900B6DEB2 /* My */ = {
 			isa = PBXGroup;
 			children = (
-				FF4BF6AE2C2DB39300B6DEB2 /* MyView.swift */,
+				FF4BF6AE2C2DB39300B6DEB2 /* MyViewController.swift */,
+				1E9727452C3C3C6F00252CA6 /* SettingViewController.swift */,
+				1E9727492C3DA24100252CA6 /* ProfileEditViewController.swift */,
 			);
 			path = My;
 			sourceTree = "<group>";
@@ -270,6 +299,7 @@
 			isa = PBXGroup;
 			children = (
 				FFC7BB8E2C3EDFA2000EA7B5 /* Auth */,
+				1E9727592C43982300252CA6 /* User */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -278,6 +308,7 @@
 			isa = PBXGroup;
 			children = (
 				FFC7BB912C3EDFCB000EA7B5 /* AuthRouter.swift */,
+				1E9727572C43924F00252CA6 /* UserRouter.swift */,
 			);
 			path = Routers;
 			sourceTree = "<group>";
@@ -287,6 +318,7 @@
 			children = (
 				FFC7BB8A2C3D95BA000EA7B5 /* BaseService.swift */,
 				FFC7BB8C2C3EDF95000EA7B5 /* AuthService.swift */,
+				1E97275D2C43996D00252CA6 /* UserService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -447,7 +479,6 @@
 				FFCD60572C2D9515007785FF /* UIColor+.swift */,
 				FFCD60662C2D96F8007785FF /* UIView+.swift */,
 				FFCD60682C2D9718007785FF /* UIButton+.swift */,
-				FFCD606A2C2D9728007785FF /* FontManager.swift */,
 				FFCD606C2C2D9742007785FF /* UILabel+.swift */,
 				FFCD606E2C2D975A007785FF /* UICollectionView+.swift */,
 				FFCD60702C2D976E007785FF /* Adjusted+.swift */,
@@ -635,7 +666,9 @@
 				FFCD60652C2D96D8007785FF /* UIViewController+.swift in Sources */,
 				FFCD606D2C2D9742007785FF /* UILabel+.swift in Sources */,
 				FFC7BB872C3D9562000EA7B5 /* DotchiMoyaProvider.swift in Sources */,
+				1E9727462C3C3C6F00252CA6 /* SettingViewController.swift in Sources */,
 				FFCD60982C2D991A007785FF /* Messages.swift in Sources */,
+				1E9727582C43924F00252CA6 /* UserRouter.swift in Sources */,
 				FFC7BB922C3EDFCB000EA7B5 /* AuthRouter.swift in Sources */,
 				FFCD609A2C2D9920007785FF /* KeychainKeys.swift in Sources */,
 				FF4BF6B22C2DB63900B6DEB2 /* CardEntity.swift in Sources */,
@@ -649,7 +682,7 @@
 				FFCD60882C2D9884007785FF /* UIViewControllerToSwiftUI.swift in Sources */,
 				FF4BF6BF2C2DB6F900B6DEB2 /* NetworkLoggerPlugin.swift in Sources */,
 				FFCD60672C2D96F8007785FF /* UIView+.swift in Sources */,
-				FF4BF6AF2C2DB39300B6DEB2 /* MyView.swift in Sources */,
+				FF4BF6AF2C2DB39300B6DEB2 /* MyViewController.swift in Sources */,
 				FFCD60C52C2D9E66007785FF /* DotchiUITabBarController.swift in Sources */,
 				FF4BF6B82C2DB66F00B6DEB2 /* MakeDotchiEntity.swift in Sources */,
 				FFC7BB732C35A770000EA7B5 /* TextUnderlineButtonUIView.swift in Sources */,
@@ -664,20 +697,23 @@
 				FFCD60712C2D976E007785FF /* Adjusted+.swift in Sources */,
 				FFCD60942C2D990D007785FF /* CardSortType.swift in Sources */,
 				FFC7BB702C3460BF000EA7B5 /* HomeViewController.swift in Sources */,
+				1E97274A2C3DA24100252CA6 /* ProfileEditViewController.swift in Sources */,
 				FFCD60692C2D9718007785FF /* UIButton+.swift in Sources */,
 				FFCD60522C2D9482007785FF /* SplashViewController.swift in Sources */,
+				1E9727602C43AE2D00252CA6 /* MyCardResponseDTO.swift in Sources */,
 				FFCD607B2C2D97D1007785FF /* UITableView+.swift in Sources */,
 				FFCD605B2C2D953F007785FF /* BaseViewController.swift in Sources */,
 				FFCD607D2C2D97E1007785FF /* UIImage+.swift in Sources */,
-				FFCD606B2C2D9728007785FF /* FontManager.swift in Sources */,
 				FFCD606F2C2D975A007785FF /* UICollectionView+.swift in Sources */,
 				FFC7BB902C3EDFAC000EA7B5 /* SigninRequestDTO.swift in Sources */,
+				1E97275E2C43996D00252CA6 /* UserService.swift in Sources */,
 				FFC7BB8B2C3D95BA000EA7B5 /* BaseService.swift in Sources */,
 				FFCD608F2C2D98BF007785FF /* UserDefaultsManager.swift in Sources */,
 				FFC7BB9D2C3EE151000EA7B5 /* SigninResponseDTO.swift in Sources */,
 				FFCD60852C2D9860007785FF /* ClassNameProtocol.swift in Sources */,
 				FFCD60962C2D9915007785FF /* CardHeadType.swift in Sources */,
 				FFCD607F2C2D97FB007785FF /* UserDefaults+.swift in Sources */,
+				1E97275C2C43986B00252CA6 /* UserResponseDTO.swift in Sources */,
 				FFC7BB852C3D943E000EA7B5 /* BaseResponseType.swift in Sources */,
 				FF4BF6BC2C2DB69300B6DEB2 /* CardBackEntity.swift in Sources */,
 				FFCD60772C2D97AA007785FF /* UITextField+.swift in Sources */,
