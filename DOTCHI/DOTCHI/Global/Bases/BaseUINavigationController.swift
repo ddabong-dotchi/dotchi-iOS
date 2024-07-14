@@ -32,4 +32,8 @@ final class BaseUINavigationController: UINavigationController {
     func hideNavigationBar() {
         self.navigationBar.isHidden = true
     }
+    
+    func showNavigationBar() {
+        self.navigationBar.isHidden = false
+    }
 }
