@@ -45,6 +45,7 @@ class SettingViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        fetchMyData()
         hideTabBar()
     }
 

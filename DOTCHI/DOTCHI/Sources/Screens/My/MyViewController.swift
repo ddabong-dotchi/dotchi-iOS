@@ -29,6 +29,11 @@ class MyViewController: BaseViewController {
         fetchMyData()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        fetchMyData()
+    }
+    
     private func setupNavigationBar() {
         guard let navigationController = self.navigationController as? BaseUINavigationController else {
             print("네비게이션 컨트롤러가 설정되지 않았습니다.")
