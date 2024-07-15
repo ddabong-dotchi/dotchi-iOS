@@ -72,7 +72,7 @@ class SettingViewController: BaseViewController {
         profileImageView.contentMode = .scaleAspectFill
         profileImageView.layer.cornerRadius = 24
         profileImageView.layer.masksToBounds = true
-        profileImageView.image = UIImage(named: "imgTest")
+        profileImageView.image = UIImage(named: "imgDefaultDummy")
         contentView.addSubview(profileImageView)
         
         editButton.setImage(UIImage(named: "icnEdit"), for: .normal)
@@ -320,7 +320,8 @@ class SettingViewController: BaseViewController {
     }
     
     @objc private func openBlockedAccounts() {
-        
+        let blacklistVC = BlacklistViewController()
+        navigationController?.pushViewController(blacklistVC, animated: true)
     }
     
     @objc private func logout() {
