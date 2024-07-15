@@ -11,6 +11,7 @@ import Moya
 enum UserRouter {
     case getUser
     case getMyCard
+    case getBlacklists
 }
 
 extension UserRouter: TargetType {
@@ -24,7 +25,9 @@ extension UserRouter: TargetType {
         case .getUser:
             return "/user/me"
         case .getMyCard:
-            return "user/me/card"
+            return "/user/me/card"
+        case .getBlacklists:
+            return "/blacklists"
         }
     }
 
@@ -34,6 +37,8 @@ extension UserRouter: TargetType {
             return .get
         case .getMyCard:
             return .get
+        case .getBlacklists:
+            return .get
         }
     }
 
@@ -42,6 +47,8 @@ extension UserRouter: TargetType {
         case .getUser:
             return .requestPlain
         case .getMyCard:
+            return .requestPlain
+        case .getBlacklists:
             return .requestPlain
         }
     }

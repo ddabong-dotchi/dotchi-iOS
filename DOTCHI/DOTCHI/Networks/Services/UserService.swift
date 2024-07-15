@@ -52,4 +52,28 @@ extension UserService: UserServiceProtocol {
             }
         }
     }
+    
+    // [GET] 차단 목록 조회
+    
+    func getBlacklists(completion: @escaping (NetworkResult<Any>) -> Void) {
+        self.provider.request(.getBlacklists) { result in
+            switch result {
+            case .success(let response):
+                let data = response.data
+                
+                do {
+                    let decoder = JSONDecoder()
+                    let blacklistResponse = try decoder.decode(BlacklistResponseDTO.self, from: data)
+                    completion(.success(blacklistResponse.content))
+                } catch {
+                    print("Error decoding JSON: \(error)")
+                    completion(.pathErr)
+                }
+                
+            case .failure(let error):
+                debugPrint(error)
+                completion(.networkFail)
+            }
+        }
+    }
 }

@@ -13,6 +13,8 @@
 		1E97275C2C43986B00252CA6 /* UserResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E97275B2C43986B00252CA6 /* UserResponseDTO.swift */; };
 		1E97275E2C43996D00252CA6 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E97275D2C43996D00252CA6 /* UserService.swift */; };
 		1E9727602C43AE2D00252CA6 /* MyCardResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E97275F2C43AE2D00252CA6 /* MyCardResponseDTO.swift */; };
+		1E9727622C44F62000252CA6 /* BlacklistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9727612C44F62000252CA6 /* BlacklistViewController.swift */; };
+		1E9727652C44FCA600252CA6 /* BlacklistResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9727642C44FCA600252CA6 /* BlacklistResponseDTO.swift */; };
 		FF4BF6A92C2DACCB00B6DEB2 /* MakeDotchiPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4BF6A82C2DACCB00B6DEB2 /* MakeDotchiPhotoViewController.swift */; };
 		FF4BF6AC2C2DB15500B6DEB2 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FF4BF6AB2C2DB15500B6DEB2 /* SnapKit */; };
 		FF4BF6AF2C2DB39300B6DEB2 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4BF6AE2C2DB39300B6DEB2 /* MyViewController.swift */; };
@@ -99,6 +101,8 @@
 		1E97275B2C43986B00252CA6 /* UserResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponseDTO.swift; sourceTree = "<group>"; };
 		1E97275D2C43996D00252CA6 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		1E97275F2C43AE2D00252CA6 /* MyCardResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardResponseDTO.swift; sourceTree = "<group>"; };
+		1E9727612C44F62000252CA6 /* BlacklistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlacklistViewController.swift; sourceTree = "<group>"; };
+		1E9727642C44FCA600252CA6 /* BlacklistResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlacklistResponseDTO.swift; sourceTree = "<group>"; };
 		FF4BF6A82C2DACCB00B6DEB2 /* MakeDotchiPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeDotchiPhotoViewController.swift; sourceTree = "<group>"; };
 		FF4BF6AE2C2DB39300B6DEB2 /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
 		FF4BF6B12C2DB63900B6DEB2 /* CardEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardEntity.swift; sourceTree = "<group>"; };
@@ -204,6 +208,7 @@
 			children = (
 				1E97275B2C43986B00252CA6 /* UserResponseDTO.swift */,
 				1E97275F2C43AE2D00252CA6 /* MyCardResponseDTO.swift */,
+				1E9727642C44FCA600252CA6 /* BlacklistResponseDTO.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -222,6 +227,7 @@
 				FF4BF6AE2C2DB39300B6DEB2 /* MyViewController.swift */,
 				1E9727452C3C3C6F00252CA6 /* SettingViewController.swift */,
 				1E9727492C3DA24100252CA6 /* ProfileEditViewController.swift */,
+				1E9727612C44F62000252CA6 /* BlacklistViewController.swift */,
 			);
 			path = My;
 			sourceTree = "<group>";
@@ -664,6 +670,7 @@
 				FFCD60832C2D9832007785FF /* Encodable+.swift in Sources */,
 				FFC7BB7B2C35BA89000EA7B5 /* DoneUIButton.swift in Sources */,
 				FFCD60652C2D96D8007785FF /* UIViewController+.swift in Sources */,
+				1E9727652C44FCA600252CA6 /* BlacklistResponseDTO.swift in Sources */,
 				FFCD606D2C2D9742007785FF /* UILabel+.swift in Sources */,
 				FFC7BB872C3D9562000EA7B5 /* DotchiMoyaProvider.swift in Sources */,
 				1E9727462C3C3C6F00252CA6 /* SettingViewController.swift in Sources */,
@@ -672,6 +679,7 @@
 				FFC7BB922C3EDFCB000EA7B5 /* AuthRouter.swift in Sources */,
 				FFCD609A2C2D9920007785FF /* KeychainKeys.swift in Sources */,
 				FF4BF6B22C2DB63900B6DEB2 /* CardEntity.swift in Sources */,
+				1E9727622C44F62000252CA6 /* BlacklistViewController.swift in Sources */,
 				FF4BF6BA2C2DB68000B6DEB2 /* CommentEntity.swift in Sources */,
 				FFC7BB962C3EE055000EA7B5 /* ServiceEnvironment.swift in Sources */,
 				FFC7BB7E2C3D8A38000EA7B5 /* SignupUserInfoViewController.swift in Sources */,
