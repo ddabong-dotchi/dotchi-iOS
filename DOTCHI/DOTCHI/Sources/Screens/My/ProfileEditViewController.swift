@@ -15,9 +15,9 @@ class ProfileEditViewController: BaseViewController, UITextViewDelegate, UIImage
     private var introduceTextView = UITextView()
     private var introducePlaceholderLabel = UILabel()
     private var isNicknameDuplicated = false
+    
     private let nicknameLimit = 7
     private let introduceLimit = 40
-    
     private let checkButton = UIButton(type: .system)
     
     override func viewDidLoad() {
@@ -47,9 +47,10 @@ class ProfileEditViewController: BaseViewController, UITextViewDelegate, UIImage
         titleLabel.font = .subTitle
         self.view.addSubview(titleLabel)
         
-        imageView.layer.cornerRadius = 30
-        imageView.clipsToBounds = true
-        imageView.image = UIImage(named: "imgDefaultDummy")
+        imageView.contentMode = .scaleAspectFill
+        imageView.layer.cornerRadius = 24
+        imageView.layer.masksToBounds = true
+        imageView.image = UIImage(named: "imgRClover")
         self.view.addSubview(imageView)
         
         let cameraButton = UIButton(type: .custom)
@@ -66,11 +67,15 @@ class ProfileEditViewController: BaseViewController, UITextViewDelegate, UIImage
         self.view.addSubview(nicknameLabel)
         
         nicknameTextField.placeholder = "최대 7글자"
-        nicknameTextField.borderStyle = .roundedRect
+        nicknameTextField.layer.cornerRadius = 8
         nicknameTextField.backgroundColor = .dotchiMgray
         nicknameTextField.textColor = .dotchiLgray
         nicknameTextField.font = .head2
         nicknameTextField.tintColor = UITextField().tintColor
+
+        let leftPaddingView1 = UIView(frame: CGRect(x: 0, y: 0, width: 18, height: nicknameTextField.frame.height))
+        nicknameTextField.leftView = leftPaddingView1
+        nicknameTextField.leftViewMode = .always
         
         let attributes: [NSAttributedString.Key: Any] = [
             NSAttributedString.Key.foregroundColor: UIColor.dotchiWhite.withAlphaComponent(0.3),
@@ -107,9 +112,15 @@ class ProfileEditViewController: BaseViewController, UITextViewDelegate, UIImage
         introducePlaceholderLabel.font = .head2
         introduceTextView.addSubview(introducePlaceholderLabel)
         introducePlaceholderLabel.snp.makeConstraints { make in
-            make.top.equalTo(introduceTextView).offset(8)
-            make.leading.equalTo(introduceTextView).offset(6)
+            make.top.equalTo(introduceTextView).offset(13)
+            make.leading.equalTo(introduceTextView).offset(18)
         }
+
+        let leftPaddingView2 = UIView(frame: CGRect(x: 0, y: 0, width: 18, height: 13))
+        let rightPaddingView = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: 13))
+        introduceTextView.textContainerInset = UIEdgeInsets(top: 13, left: 15, bottom: 0, right: 15)
+        introduceTextView.addSubview(leftPaddingView2)
+        introduceTextView.addSubview(rightPaddingView)
         
         let saveButton = UIButton(type: .system)
         saveButton.setTitle("저장하기", for: .normal)
@@ -142,7 +153,7 @@ class ProfileEditViewController: BaseViewController, UITextViewDelegate, UIImage
         imageView.snp.makeConstraints { make in
             make.top.equalTo(titleLabel!.snp.bottom).offset(20)
             make.centerX.equalTo(safeArea)
-            make.width.height.equalTo(132)
+            make.width.height.equalTo(116)
         }
         
         let cameraButton = view.subviews.compactMap { $0 as? UIButton }.first { $0.currentImage == UIImage(named: "imgCamera") }
