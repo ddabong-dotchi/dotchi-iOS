@@ -27,6 +27,24 @@ class MyViewController: BaseViewController {
         setupNavigationBar()
         setupSubviews()
         fetchMyData()
+        
+        if let navigationBar = self.navigationController?.navigationBar {
+            let appearance = UINavigationBarAppearance()
+            appearance.configureWithOpaqueBackground()
+            appearance.backgroundColor = UIColor.dotchiScreenBackground
+            
+            appearance.titleTextAttributes = [
+                .foregroundColor: UIColor.dotchiWhite,
+                .font: UIFont.subTitle
+            ]
+            
+            navigationBar.standardAppearance = appearance
+            navigationBar.scrollEdgeAppearance = appearance
+            navigationBar.compactAppearance = appearance
+            navigationBar.isTranslucent = false
+            
+            navigationController?.navigationBar.tintColor = UIColor.dotchiWhite
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,9 +59,6 @@ class MyViewController: BaseViewController {
         }
         navigationController.showNavigationBar()
         navigationItem.title = ""
-        navigationController.navigationBar.barTintColor = UIColor.dotchiScreenBackground
-        navigationController.navigationBar.tintColor = UIColor.white
-        navigationController.navigationBar.isTranslucent = false
         
         if let image = UIImage(named: "icnSetting") {
             let settingButton = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(settingButtonTapped))

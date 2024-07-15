@@ -56,10 +56,13 @@ class SettingViewController: BaseViewController {
     
     private func setupNavigationBar() {
         navigationItem.title = "설정"
-        navigationController?.navigationBar.titleTextAttributes = [
-            .foregroundColor: UIColor.white,
-            .font: UIFont.boldSystemFont(ofSize: 18)
-        ]
+        
+        if let image = UIImage(named: "icnBack") {
+            let settingButton = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(backButtonTapped))
+            navigationItem.leftBarButtonItem = settingButton
+        } else {
+            print("이미지를 찾을 수 없습니다.")
+        }
     }
     
     private func setupSubviews() {
@@ -282,6 +285,10 @@ class SettingViewController: BaseViewController {
             make.trailing.equalToSuperview().offset(-20)
             make.bottom.equalToSuperview().offset(-30)
         }
+    }
+    
+    @objc private func backButtonTapped() {
+        navigationController?.popViewController(animated: true)
     }
     
     @objc private func openEditProfile() {
