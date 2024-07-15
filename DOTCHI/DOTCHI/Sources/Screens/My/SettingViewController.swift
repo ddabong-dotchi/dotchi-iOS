@@ -54,6 +54,8 @@ class SettingViewController: BaseViewController {
         showTabBar()
     }
     
+    // MARK: - Setup NavigationBar
+    
     private func setupNavigationBar() {
         navigationItem.title = "설정"
         
@@ -64,6 +66,8 @@ class SettingViewController: BaseViewController {
             print("이미지를 찾을 수 없습니다.")
         }
     }
+    
+    // MARK: - Setup Subviews
     
     private func setupSubviews() {
         view.addSubview(scrollView)
@@ -184,6 +188,8 @@ class SettingViewController: BaseViewController {
         stackView.addGestureRecognizer(tapGesture)
     }
     
+    // MARK: - Setup Constraints
+    
     private func setupConstraints() {
         scrollView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
@@ -286,6 +292,8 @@ class SettingViewController: BaseViewController {
             make.bottom.equalToSuperview().offset(-30)
         }
     }
+    
+    // MARK: - Button Actions
     
     @objc private func backButtonTapped() {
         navigationController?.popViewController(animated: true)

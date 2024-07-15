@@ -35,6 +35,8 @@ class BlacklistViewController: BaseViewController {
         showTabBar()
     }
     
+    // MARK: - Setup NavigationBar
+    
     private func setupNavigationBar() {
         navigationItem.title = "차단된 계정"
         
@@ -42,10 +44,14 @@ class BlacklistViewController: BaseViewController {
         navigationItem.leftBarButtonItem = backButton
     }
     
+    // MARK: - Setup Subviews
+    
     private func setupSubviews() {
         view.addSubview(scrollView)
         scrollView.addSubview(contentView)
     }
+    
+    // MARK: - Setup Constraints
     
     private func setupConstraints() {
         scrollView.snp.makeConstraints { make in
@@ -137,6 +143,8 @@ class BlacklistViewController: BaseViewController {
             previousView = view
         }
     }
+    
+    // MARK: - Button Actions
     
     @objc private func backButtonTapped() {
         navigationController?.popViewController(animated: true)

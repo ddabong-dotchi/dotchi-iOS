@@ -52,6 +52,8 @@ class MyViewController: BaseViewController {
         fetchMyData()
     }
     
+    // MARK: - Setup NavigationBar
+    
     private func setupNavigationBar() {
         guard let navigationController = self.navigationController as? BaseUINavigationController else {
             print("네비게이션 컨트롤러가 설정되지 않았습니다.")
@@ -67,6 +69,8 @@ class MyViewController: BaseViewController {
             print("이미지를 찾을 수 없습니다.")
         }
     }
+    
+    // MARK: - Setup Subviews
     
     private func setupSubviews() {
         profileImageView = UIImageView()
@@ -274,12 +278,16 @@ class MyCollectionViewCell: UICollectionViewCell {
 
 extension UIImageView {
     func loadImage(from url: URL) {
-        DispatchQueue.global().async { [weak self] in
-            if let data = try? Data(contentsOf: url), let image = UIImage(data: data) {
-                DispatchQueue.main.async {
-                    self?.image = image
-                }
+        let session = URLSession.shared
+        let dataTask = session.dataTask(with: url) { [weak self] data, response, error in
+            guard let self = self, let data = data, error == nil, let image = UIImage(data: data) else {
+                print("Failed to load image from URL: \(error?.localizedDescription ?? "Unknown error")")
+                return
+            }
+            DispatchQueue.main.async {
+                self.image = image
             }
         }
+        dataTask.resume()
     }
 }

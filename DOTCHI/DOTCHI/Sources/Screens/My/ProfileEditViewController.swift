@@ -206,7 +206,7 @@ class ProfileEditViewController: BaseViewController, UITextViewDelegate, UIImage
         configureIntroducePlaceholder()
         guard let text = textView.text else { return }
         let remaining = introduceLimit - text.count
-        // 최대 글자 수 초과 시 텍스트 자르기
+        
         if text.count > introduceLimit {
             let endIndex = text.index(text.startIndex, offsetBy: introduceLimit)
             textView.text = String(text.prefix(upTo: endIndex))
@@ -227,8 +227,8 @@ class ProfileEditViewController: BaseViewController, UITextViewDelegate, UIImage
     }
     
     @objc private func checkForDuplicateNickname() {
-        // 닉네임 중복 확인 로직을 여기에 추가합니다.
-        isNicknameDuplicated = true // 테스트 코드, 실제로는 중복 확인 로직 수행
+        // TODO: 닉네임 중복 확인 로직 추가
+        isNicknameDuplicated = true // 테스트 코드
         if isNicknameDuplicated {
             nicknameTextField.layer.borderColor = UIColor.dotchiOrange.cgColor
             nicknameTextField.layer.borderWidth = 1
@@ -239,7 +239,7 @@ class ProfileEditViewController: BaseViewController, UITextViewDelegate, UIImage
     }
     
     @objc private func saveProfile() {
-        // 프로필 저장 로직을 여기에 추가합니다.
+        // TODO: 프로필 저장 로직 추가
     }
     
     // MARK: - UIImagePickerControllerDelegate
