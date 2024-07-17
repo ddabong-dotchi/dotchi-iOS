@@ -180,7 +180,7 @@ OS Version: \(UIDevice.current.systemVersion)
         }
     }
     
-    func sendMail() {
+    func sendContactMail() {
         if MFMailComposeViewController.canSendMail() {
             let compseVC = MFMailComposeViewController()
             compseVC.mailComposeDelegate = self
