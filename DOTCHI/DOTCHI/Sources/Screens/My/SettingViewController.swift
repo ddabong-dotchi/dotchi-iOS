@@ -344,7 +344,7 @@ class SettingViewController: BaseViewController {
         userService.getUser { [weak self] result in
             switch result {
             case .success(let data):
-                if let userResponse = data as? UserResultDTO {
+                if let userResponse = data as? UserResponseDTO {
                     self?.updateUI(with: userResponse)
                     
                 } else {
@@ -362,7 +362,7 @@ class SettingViewController: BaseViewController {
         }
     }
     
-    private func updateUI(with userData: UserResultDTO) {
+    private func updateUI(with userData: UserResponseDTO) {
         DispatchQueue.main.async { [weak self] in
             self?.nameLabel.text = userData.nickname
             self?.descriptionLabel.text = userData.description

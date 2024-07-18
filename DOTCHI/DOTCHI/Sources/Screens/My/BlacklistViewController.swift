@@ -13,7 +13,7 @@ class BlacklistViewController: BaseViewController {
     private let scrollView = UIScrollView()
     private let contentView = UIView()
     
-    private var blockedAccounts: [BlacklistResultDTO] = []
+    private var blockedAccounts: [BlacklistResponseDTO] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -158,7 +158,7 @@ class BlacklistViewController: BaseViewController {
         userService.getBlacklists { [weak self] result in
             switch result {
             case .success(let data):
-                if let blacklistResponse = data as? [BlacklistResultDTO] {
+                if let blacklistResponse = data as? [BlacklistResponseDTO] {
                     self?.blockedAccounts = blacklistResponse
                     self?.addBlockedAccountViews()
                 } else {

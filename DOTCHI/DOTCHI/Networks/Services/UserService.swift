@@ -29,7 +29,7 @@ extension UserService: UserServiceProtocol {
             case .success(let response):
                 let statusCode = response.statusCode
                 let data = response.data
-                let networkResult = self.judgeStatus(by: statusCode, data, UserResultDTO.self)
+                let networkResult = self.judgeStatus(by: statusCode, data, UserResponseDTO.self)
                 completion(networkResult)
             case .failure(let error):
                 debugPrint(error)
@@ -45,7 +45,7 @@ extension UserService: UserServiceProtocol {
             case .success(let response):
                 let statusCode = response.statusCode
                 let data = response.data
-                let networkResult = self.judgeStatus(by: statusCode, data, MyCardResultDTO.self)
+                let networkResult = self.judgeStatus(by: statusCode, data, MyCardResponseDTO.self)
                 completion(networkResult)
             case .failure(let error):
                 debugPrint(error)
@@ -59,17 +59,10 @@ extension UserService: UserServiceProtocol {
         self.provider.request(.getBlacklists) { result in
             switch result {
             case .success(let response):
+                let statusCode = response.statusCode
                 let data = response.data
-                
-                do {
-                    let decoder = JSONDecoder()
-                    let blacklistResponse = try decoder.decode(BlacklistResponseDTO.self, from: data)
-                    completion(.success(blacklistResponse.content))
-                } catch {
-                    print("Error decoding JSON: \(error)")
-                    completion(.pathErr)
-                }
-                
+                let networkResult = self.judgeStatus(by: statusCode, data, [BlacklistResponseDTO].self)
+                completion(networkResult)
             case .failure(let error):
                 debugPrint(error)
                 completion(.networkFail)
