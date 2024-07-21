@@ -180,6 +180,34 @@ OS Version: \(UIDevice.current.systemVersion)
         }
     }
     
+    func sendContactMail() {
+        if MFMailComposeViewController.canSendMail() {
+            let compseVC = MFMailComposeViewController()
+            compseVC.mailComposeDelegate = self
+            
+            compseVC.setToRecipients(["ddabongdotchi@gmail.com"])
+            compseVC.setSubject("[따봉도치] 문의해요 👋")
+            compseVC.setMessageBody(
+"""
+안녕하세요.
+서비스를 이용해 주셔서 감사해요.
+개선했으면 하는 부분 혹은 추가되었으면 하는 기능은 적극 반영해 볼게요.
+문의에 대한 답변은 빠른 시일 내에 전송해 주신 메일로 회신드리겠습니다.
+————————————————————————
+User: \(String(describing: UserInfo.shared.userID))
+App Version: \(AppInfo.shared.currentAppVersion())
+Device: \(self.deviceModelName())
+OS Version: \(UIDevice.current.systemVersion)
+"""
+                , isHTML: false)
+            
+            self.present(compseVC, animated: true, completion: nil)
+            
+        } else {
+            self.makeAlert(title: Messages.unabledMailApp.text)
+        }
+    }
+    
     private func deviceModelName() -> String {
         
         /// 시뮬레이터 확인

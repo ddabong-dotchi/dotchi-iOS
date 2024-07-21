@@ -63,7 +63,7 @@ final class DotchiUITabBarController: UITabBarController {
         self.delegate = self
         
         let homeTab = self.makeTabBarItem(
-            title: "홈",
+            viewController: BaseUINavigationController(rootViewController: BaseViewController()), title: "홈",
             image: .icnHome,
             selectedImage: .icnHomeSelected
         )
@@ -71,7 +71,7 @@ final class DotchiUITabBarController: UITabBarController {
         homeTab.tabBarItem.tag = 0
         
         let writeTab = self.makeTabBarItem(
-            viewController: BaseUINavigationController(rootViewController: BaseViewController()), // 이 부분 마이페이지 뷰로 변경 필요 @유빈
+            viewController: BaseUINavigationController(rootViewController: BaseViewController()),
             title: "",
             image: .icnPlus,
             selectedImage: .icnPlus
@@ -81,7 +81,7 @@ final class DotchiUITabBarController: UITabBarController {
         writeTab.tabBarItem.imageInsets = UIEdgeInsets(top: 16.adjustedH, left: 0, bottom: 0, right: 0)
         
         let myTab = self.makeTabBarItem(
-            viewController: BaseUINavigationController(rootViewController: UIHostingController(rootView: MyView())),
+            viewController: BaseUINavigationController(rootViewController: MyViewController()),
             title: "마이",
             image: .icnMy,
             selectedImage: .icnMySelected
