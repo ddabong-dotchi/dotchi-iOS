@@ -37,6 +37,10 @@
 		FFC7BB982C3EE073000EA7B5 /* Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = FFC7BB972C3EE073000EA7B5 /* Debug.xcconfig */; };
 		FFC7BB9A2C3EE08F000EA7B5 /* Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = FFC7BB992C3EE08F000EA7B5 /* Release.xcconfig */; };
 		FFC7BB9D2C3EE151000EA7B5 /* SigninResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7BB9C2C3EE151000EA7B5 /* SigninResponseDTO.swift */; };
+		FFC7BB9F2C457616000EA7B5 /* SignupNicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7BB9E2C457616000EA7B5 /* SignupNicknameViewController.swift */; };
+		FFC7BBA12C45764E000EA7B5 /* SignupIntroduceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7BBA02C45764E000EA7B5 /* SignupIntroduceViewController.swift */; };
+		FFC7BBA32C45765A000EA7B5 /* SignupProfileImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7BBA22C45765A000EA7B5 /* SignupProfileImageViewController.swift */; };
+		FFC7BBA52C45766D000EA7B5 /* SignupCompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7BBA42C45766D000EA7B5 /* SignupCompleteViewController.swift */; };
 		FFCD602A2C21D9F2007785FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD60292C21D9F2007785FF /* AppDelegate.swift */; };
 		FFCD602C2C21D9F2007785FF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD602B2C21D9F2007785FF /* SceneDelegate.swift */; };
 		FFCD60362C21D9F3007785FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFCD60342C21D9F3007785FF /* LaunchScreen.storyboard */; };
@@ -116,6 +120,10 @@
 		FFC7BB972C3EE073000EA7B5 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		FFC7BB992C3EE08F000EA7B5 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		FFC7BB9C2C3EE151000EA7B5 /* SigninResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninResponseDTO.swift; sourceTree = "<group>"; };
+		FFC7BB9E2C457616000EA7B5 /* SignupNicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupNicknameViewController.swift; sourceTree = "<group>"; };
+		FFC7BBA02C45764E000EA7B5 /* SignupIntroduceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupIntroduceViewController.swift; sourceTree = "<group>"; };
+		FFC7BBA22C45765A000EA7B5 /* SignupProfileImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupProfileImageViewController.swift; sourceTree = "<group>"; };
+		FFC7BBA42C45766D000EA7B5 /* SignupCompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupCompleteViewController.swift; sourceTree = "<group>"; };
 		FFCD60262C21D9F2007785FF /* DOTCHI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DOTCHI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFCD60292C21D9F2007785FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFCD602B2C21D9F2007785FF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -262,6 +270,10 @@
 			isa = PBXGroup;
 			children = (
 				FFC7BB7D2C3D8A38000EA7B5 /* SignupUserInfoViewController.swift */,
+				FFC7BB9E2C457616000EA7B5 /* SignupNicknameViewController.swift */,
+				FFC7BBA02C45764E000EA7B5 /* SignupIntroduceViewController.swift */,
+				FFC7BBA22C45765A000EA7B5 /* SignupProfileImageViewController.swift */,
+				FFC7BBA42C45766D000EA7B5 /* SignupCompleteViewController.swift */,
 			);
 			path = Signup;
 			sourceTree = "<group>";
@@ -635,7 +647,9 @@
 				FFCD60652C2D96D8007785FF /* UIViewController+.swift in Sources */,
 				FFCD606D2C2D9742007785FF /* UILabel+.swift in Sources */,
 				FFC7BB872C3D9562000EA7B5 /* DotchiMoyaProvider.swift in Sources */,
+				FFC7BBA32C45765A000EA7B5 /* SignupProfileImageViewController.swift in Sources */,
 				FFCD60982C2D991A007785FF /* Messages.swift in Sources */,
+				FFC7BBA12C45764E000EA7B5 /* SignupIntroduceViewController.swift in Sources */,
 				FFC7BB922C3EDFCB000EA7B5 /* AuthRouter.swift in Sources */,
 				FFCD609A2C2D9920007785FF /* KeychainKeys.swift in Sources */,
 				FF4BF6B22C2DB63900B6DEB2 /* CardEntity.swift in Sources */,
@@ -647,7 +661,9 @@
 				FFCD602A2C21D9F2007785FF /* AppDelegate.swift in Sources */,
 				FF4BF6C22C2DB72700B6DEB2 /* APIConstants.swift in Sources */,
 				FFCD60882C2D9884007785FF /* UIViewControllerToSwiftUI.swift in Sources */,
+				FFC7BBA52C45766D000EA7B5 /* SignupCompleteViewController.swift in Sources */,
 				FF4BF6BF2C2DB6F900B6DEB2 /* NetworkLoggerPlugin.swift in Sources */,
+				FFC7BB9F2C457616000EA7B5 /* SignupNicknameViewController.swift in Sources */,
 				FFCD60672C2D96F8007785FF /* UIView+.swift in Sources */,
 				FF4BF6AF2C2DB39300B6DEB2 /* MyView.swift in Sources */,
 				FFCD60C52C2D9E66007785FF /* DotchiUITabBarController.swift in Sources */,
