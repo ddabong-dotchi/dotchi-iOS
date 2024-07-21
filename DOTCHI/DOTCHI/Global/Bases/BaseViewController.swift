@@ -69,13 +69,13 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     func hideTabBar() {
-        if let tabBarController = self.tabBarController as? DotchiUITabBarController {
+        if let tabBarController = self.tabBarController as? DotchiTabBarController {
             tabBarController.hideTabBar()
         }
     }
     
     func showTabBar() {
-        if let tabBarController = self.tabBarController as? DotchiUITabBarController {
+        if let tabBarController = self.tabBarController as? DotchiTabBarController {
             tabBarController.showTabBar()
         }
     }

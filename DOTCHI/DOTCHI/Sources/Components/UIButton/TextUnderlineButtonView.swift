@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-final class TextUnderlineButtonUIView: UIView {
+final class TextUnderlineButtonView: UIView {
     
     // MARK: Properties
     
@@ -48,7 +48,7 @@ final class TextUnderlineButtonUIView: UIView {
 
 // MARK: - Layout
 
-extension TextUnderlineButtonUIView {
+extension TextUnderlineButtonView {
     
     private func setLayout() {
         self.addSubviews([self.button, self.underlineView])
