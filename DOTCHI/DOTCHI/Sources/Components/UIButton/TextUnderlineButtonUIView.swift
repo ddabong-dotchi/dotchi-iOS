@@ -62,7 +62,7 @@ extension TextUnderlineButtonUIView {
             make.bottom.equalToSuperview()
             make.horizontalEdges.equalToSuperview().inset(1)
             make.height.equalTo(0.5)
-            make.top.equalTo(self.button.snp.bottom).offset(2)
+            make.top.equalTo(self.button.snp.bottom).offset(1.5)
         }
     }
 }

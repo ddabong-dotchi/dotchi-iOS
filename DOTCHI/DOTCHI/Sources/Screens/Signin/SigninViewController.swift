@@ -233,7 +233,7 @@ extension SigninViewController {
         }
         
         self.signupButton.snp.makeConstraints { make in
-            make.top.equalTo(self.signupInfoLabel)
+            make.centerY.equalTo(self.signupInfoLabel)
             make.left.equalTo(self.signupInfoLabel.snp.right).offset(3)
             make.height.equalTo(16)
         }
