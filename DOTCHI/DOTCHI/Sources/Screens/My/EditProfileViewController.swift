@@ -1,5 +1,5 @@
 //
-//  ProfileEditViewController.swift
+//  EditProfileViewController.swift
 //  DOTCHI
 //
 //  Created by KimYuBin on 7/10/24.
@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class ProfileEditViewController: BaseViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class EditProfileViewController: BaseViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     private var imageView = UIImageView()
     private var nicknameTextField = UITextField()

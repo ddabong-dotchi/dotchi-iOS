@@ -300,11 +300,11 @@ class SettingViewController: BaseViewController {
     }
     
     @objc private func openEditProfile() {
-        let profileEditVC = ProfileEditViewController()
-        profileEditVC.modalPresentationStyle = .fullScreen
-        profileEditVC.modalTransitionStyle = .coverVertical
+        let editProfileVC = EditProfileViewController()
+        editProfileVC.modalPresentationStyle = .fullScreen
+        editProfileVC.modalTransitionStyle = .coverVertical
         
-        self.present(profileEditVC, animated: true, completion: nil)
+        self.present(editProfileVC, animated: true, completion: nil)
     }
     
     @objc private func contactUs() {

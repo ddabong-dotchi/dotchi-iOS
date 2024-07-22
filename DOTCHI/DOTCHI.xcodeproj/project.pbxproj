@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1E9727462C3C3C6F00252CA6 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9727452C3C3C6F00252CA6 /* SettingViewController.swift */; };
-		1E97274A2C3DA24100252CA6 /* ProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9727492C3DA24100252CA6 /* ProfileEditViewController.swift */; };
+		1E97274A2C3DA24100252CA6 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9727492C3DA24100252CA6 /* EditProfileViewController.swift */; };
 		1E9727582C43924F00252CA6 /* UserRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9727572C43924F00252CA6 /* UserRouter.swift */; };
 		1E97275C2C43986B00252CA6 /* UserResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E97275B2C43986B00252CA6 /* UserResponseDTO.swift */; };
 		1E97275E2C43996D00252CA6 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E97275D2C43996D00252CA6 /* UserService.swift */; };
@@ -96,7 +96,7 @@
 
 /* Begin PBXFileReference section */
 		1E9727452C3C3C6F00252CA6 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
-		1E9727492C3DA24100252CA6 /* ProfileEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditViewController.swift; sourceTree = "<group>"; };
+		1E9727492C3DA24100252CA6 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		1E9727572C43924F00252CA6 /* UserRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRouter.swift; sourceTree = "<group>"; };
 		1E97275B2C43986B00252CA6 /* UserResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponseDTO.swift; sourceTree = "<group>"; };
 		1E97275D2C43996D00252CA6 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
@@ -226,7 +226,7 @@
 			children = (
 				FF4BF6AE2C2DB39300B6DEB2 /* MyViewController.swift */,
 				1E9727452C3C3C6F00252CA6 /* SettingViewController.swift */,
-				1E9727492C3DA24100252CA6 /* ProfileEditViewController.swift */,
+				1E9727492C3DA24100252CA6 /* EditProfileViewController.swift */,
 				1E9727612C44F62000252CA6 /* BlacklistViewController.swift */,
 			);
 			path = My;
@@ -705,7 +705,7 @@
 				FFCD60712C2D976E007785FF /* Adjusted+.swift in Sources */,
 				FFCD60942C2D990D007785FF /* CardSortType.swift in Sources */,
 				FFC7BB702C3460BF000EA7B5 /* HomeViewController.swift in Sources */,
-				1E97274A2C3DA24100252CA6 /* ProfileEditViewController.swift in Sources */,
+				1E97274A2C3DA24100252CA6 /* EditProfileViewController.swift in Sources */,
 				FFCD60692C2D9718007785FF /* UIButton+.swift in Sources */,
 				FFCD60522C2D9482007785FF /* SplashViewController.swift in Sources */,
 				1E9727602C43AE2D00252CA6 /* MyCardResponseDTO.swift in Sources */,
