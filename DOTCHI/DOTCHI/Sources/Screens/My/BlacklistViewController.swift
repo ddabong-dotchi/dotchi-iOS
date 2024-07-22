@@ -154,6 +154,8 @@ class BlacklistViewController: BaseViewController {
         
     }
     
+    // MARK: - Network
+    
     private func fetchBlacklistData() {
         userService.getBlacklists { [weak self] result in
             switch result {

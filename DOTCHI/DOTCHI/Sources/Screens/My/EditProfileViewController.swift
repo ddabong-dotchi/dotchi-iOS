@@ -9,6 +9,7 @@ import UIKit
 import SnapKit
 
 class EditProfileViewController: BaseViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    private let userService = UserService.shared
     
     private var imageView = UIImageView()
     private var nicknameTextField = UITextField()
@@ -29,6 +30,7 @@ class EditProfileViewController: BaseViewController, UITextViewDelegate, UIImage
         introduceTextView.delegate = self
         
         configureIntroducePlaceholder()
+        fetchMyData()
     }
     
     // MARK: - Setup Subviews
@@ -274,6 +276,42 @@ class EditProfileViewController: BaseViewController, UITextViewDelegate, UIImage
         if text.count > nicknameLimit {
             let endIndex = text.index(text.startIndex, offsetBy: nicknameLimit)
             textField.text = String(text.prefix(upTo: endIndex))
+        }
+    }
+    
+    // MARK: - Network
+    
+    private func fetchMyData() {
+        userService.getUser { [weak self] result in
+            switch result {
+            case .success(let data):
+                if let userResponse = data as? UserResponseDTO {
+                    self?.updateUI(with: userResponse)
+                    
+                } else {
+                    print("Invalid data format received")
+                }
+            case .requestErr(let message):
+                print("Request error: \(message)")
+            case .pathErr:
+                print("Path error")
+            case .serverErr:
+                print("Server error")
+            case .networkFail:
+                print("Network failure")
+            }
+        }
+    }
+    
+    private func updateUI(with userData: UserResponseDTO) {
+        DispatchQueue.main.async { [weak self] in
+            self?.nicknameTextField.text = userData.nickname
+            self?.introduceTextView.text = userData.description
+            if let url = URL(string: userData.imageUrl) {
+                self?.imageView.loadImage(from: url)
+            } else {
+                print("Invalid image URL: \(userData.imageUrl)")
+            }
         }
     }
 }

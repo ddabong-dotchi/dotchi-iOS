@@ -200,6 +200,8 @@ class MyViewController: BaseViewController {
         }
     }
     
+    // MARK: - Network
+    
     private func fetchMyData() {
         userService.getUser { [weak self] result in
             switch result {
