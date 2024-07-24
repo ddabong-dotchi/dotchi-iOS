@@ -13,8 +13,8 @@ class EditProfileViewController: BaseViewController, UITextViewDelegate, UIImage
     
     private var imageView = UIImageView()
     private var nicknameTextField = UITextField()
-    private var introduceTextView = UITextView()
-    private var introducePlaceholderLabel = UILabel()
+    private var descriptionTextView = UITextView()
+    private var descriptionPlaceholderLabel = UILabel()
     private var isNicknameDuplicated = false
     
     private let nicknameLimit = 7
@@ -27,9 +27,9 @@ class EditProfileViewController: BaseViewController, UITextViewDelegate, UIImage
         setupSubviews()
         setupConstraints()
         
-        introduceTextView.delegate = self
+        descriptionTextView.delegate = self
         
-        configureIntroducePlaceholder()
+        configureDescriptionPlaceholder()
         fetchMyData()
     }
     
@@ -74,7 +74,7 @@ class EditProfileViewController: BaseViewController, UITextViewDelegate, UIImage
         nicknameTextField.textColor = .dotchiLgray
         nicknameTextField.font = .head2
         nicknameTextField.tintColor = UITextField().tintColor
-
+        
         let leftPaddingView1 = UIView(frame: CGRect(x: 0, y: 0, width: 18, height: nicknameTextField.frame.height))
         nicknameTextField.leftView = leftPaddingView1
         nicknameTextField.leftViewMode = .always
@@ -102,27 +102,27 @@ class EditProfileViewController: BaseViewController, UITextViewDelegate, UIImage
         introduceLabel.font = .sub
         self.view.addSubview(introduceLabel)
         
-        introduceTextView.layer.cornerRadius = 8
-        introduceTextView.backgroundColor = .dotchiMgray
-        introduceTextView.textColor = .dotchiLgray
-        introduceTextView.font = .head2
-        introduceTextView.delegate = self
-        self.view.addSubview(introduceTextView)
-
-        introducePlaceholderLabel.text = "최대 40글자"
-        introducePlaceholderLabel.textColor = UIColor.dotchiWhite.withAlphaComponent(0.3)
-        introducePlaceholderLabel.font = .head2
-        introduceTextView.addSubview(introducePlaceholderLabel)
-        introducePlaceholderLabel.snp.makeConstraints { make in
-            make.top.equalTo(introduceTextView).offset(13)
-            make.leading.equalTo(introduceTextView).offset(18)
+        descriptionTextView.layer.cornerRadius = 8
+        descriptionTextView.backgroundColor = .dotchiMgray
+        descriptionTextView.textColor = .dotchiLgray
+        descriptionTextView.font = .head2
+        descriptionTextView.delegate = self
+        self.view.addSubview(descriptionTextView)
+        
+        descriptionPlaceholderLabel.text = "최대 40글자"
+        descriptionPlaceholderLabel.textColor = UIColor.dotchiWhite.withAlphaComponent(0.3)
+        descriptionPlaceholderLabel.font = .head2
+        descriptionTextView.addSubview(descriptionPlaceholderLabel)
+        descriptionPlaceholderLabel.snp.makeConstraints { make in
+            make.top.equalTo(descriptionTextView).offset(13)
+            make.leading.equalTo(descriptionTextView).offset(18)
         }
-
+        
         let leftPaddingView2 = UIView(frame: CGRect(x: 0, y: 0, width: 18, height: 13))
         let rightPaddingView = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: 13))
-        introduceTextView.textContainerInset = UIEdgeInsets(top: 13, left: 15, bottom: 0, right: 15)
-        introduceTextView.addSubview(leftPaddingView2)
-        introduceTextView.addSubview(rightPaddingView)
+        descriptionTextView.textContainerInset = UIEdgeInsets(top: 13, left: 15, bottom: 0, right: 15)
+        descriptionTextView.addSubview(leftPaddingView2)
+        descriptionTextView.addSubview(rightPaddingView)
         
         let saveButton = UIButton(type: .system)
         saveButton.setTitle("저장하기", for: .normal)
@@ -177,7 +177,7 @@ class EditProfileViewController: BaseViewController, UITextViewDelegate, UIImage
             make.height.equalTo(48)
             make.trailing.equalTo(checkButton.snp.leading).offset(-8) // 여기서 수정
         }
-
+        
         checkButton.snp.makeConstraints { make in
             make.centerY.equalTo(nicknameTextField)
             make.trailing.equalTo(safeArea).offset(-28)
@@ -191,7 +191,7 @@ class EditProfileViewController: BaseViewController, UITextViewDelegate, UIImage
             make.leading.equalTo(safeArea).offset(20)
         }
         
-        introduceTextView.snp.makeConstraints { make in
+        descriptionTextView.snp.makeConstraints { make in
             make.top.equalTo(introduceLabel!.snp.bottom).offset(10)
             make.leading.equalTo(safeArea).offset(20)
             make.trailing.equalTo(safeArea).offset(-20)
@@ -209,14 +209,14 @@ class EditProfileViewController: BaseViewController, UITextViewDelegate, UIImage
     
     // MARK: - Placeholder 관리
     
-    private func configureIntroducePlaceholder() {
-        introducePlaceholderLabel.isHidden = !introduceTextView.text.isEmpty
+    private func configureDescriptionPlaceholder() {
+        descriptionPlaceholderLabel.isHidden = !descriptionTextView.text.isEmpty
     }
     
     // MARK: - UITextViewDelegate
     
     func textViewDidChange(_ textView: UITextView) {
-        configureIntroducePlaceholder()
+        configureDescriptionPlaceholder()
         guard let text = textView.text else { return }
         let remaining = introduceLimit - text.count
         
@@ -306,7 +306,8 @@ class EditProfileViewController: BaseViewController, UITextViewDelegate, UIImage
     private func updateUI(with userData: UserResponseDTO) {
         DispatchQueue.main.async { [weak self] in
             self?.nicknameTextField.text = userData.nickname
-            self?.introduceTextView.text = userData.description
+            self?.descriptionTextView.text = userData.description
+            self?.configureDescriptionPlaceholder()
             if let url = URL(string: userData.imageUrl) {
                 self?.imageView.loadImage(from: url)
             } else {
