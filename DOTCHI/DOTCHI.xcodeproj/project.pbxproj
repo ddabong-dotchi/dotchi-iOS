@@ -15,6 +15,8 @@
 		1E9727602C43AE2D00252CA6 /* MyCardResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E97275F2C43AE2D00252CA6 /* MyCardResponseDTO.swift */; };
 		1E9727622C44F62000252CA6 /* BlacklistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9727612C44F62000252CA6 /* BlacklistViewController.swift */; };
 		1E9727652C44FCA600252CA6 /* BlacklistResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9727642C44FCA600252CA6 /* BlacklistResponseDTO.swift */; };
+		FF328DC52C4D4DA300007CD5 /* DotchiNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF328DC42C4D4DA300007CD5 /* DotchiNavigationView.swift */; };
+		FF328DC72C4D6FBC00007CD5 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF328DC62C4D6FBC00007CD5 /* ProgressBarView.swift */; };
 		FF4BF6A92C2DACCB00B6DEB2 /* MakeDotchiPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4BF6A82C2DACCB00B6DEB2 /* MakeDotchiPhotoViewController.swift */; };
 		FF4BF6AC2C2DB15500B6DEB2 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FF4BF6AB2C2DB15500B6DEB2 /* SnapKit */; };
 		FF4BF6AF2C2DB39300B6DEB2 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4BF6AE2C2DB39300B6DEB2 /* MyViewController.swift */; };
@@ -107,6 +109,8 @@
 		1E97275F2C43AE2D00252CA6 /* MyCardResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardResponseDTO.swift; sourceTree = "<group>"; };
 		1E9727612C44F62000252CA6 /* BlacklistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlacklistViewController.swift; sourceTree = "<group>"; };
 		1E9727642C44FCA600252CA6 /* BlacklistResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlacklistResponseDTO.swift; sourceTree = "<group>"; };
+		FF328DC42C4D4DA300007CD5 /* DotchiNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotchiNavigationView.swift; sourceTree = "<group>"; };
+		FF328DC62C4D6FBC00007CD5 /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		FF4BF6A82C2DACCB00B6DEB2 /* MakeDotchiPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeDotchiPhotoViewController.swift; sourceTree = "<group>"; };
 		FF4BF6AE2C2DB39300B6DEB2 /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
 		FF4BF6B12C2DB63900B6DEB2 /* CardEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardEntity.swift; sourceTree = "<group>"; };
@@ -219,6 +223,15 @@
 				1E9727642C44FCA600252CA6 /* BlacklistResponseDTO.swift */,
 			);
 			path = Response;
+			sourceTree = "<group>";
+		};
+		FF328DC32C4D4D8C00007CD5 /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				FF328DC42C4D4DA300007CD5 /* DotchiNavigationView.swift */,
+				FF328DC62C4D6FBC00007CD5 /* ProgressBarView.swift */,
+			);
+			path = UIView;
 			sourceTree = "<group>";
 		};
 		FF4BF6A72C2DAC9500B6DEB2 /* Make */ = {
@@ -564,6 +577,7 @@
 		FFCD60C22C2D9E36007785FF /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				FF328DC32C4D4D8C00007CD5 /* UIView */,
 				FFC7BB742C35AD66000EA7B5 /* UITextField */,
 				FFC7BB712C359E19000EA7B5 /* UIButton */,
 				FFCD60C32C2D9E3E007785FF /* UITabBarViewController */,
@@ -696,9 +710,11 @@
 				FF4BF6B22C2DB63900B6DEB2 /* CardEntity.swift in Sources */,
 				1E9727622C44F62000252CA6 /* BlacklistViewController.swift in Sources */,
 				FF4BF6BA2C2DB68000B6DEB2 /* CommentEntity.swift in Sources */,
+				FF328DC52C4D4DA300007CD5 /* DotchiNavigationView.swift in Sources */,
 				FFC7BB962C3EE055000EA7B5 /* ServiceEnvironment.swift in Sources */,
 				FFC7BB7E2C3D8A38000EA7B5 /* SignupUserInfoViewController.swift in Sources */,
 				FFCD60732C2D977F007785FF /* UIImageView+.swift in Sources */,
+				FF328DC72C4D6FBC00007CD5 /* ProgressBarView.swift in Sources */,
 				FFCD60792C2D97C3007785FF /* String+.swift in Sources */,
 				FFCD602A2C21D9F2007785FF /* AppDelegate.swift in Sources */,
 				FF4BF6C22C2DB72700B6DEB2 /* APIConstants.swift in Sources */,
