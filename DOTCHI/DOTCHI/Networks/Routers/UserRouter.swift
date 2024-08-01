@@ -12,6 +12,7 @@ enum UserRouter {
     case getUser
     case getMyCard
     case getBlacklists
+    case checkUsernameDuplicate(data: String)
 }
 
 extension UserRouter: TargetType {
@@ -28,35 +29,38 @@ extension UserRouter: TargetType {
             return "/user/me/card"
         case .getBlacklists:
             return "/blacklists"
+        case .checkUsernameDuplicate:
+            return "/user/username"
         }
     }
 
     var method: Moya.Method {
         switch self {
-        case .getUser:
-            return .get
-        case .getMyCard:
-            return .get
-        case .getBlacklists:
+        case .getUser, .getMyCard, .getBlacklists, .checkUsernameDuplicate:
             return .get
         }
     }
 
     var task: Task {
         switch self {
-        case .getUser:
+        case .getUser, .getMyCard, .getBlacklists:
             return .requestPlain
-        case .getMyCard:
-            return .requestPlain
-        case .getBlacklists:
-            return .requestPlain
+        case .checkUsernameDuplicate(let data):
+            return .requestParameters(parameters: ["username": data], encoding: URLEncoding.queryString)
         }
     }
 
     var headers: [String: String]? {
-        return [
-            "Content-Type": "application/json",
-            "Authorization": "Bearer \(UserInfo.shared.accessToken)",
-        ]
+        switch self {
+        case .checkUsernameDuplicate:
+            return [
+                "Content-Type": "application/json"
+            ]
+        default:
+            return [
+                "Content-Type": "application/json",
+                "Authorization": "Bearer \(UserInfo.shared.accessToken)",
+            ]
+        }
     }
 }
