@@ -308,7 +308,7 @@ class SettingViewController: BaseViewController {
     }
     
     @objc private func contactUs() {
-        self.sendMail()
+        self.sendContactMail()
     }
     
     @objc private func openTerms() {

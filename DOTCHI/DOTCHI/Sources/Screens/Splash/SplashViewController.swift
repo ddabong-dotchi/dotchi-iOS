@@ -52,7 +52,7 @@ final class SplashViewController: BaseViewController {
     }
     
     private func presentHomeViewController() {
-        self.present(DotchiUITabBarController(), animated: true)
+        self.present(DotchiTabBarController(), animated: true)
     }
     
     private func presentSigninViewController() {

@@ -1,5 +1,5 @@
 //
-//  DotchiUITabBarController.swift
+//  DotchiTabBarController.swift
 //  DOTCHI
 //
 //  Created by Jungbin on 6/27/24.
@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import SwiftUI
 
-final class DotchiUITabBarController: UITabBarController {
+final class DotchiTabBarController: UITabBarController {
     
     // MARK: UIComponents
     
@@ -107,7 +107,7 @@ final class DotchiUITabBarController: UITabBarController {
 
 // MARK: - Layout
 
-extension DotchiUITabBarController {
+extension DotchiTabBarController {
     
     /// TabBar의 height을 설정하는 메서드
     private func setTabBarHeight() {
@@ -147,7 +147,7 @@ extension DotchiUITabBarController {
 
 // MARK: - UITabBarControllerDelegate
 
-extension DotchiUITabBarController: UITabBarControllerDelegate {
+extension DotchiTabBarController: UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         let writeIndex: Int = 1
         if viewController.tabBarItem.tag != writeIndex { return true }
