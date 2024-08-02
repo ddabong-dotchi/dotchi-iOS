@@ -7,6 +7,8 @@
 
 import UIKit
 import SnapKit
+import RxSwift
+import RxCocoa
 
 final class SignupNicknameViewController: BaseViewController {
     
@@ -16,11 +18,12 @@ final class SignupNicknameViewController: BaseViewController {
         static let checkDuplicate = "중복확인"
         static let duplicatedNickname = "중복된 닉네임입니다."
         static let uniqueNickname = "사용 가능한 닉네임입니다."
+        static let next = "다음"
     }
     
     // MARK: UIComponents
     
-    private let navigationView: DotchiNavigationView = DotchiNavigationView(type: .close)
+    private let navigationView: DotchiNavigationView = DotchiNavigationView(type: .back)
     
     private let progressBarView = ProgressBarView()
     
@@ -49,14 +52,24 @@ final class SignupNicknameViewController: BaseViewController {
     }()
     
     private let nicknameStatusLabel = StatusLabel(warningText: Text.duplicatedNickname, successText: Text.uniqueNickname)
-
+    
+    private let nextButton: DoneButton = {
+        let button: DoneButton = DoneButton(type: .system)
+        button.setTitle(Text.next, for: .normal)
+        return button
+    }()
     
     // MARK: Properties
+    
+    private let disposeBag = DisposeBag()
+    private var signupRequestData = SignupRequestDTO()
     
     // MARK: Initializer
     
     init(signupRequestData: SignupRequestDTO) {
         super.init(nibName: nil, bundle: nil)
+        
+        self.signupRequestData = signupRequestData
     }
     
     required init?(coder: NSCoder) {
@@ -69,6 +82,10 @@ final class SignupNicknameViewController: BaseViewController {
         super.viewDidLoad()
         
         self.setLayout()
+        self.setDuplicateButtonAction()
+        self.setNextButtonAction()
+        self.setNicknameTextField()
+        self.setBackButtonAction(self.navigationView.backButton)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -82,6 +99,36 @@ final class SignupNicknameViewController: BaseViewController {
     private func setUI() {
         self.progressBarView.setProgress(step: .two)
     }
+    
+    private func setDuplicateButtonAction() {
+        self.nicknameDuplicateButton.setAction {
+            self.requestCheckNicknameDuplicate(nickname: self.nicknameTextField.text ?? "") { isDuplicated in
+                self.nicknameTextField.setBorderColor(isCorrect: !isDuplicated)
+                self.nextButton.isEnabled = !isDuplicated
+                self.nicknameStatusLabel.status = isDuplicated ? .warning : .success
+            }
+        }
+    }
+
+    private func setNicknameTextField() {
+        self.nicknameTextField.rx.controlEvent(.editingChanged)
+            .withLatestFrom(self.nicknameTextField.rx.text.orEmpty)
+            .distinctUntilChanged()
+            .subscribe(onNext: { [weak self] text in
+                self?.nextButton.isEnabled = false
+            })
+            .disposed(by: self.disposeBag)
+    }
+    
+    private func setNextButtonAction() {
+        self.nextButton.setAction {
+            self.signupRequestData.nickname = self.nicknameTextField.text ?? ""
+            
+            self.present(SignupNicknameViewController(signupRequestData: self.signupRequestData), animated: true)
+        }
+    }
+}
+
 // MARK: - Network
 
 extension SignupNicknameViewController {
@@ -110,7 +157,8 @@ extension SignupNicknameViewController {
             nicknameDescriptionLabel,
             nicknameTextField,
             nicknameDuplicateButton,
-            nicknameStatusLabel
+            nicknameStatusLabel,
+            nextButton
         ])
         
         self.navigationView.snp.makeConstraints { make in
@@ -153,6 +201,12 @@ extension SignupNicknameViewController {
             make.top.equalTo(self.nicknameTextField.snp.bottom).offset(8)
             make.horizontalEdges.equalToSuperview().inset(28)
             make.height.equalTo(12)
+        }
+        
+        self.nextButton.snp.makeConstraints { make in
+            make.bottom.equalToSuperview().inset(32)
+            make.horizontalEdges.equalToSuperview().inset(28)
+            make.height.equalTo(52)
         }
     }
 }

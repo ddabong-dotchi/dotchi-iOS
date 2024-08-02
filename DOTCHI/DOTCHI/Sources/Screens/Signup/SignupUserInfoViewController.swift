@@ -173,7 +173,7 @@ final class SignupUserInfoViewController: BaseViewController {
             self.signupRequestData.username = self.usernameTextField.text ?? ""
             self.signupRequestData.password = self.passwordTextField.text ?? ""
             
-            self.present(SignupNicknameViewController(signupRequestData: self.signupRequestData), animated: true)
+            self.navigationController?.pushViewController(SignupNicknameViewController(signupRequestData: self.signupRequestData), animated: true)
         }
     }
 }
