@@ -33,6 +33,7 @@
 		FFB7F9B62C5A396F00650238 /* WarningLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB7F9B52C5A396F00650238 /* WarningLabel.swift */; };
 		FFB7F9B82C5A42E700650238 /* TermsLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB7F9B72C5A42E700650238 /* TermsLabel.swift */; };
 		FFB7F9BA2C5A430700650238 /* UITapGestureRecognizer+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB7F9B92C5A430700650238 /* UITapGestureRecognizer+.swift */; };
+		FFB7F9BD2C5BE35900650238 /* SignupRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB7F9BC2C5BE35900650238 /* SignupRequestDTO.swift */; };
 		FFC7BB6E2C345EBC000EA7B5 /* SigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7BB6D2C345EBC000EA7B5 /* SigninViewController.swift */; };
 		FFC7BB702C3460BF000EA7B5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7BB6F2C3460BF000EA7B5 /* HomeViewController.swift */; };
 		FFC7BB732C35A770000EA7B5 /* TextUnderlineButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7BB722C35A770000EA7B5 /* TextUnderlineButtonView.swift */; };
@@ -131,6 +132,7 @@
 		FFB7F9B52C5A396F00650238 /* WarningLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningLabel.swift; sourceTree = "<group>"; };
 		FFB7F9B72C5A42E700650238 /* TermsLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsLabel.swift; sourceTree = "<group>"; };
 		FFB7F9B92C5A430700650238 /* UITapGestureRecognizer+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITapGestureRecognizer+.swift"; sourceTree = "<group>"; };
+		FFB7F9BC2C5BE35900650238 /* SignupRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupRequestDTO.swift; sourceTree = "<group>"; };
 		FFC7BB6D2C345EBC000EA7B5 /* SigninViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewController.swift; sourceTree = "<group>"; };
 		FFC7BB6F2C3460BF000EA7B5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FFC7BB722C35A770000EA7B5 /* TextUnderlineButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextUnderlineButtonView.swift; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 		1E9727592C43982300252CA6 /* User */ = {
 			isa = PBXGroup;
 			children = (
+				FFB7F9BB2C5BE34B00650238 /* Request */,
 				1E97275A2C43983700252CA6 /* Response */,
 			);
 			path = User;
@@ -306,6 +309,14 @@
 				FFB7F9B72C5A42E700650238 /* TermsLabel.swift */,
 			);
 			path = UILabel;
+			sourceTree = "<group>";
+		};
+		FFB7F9BB2C5BE34B00650238 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				FFB7F9BC2C5BE35900650238 /* SignupRequestDTO.swift */,
+			);
+			path = Request;
 			sourceTree = "<group>";
 		};
 		FFC7BB6C2C345EAC000EA7B5 /* Signin */ = {
@@ -783,6 +794,7 @@
 				FFCD60962C2D9915007785FF /* CardHeadType.swift in Sources */,
 				FFCD607F2C2D97FB007785FF /* UserDefaults+.swift in Sources */,
 				1E97275C2C43986B00252CA6 /* UserResponseDTO.swift in Sources */,
+				FFB7F9BD2C5BE35900650238 /* SignupRequestDTO.swift in Sources */,
 				FFC7BB852C3D943E000EA7B5 /* BaseResponseType.swift in Sources */,
 				FF4BF6BC2C2DB69300B6DEB2 /* CardBackEntity.swift in Sources */,
 				FFCD60772C2D97AA007785FF /* UITextField+.swift in Sources */,
