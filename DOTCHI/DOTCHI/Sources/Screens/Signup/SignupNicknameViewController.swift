@@ -82,6 +82,21 @@ final class SignupNicknameViewController: BaseViewController {
     private func setUI() {
         self.progressBarView.setProgress(step: .two)
     }
+// MARK: - Network
+
+extension SignupNicknameViewController {
+    private func requestCheckNicknameDuplicate(nickname: String, completion: @escaping (Bool) -> ()) {
+        UserService.shared.checkNicknameDuplicate(data: nickname) { networkResult in
+            switch networkResult {
+            case .success(let responseData):
+                if let isDuplicated = responseData as? Bool {
+                    completion(isDuplicated)
+                }
+            default:
+                self.showNetworkErrorAlert()
+            }
+        }
+    }
 }
 
 // MARK: - Layout
