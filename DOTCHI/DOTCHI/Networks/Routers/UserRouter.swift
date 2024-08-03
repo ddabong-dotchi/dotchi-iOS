@@ -13,6 +13,7 @@ enum UserRouter {
     case getMyCard
     case getBlacklists
     case checkUsernameDuplicate(data: String)
+    case checkNicknameDuplicate(data: String)
 }
 
 extension UserRouter: TargetType {
@@ -31,12 +32,14 @@ extension UserRouter: TargetType {
             return "/blacklists"
         case .checkUsernameDuplicate:
             return "/user/username"
+        case .checkNicknameDuplicate:
+            return "/user/nickname"
         }
     }
 
     var method: Moya.Method {
         switch self {
-        case .getUser, .getMyCard, .getBlacklists, .checkUsernameDuplicate:
+        case .getUser, .getMyCard, .getBlacklists, .checkUsernameDuplicate, .checkNicknameDuplicate:
             return .get
         }
     }
@@ -47,12 +50,14 @@ extension UserRouter: TargetType {
             return .requestPlain
         case .checkUsernameDuplicate(let data):
             return .requestParameters(parameters: ["username": data], encoding: URLEncoding.queryString)
+        case .checkNicknameDuplicate(let data):
+            return .requestParameters(parameters: ["nickname": data], encoding: URLEncoding.queryString)
         }
     }
 
     var headers: [String: String]? {
         switch self {
-        case .checkUsernameDuplicate:
+        case .checkUsernameDuplicate, .checkNicknameDuplicate:
             return [
                 "Content-Type": "application/json"
             ]

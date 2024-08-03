@@ -89,6 +89,7 @@ final class SignupUserInfoViewController: BaseViewController {
             self.nextButton.isEnabled = self.isNextButtonEnabled == [true, true]
         }
     }
+    private var signupRequestData = SignupRequestDTO()
     
     // MARK: View Life Cycle
     
@@ -100,6 +101,7 @@ final class SignupUserInfoViewController: BaseViewController {
         self.setDuplicateButtonAction()
         self.setUsernameTextField()
         self.setPasswordTextField()
+        self.setNextButtonAction()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -164,6 +166,15 @@ final class SignupUserInfoViewController: BaseViewController {
         }
         
         return false
+    }
+    
+    private func setNextButtonAction() {
+        self.nextButton.setAction {
+            self.signupRequestData.username = self.usernameTextField.text ?? ""
+            self.signupRequestData.password = self.passwordTextField.text ?? ""
+            
+            self.navigationController?.pushViewController(SignupNicknameViewController(signupRequestData: self.signupRequestData), animated: true)
+        }
     }
 }
 
