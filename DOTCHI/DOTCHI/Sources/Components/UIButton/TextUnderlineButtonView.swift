@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-final class TextUnderlineButtonUIView: UIView {
+final class TextUnderlineButtonView: UIView {
     
     // MARK: Properties
     
@@ -48,7 +48,7 @@ final class TextUnderlineButtonUIView: UIView {
 
 // MARK: - Layout
 
-extension TextUnderlineButtonUIView {
+extension TextUnderlineButtonView {
     
     private func setLayout() {
         self.addSubviews([self.button, self.underlineView])
@@ -62,7 +62,7 @@ extension TextUnderlineButtonUIView {
             make.bottom.equalToSuperview()
             make.horizontalEdges.equalToSuperview().inset(1)
             make.height.equalTo(0.5)
-            make.top.equalTo(self.button.snp.bottom).offset(2)
+            make.top.equalTo(self.button.snp.bottom).offset(1.5)
         }
     }
 }

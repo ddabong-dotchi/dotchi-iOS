@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SafariServices
 
 extension UIViewController {
     
@@ -130,5 +131,15 @@ extension UIViewController {
             object: nibName
         )
     }
+    
+    func openSafariInApp(url: String) {
+        if let url = URL(string: url) {
+            let safariViewController = SFSafariViewController(url: url)
+            safariViewController.modalPresentationStyle = .pageSheet
+            
+            self.present(safariViewController, animated: true)
+        } else {
+            debugPrint(#function, url, "URL String is not available.")
+        }
+    }
 }
-

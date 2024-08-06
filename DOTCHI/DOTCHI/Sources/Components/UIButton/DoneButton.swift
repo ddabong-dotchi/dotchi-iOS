@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class DoneUIButton: UIButton {
+final class DoneButton: UIButton {
     
     // MARK: Initializer
     

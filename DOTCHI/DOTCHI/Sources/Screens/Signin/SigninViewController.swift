@@ -52,18 +52,18 @@ final class SigninViewController: BaseViewController {
         return label
     }()
     
-    private let signupButton: TextUnderlineButtonUIView = TextUnderlineButtonUIView(title: Text.signup)
+    private let signupButton: TextUnderlineButtonView = TextUnderlineButtonView(title: Text.signup)
     
-    private let usernameTextField: SigninUITextField = {
-        let textField: SigninUITextField = SigninUITextField()
+    private let usernameTextField: SigninTextField = {
+        let textField: SigninTextField = SigninTextField()
         textField.setDotchiPlaceholder(Text.usernamePlaceholder)
         textField.textContentType = .username
         textField.returnKeyType = .next
         return textField
     }()
     
-    private let passwordTextField: SigninUITextField = {
-        let textField: SigninUITextField = SigninUITextField()
+    private let passwordTextField: SigninTextField = {
+        let textField: SigninTextField = SigninTextField()
         textField.setDotchiPlaceholder(Text.passwordPlaceholder)
         textField.textContentType = .password
         textField.isSecureTextEntry = true
@@ -71,8 +71,8 @@ final class SigninViewController: BaseViewController {
         return textField
     }()
     
-    private let signinButton: DoneUIButton = {
-        let button: DoneUIButton = DoneUIButton(type: .system)
+    private let signinButton: DoneButton = {
+        let button: DoneButton = DoneButton(type: .system)
         button.setTitle(Text.signin, for: .normal)
         return button
     }()
@@ -91,7 +91,7 @@ final class SigninViewController: BaseViewController {
         return label
     }()
     
-    private let contactButton: TextUnderlineButtonUIView = TextUnderlineButtonUIView(title: Text.contact)
+    private let contactButton: TextUnderlineButtonView = TextUnderlineButtonView(title: Text.contact)
     
     // MARK: Properties
     
@@ -165,7 +165,7 @@ final class SigninViewController: BaseViewController {
     }
     
     private func presentHomeViewController() {
-        self.present(DotchiUITabBarController(), animated: true)
+        self.present(DotchiTabBarController(), animated: true)
     }
 }
 
@@ -233,7 +233,7 @@ extension SigninViewController {
         }
         
         self.signupButton.snp.makeConstraints { make in
-            make.top.equalTo(self.signupInfoLabel)
+            make.centerY.equalTo(self.signupInfoLabel)
             make.left.equalTo(self.signupInfoLabel.snp.right).offset(3)
             make.height.equalTo(16)
         }

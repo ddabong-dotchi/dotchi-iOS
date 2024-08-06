@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-final class SigninUITextField: UITextField {
+final class SigninTextField: UITextField {
     
     // MARK: Properties
     
