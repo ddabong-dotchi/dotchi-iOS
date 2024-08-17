@@ -8,13 +8,14 @@
 import UIKit
 import SnapKit
 
-class EditProfileViewController: BaseViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class EditProfileViewController: BaseViewController, UITextFieldDelegate, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     private let userService = UserService.shared
     
     private var imageView = UIImageView()
     private var nicknameTextField = UITextField()
     private var descriptionTextView = UITextView()
     private var descriptionPlaceholderLabel = UILabel()
+    private var nicknameStatusLabel = UILabel()
     private var isNicknameDuplicated = false
     
     private let nicknameLimit = 7
@@ -27,6 +28,7 @@ class EditProfileViewController: BaseViewController, UITextViewDelegate, UIImage
         setupSubviews()
         setupConstraints()
         
+        nicknameTextField.delegate = self
         descriptionTextView.delegate = self
         
         configureDescriptionPlaceholder()
@@ -63,19 +65,20 @@ class EditProfileViewController: BaseViewController, UITextViewDelegate, UIImage
         self.view.addSubview(cameraButton)
         
         let nicknameLabel = UILabel()
-        nicknameLabel.text = "닉네임을 설정해주세요."
+        nicknameLabel.text = "닉네임을 설정해 주세요."
         nicknameLabel.textColor = UIColor.dotchiLgray
         nicknameLabel.font = .sub
         self.view.addSubview(nicknameLabel)
         
         nicknameTextField.placeholder = "최대 7글자"
         nicknameTextField.layer.cornerRadius = 8
+        nicknameTextField.layer.borderWidth = 1
         nicknameTextField.backgroundColor = .dotchiMgray
         nicknameTextField.textColor = .dotchiLgray
         nicknameTextField.font = .head2
         nicknameTextField.tintColor = UITextField().tintColor
         
-        let leftPaddingView1 = UIView(frame: CGRect(x: 0, y: 0, width: 18, height: nicknameTextField.frame.height))
+        let leftPaddingView1 = UIView(frame: CGRect(x: 0, y: 0, width: 18, height: 48))
         nicknameTextField.leftView = leftPaddingView1
         nicknameTextField.leftViewMode = .always
         
@@ -96,8 +99,12 @@ class EditProfileViewController: BaseViewController, UITextViewDelegate, UIImage
         checkButton.addTarget(self, action: #selector(checkForDuplicateNickname), for: .touchUpInside)
         self.view.addSubview(checkButton)
         
+        nicknameStatusLabel.textColor = UIColor.dotchiOrange
+        nicknameStatusLabel.font = .sSub
+        self.view.addSubview(nicknameStatusLabel)
+        
         let introduceLabel = UILabel()
-        introduceLabel.text = "간단한 소개를 작성해주세요."
+        introduceLabel.text = "간단한 소개를 작성해 주세요."
         introduceLabel.textColor = UIColor.dotchiLgray
         introduceLabel.font = .sub
         self.view.addSubview(introduceLabel)
@@ -165,7 +172,7 @@ class EditProfileViewController: BaseViewController, UITextViewDelegate, UIImage
             make.centerY.equalTo(imageView.snp.bottom).offset(-10)
         }
         
-        let nicknameLabel = view.subviews.compactMap { $0 as? UILabel }.first { $0.text == "닉네임을 설정해주세요." }
+        let nicknameLabel = view.subviews.compactMap { $0 as? UILabel }.first { $0.text == "닉네임을 설정해 주세요." }
         nicknameLabel?.snp.makeConstraints { make in
             make.top.equalTo(imageView.snp.bottom).offset(30)
             make.leading.equalTo(safeArea).offset(20)
@@ -175,7 +182,7 @@ class EditProfileViewController: BaseViewController, UITextViewDelegate, UIImage
             make.top.equalTo(nicknameLabel!.snp.bottom).offset(10)
             make.leading.equalTo(safeArea).offset(20)
             make.height.equalTo(48)
-            make.trailing.equalTo(checkButton.snp.leading).offset(-8) // 여기서 수정
+            make.trailing.equalTo(checkButton.snp.leading).offset(-8)
         }
         
         checkButton.snp.makeConstraints { make in
@@ -185,7 +192,12 @@ class EditProfileViewController: BaseViewController, UITextViewDelegate, UIImage
             make.width.equalTo(128)
         }
         
-        let introduceLabel = view.subviews.compactMap { $0 as? UILabel }.first { $0.text == "간단한 소개를 작성해주세요." }
+        nicknameStatusLabel.snp.makeConstraints { make in
+            make.top.equalTo(nicknameTextField.snp.bottom).offset(5)
+            make.leading.equalTo(nicknameTextField)
+        }
+        
+        let introduceLabel = view.subviews.compactMap { $0 as? UILabel }.first { $0.text == "간단한 소개를 작성해 주세요." }
         introduceLabel?.snp.makeConstraints { make in
             make.top.equalTo(nicknameTextField.snp.bottom).offset(30)
             make.leading.equalTo(safeArea).offset(20)
@@ -198,7 +210,7 @@ class EditProfileViewController: BaseViewController, UITextViewDelegate, UIImage
             make.height.equalTo(138)
         }
         
-        let saveButton = view.subviews.compactMap { $0 as? UIButton }.first { $0.titleLabel?.text == "저장하기" }
+        let saveButton = view.subviews.compactMap { $0 as? UIButton }.first { $0.currentTitle == "저장하기" }
         saveButton?.snp.makeConstraints { make in
             make.bottom.equalTo(safeArea).offset(-20)
             make.leading.equalTo(safeArea).offset(20)
@@ -207,29 +219,86 @@ class EditProfileViewController: BaseViewController, UITextViewDelegate, UIImage
         }
     }
     
-    // MARK: - Placeholder 관리
-    
     private func configureDescriptionPlaceholder() {
-        descriptionPlaceholderLabel.isHidden = !descriptionTextView.text.isEmpty
-    }
-    
-    // MARK: - UITextViewDelegate
-    
-    func textViewDidChange(_ textView: UITextView) {
-        configureDescriptionPlaceholder()
-        guard let text = textView.text else { return }
-        let remaining = introduceLimit - text.count
-        
-        if text.count > introduceLimit {
-            let endIndex = text.index(text.startIndex, offsetBy: introduceLimit)
-            textView.text = String(text.prefix(upTo: endIndex))
+        if descriptionTextView.text.isEmpty {
+            descriptionPlaceholderLabel.isHidden = false
+        } else {
+            descriptionPlaceholderLabel.isHidden = true
         }
     }
     
-    // MARK: - Button Actions
-    
     @objc private func closeButtonTapped() {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    @objc private func checkForDuplicateNickname() {
+        guard let nickname = nicknameTextField.text, !nickname.isEmpty else {
+            showAlert(message: "닉네임을 입력해 주세요.")
+            return
+        }
+        
+        userService.checkNicknameDuplicate(data: nickname) { [weak self] result in
+            DispatchQueue.main.async { [self] in
+                guard let self = self else { return }
+                
+                switch result {
+                case .success(let response):
+                    if let isDuplicated = response as? Bool {
+                        self.nicknameStatusLabel.text = isDuplicated ? "중복된 닉네임입니다." : "사용 가능 닉네임입니다."
+                        self.nicknameStatusLabel.textColor = isDuplicated ? .dotchiOrange : .dotchiGreen
+                        self.nicknameTextField.layer.borderColor = isDuplicated ? UIColor.dotchiOrange.cgColor : UIColor.dotchiGreen.cgColor
+                    } else {
+                        print("서버에서 올바른 응답을 받지 못했습니다.")
+                    }
+                    
+                case .requestErr(let message):
+                    print("Request error: \(message)")
+                case .pathErr:
+                    print("Path error")
+                case .serverErr:
+                    print("Server error")
+                case .networkFail:
+                    print("Network failure")
+                }
+            }
+        }
+    }
+    
+    // MARK: - UITextFieldDelegate
+    
+    @objc private func nicknameTextFieldDidChange(_ textField: UITextField) {
+        let nickname = textField.text ?? ""
+        if nickname.count > nicknameLimit {
+            textField.text = String(nickname.prefix(nicknameLimit))
+        }
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let currentText = textField.text ?? ""
+        guard let stringRange = Range(range, in: currentText) else { return false }
+        let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
+        
+        return updatedText.count <= nicknameLimit
+    }
+
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        let currentText = textView.text ?? ""
+        guard let stringRange = Range(range, in: currentText) else { return false }
+        let updatedText = currentText.replacingCharacters(in: stringRange, with: text)
+        
+        return updatedText.count <= introduceLimit
+    }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        let text = textView.text ?? ""
+        if text.count > introduceLimit {
+            textView.text = String(text.prefix(introduceLimit))
+        }
+        configureDescriptionPlaceholder()
+    }
+    
+    @objc private func saveProfile() {
+        // TODO: 프로필 수정 로직 추가
     }
     
     @objc private func openPhotoLibrary() {
@@ -239,44 +308,13 @@ class EditProfileViewController: BaseViewController, UITextViewDelegate, UIImage
         present(imagePicker, animated: true, completion: nil)
     }
     
-    @objc private func checkForDuplicateNickname() {
-        // TODO: 닉네임 중복 확인 로직 추가
-        isNicknameDuplicated = true // 테스트 코드
-        if isNicknameDuplicated {
-            nicknameTextField.layer.borderColor = UIColor.dotchiOrange.cgColor
-            nicknameTextField.layer.borderWidth = 1
-            nicknameTextField.makeRounded(cornerRadius: 8)
-        } else {
-            nicknameTextField.layer.borderColor = UIColor.clear.cgColor
-        }
-    }
-    
-    @objc private func saveProfile() {
-        // TODO: 프로필 저장 로직 추가
-    }
-    
     // MARK: - UIImagePickerControllerDelegate
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let selectedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+        if let selectedImage = info[.originalImage] as? UIImage {
             imageView.image = selectedImage
         }
-        picker.dismiss(animated: true, completion: nil)
-    }
-    
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        picker.dismiss(animated: true, completion: nil)
-    }
-    
-    // MARK: - Text Field Limit
-    
-    @objc func nicknameTextFieldDidChange(_ textField: UITextField) {
-        guard let text = textField.text else { return }
-        // 최대 글자 수 초과 시 텍스트 자르기
-        if text.count > nicknameLimit {
-            let endIndex = text.index(text.startIndex, offsetBy: nicknameLimit)
-            textField.text = String(text.prefix(upTo: endIndex))
-        }
+        dismiss(animated: true, completion: nil)
     }
     
     // MARK: - Network
@@ -314,5 +352,12 @@ class EditProfileViewController: BaseViewController, UITextViewDelegate, UIImage
                 print("Invalid image URL: \(userData.imageUrl)")
             }
         }
+    }
+    
+    private func showAlert(message: String) {
+        let alertController = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "확인", style: .default)
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
     }
 }
