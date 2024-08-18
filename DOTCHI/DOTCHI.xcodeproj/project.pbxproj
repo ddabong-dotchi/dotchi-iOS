@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E3A1E5F2C71EE740096708D /* EditUserResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3A1E5E2C71EE740096708D /* EditUserResponseDTO.swift */; };
+		1E3A1E612C71EEA50096708D /* EditUserRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3A1E602C71EEA50096708D /* EditUserRequestDTO.swift */; };
 		1E9727462C3C3C6F00252CA6 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9727452C3C3C6F00252CA6 /* SettingViewController.swift */; };
 		1E97274A2C3DA24100252CA6 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9727492C3DA24100252CA6 /* EditProfileViewController.swift */; };
 		1E9727582C43924F00252CA6 /* UserRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9727572C43924F00252CA6 /* UserRouter.swift */; };
@@ -107,6 +109,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1E3A1E5E2C71EE740096708D /* EditUserResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserResponseDTO.swift; sourceTree = "<group>"; };
+		1E3A1E602C71EEA50096708D /* EditUserRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserRequestDTO.swift; sourceTree = "<group>"; };
 		1E9727452C3C3C6F00252CA6 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		1E9727492C3DA24100252CA6 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		1E9727572C43924F00252CA6 /* UserRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRouter.swift; sourceTree = "<group>"; };
@@ -232,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				1E97275B2C43986B00252CA6 /* UserResponseDTO.swift */,
+				1E3A1E5E2C71EE740096708D /* EditUserResponseDTO.swift */,
 				1E97275F2C43AE2D00252CA6 /* MyCardResponseDTO.swift */,
 				1E9727642C44FCA600252CA6 /* BlacklistResponseDTO.swift */,
 			);
@@ -315,6 +320,7 @@
 			isa = PBXGroup;
 			children = (
 				FFB7F9BC2C5BE35900650238 /* SignupRequestDTO.swift */,
+				1E3A1E602C71EEA50096708D /* EditUserRequestDTO.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -751,6 +757,7 @@
 				FFCD60732C2D977F007785FF /* UIImageView+.swift in Sources */,
 				FF328DC72C4D6FBC00007CD5 /* ProgressBarView.swift in Sources */,
 				FFCD60792C2D97C3007785FF /* String+.swift in Sources */,
+				1E3A1E612C71EEA50096708D /* EditUserRequestDTO.swift in Sources */,
 				FFCD602A2C21D9F2007785FF /* AppDelegate.swift in Sources */,
 				FFB7F9B62C5A396F00650238 /* WarningLabel.swift in Sources */,
 				FF4BF6C22C2DB72700B6DEB2 /* APIConstants.swift in Sources */,
@@ -771,6 +778,7 @@
 				FFCD60562C2D9501007785FF /* UIFont+.swift in Sources */,
 				FFCD60922C2D98F7007785FF /* LuckyType.swift in Sources */,
 				FF4BF6B42C2DB64A00B6DEB2 /* CardUserEntity.swift in Sources */,
+				1E3A1E5F2C71EE740096708D /* EditUserResponseDTO.swift in Sources */,
 				FFCD602C2C21D9F2007785FF /* SceneDelegate.swift in Sources */,
 				FFC7BB6E2C345EBC000EA7B5 /* SigninViewController.swift in Sources */,
 				FFCD60712C2D976E007785FF /* Adjusted+.swift in Sources */,
