@@ -41,7 +41,6 @@ class SettingViewController: BaseViewController {
         setupSubviews()
         setupConstraints()
         fetchMyData()
-        self.setBackButtonAction(self.navigationView.backButton)
     }
     
     override func viewWillAppear(_ animated: Bool) {
