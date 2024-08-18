@@ -102,7 +102,7 @@ class BlacklistViewController: BaseViewController {
         }
         
         targetNicknameLabel.snp.makeConstraints { make in
-            make.leading.equalTo(profileImageView.snp.trailing).offset(20)
+            make.leading.equalTo(profileImageView.snp.trailing).offset(28)
             make.centerY.equalToSuperview()
         }
         
@@ -127,7 +127,7 @@ class BlacklistViewController: BaseViewController {
         var previousView: UIView?
         for (index, view) in contentView.subviews.enumerated() {
             view.snp.makeConstraints { make in
-                make.leading.trailing.equalTo(contentView).inset(20)
+                make.leading.trailing.equalTo(contentView).inset(28)
                 make.height.equalTo(53)
                 
                 if let previousView = previousView {
@@ -137,7 +137,7 @@ class BlacklistViewController: BaseViewController {
                 }
                 
                 if index == contentView.subviews.count - 1 {
-                    make.bottom.equalToSuperview().inset(20)
+                    make.bottom.equalToSuperview().inset(28)
                 }
             }
             previousView = view
