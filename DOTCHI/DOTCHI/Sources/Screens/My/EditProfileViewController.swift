@@ -351,7 +351,14 @@ class EditProfileViewController: BaseViewController, UITextFieldDelegate, UIText
     }
     
     @objc private func saveProfile() {
-        // TODO: 프로필 수정 로직 추가
+        UserService.shared.editUser(nickname: nicknameTextField.text ?? "", description: descriptionTextView.text, profileImage: imageView.image) { result in
+            switch result {
+            case .success(let response):
+                self.dismiss(animated: true, completion: nil)
+            default:
+                self.showNetworkErrorAlert()
+            }
+        }
     }
     
     @objc private func openPhotoLibrary() {

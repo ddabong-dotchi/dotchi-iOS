@@ -7,9 +7,11 @@
 
 import Foundation
 import Moya
+import UIKit
 
 internal protocol UserServiceProtocol {
     func getUser(completion: @escaping (NetworkResult<Any>) -> (Void))
+    func editUser(nickname: String, description: String, profileImage: UIImage?, completion: @escaping (NetworkResult<Any>) -> (Void))
     func checkUsernameDuplicate(data: String, completion: @escaping (NetworkResult<Any>) -> (Void))
     func checkNicknameDuplicate(data: String, completion: @escaping (NetworkResult<Any>) -> (Void))
 }
@@ -32,6 +34,25 @@ extension UserService: UserServiceProtocol {
                 let statusCode = response.statusCode
                 let data = response.data
                 let networkResult = self.judgeStatus(by: statusCode, data, UserResponseDTO.self)
+                completion(networkResult)
+            case .failure(let error):
+                debugPrint(error)
+            }
+        }
+    }
+    
+    // [PATCH] 내 정보 수정
+    
+    func editUser(nickname: String, description: String, profileImage: UIImage?, completion: @escaping (NetworkResult<Any>) -> Void) {
+        let imageData = profileImage?.jpegData(compressionQuality: 0.1)
+        let requestData = EditUserRequestDTO(nickname: nickname, description: description, profileImage: imageData)
+        
+        self.provider.request(.editUser(data: requestData)) { result in
+            switch result {
+            case .success(let response):
+                let statusCode = response.statusCode
+                let data = response.data
+                let networkResult = self.judgeStatus(by: statusCode, data, EditUserResponseDTO.self)
                 completion(networkResult)
             case .failure(let error):
                 debugPrint(error)
@@ -67,7 +88,6 @@ extension UserService: UserServiceProtocol {
                 completion(networkResult)
             case .failure(let error):
                 debugPrint(error)
-                completion(.networkFail)
             }
         }
     }
