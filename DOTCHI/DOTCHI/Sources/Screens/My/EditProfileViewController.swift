@@ -11,8 +11,7 @@ import SnapKit
 class EditProfileViewController: BaseViewController, UITextFieldDelegate, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     private let userService = UserService.shared
     
-    private let closeButton = UIButton()
-    private let titleLabel = UILabel()
+    private let navigationView = DotchiNavigationView(type: .closeCenterTitle)
     private var imageView = UIImageView()
     private let cameraButton = UIButton()
     private let nicknameLabel = UILabel()
@@ -49,8 +48,7 @@ class EditProfileViewController: BaseViewController, UITextFieldDelegate, UIText
     
     private func setupSubviews() {
         self.view.addSubviews([
-            closeButton,
-            titleLabel,
+            navigationView,
             imageView,
             cameraButton,
             nicknameLabel,
@@ -64,12 +62,7 @@ class EditProfileViewController: BaseViewController, UITextFieldDelegate, UIText
         
         self.view.backgroundColor = UIColor.dotchiScreenBackground
         
-        closeButton.setImage(UIImage(named: "icnClose"), for: .normal)
-        closeButton.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
-        
-        titleLabel.text = "프로필 수정"
-        titleLabel.textColor = UIColor.dotchiWhite
-        titleLabel.font = .subTitle
+        navigationView.centerTitleLabel.text = "프로필 수정"
         
         imageView.contentMode = .scaleAspectFill
         imageView.layer.cornerRadius = 24
@@ -154,21 +147,13 @@ class EditProfileViewController: BaseViewController, UITextFieldDelegate, UIText
     private func setupConstraints() {
         let safeArea = view.safeAreaLayoutGuide
         
-        let closeButton = view.subviews.compactMap { $0 as? UIButton }.first
-        closeButton?.snp.makeConstraints { make in
-            make.top.equalTo(safeArea).offset(10)
-            make.leading.equalTo(safeArea).offset(10)
-            make.width.height.equalTo(30)
-        }
-        
-        let titleLabel = view.subviews.compactMap { $0 as? UILabel }.first
-        titleLabel?.snp.makeConstraints { make in
-            make.top.equalTo(safeArea).offset(10)
-            make.centerX.equalTo(safeArea)
+        navigationView.snp.makeConstraints { make in
+            make.top.horizontalEdges.equalTo(self.view.safeAreaLayoutGuide)
+            make.height.equalTo(48)
         }
         
         imageView.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel!.snp.bottom).offset(20)
+            make.top.equalTo(navigationView.snp.bottom).offset(20)
             make.centerX.equalTo(safeArea)
             make.width.height.equalTo(116)
         }
@@ -228,10 +213,6 @@ class EditProfileViewController: BaseViewController, UITextFieldDelegate, UIText
     
     private func configureDescriptionPlaceholder() {
         descriptionPlaceholderLabel.isHidden = !descriptionTextView.text.isEmpty
-    }
-    
-    @objc private func closeButtonTapped() {
-        self.dismiss(animated: true, completion: nil)
     }
     
     @objc private func checkForDuplicateNickname() {
