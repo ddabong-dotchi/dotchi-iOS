@@ -11,16 +11,26 @@ import SnapKit
 class EditProfileViewController: BaseViewController, UITextFieldDelegate, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     private let userService = UserService.shared
     
+    private let closeButton = UIButton()
+    private let titleLabel = UILabel()
     private var imageView = UIImageView()
+    private let cameraButton = UIButton()
+    private let nicknameLabel = UILabel()
     private var nicknameTextField = UITextField()
+    private let descriptionLabel = UILabel()
     private var descriptionTextView = UITextView()
     private var descriptionPlaceholderLabel = UILabel()
     private var nicknameStatusLabel = UILabel()
+    private var isNicknameChecked = false
     private var isNicknameDuplicated = false
-    
     private let nicknameLimit = 7
-    private let introduceLimit = 40
-    private let checkButton = UIButton(type: .system)
+    private let descriptionLimit = 40
+    private let nicknameDuplicateButton = UIButton(type: .system)
+    private let saveButton = UIButton(type: .system)
+    
+    private var originalNickname: String?
+    private var originalDescription: String?
+    private var originalImageUrl: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,37 +48,42 @@ class EditProfileViewController: BaseViewController, UITextFieldDelegate, UIText
     // MARK: - Setup Subviews
     
     private func setupSubviews() {
+        self.view.addSubviews([
+            closeButton,
+            titleLabel,
+            imageView,
+            cameraButton,
+            nicknameLabel,
+            nicknameTextField,
+            nicknameDuplicateButton,
+            nicknameStatusLabel,
+            descriptionLabel,
+            descriptionTextView,
+            saveButton
+        ])
+        
         self.view.backgroundColor = UIColor.dotchiScreenBackground
         
-        let closeButton = UIButton(type: .custom)
         closeButton.setImage(UIImage(named: "icnClose"), for: .normal)
         closeButton.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
-        self.view.addSubview(closeButton)
         
-        let titleLabel = UILabel()
         titleLabel.text = "프로필 수정"
         titleLabel.textColor = UIColor.dotchiWhite
         titleLabel.font = .subTitle
-        self.view.addSubview(titleLabel)
         
         imageView.contentMode = .scaleAspectFill
         imageView.layer.cornerRadius = 24
         imageView.layer.masksToBounds = true
         imageView.image = UIImage(named: "imgRClover")
-        self.view.addSubview(imageView)
         
-        let cameraButton = UIButton(type: .custom)
         cameraButton.setImage(UIImage(named: "imgCamera"), for: .normal)
         cameraButton.backgroundColor = UIColor.dotchiBlack70
         cameraButton.layer.cornerRadius = 15
         cameraButton.addTarget(self, action: #selector(openPhotoLibrary), for: .touchUpInside)
-        self.view.addSubview(cameraButton)
         
-        let nicknameLabel = UILabel()
         nicknameLabel.text = "닉네임을 설정해 주세요."
         nicknameLabel.textColor = UIColor.dotchiLgray
         nicknameLabel.font = .sub
-        self.view.addSubview(nicknameLabel)
         
         nicknameTextField.placeholder = "최대 7글자"
         nicknameTextField.layer.cornerRadius = 8
@@ -89,32 +104,27 @@ class EditProfileViewController: BaseViewController, UITextFieldDelegate, UIText
         nicknameTextField.attributedPlaceholder = NSAttributedString(string: "최대 7글자", attributes: attributes)
         
         nicknameTextField.addTarget(self, action: #selector(nicknameTextFieldDidChange(_:)), for: .editingChanged)
-        self.view.addSubview(nicknameTextField)
         
-        checkButton.setTitle("중복확인", for: .normal)
-        checkButton.backgroundColor = UIColor.dotchiGreen
-        checkButton.setTitleColor(UIColor.white, for: .normal)
-        checkButton.titleLabel?.font = .head2
-        checkButton.layer.cornerRadius = 8
-        checkButton.addTarget(self, action: #selector(checkForDuplicateNickname), for: .touchUpInside)
-        self.view.addSubview(checkButton)
+        nicknameDuplicateButton.setTitle("중복확인", for: .normal)
+        nicknameDuplicateButton.backgroundColor = UIColor.dotchiGreen
+        nicknameDuplicateButton.setTitleColor(UIColor.white, for: .normal)
+        nicknameDuplicateButton.titleLabel?.font = .head2
+        nicknameDuplicateButton.layer.cornerRadius = 8
+        nicknameDuplicateButton.addTarget(self, action: #selector(checkForDuplicateNickname), for: .touchUpInside)
+        nicknameDuplicateButton.isEnabled = false
+        updateNicknameDuplicateButtonAppearance()
         
-        nicknameStatusLabel.textColor = UIColor.dotchiOrange
         nicknameStatusLabel.font = .sSub
-        self.view.addSubview(nicknameStatusLabel)
         
-        let introduceLabel = UILabel()
-        introduceLabel.text = "간단한 소개를 작성해 주세요."
-        introduceLabel.textColor = UIColor.dotchiLgray
-        introduceLabel.font = .sub
-        self.view.addSubview(introduceLabel)
+        descriptionLabel.text = "간단한 소개를 작성해 주세요."
+        descriptionLabel.textColor = UIColor.dotchiLgray
+        descriptionLabel.font = .sub
         
         descriptionTextView.layer.cornerRadius = 8
         descriptionTextView.backgroundColor = .dotchiMgray
         descriptionTextView.textColor = .dotchiLgray
         descriptionTextView.font = .head2
         descriptionTextView.delegate = self
-        self.view.addSubview(descriptionTextView)
         
         descriptionPlaceholderLabel.text = "최대 40글자"
         descriptionPlaceholderLabel.textColor = UIColor.dotchiWhite.withAlphaComponent(0.3)
@@ -131,14 +141,12 @@ class EditProfileViewController: BaseViewController, UITextFieldDelegate, UIText
         descriptionTextView.addSubview(leftPaddingView2)
         descriptionTextView.addSubview(rightPaddingView)
         
-        let saveButton = UIButton(type: .system)
         saveButton.setTitle("저장하기", for: .normal)
-        saveButton.backgroundColor = UIColor.dotchiGreen
-        saveButton.setTitleColor(UIColor.white, for: .normal)
         saveButton.titleLabel?.font = .head2
         saveButton.layer.cornerRadius = 8
         saveButton.addTarget(self, action: #selector(saveProfile), for: .touchUpInside)
-        self.view.addSubview(saveButton)
+        saveButton.isEnabled = false
+        updateSaveButtonAppearance()
     }
     
     // MARK: - Setup Constraints
@@ -175,17 +183,17 @@ class EditProfileViewController: BaseViewController, UITextFieldDelegate, UIText
         let nicknameLabel = view.subviews.compactMap { $0 as? UILabel }.first { $0.text == "닉네임을 설정해 주세요." }
         nicknameLabel?.snp.makeConstraints { make in
             make.top.equalTo(imageView.snp.bottom).offset(30)
-            make.leading.equalTo(safeArea).offset(20)
+            make.leading.equalTo(safeArea).offset(28)
         }
         
         nicknameTextField.snp.makeConstraints { make in
             make.top.equalTo(nicknameLabel!.snp.bottom).offset(10)
-            make.leading.equalTo(safeArea).offset(20)
+            make.leading.equalTo(safeArea).offset(28)
             make.height.equalTo(48)
-            make.trailing.equalTo(checkButton.snp.leading).offset(-8)
+            make.trailing.equalTo(nicknameDuplicateButton.snp.leading).offset(-8)
         }
         
-        checkButton.snp.makeConstraints { make in
+        nicknameDuplicateButton.snp.makeConstraints { make in
             make.centerY.equalTo(nicknameTextField)
             make.trailing.equalTo(safeArea).offset(-28)
             make.height.equalTo(48)
@@ -199,32 +207,27 @@ class EditProfileViewController: BaseViewController, UITextFieldDelegate, UIText
         
         let introduceLabel = view.subviews.compactMap { $0 as? UILabel }.first { $0.text == "간단한 소개를 작성해 주세요." }
         introduceLabel?.snp.makeConstraints { make in
-            make.top.equalTo(nicknameTextField.snp.bottom).offset(30)
-            make.leading.equalTo(safeArea).offset(20)
+            make.top.equalTo(nicknameStatusLabel.snp.bottom).offset(30)
+            make.leading.equalTo(safeArea).offset(28)
         }
         
         descriptionTextView.snp.makeConstraints { make in
             make.top.equalTo(introduceLabel!.snp.bottom).offset(10)
-            make.leading.equalTo(safeArea).offset(20)
-            make.trailing.equalTo(safeArea).offset(-20)
+            make.leading.equalTo(safeArea).offset(28)
+            make.trailing.equalTo(safeArea).offset(-28)
             make.height.equalTo(138)
         }
         
-        let saveButton = view.subviews.compactMap { $0 as? UIButton }.first { $0.currentTitle == "저장하기" }
-        saveButton?.snp.makeConstraints { make in
-            make.bottom.equalTo(safeArea).offset(-20)
-            make.leading.equalTo(safeArea).offset(20)
-            make.trailing.equalTo(safeArea).offset(-20)
+        saveButton.snp.makeConstraints { make in
+            make.bottom.equalTo(safeArea).offset(-32)
+            make.leading.equalTo(safeArea).offset(28)
+            make.trailing.equalTo(safeArea).offset(-28)
             make.height.equalTo(52)
         }
     }
     
     private func configureDescriptionPlaceholder() {
-        if descriptionTextView.text.isEmpty {
-            descriptionPlaceholderLabel.isHidden = false
-        } else {
-            descriptionPlaceholderLabel.isHidden = true
-        }
+        descriptionPlaceholderLabel.isHidden = !descriptionTextView.text.isEmpty
     }
     
     @objc private func closeButtonTapped() {
@@ -244,9 +247,14 @@ class EditProfileViewController: BaseViewController, UITextFieldDelegate, UIText
                 switch result {
                 case .success(let response):
                     if let isDuplicated = response as? Bool {
+                        self.isNicknameDuplicated = isDuplicated
+                        self.isNicknameChecked = true
                         self.nicknameStatusLabel.text = isDuplicated ? "중복된 닉네임입니다." : "사용 가능 닉네임입니다."
                         self.nicknameStatusLabel.textColor = isDuplicated ? .dotchiOrange : .dotchiGreen
                         self.nicknameTextField.layer.borderColor = isDuplicated ? UIColor.dotchiOrange.cgColor : UIColor.dotchiGreen.cgColor
+                        
+                        self.checkForUnsavedChanges()
+                        
                     } else {
                         print("서버에서 올바른 응답을 받지 못했습니다.")
                     }
@@ -268,9 +276,29 @@ class EditProfileViewController: BaseViewController, UITextFieldDelegate, UIText
     
     @objc private func nicknameTextFieldDidChange(_ textField: UITextField) {
         let nickname = textField.text ?? ""
+        
         if nickname.count > nicknameLimit {
             textField.text = String(nickname.prefix(nicknameLimit))
         }
+        
+        let isNicknameChanged = (nickname != originalNickname)
+        nicknameDuplicateButton.isEnabled = isNicknameChanged
+        updateNicknameDuplicateButtonAppearance()
+        
+        if isNicknameChanged || nickname == originalNickname {
+            nicknameStatusLabel.text = ""
+            nicknameStatusLabel.textColor = UIColor.clear
+            nicknameTextField.layer.borderColor = UIColor.dotchiMgray.cgColor
+        }
+        
+        isNicknameChecked = false
+        checkForUnsavedChanges()
+    }
+    
+    private func updateNicknameDuplicateButtonAppearance() {
+        let isEnabled = nicknameDuplicateButton.isEnabled
+        nicknameDuplicateButton.backgroundColor = isEnabled ? UIColor.dotchiGreen : UIColor.dotchiGreen.withAlphaComponent(0.5)
+        nicknameDuplicateButton.setTitleColor(isEnabled ? UIColor.white : UIColor.white.withAlphaComponent(0.5), for: .normal)
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -280,21 +308,46 @@ class EditProfileViewController: BaseViewController, UITextFieldDelegate, UIText
         
         return updatedText.count <= nicknameLimit
     }
-
+    
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         let currentText = textView.text ?? ""
         guard let stringRange = Range(range, in: currentText) else { return false }
         let updatedText = currentText.replacingCharacters(in: stringRange, with: text)
         
-        return updatedText.count <= introduceLimit
+        return updatedText.count <= descriptionLimit
     }
     
     func textViewDidChange(_ textView: UITextView) {
         let text = textView.text ?? ""
-        if text.count > introduceLimit {
-            textView.text = String(text.prefix(introduceLimit))
+        if text.count > descriptionLimit {
+            textView.text = String(text.prefix(descriptionLimit))
         }
         configureDescriptionPlaceholder()
+        checkForUnsavedChanges()
+    }
+    
+    private func checkForUnsavedChanges() {
+        let currentNickname = nicknameTextField.text ?? ""
+        let currentDescription = descriptionTextView.text ?? ""
+        let currentImageUrl = imageView.image != UIImage(named: "imgRClover") ? "CustomImageURL" : originalImageUrl
+        
+        let hasChanges = (currentNickname != originalNickname) ||
+        (currentDescription != originalDescription) ||
+        (currentImageUrl != originalImageUrl)
+        
+        if currentNickname != originalNickname {
+            saveButton.isEnabled = hasChanges && isNicknameChecked && !isNicknameDuplicated
+        } else {
+            saveButton.isEnabled = hasChanges
+        }
+        
+        updateSaveButtonAppearance()
+    }
+    
+    private func updateSaveButtonAppearance() {
+        let isEnabled = saveButton.isEnabled
+        saveButton.backgroundColor = isEnabled ? UIColor.dotchiGreen : UIColor.dotchiGreen.withAlphaComponent(0.5)
+        saveButton.setTitleColor(isEnabled ? UIColor.white : UIColor.white.withAlphaComponent(0.5), for: .normal)
     }
     
     @objc private func saveProfile() {
@@ -313,6 +366,7 @@ class EditProfileViewController: BaseViewController, UITextFieldDelegate, UIText
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let selectedImage = info[.originalImage] as? UIImage {
             imageView.image = selectedImage
+            checkForUnsavedChanges()
         }
         dismiss(animated: true, completion: nil)
     }
@@ -346,11 +400,15 @@ class EditProfileViewController: BaseViewController, UITextFieldDelegate, UIText
             self?.nicknameTextField.text = userData.nickname
             self?.descriptionTextView.text = userData.description
             self?.configureDescriptionPlaceholder()
+            self?.originalNickname = userData.nickname
+            self?.originalDescription = userData.description
+            self?.originalImageUrl = userData.imageUrl
             if let url = URL(string: userData.imageUrl) {
                 self?.imageView.loadImage(from: url)
             } else {
                 print("Invalid image URL: \(userData.imageUrl)")
             }
+            self?.checkForUnsavedChanges()
         }
     }
     
