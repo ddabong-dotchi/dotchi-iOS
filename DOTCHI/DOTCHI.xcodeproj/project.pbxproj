@@ -32,6 +32,7 @@
 		FF4BF6C22C2DB72700B6DEB2 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4BF6C12C2DB72700B6DEB2 /* APIConstants.swift */; };
 		FF843BDA2C7A2F79007B14A8 /* Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = FF843BD92C7A2F79007B14A8 /* Debug.xcconfig */; };
 		FF843BDC2C7A2F8B007B14A8 /* Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = FF843BDB2C7A2F88007B14A8 /* Release.xcconfig */; };
+		FF843BDF2C7A4967007B14A8 /* PlaceholderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF843BDE2C7A4967007B14A8 /* PlaceholderTextView.swift */; };
 		FFB7F9B62C5A396F00650238 /* WarningLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB7F9B52C5A396F00650238 /* WarningLabel.swift */; };
 		FFB7F9B82C5A42E700650238 /* TermsLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB7F9B72C5A42E700650238 /* TermsLabel.swift */; };
 		FFB7F9BA2C5A430700650238 /* UITapGestureRecognizer+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB7F9B92C5A430700650238 /* UITapGestureRecognizer+.swift */; };
@@ -131,6 +132,7 @@
 		FF4BF6C12C2DB72700B6DEB2 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		FF843BD92C7A2F79007B14A8 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		FF843BDB2C7A2F88007B14A8 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		FF843BDE2C7A4967007B14A8 /* PlaceholderTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderTextView.swift; sourceTree = "<group>"; };
 		FFB7F9B52C5A396F00650238 /* WarningLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningLabel.swift; sourceTree = "<group>"; };
 		FFB7F9B72C5A42E700650238 /* TermsLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsLabel.swift; sourceTree = "<group>"; };
 		FFB7F9B92C5A430700650238 /* UITapGestureRecognizer+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITapGestureRecognizer+.swift"; sourceTree = "<group>"; };
@@ -300,6 +302,14 @@
 				FFC7BB882C3D956F000EA7B5 /* NetworkResult.swift */,
 			);
 			path = Essentials;
+			sourceTree = "<group>";
+		};
+		FF843BDD2C7A495A007B14A8 /* UITextView */ = {
+			isa = PBXGroup;
+			children = (
+				FF843BDE2C7A4967007B14A8 /* PlaceholderTextView.swift */,
+			);
+			path = UITextView;
 			sourceTree = "<group>";
 		};
 		FFB7F9B42C5A396300650238 /* UILabel */ = {
@@ -610,6 +620,7 @@
 		FFCD60C22C2D9E36007785FF /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				FF843BDD2C7A495A007B14A8 /* UITextView */,
 				FFB7F9B42C5A396300650238 /* UILabel */,
 				FF328DC32C4D4D8C00007CD5 /* UIView */,
 				FFC7BB742C35AD66000EA7B5 /* UITextField */,
@@ -726,6 +737,7 @@
 				FFCD60622C2D95AA007785FF /* BaseUINavigationController.swift in Sources */,
 				FFC7BB762C35ADD4000EA7B5 /* SigninTextField.swift in Sources */,
 				FFCD60812C2D980F007785FF /* UINavigationController+.swift in Sources */,
+				FF843BDF2C7A4967007B14A8 /* PlaceholderTextView.swift in Sources */,
 				FFC7BB892C3D956F000EA7B5 /* NetworkResult.swift in Sources */,
 				FFCD60832C2D9832007785FF /* Encodable+.swift in Sources */,
 				FFC7BB7B2C35BA89000EA7B5 /* DoneButton.swift in Sources */,
