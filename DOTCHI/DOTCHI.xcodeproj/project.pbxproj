@@ -30,6 +30,8 @@
 		FF4BF6BC2C2DB69300B6DEB2 /* CardBackEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4BF6BB2C2DB69300B6DEB2 /* CardBackEntity.swift */; };
 		FF4BF6BF2C2DB6F900B6DEB2 /* NetworkLoggerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4BF6BE2C2DB6F900B6DEB2 /* NetworkLoggerPlugin.swift */; };
 		FF4BF6C22C2DB72700B6DEB2 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4BF6C12C2DB72700B6DEB2 /* APIConstants.swift */; };
+		FF843BDA2C7A2F79007B14A8 /* Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = FF843BD92C7A2F79007B14A8 /* Debug.xcconfig */; };
+		FF843BDC2C7A2F8B007B14A8 /* Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = FF843BDB2C7A2F88007B14A8 /* Release.xcconfig */; };
 		FFB7F9B62C5A396F00650238 /* WarningLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB7F9B52C5A396F00650238 /* WarningLabel.swift */; };
 		FFB7F9B82C5A42E700650238 /* TermsLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB7F9B72C5A42E700650238 /* TermsLabel.swift */; };
 		FFB7F9BA2C5A430700650238 /* UITapGestureRecognizer+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB7F9B92C5A430700650238 /* UITapGestureRecognizer+.swift */; };
@@ -50,8 +52,6 @@
 		FFC7BB902C3EDFAC000EA7B5 /* SigninRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7BB8F2C3EDFAC000EA7B5 /* SigninRequestDTO.swift */; };
 		FFC7BB922C3EDFCB000EA7B5 /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7BB912C3EDFCB000EA7B5 /* AuthRouter.swift */; };
 		FFC7BB962C3EE055000EA7B5 /* ServiceEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7BB952C3EE055000EA7B5 /* ServiceEnvironment.swift */; };
-		FFC7BB982C3EE073000EA7B5 /* Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = FFC7BB972C3EE073000EA7B5 /* Debug.xcconfig */; };
-		FFC7BB9A2C3EE08F000EA7B5 /* Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = FFC7BB992C3EE08F000EA7B5 /* Release.xcconfig */; };
 		FFC7BB9D2C3EE151000EA7B5 /* SigninResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7BB9C2C3EE151000EA7B5 /* SigninResponseDTO.swift */; };
 		FFC7BB9F2C457616000EA7B5 /* SignupNicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7BB9E2C457616000EA7B5 /* SignupNicknameViewController.swift */; };
 		FFC7BBA12C45764E000EA7B5 /* SignupIntroduceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7BBA02C45764E000EA7B5 /* SignupIntroduceViewController.swift */; };
@@ -129,6 +129,8 @@
 		FF4BF6BB2C2DB69300B6DEB2 /* CardBackEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBackEntity.swift; sourceTree = "<group>"; };
 		FF4BF6BE2C2DB6F900B6DEB2 /* NetworkLoggerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLoggerPlugin.swift; sourceTree = "<group>"; };
 		FF4BF6C12C2DB72700B6DEB2 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
+		FF843BD92C7A2F79007B14A8 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		FF843BDB2C7A2F88007B14A8 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		FFB7F9B52C5A396F00650238 /* WarningLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningLabel.swift; sourceTree = "<group>"; };
 		FFB7F9B72C5A42E700650238 /* TermsLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsLabel.swift; sourceTree = "<group>"; };
 		FFB7F9B92C5A430700650238 /* UITapGestureRecognizer+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITapGestureRecognizer+.swift"; sourceTree = "<group>"; };
@@ -148,8 +150,6 @@
 		FFC7BB8F2C3EDFAC000EA7B5 /* SigninRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninRequestDTO.swift; sourceTree = "<group>"; };
 		FFC7BB912C3EDFCB000EA7B5 /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
 		FFC7BB952C3EE055000EA7B5 /* ServiceEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceEnvironment.swift; sourceTree = "<group>"; };
-		FFC7BB972C3EE073000EA7B5 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
-		FFC7BB992C3EE08F000EA7B5 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		FFC7BB9C2C3EE151000EA7B5 /* SigninResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninResponseDTO.swift; sourceTree = "<group>"; };
 		FFC7BB9E2C457616000EA7B5 /* SignupNicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupNicknameViewController.swift; sourceTree = "<group>"; };
 		FFC7BBA02C45764E000EA7B5 /* SignupIntroduceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupIntroduceViewController.swift; sourceTree = "<group>"; };
@@ -407,8 +407,8 @@
 			isa = PBXGroup;
 			children = (
 				FFC7BB952C3EE055000EA7B5 /* ServiceEnvironment.swift */,
-				FFC7BB972C3EE073000EA7B5 /* Debug.xcconfig */,
-				FFC7BB992C3EE08F000EA7B5 /* Release.xcconfig */,
+				FF843BD92C7A2F79007B14A8 /* Debug.xcconfig */,
+				FF843BDB2C7A2F88007B14A8 /* Release.xcconfig */,
 			);
 			path = Supports;
 			sourceTree = "<group>";
@@ -706,13 +706,13 @@
 			files = (
 				FFCD60442C2D9195007785FF /* Pretendard-SemiBold.ttf in Resources */,
 				FFCD60362C21D9F3007785FF /* LaunchScreen.storyboard in Resources */,
-				FFC7BB9A2C3EE08F000EA7B5 /* Release.xcconfig in Resources */,
+				FF843BDC2C7A2F8B007B14A8 /* Release.xcconfig in Resources */,
 				FFCD60452C2D9195007785FF /* Pretendard-ExtraBold.ttf in Resources */,
 				FFCD60462C2D9195007785FF /* Pretendard-Bold.ttf in Resources */,
-				FFC7BB982C3EE073000EA7B5 /* Debug.xcconfig in Resources */,
 				FFCD60472C2D9195007785FF /* Pretendard-Medium.ttf in Resources */,
 				FFCD604A2C2D9290007785FF /* Assets.xcassets in Resources */,
 				FFCD604B2C2D9290007785FF /* Colorsets.xcassets in Resources */,
+				FF843BDA2C7A2F79007B14A8 /* Debug.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -822,7 +822,7 @@
 /* Begin XCBuildConfiguration section */
 		FFCD60382C21D9F3007785FF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FFC7BB972C3EE073000EA7B5 /* Debug.xcconfig */;
+			baseConfigurationReference = FF843BD92C7A2F79007B14A8 /* Debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -887,7 +887,7 @@
 		};
 		FFCD60392C21D9F3007785FF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FFC7BB992C3EE08F000EA7B5 /* Release.xcconfig */;
+			baseConfigurationReference = FF843BD92C7A2F79007B14A8 /* Debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -945,7 +945,7 @@
 		};
 		FFCD603B2C21D9F3007785FF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FFC7BB972C3EE073000EA7B5 /* Debug.xcconfig */;
+			baseConfigurationReference = FF843BD92C7A2F79007B14A8 /* Debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -976,7 +976,7 @@
 		};
 		FFCD603C2C21D9F3007785FF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FFC7BB992C3EE08F000EA7B5 /* Release.xcconfig */;
+			baseConfigurationReference = FF843BD92C7A2F79007B14A8 /* Debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
