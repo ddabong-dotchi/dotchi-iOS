@@ -16,7 +16,19 @@ final class SignupProfileImageViewController: BaseViewController {
     
     // MARK: Properties
     
+    private var signupRequestData = SignupRequestDTO()
     
+    // MARK: Initializer
+    
+    init(signupRequestData: SignupRequestDTO) {
+        super.init(nibName: nil, bundle: nil)
+        
+        self.signupRequestData = signupRequestData
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     // MARK: View Life Cycle
     
