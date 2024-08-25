@@ -20,7 +20,7 @@ final class SignupProfileImageViewController: BaseViewController {
     
     // MARK: Initializer
     
-    init(signupRequestData: SignupRequestDTO) {
+    init(signupRequestData: SignupEntity) {
         super.init(nibName: nil, bundle: nil)
         
         self.signupRequestData = signupRequestData

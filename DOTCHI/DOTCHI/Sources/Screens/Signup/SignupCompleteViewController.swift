@@ -16,7 +16,19 @@ final class SignupCompleteViewController: BaseViewController {
     
     // MARK: Properties
     
+    private var signupRequestData = SignupEntity()
     
+    // MARK: Initializer
+    
+    init(signupRequestData: SignupEntity) {
+        super.init(nibName: nil, bundle: nil)
+        
+        self.signupRequestData = signupRequestData
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     // MARK: View Life Cycle
     

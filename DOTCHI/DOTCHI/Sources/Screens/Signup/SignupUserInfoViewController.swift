@@ -89,7 +89,7 @@ final class SignupUserInfoViewController: BaseViewController {
             self.nextButton.isEnabled = self.isNextButtonEnabled == [true, true]
         }
     }
-    private var signupRequestData = SignupRequestDTO()
+    private var signupRequestData = SignupEntity()
     
     // MARK: View Life Cycle
     
