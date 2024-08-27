@@ -20,7 +20,7 @@ struct SignupEntity {
             password: self.password,
             nickname: self.nickname,
             description: self.description,
-            profileImage: self.profileImage.pngData() ?? Data()
+            profileImage: self.profileImage.jpegData(compressionQuality: 0.8) ?? Data()
         )
     }
 }

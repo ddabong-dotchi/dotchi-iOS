@@ -14,6 +14,7 @@ enum UserRouter {
     case getBlacklists
     case checkUsernameDuplicate(data: String)
     case checkNicknameDuplicate(data: String)
+    case requestSignup(data: SignupRequestDTO)
 }
 
 extension UserRouter: TargetType {
@@ -34,6 +35,8 @@ extension UserRouter: TargetType {
             return "/user/username"
         case .checkNicknameDuplicate:
             return "/user/nickname"
+        case .requestSignup:
+            return "/user/join"
         }
     }
 
@@ -41,6 +44,8 @@ extension UserRouter: TargetType {
         switch self {
         case .getUser, .getMyCard, .getBlacklists, .checkUsernameDuplicate, .checkNicknameDuplicate:
             return .get
+        case .requestSignup:
+            return .post
         }
     }
 
@@ -52,6 +57,23 @@ extension UserRouter: TargetType {
             return .requestParameters(parameters: ["username": data], encoding: URLEncoding.queryString)
         case .checkNicknameDuplicate(let data):
             return .requestParameters(parameters: ["nickname": data], encoding: URLEncoding.queryString)
+        case .requestSignup(let data):
+            var formData = [MultipartFormData]()
+            
+            let encoder = JSONEncoder()
+            encoder.outputFormatting = .prettyPrinted
+            
+            if let jsonData = try? encoder.encode(data),
+               let jsonString = String(data: jsonData, encoding: .utf8) {
+                
+                let requestData = MultipartFormData(provider: .data(jsonString.data(using: .utf8)!), name: "request")
+                formData.append(requestData)
+            }
+            
+            let imageMultipart = MultipartFormData(provider: .data(data.profileImage), name: "profileImage", fileName: "profile.jpg", mimeType: "image/jpeg")
+            formData.append(imageMultipart)
+            
+            return .uploadMultipart(formData)
         }
     }
 
@@ -61,6 +83,8 @@ extension UserRouter: TargetType {
             return [
                 "Content-Type": "application/json"
             ]
+        case .requestSignup:
+            return ["Content-Type": "multipart/form-data"]
         default:
             return [
                 "Content-Type": "application/json",

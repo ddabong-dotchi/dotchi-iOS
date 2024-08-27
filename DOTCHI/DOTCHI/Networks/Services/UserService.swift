@@ -12,6 +12,7 @@ internal protocol UserServiceProtocol {
     func getUser(completion: @escaping (NetworkResult<Any>) -> (Void))
     func checkUsernameDuplicate(data: String, completion: @escaping (NetworkResult<Any>) -> (Void))
     func checkNicknameDuplicate(data: String, completion: @escaping (NetworkResult<Any>) -> (Void))
+    func requestSignup(data: SignupRequestDTO, completion: @escaping (NetworkResult<Any>) -> (Void))
 }
 
 final class UserService: BaseService {
@@ -69,6 +70,12 @@ extension UserService: UserServiceProtocol {
     
     func checkNicknameDuplicate(data: String, completion: @escaping (NetworkResult<Any>) -> (Void)) {
         self.request(.checkNicknameDuplicate(data: data), decodingType: Bool.self, completion: completion)
+    }
+    
+    // [POST] 회원가입 요청
+    
+    func requestSignup(data: SignupRequestDTO, completion: @escaping (NetworkResult<Any>) -> (Void)) {
+        self.request(.requestSignup(data: data), decodingType: SignupResponseDTO.self, completion: completion)
     }
     
     private func request<T: Decodable>(_ target: UserRouter, decodingType: T.Type, completion: @escaping (NetworkResult<Any>) -> Void) {
