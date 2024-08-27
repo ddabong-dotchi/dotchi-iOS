@@ -13,4 +13,14 @@ struct SignupEntity {
     var nickname: String = ""
     var description: String = ""
     var profileImage: UIImage = UIImage()
+    
+    func toSignupRequestDTO() -> SignupRequestDTO {
+        return SignupRequestDTO(
+            username: self.username,
+            password: self.password,
+            nickname: self.nickname,
+            description: self.description,
+            profileImage: self.profileImage.pngData() ?? Data()
+        )
+    }
 }
