@@ -73,11 +73,16 @@ final class SignupCompleteViewController: BaseViewController {
         super.viewDidLoad()
         
         self.setLayout()
+        self.setStartButtonAction()
     }
     
     // MARK: Methods
     
-    
+    private func setStartButtonAction() {
+        self.startButton.setAction {
+            self.dismiss(animated: true)
+        }
+    }
 }
 
 // MARK: - Layout

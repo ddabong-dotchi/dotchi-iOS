@@ -106,6 +106,7 @@
 		FFCD60C12C2D9DBC007785FF /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = FFCD60C02C2D9DBC007785FF /* Lottie */; };
 		FFCD60C52C2D9E66007785FF /* DotchiTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD60C42C2D9E66007785FF /* DotchiTabBarController.swift */; };
 		FFFB88872C7B216A00ACB0C6 /* SignupEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFB88862C7B216A00ACB0C6 /* SignupEntity.swift */; };
+		FFFB88892C7E1BA100ACB0C6 /* SignupResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFB88882C7E1BA100ACB0C6 /* SignupResponseDTO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -201,6 +202,7 @@
 		FFCD60992C2D9920007785FF /* KeychainKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainKeys.swift; sourceTree = "<group>"; };
 		FFCD60C42C2D9E66007785FF /* DotchiTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotchiTabBarController.swift; sourceTree = "<group>"; };
 		FFFB88862C7B216A00ACB0C6 /* SignupEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupEntity.swift; sourceTree = "<group>"; };
+		FFFB88882C7E1BA100ACB0C6 /* SignupResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupResponseDTO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,6 +240,7 @@
 				1E97275B2C43986B00252CA6 /* UserResponseDTO.swift */,
 				1E97275F2C43AE2D00252CA6 /* MyCardResponseDTO.swift */,
 				1E9727642C44FCA600252CA6 /* BlacklistResponseDTO.swift */,
+				FFFB88882C7E1BA100ACB0C6 /* SignupResponseDTO.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -816,6 +819,7 @@
 				FFCD60772C2D97AA007785FF /* UITextField+.swift in Sources */,
 				FFC7BB802C3D8D62000EA7B5 /* AppInfo.swift in Sources */,
 				FFCD60752C2D9792007785FF /* UIStackView+.swift in Sources */,
+				FFFB88892C7E1BA100ACB0C6 /* SignupResponseDTO.swift in Sources */,
 				FFCD60582C2D9515007785FF /* UIColor+.swift in Sources */,
 				FF4BF6A92C2DACCB00B6DEB2 /* MakeDotchiPhotoViewController.swift in Sources */,
 				FFC7BB8D2C3EDF95000EA7B5 /* AuthService.swift in Sources */,
