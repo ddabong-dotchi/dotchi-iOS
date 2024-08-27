@@ -212,13 +212,13 @@ class SettingViewController: BaseViewController {
         }
         
         nameLabel.snp.makeConstraints { make in
-            make.top.equalTo(profileImageView.snp.bottom).offset(20)
+            make.top.equalTo(profileImageView.snp.bottom).offset(25)
             make.centerX.equalToSuperview()
         }
         
         descriptionLabel.snp.makeConstraints { make in
             make.top.equalTo(nameLabel.snp.bottom).offset(10)
-            make.leading.trailing.equalToSuperview().inset(20)
+            make.leading.trailing.equalToSuperview().inset(28)
         }
         
         separator1.snp.makeConstraints { make in
@@ -229,25 +229,25 @@ class SettingViewController: BaseViewController {
         
         informationLabel.snp.makeConstraints { make in
             make.top.equalTo(separator1.snp.bottom).offset(28)
-            make.leading.equalToSuperview().offset(20)
+            make.leading.equalToSuperview().offset(28)
         }
         
         contactButton.snp.makeConstraints { make in
             make.top.equalTo(informationLabel.snp.bottom).offset(10)
-            make.leading.equalToSuperview().offset(20)
-            make.trailing.equalToSuperview().offset(-20)
+            make.leading.equalToSuperview().offset(28)
+            make.trailing.equalToSuperview().offset(-28)
         }
         
         termsLinkButton.snp.makeConstraints { make in
             make.top.equalTo(contactButton.snp.bottom).offset(10)
-            make.leading.equalToSuperview().offset(20)
-            make.trailing.equalToSuperview().offset(-20)
+            make.leading.equalToSuperview().offset(28)
+            make.trailing.equalToSuperview().offset(-28)
         }
         
         privacyLinkButton.snp.makeConstraints { make in
             make.top.equalTo(termsLinkButton.snp.bottom).offset(10)
-            make.leading.equalToSuperview().offset(20)
-            make.trailing.equalToSuperview().offset(-20)
+            make.leading.equalToSuperview().offset(28)
+            make.trailing.equalToSuperview().offset(-28)
         }
         
         separator2.snp.makeConstraints { make in
@@ -258,19 +258,19 @@ class SettingViewController: BaseViewController {
         
         accountInfoLabel.snp.makeConstraints { make in
             make.top.equalTo(separator2.snp.bottom).offset(28)
-            make.leading.equalToSuperview().offset(20)
+            make.leading.equalToSuperview().offset(28)
         }
         
         modifyAccountInfoButton.snp.makeConstraints { make in
             make.top.equalTo(accountInfoLabel.snp.bottom).offset(10)
-            make.leading.equalToSuperview().offset(20)
-            make.trailing.equalToSuperview().offset(-20)
+            make.leading.equalToSuperview().offset(28)
+            make.trailing.equalToSuperview().offset(-28)
         }
         
         blockedAccountsButton.snp.makeConstraints { make in
             make.top.equalTo(modifyAccountInfoButton.snp.bottom).offset(10)
-            make.leading.equalToSuperview().offset(20)
-            make.trailing.equalToSuperview().offset(-20)
+            make.leading.equalToSuperview().offset(28)
+            make.trailing.equalToSuperview().offset(-28)
         }
         
         separator3.snp.makeConstraints { make in
@@ -281,14 +281,14 @@ class SettingViewController: BaseViewController {
         
         logoutButton.snp.makeConstraints { make in
             make.top.equalTo(separator3.snp.bottom).offset(28)
-            make.leading.equalToSuperview().offset(20)
-            make.trailing.equalToSuperview().offset(-20)
+            make.leading.equalToSuperview().offset(28)
+            make.trailing.equalToSuperview().offset(-28)
         }
         
         deleteAccountButton.snp.makeConstraints { make in
             make.top.equalTo(logoutButton.snp.bottom).offset(10)
-            make.leading.equalToSuperview().offset(20)
-            make.trailing.equalToSuperview().offset(-20)
+            make.leading.equalToSuperview().offset(28)
+            make.trailing.equalToSuperview().offset(-28)
             make.bottom.equalToSuperview().offset(-30)
         }
     }
@@ -300,11 +300,11 @@ class SettingViewController: BaseViewController {
     }
     
     @objc private func openEditProfile() {
-        let profileEditVC = ProfileEditViewController()
-        profileEditVC.modalPresentationStyle = .fullScreen
-        profileEditVC.modalTransitionStyle = .coverVertical
+        let editProfileVC = EditProfileViewController()
+        editProfileVC.modalPresentationStyle = .fullScreen
+        editProfileVC.modalTransitionStyle = .coverVertical
         
-        self.present(profileEditVC, animated: true, completion: nil)
+        self.present(editProfileVC, animated: true, completion: nil)
     }
     
     @objc private func contactUs() {
@@ -340,11 +340,13 @@ class SettingViewController: BaseViewController {
         
     }
     
+    // MARK: - Network
+    
     private func fetchMyData() {
         userService.getUser { [weak self] result in
             switch result {
             case .success(let data):
-                if let userResponse = data as? UserResultDTO {
+                if let userResponse = data as? UserResponseDTO {
                     self?.updateUI(with: userResponse)
                     
                 } else {
@@ -362,7 +364,7 @@ class SettingViewController: BaseViewController {
         }
     }
     
-    private func updateUI(with userData: UserResultDTO) {
+    private func updateUI(with userData: UserResponseDTO) {
         DispatchQueue.main.async { [weak self] in
             self?.nameLabel.text = userData.nickname
             self?.descriptionLabel.text = userData.description

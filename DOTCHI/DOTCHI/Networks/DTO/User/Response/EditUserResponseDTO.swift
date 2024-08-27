@@ -1,14 +1,13 @@
 //
-//  UserResponseDTO.swift
+//  EditUserResponseDTO.swift
 //  DOTCHI
 //
-//  Created by KimYuBin on 7/14/24.
+//  Created by KimYuBin on 8/18/24.
 //
 
 import Foundation
 
-struct UserResponseDTO: Codable {
-    let id: Int
+struct EditUserResponseDTO: Codable {
     let username: String
     let nickname: String
     let description: String

@@ -8,12 +8,6 @@
 import Foundation
 
 struct BlacklistResponseDTO: Codable {
-    let statusCode: String
-    let message: String
-    let content: [BlacklistResultDTO]
-}
-
-struct BlacklistResultDTO: Codable {
     let id: Int
     let username: String
     let target: String
