@@ -124,7 +124,7 @@ final class SignupNicknameViewController: BaseViewController {
         self.nextButton.setAction {
             self.signupRequestData.nickname = self.nicknameTextField.text ?? ""
             
-            self.present(SignupNicknameViewController(signupRequestData: self.signupRequestData), animated: true)
+            self.navigationController?.pushViewController(SignupIntroduceViewController(signupRequestData: self.signupRequestData), animated: true)
         }
     }
 }
