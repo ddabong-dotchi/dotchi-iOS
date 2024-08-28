@@ -78,11 +78,11 @@ final class SignupIntroduceViewController: BaseViewController {
     // MARK: Properties
     
     private let maxCount = 40
-    private var signupRequestData = SignupRequestDTO()
+    private var signupRequestData = SignupEntity()
     
     // MARK: Initializer
     
-    init(signupRequestData: SignupRequestDTO) {
+    init(signupRequestData: SignupEntity) {
         super.init(nibName: nil, bundle: nil)
         
         self.signupRequestData = signupRequestData

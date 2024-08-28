@@ -107,6 +107,8 @@
 		FFCD60BE2C2D9B29007785FF /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = FFCD60BD2C2D9B29007785FF /* RxMoya */; };
 		FFCD60C12C2D9DBC007785FF /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = FFCD60C02C2D9DBC007785FF /* Lottie */; };
 		FFCD60C52C2D9E66007785FF /* DotchiTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD60C42C2D9E66007785FF /* DotchiTabBarController.swift */; };
+		FFFB88872C7B216A00ACB0C6 /* SignupEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFB88862C7B216A00ACB0C6 /* SignupEntity.swift */; };
+		FFFB88892C7E1BA100ACB0C6 /* SignupResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFB88882C7E1BA100ACB0C6 /* SignupResponseDTO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -203,6 +205,8 @@
 		FFCD60972C2D991A007785FF /* Messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
 		FFCD60992C2D9920007785FF /* KeychainKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainKeys.swift; sourceTree = "<group>"; };
 		FFCD60C42C2D9E66007785FF /* DotchiTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotchiTabBarController.swift; sourceTree = "<group>"; };
+		FFFB88862C7B216A00ACB0C6 /* SignupEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupEntity.swift; sourceTree = "<group>"; };
+		FFFB88882C7E1BA100ACB0C6 /* SignupResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupResponseDTO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,6 +245,7 @@
 				1E3A1E5E2C71EE740096708D /* EditUserResponseDTO.swift */,
 				1E97275F2C43AE2D00252CA6 /* MyCardResponseDTO.swift */,
 				1E9727642C44FCA600252CA6 /* BlacklistResponseDTO.swift */,
+				FFFB88882C7E1BA100ACB0C6 /* SignupResponseDTO.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -282,6 +287,7 @@
 				FF4BF6B72C2DB66F00B6DEB2 /* MakeDotchiEntity.swift */,
 				FF4BF6B92C2DB68000B6DEB2 /* CommentEntity.swift */,
 				FF4BF6BB2C2DB69300B6DEB2 /* CardBackEntity.swift */,
+				FFFB88862C7B216A00ACB0C6 /* SignupEntity.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -748,6 +754,7 @@
 				FFCD60832C2D9832007785FF /* Encodable+.swift in Sources */,
 				FFC7BB7B2C35BA89000EA7B5 /* DoneButton.swift in Sources */,
 				FFCD60652C2D96D8007785FF /* UIViewController+.swift in Sources */,
+				FFFB88872C7B216A00ACB0C6 /* SignupEntity.swift in Sources */,
 				1E9727652C44FCA600252CA6 /* BlacklistResponseDTO.swift in Sources */,
 				FFCD606D2C2D9742007785FF /* UILabel+.swift in Sources */,
 				FFC7BB872C3D9562000EA7B5 /* DotchiMoyaProvider.swift in Sources */,
@@ -820,6 +827,7 @@
 				FFCD60772C2D97AA007785FF /* UITextField+.swift in Sources */,
 				FFC7BB802C3D8D62000EA7B5 /* AppInfo.swift in Sources */,
 				FFCD60752C2D9792007785FF /* UIStackView+.swift in Sources */,
+				FFFB88892C7E1BA100ACB0C6 /* SignupResponseDTO.swift in Sources */,
 				FFCD60582C2D9515007785FF /* UIColor+.swift in Sources */,
 				FF4BF6A92C2DACCB00B6DEB2 /* MakeDotchiPhotoViewController.swift in Sources */,
 				FFC7BB8D2C3EDF95000EA7B5 /* AuthService.swift in Sources */,
