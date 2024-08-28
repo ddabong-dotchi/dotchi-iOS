@@ -74,11 +74,10 @@ class EditProfileViewController: BaseViewController, UITextFieldDelegate, UIText
         cameraButton.layer.cornerRadius = 15
         cameraButton.addTarget(self, action: #selector(openPhotoLibrary), for: .touchUpInside)
         
-        nicknameLabel.text = "닉네임을 설정해 주세요."
+        nicknameLabel.text = "닉네임을 설정해 주세요. (한글)"
         nicknameLabel.textColor = UIColor.dotchiLgray
         nicknameLabel.font = .sub
         
-        nicknameTextField.placeholder = "최대 7글자"
         nicknameTextField.layer.cornerRadius = 8
         nicknameTextField.layer.borderWidth = 1
         nicknameTextField.backgroundColor = .dotchiMgray
@@ -94,7 +93,7 @@ class EditProfileViewController: BaseViewController, UITextFieldDelegate, UIText
             NSAttributedString.Key.foregroundColor: UIColor.dotchiWhite.withAlphaComponent(0.3),
             NSAttributedString.Key.font: UIFont(name: "Pretendard-Bold", size: 16) ?? UIFont.systemFont(ofSize: 16)
         ]
-        nicknameTextField.attributedPlaceholder = NSAttributedString(string: "최대 7글자", attributes: attributes)
+        nicknameTextField.attributedPlaceholder = NSAttributedString(string: "2~7글자", attributes: attributes)
         
         nicknameTextField.addTarget(self, action: #selector(nicknameTextFieldDidChange(_:)), for: .editingChanged)
         
@@ -158,21 +157,19 @@ class EditProfileViewController: BaseViewController, UITextFieldDelegate, UIText
             make.width.height.equalTo(116)
         }
         
-        let cameraButton = view.subviews.compactMap { $0 as? UIButton }.first { $0.currentImage == UIImage(named: "imgCamera") }
-        cameraButton?.snp.makeConstraints { make in
+        cameraButton.snp.makeConstraints { make in
             make.width.height.equalTo(32)
             make.centerX.equalTo(imageView.snp.trailing).offset(-10)
             make.centerY.equalTo(imageView.snp.bottom).offset(-10)
         }
         
-        let nicknameLabel = view.subviews.compactMap { $0 as? UILabel }.first { $0.text == "닉네임을 설정해 주세요." }
-        nicknameLabel?.snp.makeConstraints { make in
+        nicknameLabel.snp.makeConstraints { make in
             make.top.equalTo(imageView.snp.bottom).offset(30)
             make.leading.equalTo(safeArea).offset(28)
         }
         
         nicknameTextField.snp.makeConstraints { make in
-            make.top.equalTo(nicknameLabel!.snp.bottom).offset(10)
+            make.top.equalTo(nicknameLabel.snp.bottom).offset(10)
             make.leading.equalTo(safeArea).offset(28)
             make.height.equalTo(48)
             make.trailing.equalTo(nicknameDuplicateButton.snp.leading).offset(-8)
@@ -190,14 +187,13 @@ class EditProfileViewController: BaseViewController, UITextFieldDelegate, UIText
             make.leading.equalTo(nicknameTextField)
         }
         
-        let introduceLabel = view.subviews.compactMap { $0 as? UILabel }.first { $0.text == "간단한 소개를 작성해 주세요." }
-        introduceLabel?.snp.makeConstraints { make in
+        descriptionLabel.snp.makeConstraints { make in
             make.top.equalTo(nicknameStatusLabel.snp.bottom).offset(30)
             make.leading.equalTo(safeArea).offset(28)
         }
         
         descriptionTextView.snp.makeConstraints { make in
-            make.top.equalTo(introduceLabel!.snp.bottom).offset(10)
+            make.top.equalTo(descriptionLabel.snp.bottom).offset(10)
             make.leading.equalTo(safeArea).offset(28)
             make.trailing.equalTo(safeArea).offset(-28)
             make.height.equalTo(138)
@@ -216,12 +212,7 @@ class EditProfileViewController: BaseViewController, UITextFieldDelegate, UIText
     }
     
     @objc private func checkForDuplicateNickname() {
-        guard let nickname = nicknameTextField.text, !nickname.isEmpty else {
-            showAlert(message: "닉네임을 입력해 주세요.")
-            return
-        }
-        
-        userService.checkNicknameDuplicate(data: nickname) { [weak self] result in
+        userService.checkNicknameDuplicate(data: nicknameTextField.text ?? "") { [weak self] result in
             DispatchQueue.main.async { [self] in
                 guard let self = self else { return }
                 
@@ -263,7 +254,7 @@ class EditProfileViewController: BaseViewController, UITextFieldDelegate, UIText
         }
         
         let isNicknameChanged = (nickname != originalNickname)
-        nicknameDuplicateButton.isEnabled = isNicknameChanged
+        nicknameDuplicateButton.isEnabled = isNicknameChanged && nickname.count >= 2
         updateNicknameDuplicateButtonAppearance()
         
         if isNicknameChanged || nickname == originalNickname {
@@ -398,12 +389,5 @@ class EditProfileViewController: BaseViewController, UITextFieldDelegate, UIText
             }
             self?.checkForUnsavedChanges()
         }
-    }
-    
-    private func showAlert(message: String) {
-        let alertController = UIAlertController(title: nil, message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "확인", style: .default)
-        alertController.addAction(okAction)
-        self.present(alertController, animated: true, completion: nil)
     }
 }
