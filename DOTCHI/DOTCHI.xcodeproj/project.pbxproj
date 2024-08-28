@@ -109,6 +109,7 @@
 		FFCD60C52C2D9E66007785FF /* DotchiTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD60C42C2D9E66007785FF /* DotchiTabBarController.swift */; };
 		FFFB88872C7B216A00ACB0C6 /* SignupEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFB88862C7B216A00ACB0C6 /* SignupEntity.swift */; };
 		FFFB88892C7E1BA100ACB0C6 /* SignupResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFB88882C7E1BA100ACB0C6 /* SignupResponseDTO.swift */; };
+		FFFB888D2C7F79C500ACB0C6 /* HomeTodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFB888C2C7F79C500ACB0C6 /* HomeTodayView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -207,6 +208,7 @@
 		FFCD60C42C2D9E66007785FF /* DotchiTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotchiTabBarController.swift; sourceTree = "<group>"; };
 		FFFB88862C7B216A00ACB0C6 /* SignupEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupEntity.swift; sourceTree = "<group>"; };
 		FFFB88882C7E1BA100ACB0C6 /* SignupResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupResponseDTO.swift; sourceTree = "<group>"; };
+		FFFB888C2C7F79C500ACB0C6 /* HomeTodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTodayView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,6 +257,7 @@
 			children = (
 				FF328DC42C4D4DA300007CD5 /* DotchiNavigationView.swift */,
 				FF328DC62C4D6FBC00007CD5 /* ProgressBarView.swift */,
+				FFFB888C2C7F79C500ACB0C6 /* HomeTodayView.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -795,6 +798,7 @@
 				FFCD608B2C2D98A5007785FF /* ImageCacheManager.swift in Sources */,
 				FFCD608D2C2D98B1007785FF /* UserInfo.swift in Sources */,
 				FFCD60562C2D9501007785FF /* UIFont+.swift in Sources */,
+				FFFB888D2C7F79C500ACB0C6 /* HomeTodayView.swift in Sources */,
 				FFCD60922C2D98F7007785FF /* LuckyType.swift in Sources */,
 				FF4BF6B42C2DB64A00B6DEB2 /* CardUserEntity.swift in Sources */,
 				1E3A1E5F2C71EE740096708D /* EditUserResponseDTO.swift in Sources */,
