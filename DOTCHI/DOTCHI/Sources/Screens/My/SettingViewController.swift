@@ -13,7 +13,6 @@ class SettingViewController: BaseViewController {
     private let userService = UserService.shared
     private let scrollView = UIScrollView()
     private let contentView = UIView()
-    
     private let profileImageView = UIImageView()
     private let editButton = UIButton()
     private let nameLabel = UILabel()
@@ -71,23 +70,36 @@ class SettingViewController: BaseViewController {
     
     private func setupSubviews() {
         view.addSubview(scrollView)
-        scrollView.addSubview(contentView)
+        
+        self.scrollView.addSubviews([
+            contentView,
+            profileImageView,
+            editButton,
+            nameLabel,
+            descriptionLabel,
+            informationLabel,
+            contactButton,
+            termsLinkButton,
+            privacyLinkButton,
+            accountInfoLabel,
+            modifyAccountInfoButton,
+            blockedAccountsButton,
+            logoutButton,
+            deleteAccountButton
+        ])
         
         profileImageView.contentMode = .scaleAspectFill
         profileImageView.layer.cornerRadius = 24
         profileImageView.layer.masksToBounds = true
         profileImageView.image = UIImage(named: "imgDefaultDummy")
-        contentView.addSubview(profileImageView)
         
         editButton.setImage(UIImage(named: "icnEdit"), for: .normal)
         editButton.backgroundColor = UIColor.dotchiBlack70
         editButton.layer.cornerRadius = 15
         editButton.addTarget(self, action: #selector(openEditProfile), for: .touchUpInside)
-        contentView.addSubview(editButton)
         
         nameLabel.font = UIFont.body
         nameLabel.textColor = UIColor.dotchiWhite
-        contentView.addSubview(nameLabel)
         
         descriptionLabel.font = UIFont.subSbold
         descriptionLabel.textColor = UIColor.dotchiLgray
@@ -101,7 +113,6 @@ class SettingViewController: BaseViewController {
         } else {
             descriptionLabel.text = description
         }
-        contentView.addSubview(descriptionLabel)
         
         configureSeparator(separator1)
         configureSeparator(separator2)
@@ -110,27 +121,20 @@ class SettingViewController: BaseViewController {
         informationLabel.font = UIFont.subTitle
         informationLabel.textColor = UIColor.dotchiWhite
         informationLabel.text = "정보"
-        contentView.addSubview(informationLabel)
         
         configureButton(button: contactButton, title: "문의하기", imageName: "icnNext", action: #selector(contactUs))
-        contentView.addSubview(contactButton)
         
         configureButton(button: termsLinkButton, title: "서비스 이용 약관", imageName: "icnNext", action: #selector(openTerms))
-        contentView.addSubview(termsLinkButton)
         
         configureButton(button: privacyLinkButton, title: "개인정보 처리 방침", imageName: "icnNext", action: #selector(openPrivacyPolicy))
-        contentView.addSubview(privacyLinkButton)
         
         accountInfoLabel.font = UIFont.subTitle
         accountInfoLabel.textColor = UIColor.dotchiWhite
         accountInfoLabel.text = "계정 정보"
-        contentView.addSubview(accountInfoLabel)
         
-        configureButton(button: modifyAccountInfoButton, title: "계정 정보 수정", imageName: "icnNext", action: #selector(openModifyAccountInfo))
-        contentView.addSubview(modifyAccountInfoButton)
+        configureButton(button: modifyAccountInfoButton, title: "계정 정보 수정", imageName: "icnNext", action: #selector(openEditAccountInfo))
         
         configureButton(button: blockedAccountsButton, title: "차단 사용자 관리", imageName: "icnNext", action: #selector(openBlockedAccounts))
-        contentView.addSubview(blockedAccountsButton)
         
         let title = "로그아웃"
         let attributedString = NSAttributedString(string: title, attributes: [
@@ -141,7 +145,6 @@ class SettingViewController: BaseViewController {
         logoutButton.setAttributedTitle(attributedString, for: .normal)
         logoutButton.contentHorizontalAlignment = .left
         logoutButton.addTarget(self, action: #selector(logout), for: .touchUpInside)
-        contentView.addSubview(logoutButton)
         
         let deleteTitle = "탈퇴하기"
         let deleteAttributedString = NSAttributedString(string: deleteTitle, attributes: [
@@ -152,7 +155,6 @@ class SettingViewController: BaseViewController {
         deleteAccountButton.setAttributedTitle(deleteAttributedString, for: .normal)
         deleteAccountButton.contentHorizontalAlignment = .left
         deleteAccountButton.addTarget(self, action: #selector(deleteAccount), for: .touchUpInside)
-        contentView.addSubview(deleteAccountButton)
     }
     
     private func configureSeparator(_ separator: UIView) {
@@ -323,8 +325,9 @@ class SettingViewController: BaseViewController {
         }
     }
     
-    @objc private func openModifyAccountInfo() {
-        
+    @objc private func openEditAccountInfo() {
+        let editAccountInfoVC = EditAccountInfoViewController()
+        navigationController?.pushViewController(editAccountInfoVC, animated: true)
     }
     
     @objc private func openBlockedAccounts() {
@@ -343,23 +346,16 @@ class SettingViewController: BaseViewController {
     // MARK: - Network
     
     private func fetchMyData() {
-        userService.getUser { [weak self] result in
-            switch result {
+        userService.getUser { networkResult in
+            switch networkResult {
             case .success(let data):
                 if let userResponse = data as? UserResponseDTO {
-                    self?.updateUI(with: userResponse)
-                    
+                    self.updateUI(with: userResponse)
                 } else {
                     print("Invalid data format received")
                 }
-            case .requestErr(let message):
-                print("Request error: \(message)")
-            case .pathErr:
-                print("Path error")
-            case .serverErr:
-                print("Server error")
-            case .networkFail:
-                print("Network failure")
+            default:
+                self.showNetworkErrorAlert()
             }
         }
     }

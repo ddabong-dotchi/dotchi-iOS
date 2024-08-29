@@ -34,12 +34,13 @@ class EditProfileViewController: BaseViewController, UITextFieldDelegate, UIText
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupSubviews()
-        setupConstraints()
+        self.view.backgroundColor = UIColor.dotchiScreenBackground
         
         nicknameTextField.delegate = self
         descriptionTextView.delegate = self
         
+        setupSubviews()
+        setupConstraints()
         configureDescriptionPlaceholder()
         fetchMyData()
     }
@@ -59,8 +60,6 @@ class EditProfileViewController: BaseViewController, UITextFieldDelegate, UIText
             descriptionTextView,
             saveButton
         ])
-        
-        self.view.backgroundColor = UIColor.dotchiScreenBackground
         
         navigationView.centerTitleLabel.text = "프로필 수정"
         
@@ -228,17 +227,10 @@ class EditProfileViewController: BaseViewController, UITextFieldDelegate, UIText
                         self.checkForUnsavedChanges()
                         
                     } else {
-                        print("서버에서 올바른 응답을 받지 못했습니다.")
+                        print("Invalid data format received")
                     }
-                    
-                case .requestErr(let message):
-                    print("Request error: \(message)")
-                case .pathErr:
-                    print("Path error")
-                case .serverErr:
-                    print("Server error")
-                case .networkFail:
-                    print("Network failure")
+                default:
+                    self.showNetworkErrorAlert()
                 }
             }
         }
@@ -322,17 +314,6 @@ class EditProfileViewController: BaseViewController, UITextFieldDelegate, UIText
         saveButton.setTitleColor(isEnabled ? UIColor.white : UIColor.white.withAlphaComponent(0.5), for: .normal)
     }
     
-    @objc private func saveProfile() {
-        UserService.shared.editUser(nickname: nicknameTextField.text ?? "", description: descriptionTextView.text, profileImage: imageView.image) { result in
-            switch result {
-            case .success(let response):
-                self.dismiss(animated: true, completion: nil)
-            default:
-                self.showNetworkErrorAlert()
-            }
-        }
-    }
-    
     @objc private func openPhotoLibrary() {
         let imagePicker = UIImagePickerController()
         imagePicker.sourceType = .photoLibrary
@@ -353,23 +334,16 @@ class EditProfileViewController: BaseViewController, UITextFieldDelegate, UIText
     // MARK: - Network
     
     private func fetchMyData() {
-        userService.getUser { [weak self] result in
-            switch result {
+        userService.getUser { networkResult in
+            switch networkResult {
             case .success(let data):
                 if let userResponse = data as? UserResponseDTO {
-                    self?.updateUI(with: userResponse)
-                    
+                    self.updateUI(with: userResponse)
                 } else {
                     print("Invalid data format received")
                 }
-            case .requestErr(let message):
-                print("Request error: \(message)")
-            case .pathErr:
-                print("Path error")
-            case .serverErr:
-                print("Server error")
-            case .networkFail:
-                print("Network failure")
+            default:
+                self.showNetworkErrorAlert()
             }
         }
     }
@@ -388,6 +362,17 @@ class EditProfileViewController: BaseViewController, UITextFieldDelegate, UIText
                 print("Invalid image URL: \(userData.imageUrl)")
             }
             self?.checkForUnsavedChanges()
+        }
+    }
+    
+    @objc private func saveProfile() {
+        userService.editUser(nickname: nicknameTextField.text ?? "", description: descriptionTextView.text, profileImage: imageView.image) { result in
+            switch result {
+            case .success:
+                self.dismiss(animated: true, completion: nil)
+            default:
+                self.showNetworkErrorAlert()
+            }
         }
     }
 }
