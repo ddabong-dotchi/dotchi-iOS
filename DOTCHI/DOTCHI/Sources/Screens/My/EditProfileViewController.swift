@@ -83,10 +83,7 @@ class EditProfileViewController: BaseViewController, UITextFieldDelegate, UIText
         nicknameTextField.textColor = .dotchiLgray
         nicknameTextField.font = .head2
         nicknameTextField.tintColor = UITextField().tintColor
-        
-        let leftPaddingView1 = UIView(frame: CGRect(x: 0, y: 0, width: 18, height: 48))
-        nicknameTextField.leftView = leftPaddingView1
-        nicknameTextField.leftViewMode = .always
+        nicknameTextField.setLeftPadding(18)
         
         let attributes: [NSAttributedString.Key: Any] = [
             NSAttributedString.Key.foregroundColor: UIColor.dotchiWhite.withAlphaComponent(0.3),
@@ -126,10 +123,10 @@ class EditProfileViewController: BaseViewController, UITextFieldDelegate, UIText
             make.leading.equalTo(descriptionTextView).offset(18)
         }
         
-        let leftPaddingView2 = UIView(frame: CGRect(x: 0, y: 0, width: 18, height: 13))
+        let leftPaddingView = UIView(frame: CGRect(x: 0, y: 0, width: 18, height: 13))
         let rightPaddingView = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: 13))
         descriptionTextView.textContainerInset = UIEdgeInsets(top: 13, left: 15, bottom: 0, right: 15)
-        descriptionTextView.addSubview(leftPaddingView2)
+        descriptionTextView.addSubview(leftPaddingView)
         descriptionTextView.addSubview(rightPaddingView)
         
         saveButton.setTitle("저장하기", for: .normal)
