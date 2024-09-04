@@ -113,6 +113,11 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
         return data
     }
     
+    /// 키체인에서 저장된 비밀번호를 가져오는 메서드
+    func getPasswordFromKeychain() -> String? {
+        return keychainManager.get(KeychainKeys.password.rawValue)
+    }
+    
     /// 신고 사유 선택 action sheet
 //    func reportActionSheet(userId: Int) -> UIAlertController {
 //        let reportActionSheet: UIAlertController = UIAlertController(
