@@ -21,6 +21,7 @@ class ChangePasswordViewController: BaseViewController, UITextFieldDelegate {
     private let currentPasswordTextField = UITextField()
     private let currentPasswordWarningLabel = UILabel()
     private let currentPasswordInfoImageView = UIImageView()
+    private let changePasswordButton = UIButton(type: .system)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,7 +52,8 @@ class ChangePasswordViewController: BaseViewController, UITextFieldDelegate {
             confirmPasswordWarningLabel,
             currentPasswordLabel,
             currentPasswordTextField,
-            currentPasswordWarningLabel
+            currentPasswordWarningLabel,
+            changePasswordButton
         ])
         
         navigationView.centerTitleLabel.text = "비밀번호 변경"
@@ -173,6 +175,13 @@ class ChangePasswordViewController: BaseViewController, UITextFieldDelegate {
         currentPasswordWarningLabel.textColor = .dotchiOrange
         currentPasswordWarningLabel.font = .sSub
         currentPasswordWarningLabel.isHidden = true
+        
+        changePasswordButton.setTitle("비밀번호 변경", for: .normal)
+        changePasswordButton.titleLabel?.font = .head2
+        changePasswordButton.layer.cornerRadius = 8
+        changePasswordButton.isEnabled = false
+        changePasswordButton.addTarget(self, action: #selector(changePasswordButtonTapped), for: .touchUpInside)
+        updateChangePasswordButtonState()
     }
     
     // MARK: - Button Actions
@@ -186,6 +195,12 @@ class ChangePasswordViewController: BaseViewController, UITextFieldDelegate {
         } else if textField == currentPasswordTextField {
             handleCurrentPasswordTextFieldChange(currentPasswordTextField.text ?? "")
         }
+        
+        updateChangePasswordButtonState()
+    }
+    
+    @objc private func changePasswordButtonTapped() {
+        
     }
     
     // MARK: - UITextFieldDelegate
@@ -230,15 +245,10 @@ class ChangePasswordViewController: BaseViewController, UITextFieldDelegate {
     private func handleCurrentPasswordTextFieldChange(_ newText: String) {
         currentPasswordTextField.layer.borderColor = verifyCurrentPassword() ? UIColor.clear.cgColor : UIColor.dotchiOrange.cgColor
         currentPasswordWarningLabel.isHidden = verifyCurrentPassword()
+        currentPasswordWarningLabel.text = verifyCurrentPassword() ? "" : "비밀번호가 일치하지 않습니다"
         
-        if verifyCurrentPassword() {
-            currentPasswordInfoImageView.image = UIImage(systemName: "checkmark.circle")
-            currentPasswordInfoImageView.tintColor = .dotchiGreen
-        } else {
-            currentPasswordInfoImageView.image = UIImage(systemName: "info.circle")
-            currentPasswordInfoImageView.tintColor = .dotchiOrange
-        }
-        
+        currentPasswordInfoImageView.image = verifyCurrentPassword() ? UIImage(systemName: "checkmark.circle") : UIImage(systemName: "info.circle")
+        currentPasswordInfoImageView.tintColor = verifyCurrentPassword() ? .dotchiGreen : .dotchiOrange
         currentPasswordInfoImageView.isHidden = false
     }
     
@@ -250,9 +260,6 @@ class ChangePasswordViewController: BaseViewController, UITextFieldDelegate {
         }
         
         let isValid = savedPassword == currentPasswordTextField.text
-        currentPasswordWarningLabel.isHidden = isValid
-        currentPasswordWarningLabel.text = isValid ? "" : "비밀번호가 일치하지 않습니다"
-        
         return isValid
     }
     
@@ -298,6 +305,17 @@ class ChangePasswordViewController: BaseViewController, UITextFieldDelegate {
             
             self.view.layoutIfNeeded()
         }
+    }
+    
+    private func updateChangePasswordButtonState() {
+        let isNewPasswordValid = newPasswordTextField.text?.count ?? 0 >= 10
+        let isConfirmPasswordValid = confirmPasswordTextField.text == newPasswordTextField.text
+        let isCurrentPasswordValid = verifyCurrentPassword()
+        let isEnabled = isNewPasswordValid && isConfirmPasswordValid && isCurrentPasswordValid
+        
+        changePasswordButton.isEnabled = isEnabled
+        changePasswordButton.backgroundColor = isEnabled ? .dotchiGreen : UIColor.dotchiGreen.withAlphaComponent(0.5)
+        changePasswordButton.setTitleColor(isEnabled ? .dotchiWhite : UIColor.dotchiWhite.withAlphaComponent(0.5), for: .normal)
     }
     
     // MARK: - Setup Constraints
@@ -352,6 +370,13 @@ class ChangePasswordViewController: BaseViewController, UITextFieldDelegate {
         currentPasswordWarningLabel.snp.makeConstraints { make in
             make.top.equalTo(currentPasswordTextField.snp.bottom).offset(8)
             make.leading.trailing.equalToSuperview().inset(28)
+        }
+        
+        changePasswordButton.snp.makeConstraints { make in
+            make.bottom.equalTo(safeArea).offset(-32)
+            make.leading.equalTo(safeArea).offset(28)
+            make.trailing.equalTo(safeArea).offset(-28)
+            make.height.equalTo(52)
         }
     }
     
