@@ -12,6 +12,7 @@ import UIKit
 internal protocol UserServiceProtocol {
     func getUser(completion: @escaping (NetworkResult<Any>) -> (Void))
     func editUser(nickname: String, description: String, profileImage: UIImage?, completion: @escaping (NetworkResult<Any>) -> (Void))
+    func changePassword(data: String, completion: @escaping (NetworkResult<Any>) -> (Void))
     func checkUsernameDuplicate(data: String, completion: @escaping (NetworkResult<Any>) -> (Void))
     func checkNicknameDuplicate(data: String, completion: @escaping (NetworkResult<Any>) -> (Void))
 }
@@ -53,6 +54,22 @@ extension UserService: UserServiceProtocol {
                 let statusCode = response.statusCode
                 let data = response.data
                 let networkResult = self.judgeStatus(by: statusCode, data, EditUserResponseDTO.self)
+                completion(networkResult)
+            case .failure(let error):
+                debugPrint(error)
+            }
+        }
+    }
+    
+    // [PATCH] 비밀번호 변경
+    
+    func changePassword(data: String, completion: @escaping (NetworkResult<Any>) -> Void) {
+        self.provider.request(.changePassword(data: data)) { result in
+            switch result {
+            case .success(let response):
+                let statusCode = response.statusCode
+                let data = response.data
+                let networkResult = self.judgeStatus(by: statusCode, data, String.self)
                 completion(networkResult)
             case .failure(let error):
                 debugPrint(error)

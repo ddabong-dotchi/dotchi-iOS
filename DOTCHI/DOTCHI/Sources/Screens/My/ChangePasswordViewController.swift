@@ -8,8 +8,9 @@
 import UIKit
 
 class ChangePasswordViewController: BaseViewController, UITextFieldDelegate {
-    private let navigationView = DotchiNavigationView(type: .closeCenterTitle)
+    private let userService = UserService.shared
     
+    private let navigationView = DotchiNavigationView(type: .closeCenterTitle)
     private let newPasswordLabel = UILabel()
     private let newPasswordTextField = UITextField()
     private let newPasswordWarningLabel = UILabel()
@@ -30,7 +31,6 @@ class ChangePasswordViewController: BaseViewController, UITextFieldDelegate {
         
         setupSubviews()
         setupConstraints()
-        fetchMyData()
         
         newPasswordTextField.delegate = self
         confirmPasswordTextField.delegate = self
@@ -200,7 +200,15 @@ class ChangePasswordViewController: BaseViewController, UITextFieldDelegate {
     }
     
     @objc private func changePasswordButtonTapped() {
-        
+        userService.changePassword(data: newPasswordTextField.text ?? "") { result in
+            switch result {
+            case .success:
+                self.updatePasswordInKeychain(newPassword: self.newPasswordTextField.text ?? "")
+                self.dismiss(animated: true, completion: nil)
+            default:
+                self.showNetworkErrorAlert()
+            }
+        }
     }
     
     // MARK: - UITextFieldDelegate
@@ -378,12 +386,6 @@ class ChangePasswordViewController: BaseViewController, UITextFieldDelegate {
             make.trailing.equalTo(safeArea).offset(-28)
             make.height.equalTo(52)
         }
-    }
-    
-    // MARK: - Network
-    
-    private func fetchMyData() {
-        
     }
 }
 

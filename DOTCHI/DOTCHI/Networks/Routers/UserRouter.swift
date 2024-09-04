@@ -11,6 +11,7 @@ import Moya
 enum UserRouter {
     case getUser
     case editUser(data: EditUserRequestDTO)
+    case changePassword(data: String)
     case getMyCard
     case getBlacklists
     case checkUsernameDuplicate(data: String)
@@ -27,6 +28,8 @@ extension UserRouter: TargetType {
         switch self {
         case .getUser, .editUser:
             return "/user/me"
+        case .changePassword:
+            return "/user/password"
         case .getMyCard:
             return "/user/me/card"
         case .getBlacklists:
@@ -42,7 +45,7 @@ extension UserRouter: TargetType {
         switch self {
         case .getUser, .getMyCard, .getBlacklists, .checkUsernameDuplicate, .checkNicknameDuplicate:
             return .get
-        case .editUser:
+        case .editUser, .changePassword:
             return .patch
         }
     }
@@ -73,6 +76,8 @@ extension UserRouter: TargetType {
             }
             
             return .uploadMultipart(formData)
+        case .changePassword(let data):
+            return .requestParameters(parameters: ["password": data], encoding: JSONEncoding.default)
         case .checkUsernameDuplicate(let data):
             return .requestParameters(parameters: ["username": data], encoding: URLEncoding.queryString)
         case .checkNicknameDuplicate(let data):

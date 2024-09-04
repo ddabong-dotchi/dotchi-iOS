@@ -113,9 +113,14 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
         return data
     }
     
-    /// 키체인에서 저장된 비밀번호를 가져오는 메서드
+    /// Keychain에서 저장된 비밀번호를 가져오는 메서드
     func getPasswordFromKeychain() -> String? {
         return keychainManager.get(KeychainKeys.password.rawValue)
+    }
+    
+    /// Keychain에 비밀번호 업데이트
+    func updatePasswordInKeychain(newPassword: String) {
+        keychainManager.set(newPassword, forKey: KeychainKeys.password.rawValue)
     }
     
     /// 신고 사유 선택 action sheet
