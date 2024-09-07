@@ -98,11 +98,9 @@ class SettingViewController: BaseViewController {
         editButton.layer.cornerRadius = 15
         editButton.addTarget(self, action: #selector(openEditProfile), for: .touchUpInside)
         
-        nameLabel.font = UIFont.body
-        nameLabel.textColor = UIColor.dotchiWhite
+        nameLabel.setStyle(.body, .dotchiWhite)
         
-        descriptionLabel.font = UIFont.subSbold
-        descriptionLabel.textColor = UIColor.dotchiLgray
+        descriptionLabel.setStyle(.subSbold, .dotchiLgray)
         descriptionLabel.numberOfLines = 0
         descriptionLabel.textAlignment = .center
         if description.count > 20 {
@@ -118,9 +116,8 @@ class SettingViewController: BaseViewController {
         configureSeparator(separator2)
         configureSeparator(separator3)
         
-        informationLabel.font = UIFont.subTitle
-        informationLabel.textColor = UIColor.dotchiWhite
         informationLabel.text = "정보"
+        informationLabel.setStyle(.subTitle, .dotchiWhite)
         
         configureButton(button: contactButton, title: "문의하기", imageName: "icnNext", action: #selector(contactUs))
         
@@ -128,9 +125,8 @@ class SettingViewController: BaseViewController {
         
         configureButton(button: privacyLinkButton, title: "개인정보 처리 방침", imageName: "icnNext", action: #selector(openPrivacyPolicy))
         
-        accountInfoLabel.font = UIFont.subTitle
-        accountInfoLabel.textColor = UIColor.dotchiWhite
         accountInfoLabel.text = "계정 정보"
+        accountInfoLabel.setStyle(.subTitle, .dotchiWhite)
         
         configureButton(button: modifyAccountInfoButton, title: "계정 정보 수정", imageName: "icnNext", action: #selector(openEditAccountInfo))
         
@@ -170,8 +166,7 @@ class SettingViewController: BaseViewController {
         
         let label = UILabel()
         label.text = title
-        label.font = UIFont.subSbold2
-        label.textColor = UIColor.dotchiLgray
+        label.setStyle(.subSbold2, .dotchiLgray)
         stackView.addArrangedSubview(label)
         
         let imageView = UIImageView()

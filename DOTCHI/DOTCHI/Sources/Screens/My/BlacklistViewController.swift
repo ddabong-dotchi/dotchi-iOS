@@ -76,8 +76,7 @@ class BlacklistViewController: BaseViewController {
         
         let targetNicknameLabel = UILabel()
         targetNicknameLabel.text = nickname
-        targetNicknameLabel.font = UIFont.subTitle
-        targetNicknameLabel.textColor = UIColor.dotchiWhite
+        targetNicknameLabel.setStyle(.subTitle, .dotchiWhite)
         containerView.addSubview(targetNicknameLabel)
         
         let unblockButton = UIButton(type: .system)

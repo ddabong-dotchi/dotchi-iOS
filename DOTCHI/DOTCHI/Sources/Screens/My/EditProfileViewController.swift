@@ -74,8 +74,7 @@ class EditProfileViewController: BaseViewController, UITextFieldDelegate, UIText
         cameraButton.addTarget(self, action: #selector(openPhotoLibrary), for: .touchUpInside)
         
         nicknameLabel.text = "닉네임을 설정해 주세요. (한글)"
-        nicknameLabel.textColor = UIColor.dotchiLgray
-        nicknameLabel.font = .sub
+        nicknameLabel.setStyle(.sub, .dotchiLgray)
         
         nicknameTextField.layer.cornerRadius = 8
         nicknameTextField.layer.borderWidth = 1
@@ -105,8 +104,7 @@ class EditProfileViewController: BaseViewController, UITextFieldDelegate, UIText
         nicknameStatusLabel.font = .sSub
         
         descriptionLabel.text = "간단한 소개를 작성해 주세요."
-        descriptionLabel.textColor = UIColor.dotchiLgray
-        descriptionLabel.font = .sub
+        descriptionLabel.setStyle(.sub, .dotchiLgray)
         
         descriptionTextView.layer.cornerRadius = 8
         descriptionTextView.backgroundColor = .dotchiMgray
@@ -115,8 +113,7 @@ class EditProfileViewController: BaseViewController, UITextFieldDelegate, UIText
         descriptionTextView.delegate = self
         
         descriptionPlaceholderLabel.text = "최대 40글자"
-        descriptionPlaceholderLabel.textColor = UIColor.dotchiWhite.withAlphaComponent(0.3)
-        descriptionPlaceholderLabel.font = .head2
+        descriptionPlaceholderLabel.setStyle(.head2, .dotchiWhite.withAlphaComponent(0.3))
         descriptionTextView.addSubview(descriptionPlaceholderLabel)
         descriptionPlaceholderLabel.snp.makeConstraints { make in
             make.top.equalTo(descriptionTextView).offset(13)

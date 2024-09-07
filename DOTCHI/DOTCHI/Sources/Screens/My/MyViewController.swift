@@ -87,11 +87,9 @@ class MyViewController: BaseViewController {
         profileImageView.layer.masksToBounds = true
         profileImageView.contentMode = .scaleAspectFill
         
-        nameLabel.font = UIFont.body
-        nameLabel.textColor = UIColor.dotchiWhite
+        nameLabel.setStyle(.body, .dotchiWhite)
         
-        descriptionLabel.font = UIFont.subSbold
-        descriptionLabel.textColor = UIColor.dotchiLgray
+        descriptionLabel.setStyle(.subSbold, .dotchiLgray)
         descriptionLabel.numberOfLines = 0
         descriptionLabel.textAlignment = .center
         if description.count > 20 {
@@ -111,13 +109,11 @@ class MyViewController: BaseViewController {
         stackView.axis = .horizontal
         stackView.spacing = 8
         
-        titleLabel.font = UIFont.head2
-        titleLabel.textColor = UIColor.dotchiGreen
         titleLabel.text = "공유 따봉도치"
+        titleLabel.setStyle(.head2, .dotchiGreen)
         
-        countLabel.font = UIFont.head2
-        countLabel.textColor = UIColor.dotchiGreen
         countLabel.text = "0"
+        countLabel.setStyle(.head2, .dotchiGreen)
         
         stackView.addArrangedSubview(titleLabel)
         stackView.addArrangedSubview(countLabel)

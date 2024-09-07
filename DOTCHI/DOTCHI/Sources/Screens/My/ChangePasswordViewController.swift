@@ -63,8 +63,7 @@ class ChangePasswordViewController: BaseViewController, UITextFieldDelegate {
         navigationView.centerTitleLabel.text = "비밀번호 변경"
         
         newPasswordLabel.text = "새 비밀번호"
-        newPasswordLabel.textColor = .dotchiWhite
-        newPasswordLabel.font = .sub
+        newPasswordLabel.setStyle(.sub, .dotchiWhite)
         
         newPasswordTextField.isSecureTextEntry = true
         newPasswordTextField.textColor = .dotchiWhite
@@ -104,8 +103,7 @@ class ChangePasswordViewController: BaseViewController, UITextFieldDelegate {
         newPasswordTextField.rightViewMode = .always
         
         newPasswordWarningLabel.text = "10자 이상 입력하세요"
-        newPasswordWarningLabel.textColor = .dotchiOrange
-        newPasswordWarningLabel.font = .sSub
+        newPasswordWarningLabel.setStyle(.sSub, .dotchiOrange)
         newPasswordWarningLabel.isHidden = true
         
         confirmPasswordTextField.isSecureTextEntry = true
@@ -138,13 +136,11 @@ class ChangePasswordViewController: BaseViewController, UITextFieldDelegate {
         confirmPasswordTextField.rightViewMode = .always
         
         confirmPasswordWarningLabel.text = "비밀번호가 일치하지 않습니다"
-        confirmPasswordWarningLabel.textColor = .dotchiOrange
-        confirmPasswordWarningLabel.font = .sSub
+        confirmPasswordWarningLabel.setStyle(.sSub, .dotchiOrange)
         confirmPasswordWarningLabel.isHidden = true
         
         currentPasswordLabel.text = "현재 비밀번호"
-        currentPasswordLabel.textColor = .dotchiWhite
-        currentPasswordLabel.font = .sub
+        currentPasswordLabel.setStyle(.sub, .dotchiWhite)
         
         currentPasswordTextField.isSecureTextEntry = true
         currentPasswordTextField.textColor = .dotchiWhite
@@ -176,8 +172,7 @@ class ChangePasswordViewController: BaseViewController, UITextFieldDelegate {
         currentPasswordTextField.rightViewMode = .always
         
         currentPasswordWarningLabel.text = "비밀번호가 일치하지 않습니다"
-        currentPasswordWarningLabel.textColor = .dotchiOrange
-        currentPasswordWarningLabel.font = .sSub
+        currentPasswordWarningLabel.setStyle(.sSub, .dotchiOrange)
         currentPasswordWarningLabel.isHidden = true
         
         forgetPasswordStackView.axis = .horizontal
@@ -186,8 +181,7 @@ class ChangePasswordViewController: BaseViewController, UITextFieldDelegate {
         forgetPasswordStackView.addArrangedSubviews([forgetPasswordInfoLabel, contactButton])
         
         forgetPasswordInfoLabel.text = "비밀번호를 잊으셨나요?"
-        forgetPasswordInfoLabel.textColor = .dotchiWhite50
-        forgetPasswordInfoLabel.font = .sub
+        forgetPasswordInfoLabel.setStyle(.sub, .dotchiWhite50)
         
         contactButton.button.addTarget(self, action: #selector(contactButtonTapped), for: .touchUpInside)
         

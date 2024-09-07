@@ -45,23 +45,18 @@ class EditAccountInfoViewController: BaseViewController {
         ])
         
         infoLabel.text = "가입한 계정 정보"
-        infoLabel.textColor = UIColor.dotchiWhite
-        infoLabel.font = .sub
+        infoLabel.setStyle(.sub, .dotchiWhite)
         
         idLabel.text = "아이디"
-        idLabel.textColor = UIColor.dotchiWhite
-        idLabel.font = .bigButton
+        idLabel.setStyle(.bigButton, .dotchiWhite)
         
-        idInfoLabel.textColor = UIColor.dotchiLgray
-        idInfoLabel.font = .subSbold
+        idInfoLabel.setStyle(.subSbold, .dotchiLgray)
         
         passwordLabel.text = "비밀번호"
-        passwordLabel.textColor = UIColor.dotchiWhite
-        passwordLabel.font = .bigButton
+        passwordLabel.setStyle(.bigButton, .dotchiWhite)
         
         passwordInfoLabel.text = "**********"
-        passwordInfoLabel.textColor = UIColor.dotchiLgray
-        passwordInfoLabel.font = .subSbold
+        passwordInfoLabel.setStyle(.subSbold, .dotchiLgray)
         
         changePasswordButton.setTitle("변경하기", for: .normal)
         changePasswordButton.setTitleColor(UIColor.dotchiGreen, for: .normal)
@@ -71,8 +66,7 @@ class EditAccountInfoViewController: BaseViewController {
         passwordVerticalStackView.axis = .vertical
         passwordVerticalStackView.spacing = 8
         passwordVerticalStackView.alignment = .leading
-        passwordVerticalStackView.addArrangedSubview(passwordLabel)
-        passwordVerticalStackView.addArrangedSubview(passwordInfoLabel)
+        passwordVerticalStackView.addArrangedSubviews([passwordLabel, passwordInfoLabel])
         
         passwordHorizontalStackView.axis = .horizontal
         passwordHorizontalStackView.spacing = 16
