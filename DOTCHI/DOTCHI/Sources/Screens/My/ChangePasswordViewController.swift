@@ -22,6 +22,9 @@ class ChangePasswordViewController: BaseViewController, UITextFieldDelegate {
     private let currentPasswordTextField = UITextField()
     private let currentPasswordWarningLabel = UILabel()
     private let currentPasswordInfoImageView = UIImageView()
+    private let forgetPasswordStackView = UIStackView()
+    private let forgetPasswordInfoLabel = UILabel()
+    private let contactButton: TextUnderlineButtonView = TextUnderlineButtonView(title: "문의하기")
     private let changePasswordButton = UIButton(type: .system)
     
     override func viewDidLoad() {
@@ -53,6 +56,7 @@ class ChangePasswordViewController: BaseViewController, UITextFieldDelegate {
             currentPasswordLabel,
             currentPasswordTextField,
             currentPasswordWarningLabel,
+            forgetPasswordStackView,
             changePasswordButton
         ])
         
@@ -176,6 +180,17 @@ class ChangePasswordViewController: BaseViewController, UITextFieldDelegate {
         currentPasswordWarningLabel.font = .sSub
         currentPasswordWarningLabel.isHidden = true
         
+        forgetPasswordStackView.axis = .horizontal
+        forgetPasswordStackView.spacing = 3
+        forgetPasswordStackView.alignment = .top
+        forgetPasswordStackView.addArrangedSubviews([forgetPasswordInfoLabel, contactButton])
+        
+        forgetPasswordInfoLabel.text = "비밀번호를 잊으셨나요?"
+        forgetPasswordInfoLabel.textColor = .dotchiWhite50
+        forgetPasswordInfoLabel.font = .sub
+        
+        contactButton.button.addTarget(self, action: #selector(contactButtonTapped), for: .touchUpInside)
+        
         changePasswordButton.setTitle("비밀번호 변경", for: .normal)
         changePasswordButton.titleLabel?.font = .head2
         changePasswordButton.layer.cornerRadius = 8
@@ -209,6 +224,10 @@ class ChangePasswordViewController: BaseViewController, UITextFieldDelegate {
                 self.showNetworkErrorAlert()
             }
         }
+    }
+    
+    @objc private func contactButtonTapped() {
+        self.sendForgetPasswordMail()
     }
     
     // MARK: - UITextFieldDelegate
@@ -378,6 +397,11 @@ class ChangePasswordViewController: BaseViewController, UITextFieldDelegate {
         currentPasswordWarningLabel.snp.makeConstraints { make in
             make.top.equalTo(currentPasswordTextField.snp.bottom).offset(8)
             make.leading.trailing.equalToSuperview().inset(28)
+        }
+        
+        forgetPasswordStackView.snp.makeConstraints { make in
+            make.bottom.equalTo(changePasswordButton.snp.top).offset(-32)
+            make.centerX.equalToSuperview()
         }
         
         changePasswordButton.snp.makeConstraints { make in
