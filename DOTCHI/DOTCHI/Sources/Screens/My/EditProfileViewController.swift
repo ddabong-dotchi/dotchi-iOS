@@ -82,11 +82,11 @@ class EditProfileViewController: BaseViewController, UITextFieldDelegate, UIText
         nicknameTextField.textColor = .dotchiLgray
         nicknameTextField.font = .head2
         nicknameTextField.tintColor = UITextField().tintColor
-        nicknameTextField.setLeftPadding(18)
+        nicknameTextField.addLeftPadding(18)
         
         let attributes: [NSAttributedString.Key: Any] = [
             NSAttributedString.Key.foregroundColor: UIColor.dotchiWhite.withAlphaComponent(0.3),
-            NSAttributedString.Key.font: UIFont(name: "Pretendard-Bold", size: 16) ?? UIFont.systemFont(ofSize: 16)
+            NSAttributedString.Key.font: UIFont.head2
         ]
         nicknameTextField.attributedPlaceholder = NSAttributedString(string: "2~7글자", attributes: attributes)
         

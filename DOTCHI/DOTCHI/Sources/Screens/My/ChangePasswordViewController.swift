@@ -12,16 +12,13 @@ class ChangePasswordViewController: BaseViewController, UITextFieldDelegate {
     
     private let navigationView = DotchiNavigationView(type: .closeCenterTitle)
     private let newPasswordLabel = UILabel()
-    private let newPasswordTextField = UITextField()
+    private let newPasswordTextField = PasswordTextField()
     private let newPasswordWarningLabel = UILabel()
-    private let newPasswordInfoImageView = UIImageView()
-    private let confirmPasswordTextField = UITextField()
+    private let confirmPasswordTextField = PasswordTextField()
     private let confirmPasswordWarningLabel = UILabel()
-    private let confirmPasswordInfoImageView = UIImageView()
     private let currentPasswordLabel = UILabel()
-    private let currentPasswordTextField = UITextField()
+    private let currentPasswordTextField = PasswordTextField()
     private let currentPasswordWarningLabel = UILabel()
-    private let currentPasswordInfoImageView = UIImageView()
     private let forgetPasswordStackView = UIStackView()
     private let forgetPasswordInfoLabel = UILabel()
     private let contactButton: TextUnderlineButtonView = TextUnderlineButtonView(title: "문의하기")
@@ -65,75 +62,15 @@ class ChangePasswordViewController: BaseViewController, UITextFieldDelegate {
         newPasswordLabel.text = "새 비밀번호"
         newPasswordLabel.setStyle(.sub, .dotchiWhite)
         
-        newPasswordTextField.isSecureTextEntry = true
-        newPasswordTextField.textColor = .dotchiWhite
-        newPasswordTextField.font = .sub
-        newPasswordTextField.backgroundColor = .dotchiMgray
-        newPasswordTextField.tintColor = UITextField().tintColor
-        newPasswordTextField.layer.cornerRadius = 8
-        newPasswordTextField.layer.borderWidth = 1
-        newPasswordTextField.setLeftPadding(12)
-        
-        let attributes: [NSAttributedString.Key: Any] = [
-            NSAttributedString.Key.foregroundColor: UIColor.dotchiLgray,
-            NSAttributedString.Key.font: UIFont(name: "Pretendard-Medium", size: 14) ?? UIFont.systemFont(ofSize: 14)
-        ]
-        newPasswordTextField.attributedPlaceholder = NSAttributedString(string: "새 비밀번호(최소 10자 이상)", attributes: attributes)
+        newPasswordTextField.setPlaceholder(text: "새 비밀번호(최소 10자 이상)")
         newPasswordTextField.addTarget(self, action: #selector(passwordTextFieldDidChange(_:)), for: .editingChanged)
-        
-        newPasswordInfoImageView.tintColor = .dotchiOrange
-        newPasswordInfoImageView.contentMode = .scaleAspectFit
-        newPasswordInfoImageView.isHidden = true
-        
-        let newPasswordcontainerView = UIView()
-        newPasswordcontainerView.addSubview(newPasswordInfoImageView)
-        
-        newPasswordcontainerView.snp.makeConstraints { make in
-            make.height.equalTo(48)
-            make.width.equalTo(39)
-        }
-        
-        newPasswordInfoImageView.snp.makeConstraints { make in
-            make.height.width.equalTo(20)
-            make.centerY.equalToSuperview()
-            make.trailing.equalToSuperview().offset(-10)
-        }
-        
-        newPasswordTextField.rightView = newPasswordcontainerView
-        newPasswordTextField.rightViewMode = .always
         
         newPasswordWarningLabel.text = "10자 이상 입력하세요"
         newPasswordWarningLabel.setStyle(.sSub, .dotchiOrange)
         newPasswordWarningLabel.isHidden = true
         
-        confirmPasswordTextField.isSecureTextEntry = true
-        confirmPasswordTextField.textColor = .dotchiWhite
-        confirmPasswordTextField.font = .sub
-        confirmPasswordTextField.backgroundColor = .dotchiMgray
-        confirmPasswordTextField.tintColor = UITextField().tintColor
-        confirmPasswordTextField.layer.cornerRadius = 8
-        confirmPasswordTextField.layer.borderWidth = 1
-        confirmPasswordTextField.setLeftPadding(12)
-        
-        confirmPasswordTextField.attributedPlaceholder = NSAttributedString(string: "새 비밀번호 확인(최소 10자 이상)", attributes: attributes)
+        confirmPasswordTextField.setPlaceholder(text: "새 비밀번호 확인(최소 10자 이상)")
         confirmPasswordTextField.addTarget(self, action: #selector(passwordTextFieldDidChange(_:)), for: .editingChanged)
-        
-        let confirmPasswordContainerView = UIView()
-        confirmPasswordContainerView.addSubview(confirmPasswordInfoImageView)
-        
-        confirmPasswordContainerView.snp.makeConstraints { make in
-            make.height.equalTo(48)
-            make.width.equalTo(39)
-        }
-        
-        confirmPasswordInfoImageView.snp.makeConstraints { make in
-            make.height.width.equalTo(20)
-            make.centerY.equalToSuperview()
-            make.trailing.equalToSuperview().offset(-10)
-        }
-        
-        confirmPasswordTextField.rightView = confirmPasswordContainerView
-        confirmPasswordTextField.rightViewMode = .always
         
         confirmPasswordWarningLabel.text = "비밀번호가 일치하지 않습니다"
         confirmPasswordWarningLabel.setStyle(.sSub, .dotchiOrange)
@@ -142,34 +79,8 @@ class ChangePasswordViewController: BaseViewController, UITextFieldDelegate {
         currentPasswordLabel.text = "현재 비밀번호"
         currentPasswordLabel.setStyle(.sub, .dotchiWhite)
         
-        currentPasswordTextField.isSecureTextEntry = true
-        currentPasswordTextField.textColor = .dotchiWhite
-        currentPasswordTextField.font = .sub
-        currentPasswordTextField.backgroundColor = .dotchiMgray
-        currentPasswordTextField.tintColor = UITextField().tintColor
-        currentPasswordTextField.layer.cornerRadius = 8
-        currentPasswordTextField.layer.borderWidth = 1
-        currentPasswordTextField.setLeftPadding(12)
-        
-        currentPasswordTextField.attributedPlaceholder = NSAttributedString(string: "현재 비밀번호", attributes: attributes)
+        currentPasswordTextField.setPlaceholder(text: "현재 비밀번호")
         currentPasswordTextField.addTarget(self, action: #selector(passwordTextFieldDidChange(_:)), for: .editingChanged)
-        
-        let currentPasswordContainerView = UIView()
-        currentPasswordContainerView.addSubview(currentPasswordInfoImageView)
-        
-        currentPasswordContainerView.snp.makeConstraints { make in
-            make.height.equalTo(48)
-            make.width.equalTo(39)
-        }
-        
-        currentPasswordInfoImageView.snp.makeConstraints { make in
-            make.height.width.equalTo(20)
-            make.centerY.equalToSuperview()
-            make.trailing.equalToSuperview().offset(-10)
-        }
-        
-        currentPasswordTextField.rightView = currentPasswordContainerView
-        currentPasswordTextField.rightViewMode = .always
         
         currentPasswordWarningLabel.text = "비밀번호가 일치하지 않습니다"
         currentPasswordWarningLabel.setStyle(.sSub, .dotchiOrange)
@@ -231,15 +142,10 @@ class ChangePasswordViewController: BaseViewController, UITextFieldDelegate {
         newPasswordTextField.layer.borderColor = isWarningVisible ? UIColor.dotchiOrange.cgColor : UIColor.clear.cgColor
         newPasswordWarningLabel.isHidden = !isWarningVisible
         
-        if isWarningVisible {
-            newPasswordInfoImageView.image = UIImage(systemName: "info.circle")
-            newPasswordInfoImageView.tintColor = .dotchiOrange
-        } else {
-            newPasswordInfoImageView.image = UIImage(systemName: "checkmark.circle")
-            newPasswordInfoImageView.tintColor = .dotchiGreen
-        }
+        let image = UIImage(systemName: isWarningVisible ? "info.circle" : "checkmark.circle")
+        let tintColor = isWarningVisible ? UIColor.dotchiOrange : UIColor.dotchiGreen
+        newPasswordTextField.updateRightImageView(image: image, tintColor: tintColor)
         
-        newPasswordInfoImageView.isHidden = false
         updateWarningLabelConstraints(isWarningVisible: isWarningVisible)
     }
     
@@ -251,26 +157,22 @@ class ChangePasswordViewController: BaseViewController, UITextFieldDelegate {
         confirmPasswordTextField.layer.borderColor = isWarningVisible ? UIColor.dotchiOrange.cgColor : UIColor.clear.cgColor
         confirmPasswordWarningLabel.isHidden = isMatch
         
-        if isWarningVisible {
-            confirmPasswordInfoImageView.image = UIImage(systemName: "info.circle")
-            confirmPasswordInfoImageView.tintColor = .dotchiOrange
-        } else {
-            confirmPasswordInfoImageView.image = UIImage(systemName: "checkmark.circle")
-            confirmPasswordInfoImageView.tintColor = .dotchiGreen
-        }
+        let image = UIImage(systemName: isWarningVisible ? "info.circle" : "checkmark.circle")
+        let tintColor = isWarningVisible ? UIColor.dotchiOrange : UIColor.dotchiGreen
+        confirmPasswordTextField.updateRightImageView(image: image, tintColor: tintColor)
         
-        confirmPasswordInfoImageView.isHidden = false
         updateWarningLabelConstraints(isWarningVisible: isWarningVisible, forConfirmPassword: true)
     }
     
     private func handleCurrentPasswordTextFieldChange(_ newText: String) {
-        currentPasswordTextField.layer.borderColor = verifyCurrentPassword() ? UIColor.clear.cgColor : UIColor.dotchiOrange.cgColor
-        currentPasswordWarningLabel.isHidden = verifyCurrentPassword()
-        currentPasswordWarningLabel.text = verifyCurrentPassword() ? "" : "비밀번호가 일치하지 않습니다"
+        let isValid = verifyCurrentPassword()
+        currentPasswordTextField.layer.borderColor = isValid ? UIColor.clear.cgColor : UIColor.dotchiOrange.cgColor
+        currentPasswordWarningLabel.isHidden = isValid
+        currentPasswordWarningLabel.text = isValid ? "" : "비밀번호가 일치하지 않습니다"
         
-        currentPasswordInfoImageView.image = verifyCurrentPassword() ? UIImage(systemName: "checkmark.circle") : UIImage(systemName: "info.circle")
-        currentPasswordInfoImageView.tintColor = verifyCurrentPassword() ? .dotchiGreen : .dotchiOrange
-        currentPasswordInfoImageView.isHidden = false
+        let image = UIImage(systemName: isValid ? "checkmark.circle" : "info.circle")
+        let tintColor = isValid ? UIColor.dotchiGreen : UIColor.dotchiOrange
+        currentPasswordTextField.updateRightImageView(image: image, tintColor: tintColor)
     }
     
     private func verifyCurrentPassword() -> Bool {
@@ -404,13 +306,5 @@ class ChangePasswordViewController: BaseViewController, UITextFieldDelegate {
             make.trailing.equalTo(safeArea).offset(-28)
             make.height.equalTo(52)
         }
-    }
-}
-
-extension UITextField {
-    func setLeftPadding(_ amount: CGFloat) {
-        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))
-        self.leftView = paddingView
-        self.leftViewMode = .always
     }
 }

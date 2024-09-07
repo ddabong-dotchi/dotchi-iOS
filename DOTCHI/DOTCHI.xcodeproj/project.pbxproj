@@ -19,6 +19,7 @@
 		1E9727622C44F62000252CA6 /* BlacklistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9727612C44F62000252CA6 /* BlacklistViewController.swift */; };
 		1E9727652C44FCA600252CA6 /* BlacklistResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9727642C44FCA600252CA6 /* BlacklistResponseDTO.swift */; };
 		1ED0A9262C80F44400D78F4E /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED0A9252C80F44400D78F4E /* ChangePasswordViewController.swift */; };
+		1ED0A92E2C8CC92500D78F4E /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED0A92D2C8CC92500D78F4E /* PasswordTextField.swift */; };
 		FF328DC52C4D4DA300007CD5 /* DotchiNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF328DC42C4D4DA300007CD5 /* DotchiNavigationView.swift */; };
 		FF328DC72C4D6FBC00007CD5 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF328DC62C4D6FBC00007CD5 /* ProgressBarView.swift */; };
 		FF328DC92C5A25A500007CD5 /* SignupTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF328DC82C5A25A500007CD5 /* SignupTextField.swift */; };
@@ -124,6 +125,7 @@
 		1E9727612C44F62000252CA6 /* BlacklistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlacklistViewController.swift; sourceTree = "<group>"; };
 		1E9727642C44FCA600252CA6 /* BlacklistResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlacklistResponseDTO.swift; sourceTree = "<group>"; };
 		1ED0A9252C80F44400D78F4E /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		1ED0A92D2C8CC92500D78F4E /* PasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextField.swift; sourceTree = "<group>"; };
 		FF328DC42C4D4DA300007CD5 /* DotchiNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotchiNavigationView.swift; sourceTree = "<group>"; };
 		FF328DC62C4D6FBC00007CD5 /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		FF328DC82C5A25A500007CD5 /* SignupTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupTextField.swift; sourceTree = "<group>"; };
@@ -364,6 +366,7 @@
 			children = (
 				FFC7BB752C35ADD4000EA7B5 /* SigninTextField.swift */,
 				FF328DC82C5A25A500007CD5 /* SignupTextField.swift */,
+				1ED0A92D2C8CC92500D78F4E /* PasswordTextField.swift */,
 			);
 			path = UITextField;
 			sourceTree = "<group>";
@@ -764,6 +767,7 @@
 				FFB7F9BA2C5A430700650238 /* UITapGestureRecognizer+.swift in Sources */,
 				FFCD60982C2D991A007785FF /* Messages.swift in Sources */,
 				1E9727582C43924F00252CA6 /* UserRouter.swift in Sources */,
+				1ED0A92E2C8CC92500D78F4E /* PasswordTextField.swift in Sources */,
 				FFC7BB922C3EDFCB000EA7B5 /* AuthRouter.swift in Sources */,
 				FFCD609A2C2D9920007785FF /* KeychainKeys.swift in Sources */,
 				FF4BF6B22C2DB63900B6DEB2 /* CardEntity.swift in Sources */,
