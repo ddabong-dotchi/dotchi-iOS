@@ -88,6 +88,13 @@ final class HomeTodayView: UIView {
     private func setUI() {
         self.dateLabel.text = self.generateDateText()
         self.setParticleAnimationView()
+        
+        self.secondDotchiImage.rankLabel.text = "2위"
+        self.thirdDotchiImage.rankLabel.text = "3위"
+        
+        self.firstDotchiImage.nicknameLabelView.setNickname(nickname: "일곱글자따봉닉")
+        self.secondDotchiImage.nicknameLabelView.setNickname(nickname: "따봉도치")
+        self.thirdDotchiImage.nicknameLabelView.setNickname(nickname: "따봉")
     }
     
     private func setParticleAnimationView() {

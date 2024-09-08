@@ -22,6 +22,7 @@
 		FF328DC92C5A25A500007CD5 /* SignupTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF328DC82C5A25A500007CD5 /* SignupTextField.swift */; };
 		FF328DCB2C5A280500007CD5 /* IconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF328DCA2C5A280500007CD5 /* IconButton.swift */; };
 		FF3344702C8D86F8002F2640 /* HomeRankDotchiImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF33446F2C8D86F8002F2640 /* HomeRankDotchiImageView.swift */; };
+		FF3344722C8DA2DF002F2640 /* HomeNicknameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3344712C8DA2DF002F2640 /* HomeNicknameView.swift */; };
 		FF4BF6A92C2DACCB00B6DEB2 /* MakeDotchiPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4BF6A82C2DACCB00B6DEB2 /* MakeDotchiPhotoViewController.swift */; };
 		FF4BF6AC2C2DB15500B6DEB2 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FF4BF6AB2C2DB15500B6DEB2 /* SnapKit */; };
 		FF4BF6AF2C2DB39300B6DEB2 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4BF6AE2C2DB39300B6DEB2 /* MyViewController.swift */; };
@@ -130,6 +131,7 @@
 		FF328DC82C5A25A500007CD5 /* SignupTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupTextField.swift; sourceTree = "<group>"; };
 		FF328DCA2C5A280500007CD5 /* IconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButton.swift; sourceTree = "<group>"; };
 		FF33446F2C8D86F8002F2640 /* HomeRankDotchiImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRankDotchiImageView.swift; sourceTree = "<group>"; };
+		FF3344712C8DA2DF002F2640 /* HomeNicknameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNicknameView.swift; sourceTree = "<group>"; };
 		FF4BF6A82C2DACCB00B6DEB2 /* MakeDotchiPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeDotchiPhotoViewController.swift; sourceTree = "<group>"; };
 		FF4BF6AE2C2DB39300B6DEB2 /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
 		FF4BF6B12C2DB63900B6DEB2 /* CardEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardEntity.swift; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 				FF328DC62C4D6FBC00007CD5 /* ProgressBarView.swift */,
 				FFFB888C2C7F79C500ACB0C6 /* HomeTodayView.swift */,
 				FF33446F2C8D86F8002F2640 /* HomeRankDotchiImageView.swift */,
+				FF3344712C8DA2DF002F2640 /* HomeNicknameView.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -839,6 +842,7 @@
 				FFC7BB9D2C3EE151000EA7B5 /* SigninResponseDTO.swift in Sources */,
 				FFCD60852C2D9860007785FF /* ClassNameProtocol.swift in Sources */,
 				FFCD60962C2D9915007785FF /* CardHeadType.swift in Sources */,
+				FF3344722C8DA2DF002F2640 /* HomeNicknameView.swift in Sources */,
 				FFCD607F2C2D97FB007785FF /* UserDefaults+.swift in Sources */,
 				1E97275C2C43986B00252CA6 /* UserResponseDTO.swift in Sources */,
 				FFB7F9BD2C5BE35900650238 /* SignupRequestDTO.swift in Sources */,
