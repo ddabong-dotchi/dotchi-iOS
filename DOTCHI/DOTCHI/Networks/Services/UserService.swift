@@ -15,6 +15,7 @@ internal protocol UserServiceProtocol {
     func changePassword(data: String, completion: @escaping (NetworkResult<Any>) -> (Void))
     func checkUsernameDuplicate(data: String, completion: @escaping (NetworkResult<Any>) -> (Void))
     func checkNicknameDuplicate(data: String, completion: @escaping (NetworkResult<Any>) -> (Void))
+    func requestSignup(data: SignupRequestDTO, completion: @escaping (NetworkResult<Any>) -> (Void))
 }
 
 final class UserService: BaseService {
@@ -112,31 +113,32 @@ extension UserService: UserServiceProtocol {
     // [GET] 중복 아이디 조회
     
     func checkUsernameDuplicate(data: String, completion: @escaping (NetworkResult<Any>) -> (Void)) {
-        self.provider.request(.checkUsernameDuplicate(data: data)) { result in
-            switch result {
-            case .success(let response):
-                let statusCode = response.statusCode
-                let data = response.data
-                let networkResult = self.judgeStatus(by: statusCode, data, Bool.self)
-                completion(networkResult)
-            case .failure(let error):
-                debugPrint(error)
-            }
-        }
+        self.request(.checkUsernameDuplicate(data: data), decodingType: Bool.self, completion: completion)
     }
     
     // [GET] 중복 닉네임 조회
     
     func checkNicknameDuplicate(data: String, completion: @escaping (NetworkResult<Any>) -> (Void)) {
-        self.provider.request(.checkNicknameDuplicate(data: data)) { result in
+        self.request(.checkNicknameDuplicate(data: data), decodingType: Bool.self, completion: completion)
+    }
+    
+    // [POST] 회원가입 요청
+    
+    func requestSignup(data: SignupRequestDTO, completion: @escaping (NetworkResult<Any>) -> (Void)) {
+        self.request(.requestSignup(data: data), decodingType: SignupResponseDTO.self, completion: completion)
+    }
+    
+    private func request<T: Decodable>(_ target: UserRouter, decodingType: T.Type, completion: @escaping (NetworkResult<Any>) -> Void) {
+        self.provider.request(target) { result in
             switch result {
             case .success(let response):
                 let statusCode = response.statusCode
                 let data = response.data
-                let networkResult = self.judgeStatus(by: statusCode, data, Bool.self)
+                let networkResult = self.judgeStatus(by: statusCode, data, decodingType)
                 completion(networkResult)
             case .failure(let error):
                 debugPrint(error)
+                completion(.networkFail)
             }
         }
     }
