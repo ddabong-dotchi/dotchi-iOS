@@ -110,6 +110,7 @@
 		FFFB88872C7B216A00ACB0C6 /* SignupEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFB88862C7B216A00ACB0C6 /* SignupEntity.swift */; };
 		FFFB88892C7E1BA100ACB0C6 /* SignupResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFB88882C7E1BA100ACB0C6 /* SignupResponseDTO.swift */; };
 		FFFB888D2C7F79C500ACB0C6 /* HomeTodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFB888C2C7F79C500ACB0C6 /* HomeTodayView.swift */; };
+		FFFB88922C875E6200ACB0C6 /* pung.json in Resources */ = {isa = PBXBuildFile; fileRef = FFFB88912C875E6200ACB0C6 /* pung.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -209,6 +210,7 @@
 		FFFB88862C7B216A00ACB0C6 /* SignupEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupEntity.swift; sourceTree = "<group>"; };
 		FFFB88882C7E1BA100ACB0C6 /* SignupResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupResponseDTO.swift; sourceTree = "<group>"; };
 		FFFB888C2C7F79C500ACB0C6 /* HomeTodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTodayView.swift; sourceTree = "<group>"; };
+		FFFB88912C875E6200ACB0C6 /* pung.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pung.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -480,6 +482,7 @@
 		FFCD603D2C2D911D007785FF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FFFB888E2C875DD700ACB0C6 /* GIFs */,
 				FFCD60482C2D9290007785FF /* Assets.xcassets */,
 				FFCD60492C2D9290007785FF /* Colorsets.xcassets */,
 				FFCD603E2C2D913D007785FF /* Fonts */,
@@ -653,6 +656,14 @@
 			path = UITabBarViewController;
 			sourceTree = "<group>";
 		};
+		FFFB888E2C875DD700ACB0C6 /* GIFs */ = {
+			isa = PBXGroup;
+			children = (
+				FFFB88912C875E6200ACB0C6 /* pung.json */,
+			);
+			path = GIFs;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -739,6 +750,7 @@
 				FFCD604A2C2D9290007785FF /* Assets.xcassets in Resources */,
 				FFCD604B2C2D9290007785FF /* Colorsets.xcassets in Resources */,
 				FF843BDA2C7A2F79007B14A8 /* Debug.xcconfig in Resources */,
+				FFFB88922C875E6200ACB0C6 /* pung.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
