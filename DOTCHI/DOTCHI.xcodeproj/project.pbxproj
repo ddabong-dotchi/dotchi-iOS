@@ -21,6 +21,7 @@
 		FF328DC72C4D6FBC00007CD5 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF328DC62C4D6FBC00007CD5 /* ProgressBarView.swift */; };
 		FF328DC92C5A25A500007CD5 /* SignupTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF328DC82C5A25A500007CD5 /* SignupTextField.swift */; };
 		FF328DCB2C5A280500007CD5 /* IconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF328DCA2C5A280500007CD5 /* IconButton.swift */; };
+		FF3344702C8D86F8002F2640 /* HomeRankDotchiImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF33446F2C8D86F8002F2640 /* HomeRankDotchiImageView.swift */; };
 		FF4BF6A92C2DACCB00B6DEB2 /* MakeDotchiPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4BF6A82C2DACCB00B6DEB2 /* MakeDotchiPhotoViewController.swift */; };
 		FF4BF6AC2C2DB15500B6DEB2 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FF4BF6AB2C2DB15500B6DEB2 /* SnapKit */; };
 		FF4BF6AF2C2DB39300B6DEB2 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4BF6AE2C2DB39300B6DEB2 /* MyViewController.swift */; };
@@ -128,6 +129,7 @@
 		FF328DC62C4D6FBC00007CD5 /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		FF328DC82C5A25A500007CD5 /* SignupTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupTextField.swift; sourceTree = "<group>"; };
 		FF328DCA2C5A280500007CD5 /* IconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButton.swift; sourceTree = "<group>"; };
+		FF33446F2C8D86F8002F2640 /* HomeRankDotchiImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRankDotchiImageView.swift; sourceTree = "<group>"; };
 		FF4BF6A82C2DACCB00B6DEB2 /* MakeDotchiPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeDotchiPhotoViewController.swift; sourceTree = "<group>"; };
 		FF4BF6AE2C2DB39300B6DEB2 /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
 		FF4BF6B12C2DB63900B6DEB2 /* CardEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardEntity.swift; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 				FF328DC42C4D4DA300007CD5 /* DotchiNavigationView.swift */,
 				FF328DC62C4D6FBC00007CD5 /* ProgressBarView.swift */,
 				FFFB888C2C7F79C500ACB0C6 /* HomeTodayView.swift */,
+				FF33446F2C8D86F8002F2640 /* HomeRankDotchiImageView.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -775,6 +778,7 @@
 				FFC7BB872C3D9562000EA7B5 /* DotchiMoyaProvider.swift in Sources */,
 				FFC7BBA32C45765A000EA7B5 /* SignupProfileImageViewController.swift in Sources */,
 				FFCD60982C2D991A007785FF /* Messages.swift in Sources */,
+				FF3344702C8D86F8002F2640 /* HomeRankDotchiImageView.swift in Sources */,
 				FFC7BBA12C45764E000EA7B5 /* SignupIntroduceViewController.swift in Sources */,
 				1E9727462C3C3C6F00252CA6 /* SettingViewController.swift in Sources */,
 				FFB7F9BA2C5A430700650238 /* UITapGestureRecognizer+.swift in Sources */,

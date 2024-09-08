@@ -60,6 +60,10 @@ final class HomeTodayView: UIView {
         return view
     }()
     
+    private var firstDotchiImage = HomeRankDotchiImageView(rank: .first)
+    private var secondDotchiImage = HomeRankDotchiImageView(rank: .other)
+    private var thirdDotchiImage = HomeRankDotchiImageView(rank: .other)
+    
     // MARK: Initializer
     
     override init(frame: CGRect) {
@@ -114,7 +118,10 @@ extension HomeTodayView {
             logoView,
             titleLabel,
             dateStackView,
-            particleAnimationView
+            particleAnimationView,
+            firstDotchiImage,
+            secondDotchiImage,
+            thirdDotchiImage
         ])
         
         self.logoView.snp.makeConstraints { make in
@@ -139,6 +146,27 @@ extension HomeTodayView {
             make.top.equalTo(self.logoView.snp.bottom)
             make.horizontalEdges.equalToSuperview()
             make.height.equalTo(200)
+        }
+        
+        self.firstDotchiImage.snp.makeConstraints { make in
+            make.top.equalTo(self.dateStackView.snp.bottom).offset(36)
+            make.centerX.equalToSuperview()
+            make.width.equalToSuperview().multipliedBy(112.0/393.0)
+            make.height.equalTo(self.firstDotchiImage.snp.width).multipliedBy(204.0/112.0)
+        }
+        
+        self.secondDotchiImage.snp.makeConstraints { make in
+            make.bottom.equalTo(self.firstDotchiImage)
+            make.right.equalTo(self.firstDotchiImage.snp.left).offset(-10)
+            make.height.equalTo(self.firstDotchiImage.snp.height).multipliedBy(157.0/204.0)
+            make.width.equalTo(self.firstDotchiImage.snp.width).multipliedBy(82.0/112.0)
+        }
+        
+        self.thirdDotchiImage.snp.makeConstraints { make in
+            make.bottom.equalTo(self.firstDotchiImage)
+            make.left.equalTo(self.firstDotchiImage.snp.right).offset(10)
+            make.height.equalTo(self.firstDotchiImage.snp.height).multipliedBy(157.0/204.0)
+            make.width.equalTo(self.firstDotchiImage.snp.width).multipliedBy(82.0/112.0)
         }
     }
 }

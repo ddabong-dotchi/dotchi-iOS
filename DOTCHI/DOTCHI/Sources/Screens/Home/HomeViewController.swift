@@ -59,7 +59,8 @@ extension HomeViewController {
         self.todayView.snp.makeConstraints { make in
             make.top.equalToSuperview()
             make.horizontalEdges.equalToSuperview()
-            make.height.equalTo(451)
+            make.height.equalTo(500)
+            make.bottom.equalToSuperview()
         }
     }
 }
