@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1E3A1E5F2C71EE740096708D /* EditUserResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3A1E5E2C71EE740096708D /* EditUserResponseDTO.swift */; };
 		1E3A1E612C71EEA50096708D /* EditUserRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3A1E602C71EEA50096708D /* EditUserRequestDTO.swift */; };
+		1E3A1E632C7422580096708D /* EditAccountInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3A1E622C7422580096708D /* EditAccountInfoViewController.swift */; };
 		1E9727462C3C3C6F00252CA6 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9727452C3C3C6F00252CA6 /* SettingViewController.swift */; };
 		1E97274A2C3DA24100252CA6 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9727492C3DA24100252CA6 /* EditProfileViewController.swift */; };
 		1E9727582C43924F00252CA6 /* UserRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9727572C43924F00252CA6 /* UserRouter.swift */; };
@@ -17,6 +18,8 @@
 		1E9727602C43AE2D00252CA6 /* MyCardResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E97275F2C43AE2D00252CA6 /* MyCardResponseDTO.swift */; };
 		1E9727622C44F62000252CA6 /* BlacklistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9727612C44F62000252CA6 /* BlacklistViewController.swift */; };
 		1E9727652C44FCA600252CA6 /* BlacklistResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9727642C44FCA600252CA6 /* BlacklistResponseDTO.swift */; };
+		1ED0A9262C80F44400D78F4E /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED0A9252C80F44400D78F4E /* ChangePasswordViewController.swift */; };
+		1ED0A92E2C8CC92500D78F4E /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED0A92D2C8CC92500D78F4E /* PasswordTextField.swift */; };
 		FF328DC52C4D4DA300007CD5 /* DotchiNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF328DC42C4D4DA300007CD5 /* DotchiNavigationView.swift */; };
 		FF328DC72C4D6FBC00007CD5 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF328DC62C4D6FBC00007CD5 /* ProgressBarView.swift */; };
 		FF328DC92C5A25A500007CD5 /* SignupTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF328DC82C5A25A500007CD5 /* SignupTextField.swift */; };
@@ -114,6 +117,7 @@
 /* Begin PBXFileReference section */
 		1E3A1E5E2C71EE740096708D /* EditUserResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserResponseDTO.swift; sourceTree = "<group>"; };
 		1E3A1E602C71EEA50096708D /* EditUserRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserRequestDTO.swift; sourceTree = "<group>"; };
+		1E3A1E622C7422580096708D /* EditAccountInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAccountInfoViewController.swift; sourceTree = "<group>"; };
 		1E9727452C3C3C6F00252CA6 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		1E9727492C3DA24100252CA6 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		1E9727572C43924F00252CA6 /* UserRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRouter.swift; sourceTree = "<group>"; };
@@ -122,6 +126,8 @@
 		1E97275F2C43AE2D00252CA6 /* MyCardResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardResponseDTO.swift; sourceTree = "<group>"; };
 		1E9727612C44F62000252CA6 /* BlacklistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlacklistViewController.swift; sourceTree = "<group>"; };
 		1E9727642C44FCA600252CA6 /* BlacklistResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlacklistResponseDTO.swift; sourceTree = "<group>"; };
+		1ED0A9252C80F44400D78F4E /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		1ED0A92D2C8CC92500D78F4E /* PasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextField.swift; sourceTree = "<group>"; };
 		FF328DC42C4D4DA300007CD5 /* DotchiNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotchiNavigationView.swift; sourceTree = "<group>"; };
 		FF328DC62C4D6FBC00007CD5 /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		FF328DC82C5A25A500007CD5 /* SignupTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupTextField.swift; sourceTree = "<group>"; };
@@ -273,6 +279,8 @@
 				FF4BF6AE2C2DB39300B6DEB2 /* MyViewController.swift */,
 				1E9727452C3C3C6F00252CA6 /* SettingViewController.swift */,
 				1E9727492C3DA24100252CA6 /* EditProfileViewController.swift */,
+				1E3A1E622C7422580096708D /* EditAccountInfoViewController.swift */,
+				1ED0A9252C80F44400D78F4E /* ChangePasswordViewController.swift */,
 				1E9727612C44F62000252CA6 /* BlacklistViewController.swift */,
 			);
 			path = My;
@@ -364,6 +372,7 @@
 			children = (
 				FFC7BB752C35ADD4000EA7B5 /* SigninTextField.swift */,
 				FF328DC82C5A25A500007CD5 /* SignupTextField.swift */,
+				1ED0A92D2C8CC92500D78F4E /* PasswordTextField.swift */,
 			);
 			path = UITextField;
 			sourceTree = "<group>";
@@ -765,6 +774,7 @@
 				FFB7F9BA2C5A430700650238 /* UITapGestureRecognizer+.swift in Sources */,
 				FFCD60982C2D991A007785FF /* Messages.swift in Sources */,
 				1E9727582C43924F00252CA6 /* UserRouter.swift in Sources */,
+				1ED0A92E2C8CC92500D78F4E /* PasswordTextField.swift in Sources */,
 				FFC7BB922C3EDFCB000EA7B5 /* AuthRouter.swift in Sources */,
 				FFCD609A2C2D9920007785FF /* KeychainKeys.swift in Sources */,
 				FF4BF6B22C2DB63900B6DEB2 /* CardEntity.swift in Sources */,
@@ -804,11 +814,13 @@
 				FFCD60942C2D990D007785FF /* CardSortType.swift in Sources */,
 				FFC7BB702C3460BF000EA7B5 /* HomeViewController.swift in Sources */,
 				1E97274A2C3DA24100252CA6 /* EditProfileViewController.swift in Sources */,
+				1E3A1E632C7422580096708D /* EditAccountInfoViewController.swift in Sources */,
 				FFCD60692C2D9718007785FF /* UIButton+.swift in Sources */,
 				FFCD60522C2D9482007785FF /* SplashViewController.swift in Sources */,
 				1E9727602C43AE2D00252CA6 /* MyCardResponseDTO.swift in Sources */,
 				FFB7F9B82C5A42E700650238 /* TermsLabel.swift in Sources */,
 				FFCD607B2C2D97D1007785FF /* UITableView+.swift in Sources */,
+				1ED0A9262C80F44400D78F4E /* ChangePasswordViewController.swift in Sources */,
 				FFCD605B2C2D953F007785FF /* BaseViewController.swift in Sources */,
 				FFCD607D2C2D97E1007785FF /* UIImage+.swift in Sources */,
 				FFCD606F2C2D975A007785FF /* UICollectionView+.swift in Sources */,

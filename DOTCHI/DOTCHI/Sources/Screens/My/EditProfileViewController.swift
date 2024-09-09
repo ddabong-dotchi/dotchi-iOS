@@ -34,12 +34,13 @@ class EditProfileViewController: BaseViewController, UITextFieldDelegate, UIText
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupSubviews()
-        setupConstraints()
+        self.view.backgroundColor = UIColor.dotchiScreenBackground
         
         nicknameTextField.delegate = self
         descriptionTextView.delegate = self
         
+        setupSubviews()
+        setupConstraints()
         configureDescriptionPlaceholder()
         fetchMyData()
     }
@@ -60,8 +61,6 @@ class EditProfileViewController: BaseViewController, UITextFieldDelegate, UIText
             saveButton
         ])
         
-        self.view.backgroundColor = UIColor.dotchiScreenBackground
-        
         navigationView.centerTitleLabel.text = "프로필 수정"
         
         imageView.contentMode = .scaleAspectFill
@@ -74,27 +73,22 @@ class EditProfileViewController: BaseViewController, UITextFieldDelegate, UIText
         cameraButton.layer.cornerRadius = 15
         cameraButton.addTarget(self, action: #selector(openPhotoLibrary), for: .touchUpInside)
         
-        nicknameLabel.text = "닉네임을 설정해 주세요."
-        nicknameLabel.textColor = UIColor.dotchiLgray
-        nicknameLabel.font = .sub
+        nicknameLabel.text = "닉네임을 설정해 주세요. (한글)"
+        nicknameLabel.setStyle(.sub, .dotchiLgray)
         
-        nicknameTextField.placeholder = "최대 7글자"
         nicknameTextField.layer.cornerRadius = 8
         nicknameTextField.layer.borderWidth = 1
         nicknameTextField.backgroundColor = .dotchiMgray
         nicknameTextField.textColor = .dotchiLgray
         nicknameTextField.font = .head2
         nicknameTextField.tintColor = UITextField().tintColor
-        
-        let leftPaddingView1 = UIView(frame: CGRect(x: 0, y: 0, width: 18, height: 48))
-        nicknameTextField.leftView = leftPaddingView1
-        nicknameTextField.leftViewMode = .always
+        nicknameTextField.addLeftPadding(18)
         
         let attributes: [NSAttributedString.Key: Any] = [
             NSAttributedString.Key.foregroundColor: UIColor.dotchiWhite.withAlphaComponent(0.3),
-            NSAttributedString.Key.font: UIFont(name: "Pretendard-Bold", size: 16) ?? UIFont.systemFont(ofSize: 16)
+            NSAttributedString.Key.font: UIFont.head2
         ]
-        nicknameTextField.attributedPlaceholder = NSAttributedString(string: "최대 7글자", attributes: attributes)
+        nicknameTextField.attributedPlaceholder = NSAttributedString(string: "2~7글자", attributes: attributes)
         
         nicknameTextField.addTarget(self, action: #selector(nicknameTextFieldDidChange(_:)), for: .editingChanged)
         
@@ -110,8 +104,7 @@ class EditProfileViewController: BaseViewController, UITextFieldDelegate, UIText
         nicknameStatusLabel.font = .sSub
         
         descriptionLabel.text = "간단한 소개를 작성해 주세요."
-        descriptionLabel.textColor = UIColor.dotchiLgray
-        descriptionLabel.font = .sub
+        descriptionLabel.setStyle(.sub, .dotchiLgray)
         
         descriptionTextView.layer.cornerRadius = 8
         descriptionTextView.backgroundColor = .dotchiMgray
@@ -120,18 +113,17 @@ class EditProfileViewController: BaseViewController, UITextFieldDelegate, UIText
         descriptionTextView.delegate = self
         
         descriptionPlaceholderLabel.text = "최대 40글자"
-        descriptionPlaceholderLabel.textColor = UIColor.dotchiWhite.withAlphaComponent(0.3)
-        descriptionPlaceholderLabel.font = .head2
+        descriptionPlaceholderLabel.setStyle(.head2, .dotchiWhite.withAlphaComponent(0.3))
         descriptionTextView.addSubview(descriptionPlaceholderLabel)
         descriptionPlaceholderLabel.snp.makeConstraints { make in
             make.top.equalTo(descriptionTextView).offset(13)
             make.leading.equalTo(descriptionTextView).offset(18)
         }
         
-        let leftPaddingView2 = UIView(frame: CGRect(x: 0, y: 0, width: 18, height: 13))
+        let leftPaddingView = UIView(frame: CGRect(x: 0, y: 0, width: 18, height: 13))
         let rightPaddingView = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: 13))
         descriptionTextView.textContainerInset = UIEdgeInsets(top: 13, left: 15, bottom: 0, right: 15)
-        descriptionTextView.addSubview(leftPaddingView2)
+        descriptionTextView.addSubview(leftPaddingView)
         descriptionTextView.addSubview(rightPaddingView)
         
         saveButton.setTitle("저장하기", for: .normal)
@@ -158,21 +150,19 @@ class EditProfileViewController: BaseViewController, UITextFieldDelegate, UIText
             make.width.height.equalTo(116)
         }
         
-        let cameraButton = view.subviews.compactMap { $0 as? UIButton }.first { $0.currentImage == UIImage(named: "imgCamera") }
-        cameraButton?.snp.makeConstraints { make in
+        cameraButton.snp.makeConstraints { make in
             make.width.height.equalTo(32)
             make.centerX.equalTo(imageView.snp.trailing).offset(-10)
             make.centerY.equalTo(imageView.snp.bottom).offset(-10)
         }
         
-        let nicknameLabel = view.subviews.compactMap { $0 as? UILabel }.first { $0.text == "닉네임을 설정해 주세요." }
-        nicknameLabel?.snp.makeConstraints { make in
+        nicknameLabel.snp.makeConstraints { make in
             make.top.equalTo(imageView.snp.bottom).offset(30)
             make.leading.equalTo(safeArea).offset(28)
         }
         
         nicknameTextField.snp.makeConstraints { make in
-            make.top.equalTo(nicknameLabel!.snp.bottom).offset(10)
+            make.top.equalTo(nicknameLabel.snp.bottom).offset(10)
             make.leading.equalTo(safeArea).offset(28)
             make.height.equalTo(48)
             make.trailing.equalTo(nicknameDuplicateButton.snp.leading).offset(-8)
@@ -190,14 +180,13 @@ class EditProfileViewController: BaseViewController, UITextFieldDelegate, UIText
             make.leading.equalTo(nicknameTextField)
         }
         
-        let introduceLabel = view.subviews.compactMap { $0 as? UILabel }.first { $0.text == "간단한 소개를 작성해 주세요." }
-        introduceLabel?.snp.makeConstraints { make in
+        descriptionLabel.snp.makeConstraints { make in
             make.top.equalTo(nicknameStatusLabel.snp.bottom).offset(30)
             make.leading.equalTo(safeArea).offset(28)
         }
         
         descriptionTextView.snp.makeConstraints { make in
-            make.top.equalTo(introduceLabel!.snp.bottom).offset(10)
+            make.top.equalTo(descriptionLabel.snp.bottom).offset(10)
             make.leading.equalTo(safeArea).offset(28)
             make.trailing.equalTo(safeArea).offset(-28)
             make.height.equalTo(138)
@@ -216,12 +205,7 @@ class EditProfileViewController: BaseViewController, UITextFieldDelegate, UIText
     }
     
     @objc private func checkForDuplicateNickname() {
-        guard let nickname = nicknameTextField.text, !nickname.isEmpty else {
-            showAlert(message: "닉네임을 입력해 주세요.")
-            return
-        }
-        
-        userService.checkNicknameDuplicate(data: nickname) { [weak self] result in
+        userService.checkNicknameDuplicate(data: nicknameTextField.text ?? "") { [weak self] result in
             DispatchQueue.main.async { [self] in
                 guard let self = self else { return }
                 
@@ -237,17 +221,10 @@ class EditProfileViewController: BaseViewController, UITextFieldDelegate, UIText
                         self.checkForUnsavedChanges()
                         
                     } else {
-                        print("서버에서 올바른 응답을 받지 못했습니다.")
+                        print("Invalid data format received")
                     }
-                    
-                case .requestErr(let message):
-                    print("Request error: \(message)")
-                case .pathErr:
-                    print("Path error")
-                case .serverErr:
-                    print("Server error")
-                case .networkFail:
-                    print("Network failure")
+                default:
+                    self.showNetworkErrorAlert()
                 }
             }
         }
@@ -263,7 +240,7 @@ class EditProfileViewController: BaseViewController, UITextFieldDelegate, UIText
         }
         
         let isNicknameChanged = (nickname != originalNickname)
-        nicknameDuplicateButton.isEnabled = isNicknameChanged
+        nicknameDuplicateButton.isEnabled = isNicknameChanged && nickname.count >= 2
         updateNicknameDuplicateButtonAppearance()
         
         if isNicknameChanged || nickname == originalNickname {
@@ -331,17 +308,6 @@ class EditProfileViewController: BaseViewController, UITextFieldDelegate, UIText
         saveButton.setTitleColor(isEnabled ? UIColor.white : UIColor.white.withAlphaComponent(0.5), for: .normal)
     }
     
-    @objc private func saveProfile() {
-        UserService.shared.editUser(nickname: nicknameTextField.text ?? "", description: descriptionTextView.text, profileImage: imageView.image) { result in
-            switch result {
-            case .success(let response):
-                self.dismiss(animated: true, completion: nil)
-            default:
-                self.showNetworkErrorAlert()
-            }
-        }
-    }
-    
     @objc private func openPhotoLibrary() {
         let imagePicker = UIImagePickerController()
         imagePicker.sourceType = .photoLibrary
@@ -362,23 +328,16 @@ class EditProfileViewController: BaseViewController, UITextFieldDelegate, UIText
     // MARK: - Network
     
     private func fetchMyData() {
-        userService.getUser { [weak self] result in
-            switch result {
+        userService.getUser { networkResult in
+            switch networkResult {
             case .success(let data):
                 if let userResponse = data as? UserResponseDTO {
-                    self?.updateUI(with: userResponse)
-                    
+                    self.updateUI(with: userResponse)
                 } else {
                     print("Invalid data format received")
                 }
-            case .requestErr(let message):
-                print("Request error: \(message)")
-            case .pathErr:
-                print("Path error")
-            case .serverErr:
-                print("Server error")
-            case .networkFail:
-                print("Network failure")
+            default:
+                self.showNetworkErrorAlert()
             }
         }
     }
@@ -400,10 +359,14 @@ class EditProfileViewController: BaseViewController, UITextFieldDelegate, UIText
         }
     }
     
-    private func showAlert(message: String) {
-        let alertController = UIAlertController(title: nil, message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "확인", style: .default)
-        alertController.addAction(okAction)
-        self.present(alertController, animated: true, completion: nil)
+    @objc private func saveProfile() {
+        userService.editUser(nickname: nicknameTextField.text ?? "", description: descriptionTextView.text, profileImage: imageView.image) { result in
+            switch result {
+            case .success:
+                self.dismiss(animated: true, completion: nil)
+            default:
+                self.showNetworkErrorAlert()
+            }
+        }
     }
 }
