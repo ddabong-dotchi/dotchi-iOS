@@ -11,6 +11,8 @@ import MessageUI
 
 class SettingViewController: BaseViewController {
     private let userService = UserService.shared
+    private let authService = AuthService.shared
+    
     private let scrollView = UIScrollView()
     private let contentView = UIView()
     private let profileImageView = UIImageView()
@@ -331,7 +333,26 @@ class SettingViewController: BaseViewController {
     }
     
     @objc private func logout() {
-        
+        authService.logout { [weak self] result in
+            guard let self = self else { return }
+            
+            switch result {
+            case .success:
+                self.clearKeychainData()
+                
+                DispatchQueue.main.async {
+                    let loginVC = SigninViewController()
+                    let navController = UINavigationController(rootViewController: loginVC)
+                    if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+                       let window = windowScene.windows.first {
+                        window.rootViewController = navController
+                        window.makeKeyAndVisible()
+                    }
+                }
+            default:
+                self.showNetworkErrorAlert()
+            }
+        }
     }
     
     @objc private func deleteAccount() {
