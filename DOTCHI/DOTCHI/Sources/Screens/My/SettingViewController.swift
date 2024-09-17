@@ -356,8 +356,22 @@ class SettingViewController: BaseViewController {
     }
     
     @objc private func deleteAccount() {
-        
+        makeAlertWithCancel(
+            title: "계정을 탈퇴하시겠습니까?",
+            message: "탈퇴 후에는 복구가 불가능합니다.",
+            okTitle: "탈퇴하기",
+            okStyle: .destructive,
+            cancelTitle: "취소",
+            okAction: { _ in
+                self.performAccountDeletion()
+            }
+        )
     }
+
+    private func performAccountDeletion() {
+        print("탈퇴 성공")
+    }
+
     
     // MARK: - Network
     
