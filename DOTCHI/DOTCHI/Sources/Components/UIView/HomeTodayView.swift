@@ -12,7 +12,7 @@ import Lottie
 final class HomeTodayView: UIView {
     
     private enum Text {
-        static let title = "가장 많은 행운을 나눠준\n따봉도치"
+        static let title = "가장 많은 행운을\n나눠 준 오늘의 따봉도치"
     }
     
     // MARK: UIComponents
