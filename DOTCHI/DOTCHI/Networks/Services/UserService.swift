@@ -13,6 +13,7 @@ internal protocol UserServiceProtocol {
     func getUser(completion: @escaping (NetworkResult<Any>) -> (Void))
     func editUser(nickname: String, description: String, profileImage: UIImage?, completion: @escaping (NetworkResult<Any>) -> (Void))
     func changePassword(data: String, completion: @escaping (NetworkResult<Any>) -> (Void))
+    func getBlacklists(completion: @escaping (NetworkResult<Any>) -> (Void))
     func checkUsernameDuplicate(data: String, completion: @escaping (NetworkResult<Any>) -> (Void))
     func checkNicknameDuplicate(data: String, completion: @escaping (NetworkResult<Any>) -> (Void))
     func requestSignup(data: SignupRequestDTO, completion: @escaping (NetworkResult<Any>) -> (Void))

@@ -10,6 +10,7 @@ import Moya
 
 internal protocol AuthServiceProtocol {
     func requestSignin(data: SigninRequestDTO, completion: @escaping (NetworkResult<Any>) -> (Void))
+    func logout(completion: @escaping (NetworkResult<Any>) -> (Void))
 }
 
 final class AuthService: BaseService {
