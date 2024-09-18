@@ -23,6 +23,7 @@
 		FF328DCB2C5A280500007CD5 /* IconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF328DCA2C5A280500007CD5 /* IconButton.swift */; };
 		FF3344702C8D86F8002F2640 /* HomeRankDotchiImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF33446F2C8D86F8002F2640 /* HomeRankDotchiImageView.swift */; };
 		FF3344722C8DA2DF002F2640 /* HomeNicknameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3344712C8DA2DF002F2640 /* HomeNicknameView.swift */; };
+		FF3344742C8E6844002F2640 /* HomeDiscoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3344732C8E6844002F2640 /* HomeDiscoverView.swift */; };
 		FF4BF6A92C2DACCB00B6DEB2 /* MakeDotchiPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4BF6A82C2DACCB00B6DEB2 /* MakeDotchiPhotoViewController.swift */; };
 		FF4BF6AC2C2DB15500B6DEB2 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FF4BF6AB2C2DB15500B6DEB2 /* SnapKit */; };
 		FF4BF6AF2C2DB39300B6DEB2 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4BF6AE2C2DB39300B6DEB2 /* MyViewController.swift */; };
@@ -62,6 +63,7 @@
 		FFC7BBA12C45764E000EA7B5 /* SignupIntroduceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7BBA02C45764E000EA7B5 /* SignupIntroduceViewController.swift */; };
 		FFC7BBA32C45765A000EA7B5 /* SignupProfileImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7BBA22C45765A000EA7B5 /* SignupProfileImageViewController.swift */; };
 		FFC7BBA52C45766D000EA7B5 /* SignupCompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7BBA42C45766D000EA7B5 /* SignupCompleteViewController.swift */; };
+		FFCB11F82C9AED1600892966 /* MoreButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCB11F72C9AED1600892966 /* MoreButton.swift */; };
 		FFCD602A2C21D9F2007785FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD60292C21D9F2007785FF /* AppDelegate.swift */; };
 		FFCD602C2C21D9F2007785FF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD602B2C21D9F2007785FF /* SceneDelegate.swift */; };
 		FFCD60362C21D9F3007785FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFCD60342C21D9F3007785FF /* LaunchScreen.storyboard */; };
@@ -132,6 +134,7 @@
 		FF328DCA2C5A280500007CD5 /* IconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButton.swift; sourceTree = "<group>"; };
 		FF33446F2C8D86F8002F2640 /* HomeRankDotchiImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRankDotchiImageView.swift; sourceTree = "<group>"; };
 		FF3344712C8DA2DF002F2640 /* HomeNicknameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNicknameView.swift; sourceTree = "<group>"; };
+		FF3344732C8E6844002F2640 /* HomeDiscoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDiscoverView.swift; sourceTree = "<group>"; };
 		FF4BF6A82C2DACCB00B6DEB2 /* MakeDotchiPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeDotchiPhotoViewController.swift; sourceTree = "<group>"; };
 		FF4BF6AE2C2DB39300B6DEB2 /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
 		FF4BF6B12C2DB63900B6DEB2 /* CardEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardEntity.swift; sourceTree = "<group>"; };
@@ -169,6 +172,7 @@
 		FFC7BBA02C45764E000EA7B5 /* SignupIntroduceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupIntroduceViewController.swift; sourceTree = "<group>"; };
 		FFC7BBA22C45765A000EA7B5 /* SignupProfileImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupProfileImageViewController.swift; sourceTree = "<group>"; };
 		FFC7BBA42C45766D000EA7B5 /* SignupCompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupCompleteViewController.swift; sourceTree = "<group>"; };
+		FFCB11F72C9AED1600892966 /* MoreButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreButton.swift; sourceTree = "<group>"; };
 		FFCD60262C21D9F2007785FF /* DOTCHI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DOTCHI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFCD60292C21D9F2007785FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFCD602B2C21D9F2007785FF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -266,6 +270,7 @@
 				FFFB888C2C7F79C500ACB0C6 /* HomeTodayView.swift */,
 				FF33446F2C8D86F8002F2640 /* HomeRankDotchiImageView.swift */,
 				FF3344712C8DA2DF002F2640 /* HomeNicknameView.swift */,
+				FF3344732C8E6844002F2640 /* HomeDiscoverView.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -366,6 +371,7 @@
 				FFC7BB722C35A770000EA7B5 /* TextUnderlineButtonView.swift */,
 				FFC7BB7A2C35BA89000EA7B5 /* DoneButton.swift */,
 				FF328DCA2C5A280500007CD5 /* IconButton.swift */,
+				FFCB11F72C9AED1600892966 /* MoreButton.swift */,
 			);
 			path = UIButton;
 			sourceTree = "<group>";
@@ -797,6 +803,7 @@
 				FFC7BB7E2C3D8A38000EA7B5 /* SignupUserInfoViewController.swift in Sources */,
 				FFCD60732C2D977F007785FF /* UIImageView+.swift in Sources */,
 				FF328DC72C4D6FBC00007CD5 /* ProgressBarView.swift in Sources */,
+				FF3344742C8E6844002F2640 /* HomeDiscoverView.swift in Sources */,
 				FFCD60792C2D97C3007785FF /* String+.swift in Sources */,
 				1E3A1E612C71EEA50096708D /* EditUserRequestDTO.swift in Sources */,
 				FFCD602A2C21D9F2007785FF /* AppDelegate.swift in Sources */,
@@ -836,6 +843,7 @@
 				FFCD607D2C2D97E1007785FF /* UIImage+.swift in Sources */,
 				FFCD606F2C2D975A007785FF /* UICollectionView+.swift in Sources */,
 				FFC7BB902C3EDFAC000EA7B5 /* SigninRequestDTO.swift in Sources */,
+				FFCB11F82C9AED1600892966 /* MoreButton.swift in Sources */,
 				1E97275E2C43996D00252CA6 /* UserService.swift in Sources */,
 				FFC7BB8B2C3D95BA000EA7B5 /* BaseService.swift in Sources */,
 				FFCD608F2C2D98BF007785FF /* UserDefaultsManager.swift in Sources */,
