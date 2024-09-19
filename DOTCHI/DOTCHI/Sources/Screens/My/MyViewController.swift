@@ -10,6 +10,7 @@ import SnapKit
 
 class MyViewController: BaseViewController {
     private let userService = UserService.shared
+    private var myCardData: [MyCardResponseDTO] = []
     
     private var profileImageView = UIImageView()
     private var nameLabel = UILabel()
@@ -208,7 +209,21 @@ class MyViewController: BaseViewController {
             switch networkResult {
             case .success(let data):
                 if let userResponse = data as? UserResponseDTO {
-                    self.updateUI(with: userResponse)
+                    self.updateProfileUI(with: userResponse)
+                } else {
+                    print("Invalid data format received")
+                }
+            default:
+                self.showNetworkErrorAlert()
+            }
+        }
+        
+        userService.getMyCard { networkResult in
+            switch networkResult {
+            case .success(let data):
+                if let myCardResponse = data as? [MyCardResponseDTO] {
+                    self.myCardData = myCardResponse
+                    self.updateCardUI(with: self.myCardData)
                 } else {
                     print("Invalid data format received")
                 }
@@ -218,7 +233,7 @@ class MyViewController: BaseViewController {
         }
     }
     
-    private func updateUI(with userData: UserResponseDTO) {
+    private func updateProfileUI(with userData: UserResponseDTO) {
         DispatchQueue.main.async { [weak self] in
             self?.nameLabel.text = userData.nickname
             self?.descriptionLabel.text = userData.description
@@ -226,6 +241,22 @@ class MyViewController: BaseViewController {
                 self?.profileImageView.loadImage(from: url)
             } else {
                 print("Invalid image URL: \(userData.imageUrl)")
+            }
+        }
+    }
+    
+    private func updateCardUI(with cardData: [MyCardResponseDTO]) {
+        DispatchQueue.main.async { [weak self] in
+            let count = cardData.count
+            self?.countLabel.text = String(count)
+            
+            if count == 0 {
+                self?.zeroView.isHidden = false
+                self?.collectionView.isHidden = true
+            } else {
+                self?.zeroView.isHidden = true
+                self?.collectionView.isHidden = false
+                self?.collectionView.reloadData()
             }
         }
     }
