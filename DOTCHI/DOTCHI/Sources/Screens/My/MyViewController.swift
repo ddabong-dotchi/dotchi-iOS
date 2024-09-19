@@ -144,7 +144,7 @@ class MyViewController: BaseViewController {
         zeroView.addSubview(imageView)
         imageView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.centerY.equalToSuperview().offset(-50)
+            make.centerY.equalToSuperview().offset(-35)
             make.width.equalTo(155.9)
             make.height.equalTo(132)
         }
