@@ -10,6 +10,8 @@ import Moya
 
 internal protocol AuthServiceProtocol {
     func requestSignin(data: SigninRequestDTO, completion: @escaping (NetworkResult<Any>) -> (Void))
+    func logout(completion: @escaping (NetworkResult<Any>) -> (Void))
+    func deleteAccount(completion: @escaping (NetworkResult<Any>) -> (Void))
 }
 
 final class AuthService: BaseService {
@@ -51,5 +53,21 @@ extension AuthService: AuthServiceProtocol {
                 debugPrint(error)
             }
         }
-    }   
+    }
+    
+    // [DELETE] 탈퇴
+    
+    func deleteAccount(completion: @escaping (NetworkResult<Any>) -> (Void)) {
+        self.provider.request(.deleteAccount) { result in
+            switch result {
+            case .success(let response):
+                let statusCode = response.statusCode
+                let data = response.data
+                let networkResult = self.judgeStatus(by: statusCode, data, String.self)
+                completion(networkResult)
+            case .failure(let error):
+                debugPrint(error)
+            }
+        }
+    }
 }

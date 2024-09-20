@@ -356,7 +356,39 @@ class SettingViewController: BaseViewController {
     }
     
     @objc private func deleteAccount() {
-        
+        makeAlertWithCancel(
+            title: "계정을 탈퇴하시겠습니까?",
+            message: "탈퇴 후에는 복구가 불가능합니다.",
+            okTitle: "탈퇴하기",
+            okStyle: .destructive,
+            cancelTitle: "취소",
+            okAction: { _ in
+                self.performDeleteAccount()
+            }
+        )
+    }
+
+    private func performDeleteAccount() {
+        authService.deleteAccount { [weak self] result in
+            guard let self = self else { return }
+            
+            switch result {
+            case .success:
+                self.clearKeychainData()
+                
+                DispatchQueue.main.async {
+                    let loginVC = SigninViewController()
+                    let navController = UINavigationController(rootViewController: loginVC)
+                    if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+                       let window = windowScene.windows.first {
+                        window.rootViewController = navController
+                        window.makeKeyAndVisible()
+                    }
+                }
+            default:
+                self.showNetworkErrorAlert()
+            }
+        }
     }
     
     // MARK: - Network

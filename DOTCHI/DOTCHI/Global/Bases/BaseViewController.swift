@@ -123,7 +123,7 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
         keychainManager.set(newPassword, forKey: KeychainKeys.password.rawValue)
     }
     
-    /// 로그아웃 시 모든 Keychain 데이터 삭제
+    /// 모든 Keychain 데이터 삭제
     func clearKeychainData() {
         self.keychainManager.delete(KeychainKeys.accessToken.rawValue)
         self.keychainManager.delete(KeychainKeys.refreshToken.rawValue)
