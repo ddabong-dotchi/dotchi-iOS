@@ -52,7 +52,8 @@ final class SplashViewController: BaseViewController {
     }
     
     private func presentHomeViewController() {
-        self.present(DotchiTabBarController(), animated: true)
+        let tabBarController = DotchiTabBarController(nibName: nil, bundle: nil)
+        self.present(tabBarController, animated: true)
     }
     
     private func presentSigninViewController() {
