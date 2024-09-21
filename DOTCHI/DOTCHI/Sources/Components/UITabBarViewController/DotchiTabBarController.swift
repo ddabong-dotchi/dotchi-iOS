@@ -20,7 +20,7 @@ final class DotchiTabBarController: UITabBarController {
     
     // MARK: Initializer
     
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+    init() {
         super.init(nibName: nil, bundle: nil)
         
         self.modalPresentationStyle = .fullScreen
