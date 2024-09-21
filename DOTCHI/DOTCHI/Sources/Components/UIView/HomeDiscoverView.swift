@@ -15,6 +15,12 @@ final class HomeDiscoverView: UIView {
         static let discover = "다양한 따봉도치들을 만나 보세요"
     }
     
+    enum Number {
+        static let cellHeight = 211.0
+        static let cellWidth = 143.0
+        static let cellSpacing = 12.0
+    }
+    
     // MARK: Properties
     
     private let titleLabel = {
@@ -35,6 +41,24 @@ final class HomeDiscoverView: UIView {
     
     private let allButton = MoreButton()
     
+    private let cardCollectionView: UICollectionView = {
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.scrollDirection = .horizontal
+        flowLayout.minimumLineSpacing = Number.cellSpacing
+        flowLayout.itemSize = .init(width: Number.cellWidth, height: Number.cellHeight)
+        
+        let collectionView: UICollectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
+        collectionView.backgroundColor = .clear
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.layoutMargins = .zero
+        collectionView.contentInset = .init(top: 0, left: 28, bottom: 0, right: 28)
+        return collectionView
+    }()
+    
+    // MARK: Properties
+    
+    private var cards: [CardFrontEntity] = []
+    
     // MARK: Initializer
     
     override init(frame: CGRect) {
@@ -42,6 +66,7 @@ final class HomeDiscoverView: UIView {
         
         self.setUI()
         self.setLayout()
+        self.setCollectionView()
     }
     
     required init?(coder: NSCoder) {
@@ -53,6 +78,38 @@ final class HomeDiscoverView: UIView {
     private func setUI() {
         self.backgroundColor = .dotchiBlack
     }
+    
+    private func setCollectionView() {
+        self.cardCollectionView.delegate = self
+        self.cardCollectionView.dataSource = self
+        
+        self.cardCollectionView.register(cell: DotchiSmallCardCollectionViewCell.self)
+    }
+}
+
+// MARK: - UICollectionViewDataSource
+
+extension HomeDiscoverView: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.cards.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DotchiSmallCardCollectionViewCell.className, for: indexPath) as? DotchiSmallCardCollectionViewCell
+        else { return UICollectionViewCell() }
+        
+        cell.setData(frontData: self.cards[indexPath.row])
+        return cell
+    }
+}
+
+// MARK: - UICollectionViewDelegateFlowLayout
+
+extension HomeDiscoverView: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+        print("cell clicked")
+    }
 }
 
 // MARK: - Layout
@@ -62,7 +119,8 @@ extension HomeDiscoverView {
         self.addSubviews([
             titleLabel,
             descriptionLabel,
-            allButton
+            allButton,
+            cardCollectionView
         ])
         
         self.titleLabel.snp.makeConstraints { make in
@@ -79,6 +137,12 @@ extension HomeDiscoverView {
             make.centerY.equalTo(self.titleLabel)
             make.right.equalToSuperview().inset(25)
             make.height.equalTo(14)
+        }
+        
+        self.cardCollectionView.snp.makeConstraints { make in
+            make.top.equalTo(self.descriptionLabel.snp.bottom).offset(24)
+            make.horizontalEdges.equalToSuperview().inset(28)
+            make.bottom.equalToSuperview().inset(9)
         }
     }
 }
