@@ -35,6 +35,9 @@
 		FF4BF6BC2C2DB69300B6DEB2 /* CardBackEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4BF6BB2C2DB69300B6DEB2 /* CardBackEntity.swift */; };
 		FF4BF6BF2C2DB6F900B6DEB2 /* NetworkLoggerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4BF6BE2C2DB6F900B6DEB2 /* NetworkLoggerPlugin.swift */; };
 		FF4BF6C22C2DB72700B6DEB2 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4BF6C12C2DB72700B6DEB2 /* APIConstants.swift */; };
+		FF6230382C9F36A9002029A6 /* CardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6230372C9F36A0002029A6 /* CardRouter.swift */; };
+		FF62303A2C9FCD9E002029A6 /* CardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6230392C9FCD96002029A6 /* CardService.swift */; };
+		FF62303E2C9FE41A002029A6 /* CardListResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF62303D2C9FE404002029A6 /* CardListResponseDTO.swift */; };
 		FF843BDA2C7A2F79007B14A8 /* Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = FF843BD92C7A2F79007B14A8 /* Debug.xcconfig */; };
 		FF843BDC2C7A2F8B007B14A8 /* Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = FF843BDB2C7A2F88007B14A8 /* Release.xcconfig */; };
 		FF843BDF2C7A4967007B14A8 /* PlaceholderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF843BDE2C7A4967007B14A8 /* PlaceholderTextView.swift */; };
@@ -146,6 +149,9 @@
 		FF4BF6BB2C2DB69300B6DEB2 /* CardBackEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBackEntity.swift; sourceTree = "<group>"; };
 		FF4BF6BE2C2DB6F900B6DEB2 /* NetworkLoggerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLoggerPlugin.swift; sourceTree = "<group>"; };
 		FF4BF6C12C2DB72700B6DEB2 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
+		FF6230372C9F36A0002029A6 /* CardRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardRouter.swift; sourceTree = "<group>"; };
+		FF6230392C9FCD96002029A6 /* CardService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardService.swift; sourceTree = "<group>"; };
+		FF62303D2C9FE404002029A6 /* CardListResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListResponseDTO.swift; sourceTree = "<group>"; };
 		FF843BD92C7A2F79007B14A8 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		FF843BDB2C7A2F88007B14A8 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		FF843BDE2C7A4967007B14A8 /* PlaceholderTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderTextView.swift; sourceTree = "<group>"; };
@@ -333,6 +339,22 @@
 			path = Essentials;
 			sourceTree = "<group>";
 		};
+		FF62303B2C9FCE7C002029A6 /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				FF62303C2C9FCE84002029A6 /* Response */,
+			);
+			path = Card;
+			sourceTree = "<group>";
+		};
+		FF62303C2C9FCE84002029A6 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				FF62303D2C9FE404002029A6 /* CardListResponseDTO.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
 		FF843BDD2C7A495A007B14A8 /* UITextView */ = {
 			isa = PBXGroup;
 			children = (
@@ -402,6 +424,7 @@
 		FFC7BB812C3D93FE000EA7B5 /* DTO */ = {
 			isa = PBXGroup;
 			children = (
+				FF62303B2C9FCE7C002029A6 /* Card */,
 				FFC7BB8E2C3EDFA2000EA7B5 /* Auth */,
 				1E9727592C43982300252CA6 /* User */,
 			);
@@ -411,6 +434,7 @@
 		FFC7BB822C3D941B000EA7B5 /* Routers */ = {
 			isa = PBXGroup;
 			children = (
+				FF6230372C9F36A0002029A6 /* CardRouter.swift */,
 				FFC7BB912C3EDFCB000EA7B5 /* AuthRouter.swift */,
 				1E9727572C43924F00252CA6 /* UserRouter.swift */,
 			);
@@ -420,6 +444,7 @@
 		FFC7BB832C3D9423000EA7B5 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				FF6230392C9FCD96002029A6 /* CardService.swift */,
 				FFC7BB8A2C3D95BA000EA7B5 /* BaseService.swift */,
 				FFC7BB8C2C3EDF95000EA7B5 /* AuthService.swift */,
 				1E97275D2C43996D00252CA6 /* UserService.swift */,
@@ -786,6 +811,7 @@
 			files = (
 				FFCD60622C2D95AA007785FF /* BaseUINavigationController.swift in Sources */,
 				FFC7BB762C35ADD4000EA7B5 /* SigninTextField.swift in Sources */,
+				FF6230382C9F36A9002029A6 /* CardRouter.swift in Sources */,
 				FFCD60812C2D980F007785FF /* UINavigationController+.swift in Sources */,
 				FF843BDF2C7A4967007B14A8 /* PlaceholderTextView.swift in Sources */,
 				FFC7BB892C3D956F000EA7B5 /* NetworkResult.swift in Sources */,
@@ -815,6 +841,7 @@
 				FFCD60732C2D977F007785FF /* UIImageView+.swift in Sources */,
 				FF328DC72C4D6FBC00007CD5 /* ProgressBarView.swift in Sources */,
 				FF3344742C8E6844002F2640 /* HomeDiscoverView.swift in Sources */,
+				FF62303E2C9FE41A002029A6 /* CardListResponseDTO.swift in Sources */,
 				FFCD60792C2D97C3007785FF /* String+.swift in Sources */,
 				1E3A1E612C71EEA50096708D /* EditUserRequestDTO.swift in Sources */,
 				FFCD602A2C21D9F2007785FF /* AppDelegate.swift in Sources */,
@@ -847,6 +874,7 @@
 				1E97274A2C3DA24100252CA6 /* EditProfileViewController.swift in Sources */,
 				FFCD60692C2D9718007785FF /* UIButton+.swift in Sources */,
 				FFCD60522C2D9482007785FF /* SplashViewController.swift in Sources */,
+				FF62303A2C9FCD9E002029A6 /* CardService.swift in Sources */,
 				1E9727602C43AE2D00252CA6 /* MyCardResponseDTO.swift in Sources */,
 				FFB7F9B82C5A42E700650238 /* TermsLabel.swift in Sources */,
 				FFCD607B2C2D97D1007785FF /* UITableView+.swift in Sources */,
