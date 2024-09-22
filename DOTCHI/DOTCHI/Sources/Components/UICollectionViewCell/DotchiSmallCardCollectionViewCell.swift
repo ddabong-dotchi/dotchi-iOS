@@ -14,7 +14,7 @@ final class DotchiSmallCardCollectionViewCell: UICollectionViewCell {
     
     private let frameImageView: UIImageView = {
         let imageView: UIImageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleAspectFit
         return imageView
     }()
     
@@ -27,7 +27,7 @@ final class DotchiSmallCardCollectionViewCell: UICollectionViewCell {
     
     private let dotchiNameLabel: UILabel = {
         let label: UILabel = UILabel()
-        label.font = .dotchiName
+        label.font = .dotchiName2
         label.textAlignment = .center
         return label
     }()
@@ -49,13 +49,13 @@ final class DotchiSmallCardCollectionViewCell: UICollectionViewCell {
     private func setFrameImageView(luckyType: LuckyType) {
         switch luckyType {
         case .health:
-            self.frameImageView.image = .imgHealthFront
+            self.frameImageView.image = .imgHealthFrontSmall
         case .lucky:
-            self.frameImageView.image = .imgLuckyFront
+            self.frameImageView.image = .imgLuckyFrontSmall
         case .money:
-            self.frameImageView.image = .imgMoneyFront
+            self.frameImageView.image = .imgMoneyFrontSmall
         case .love:
-            self.frameImageView.image = .imgLoveFront
+            self.frameImageView.image = .imgLoveFrontSmall
         }
     }
     

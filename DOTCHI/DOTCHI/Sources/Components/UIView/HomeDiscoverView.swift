@@ -75,6 +75,14 @@ final class HomeDiscoverView: UIView {
     
     // MARK: Methods
     
+    override func didMoveToSuperview() {
+        super.didMoveToSuperview()
+        
+        if superview != nil {
+            self.fetchCards()
+        }
+    }
+    
     private func setUI() {
         self.backgroundColor = .dotchiBlack
     }
@@ -112,6 +120,22 @@ extension HomeDiscoverView: UICollectionViewDelegateFlowLayout {
     }
 }
 
+// MARK: - Network
+
+extension HomeDiscoverView {
+    private func fetchCards() {
+        CardService.shared.getAllCards(sort: .recent) { result in
+            if case .success(let cards) = result {
+                self.cards = (cards as? CardListResponseDTO)?.toCardFrontEntity() ?? []
+                self.cardCollectionView.reloadData()
+            }
+            else {
+                debugPrint("Error fetching cards: \(result)")
+            }
+        }
+    }
+}
+
 // MARK: - Layout
 
 extension HomeDiscoverView {
@@ -126,11 +150,13 @@ extension HomeDiscoverView {
         self.titleLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(47)
             make.left.equalToSuperview().inset(28)
+            make.height.equalTo(24)
         }
         
         self.descriptionLabel.snp.makeConstraints { make in
             make.top.equalTo(self.titleLabel.snp.bottom).offset(14)
             make.left.equalToSuperview().inset(28)
+            make.height.equalTo(14)
         }
         
         self.allButton.snp.makeConstraints { make in
@@ -141,7 +167,8 @@ extension HomeDiscoverView {
         
         self.cardCollectionView.snp.makeConstraints { make in
             make.top.equalTo(self.descriptionLabel.snp.bottom).offset(24)
-            make.horizontalEdges.equalToSuperview().inset(28)
+            make.horizontalEdges.equalToSuperview()
+            make.height.equalTo(211)
             make.bottom.equalToSuperview().inset(9)
         }
     }
