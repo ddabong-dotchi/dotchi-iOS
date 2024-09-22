@@ -9,15 +9,17 @@ import UIKit
 import SnapKit
 
 class MyViewController: BaseViewController {
-    
-    var collectionView: UICollectionView!
-    var zeroView: UIView!
-    
     private let userService = UserService.shared
     
-    private var profileImageView: UIImageView!
-    private var nameLabel: UILabel!
-    private var descriptionLabel: UILabel!
+    private var profileImageView = UIImageView()
+    private var nameLabel = UILabel()
+    private var descriptionLabel = UILabel()
+    private let containerView = UIView()
+    private let stackView = UIStackView()
+    private let titleLabel = UILabel()
+    private let countLabel = UILabel()
+    private var collectionView: UICollectionView!
+    private var zeroView = UIView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +28,7 @@ class MyViewController: BaseViewController {
         
         setupNavigationBar()
         setupSubviews()
+        setupConstraints()
         fetchMyData()
         
         if let navigationBar = self.navigationController?.navigationBar {
@@ -73,31 +76,20 @@ class MyViewController: BaseViewController {
     // MARK: - Setup Subviews
     
     private func setupSubviews() {
-        profileImageView = UIImageView()
+        self.view.addSubviews([
+            profileImageView,
+            nameLabel,
+            descriptionLabel,
+            containerView
+        ])
+        
         profileImageView.layer.cornerRadius = 24
         profileImageView.layer.masksToBounds = true
         profileImageView.contentMode = .scaleAspectFill
         
-        view.addSubview(profileImageView)
-        profileImageView.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide).offset(0)
-            make.centerX.equalToSuperview()
-            make.width.height.equalTo(116)
-        }
+        nameLabel.setStyle(.body, .dotchiWhite)
         
-        nameLabel = UILabel()
-        nameLabel.font = UIFont.body
-        nameLabel.textColor = UIColor.dotchiWhite
-        
-        view.addSubview(nameLabel)
-        nameLabel.snp.makeConstraints { make in
-            make.top.equalTo(profileImageView.snp.bottom).offset(20)
-            make.centerX.equalToSuperview()
-        }
-        
-        descriptionLabel = UILabel()
-        descriptionLabel.font = UIFont.subSbold
-        descriptionLabel.textColor = UIColor.dotchiLgray
+        descriptionLabel.setStyle(.subSbold, .dotchiLgray)
         descriptionLabel.numberOfLines = 0
         descriptionLabel.textAlignment = .center
         if description.count > 20 {
@@ -109,47 +101,22 @@ class MyViewController: BaseViewController {
             descriptionLabel.text = description
         }
         
-        view.addSubview(descriptionLabel)
-        descriptionLabel.snp.makeConstraints { make in
-            make.top.equalTo(nameLabel.snp.bottom).offset(18)
-            make.leading.trailing.equalToSuperview().inset(30)
-        }
-        
-        let containerView = UIView()
         containerView.backgroundColor = UIColor.dotchiMgray
         containerView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         containerView.layer.cornerRadius = 24
         containerView.layer.masksToBounds = true
         
-        view.addSubview(containerView)
-        containerView.snp.makeConstraints { make in
-            make.top.equalTo(descriptionLabel.snp.bottom).offset(31)
-            make.leading.trailing.equalToSuperview().inset(0)
-            make.bottom.equalTo(view.safeAreaLayoutGuide).inset(0)
-        }
-        
-        let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.spacing = 8
         
-        let titleLabel = UILabel()
-        titleLabel.font = UIFont.head2
-        titleLabel.textColor = UIColor.dotchiGreen
         titleLabel.text = "공유 따봉도치"
+        titleLabel.setStyle(.head2, .dotchiGreen)
         
-        let countLabel = UILabel()
-        countLabel.font = UIFont.head2
-        countLabel.textColor = UIColor.dotchiGreen
         countLabel.text = "0"
+        countLabel.setStyle(.head2, .dotchiGreen)
         
         stackView.addArrangedSubview(titleLabel)
         stackView.addArrangedSubview(countLabel)
-        
-        containerView.addSubview(stackView)
-        stackView.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(25)
-            make.centerX.equalToSuperview()
-        }
         
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -159,20 +126,13 @@ class MyViewController: BaseViewController {
         collectionView.dataSource = self
         collectionView.register(MyCollectionViewCell.self, forCellWithReuseIdentifier: "MyCollectionViewCell")
         
-        containerView.addSubview(collectionView)
-        collectionView.snp.makeConstraints { make in
-            make.top.equalTo(stackView.snp.bottom).offset(15)
-            make.leading.trailing.equalToSuperview().inset(10)
-            make.bottom.equalToSuperview().inset(10)
-        }
-        
-        zeroView = UIView()
-        containerView.addSubview(zeroView)
-        zeroView.snp.makeConstraints { make in
-            make.edges.equalTo(collectionView)
-        }
-        
         setupZeroView()
+        
+        containerView.addSubviews([
+            stackView,
+            collectionView,
+            zeroView
+        ])
     }
     
     private func setupZeroView() {
@@ -200,26 +160,60 @@ class MyViewController: BaseViewController {
         }
     }
     
+    // MARK: - Setup Constraints
+    
+    private func setupConstraints() {
+        profileImageView.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide).offset(0)
+            make.centerX.equalToSuperview()
+            make.width.height.equalTo(116)
+        }
+        
+        nameLabel.snp.makeConstraints { make in
+            make.top.equalTo(profileImageView.snp.bottom).offset(20)
+            make.centerX.equalToSuperview()
+        }
+        
+        descriptionLabel.snp.makeConstraints { make in
+            make.top.equalTo(nameLabel.snp.bottom).offset(18)
+            make.leading.trailing.equalToSuperview().inset(30)
+        }
+        
+        containerView.snp.makeConstraints { make in
+            make.top.equalTo(descriptionLabel.snp.bottom).offset(31)
+            make.leading.trailing.equalToSuperview().inset(0)
+            make.bottom.equalTo(view.safeAreaLayoutGuide).inset(0)
+        }
+        
+        stackView.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(25)
+            make.centerX.equalToSuperview()
+        }
+        
+        collectionView.snp.makeConstraints { make in
+            make.top.equalTo(stackView.snp.bottom).offset(15)
+            make.leading.trailing.equalToSuperview().inset(10)
+            make.bottom.equalToSuperview().inset(10)
+        }
+        
+        zeroView.snp.makeConstraints { make in
+            make.edges.equalTo(collectionView)
+        }
+    }
+    
     // MARK: - Network
     
     private func fetchMyData() {
-        userService.getUser { [weak self] result in
-            switch result {
+        userService.getUser { networkResult in
+            switch networkResult {
             case .success(let data):
                 if let userResponse = data as? UserResponseDTO {
-                    self?.updateUI(with: userResponse)
-                    
+                    self.updateUI(with: userResponse)
                 } else {
                     print("Invalid data format received")
                 }
-            case .requestErr(let message):
-                print("Request error: \(message)")
-            case .pathErr:
-                print("Path error")
-            case .serverErr:
-                print("Server error")
-            case .networkFail:
-                print("Network failure")
+            default:
+                self.showNetworkErrorAlert()
             }
         }
     }

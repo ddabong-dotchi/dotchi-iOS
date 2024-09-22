@@ -113,6 +113,24 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
         return data
     }
     
+    /// Keychain에서 저장된 비밀번호를 가져오는 메서드
+    func getPasswordFromKeychain() -> String? {
+        return keychainManager.get(KeychainKeys.password.rawValue)
+    }
+    
+    /// Keychain에 비밀번호 업데이트
+    func updatePasswordInKeychain(newPassword: String) {
+        keychainManager.set(newPassword, forKey: KeychainKeys.password.rawValue)
+    }
+    
+    /// 모든 Keychain 데이터 삭제
+    func clearKeychainData() {
+        self.keychainManager.delete(KeychainKeys.accessToken.rawValue)
+        self.keychainManager.delete(KeychainKeys.refreshToken.rawValue)
+        self.keychainManager.delete(KeychainKeys.username.rawValue)
+        self.keychainManager.delete(KeychainKeys.password.rawValue)
+    }
+    
     /// 신고 사유 선택 action sheet
 //    func reportActionSheet(userId: Int) -> UIAlertController {
 //        let reportActionSheet: UIAlertController = UIAlertController(
