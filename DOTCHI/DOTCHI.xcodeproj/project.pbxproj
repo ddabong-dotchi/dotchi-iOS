@@ -41,8 +41,6 @@
 		FF6230382C9F36A9002029A6 /* CardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6230372C9F36A0002029A6 /* CardRouter.swift */; };
 		FF62303A2C9FCD9E002029A6 /* CardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6230392C9FCD96002029A6 /* CardService.swift */; };
 		FF62303E2C9FE41A002029A6 /* CardListResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF62303D2C9FE404002029A6 /* CardListResponseDTO.swift */; };
-		FF843BDA2C7A2F79007B14A8 /* Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = FF843BD92C7A2F79007B14A8 /* Debug.xcconfig */; };
-		FF843BDC2C7A2F8B007B14A8 /* Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = FF843BDB2C7A2F88007B14A8 /* Release.xcconfig */; };
 		FF843BDF2C7A4967007B14A8 /* PlaceholderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF843BDE2C7A4967007B14A8 /* PlaceholderTextView.swift */; };
 		FFB7F9B62C5A396F00650238 /* WarningLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB7F9B52C5A396F00650238 /* WarningLabel.swift */; };
 		FFB7F9B82C5A42E700650238 /* TermsLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB7F9B72C5A42E700650238 /* TermsLabel.swift */; };
@@ -281,10 +279,6 @@
 			children = (
 				FF328DC42C4D4DA300007CD5 /* DotchiNavigationView.swift */,
 				FF328DC62C4D6FBC00007CD5 /* ProgressBarView.swift */,
-				FFFB888C2C7F79C500ACB0C6 /* HomeTodayView.swift */,
-				FF33446F2C8D86F8002F2640 /* HomeRankDotchiImageView.swift */,
-				FF3344712C8DA2DF002F2640 /* HomeNicknameView.swift */,
-				FF3344732C8E6844002F2640 /* HomeDiscoverView.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -601,6 +595,10 @@
 			isa = PBXGroup;
 			children = (
 				FFC7BB6F2C3460BF000EA7B5 /* HomeViewController.swift */,
+				FFFB888C2C7F79C500ACB0C6 /* HomeTodayView.swift */,
+				FF33446F2C8D86F8002F2640 /* HomeRankDotchiImageView.swift */,
+				FF3344712C8DA2DF002F2640 /* HomeNicknameView.swift */,
+				FF3344732C8E6844002F2640 /* HomeDiscoverView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -760,7 +758,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1500;
-				LastUpgradeCheck = 1500;
+				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					FFCD60252C21D9F2007785FF = {
 						CreatedOnToolsVersion = 15.0.1;
@@ -800,13 +798,11 @@
 			files = (
 				FFCD60442C2D9195007785FF /* Pretendard-SemiBold.ttf in Resources */,
 				FFCD60362C21D9F3007785FF /* LaunchScreen.storyboard in Resources */,
-				FF843BDC2C7A2F8B007B14A8 /* Release.xcconfig in Resources */,
 				FFCD60452C2D9195007785FF /* Pretendard-ExtraBold.ttf in Resources */,
 				FFCD60462C2D9195007785FF /* Pretendard-Bold.ttf in Resources */,
 				FFCD60472C2D9195007785FF /* Pretendard-Medium.ttf in Resources */,
 				FFCD604A2C2D9290007785FF /* Assets.xcassets in Resources */,
 				FFCD604B2C2D9290007785FF /* Colorsets.xcassets in Resources */,
-				FF843BDA2C7A2F79007B14A8 /* Debug.xcconfig in Resources */,
 				FFFB88922C875E6200ACB0C6 /* pung.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -837,7 +833,6 @@
 				FFC7BBA12C45764E000EA7B5 /* SignupIntroduceViewController.swift in Sources */,
 				1E9727462C3C3C6F00252CA6 /* SettingViewController.swift in Sources */,
 				FFB7F9BA2C5A430700650238 /* UITapGestureRecognizer+.swift in Sources */,
-				FFCD60982C2D991A007785FF /* Messages.swift in Sources */,
 				1E9727582C43924F00252CA6 /* UserRouter.swift in Sources */,
 				1ED0A92E2C8CC92500D78F4E /* PasswordTextField.swift in Sources */,
 				FFC7BB922C3EDFCB000EA7B5 /* AuthRouter.swift in Sources */,
@@ -936,7 +931,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FF843BD92C7A2F79007B14A8 /* Debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -1001,7 +995,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FF843BD92C7A2F79007B14A8 /* Debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
