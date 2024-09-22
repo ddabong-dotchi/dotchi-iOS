@@ -17,6 +17,7 @@ final class HomeViewController: BaseViewController {
     
     private let todayView = HomeTodayView()
     private let discoverView = HomeDiscoverView()
+    private let themeView = HomeThemeView()
     
     // MARK: Properties
     
@@ -47,7 +48,8 @@ extension HomeViewController {
         self.scrollView.addSubviews([contentView])
         self.contentView.addSubviews([
             todayView,
-            discoverView
+            discoverView,
+            themeView
         ])
         
         self.scrollView.snp.makeConstraints { make in
@@ -68,6 +70,12 @@ extension HomeViewController {
             make.top.equalTo(self.todayView.snp.bottom)
             make.horizontalEdges.equalToSuperview()
             make.height.equalTo(343)
+        }
+        
+        self.themeView.snp.makeConstraints { make in
+            make.top.equalTo(self.discoverView.snp.bottom)
+            make.horizontalEdges.equalToSuperview()
+            make.height.equalTo(500)
             make.bottom.equalToSuperview()
         }
     }

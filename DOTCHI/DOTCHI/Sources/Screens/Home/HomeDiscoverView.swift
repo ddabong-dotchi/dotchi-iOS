@@ -12,7 +12,7 @@ final class HomeDiscoverView: UIView {
     
     private enum Text {
         static let title = "따봉도치 둘러보기"
-        static let discover = "다양한 따봉도치들을 만나 보세요"
+        static let description = "다양한 따봉도치들을 만나 보세요"
     }
     
     enum Number {
@@ -35,7 +35,7 @@ final class HomeDiscoverView: UIView {
         let label = UILabel()
         label.font = .sub
         label.textColor = .dotchiLgray
-        label.text = Text.discover
+        label.text = Text.description
         return label
     }()
     
