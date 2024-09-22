@@ -8,6 +8,6 @@
 import Foundation
 
 enum CardSortType: String {
-    case latest = "LATEST"
-    case hot = "HOT"
+    case recent = "RECENT"
+    case popular = "POPULAR"
 }
