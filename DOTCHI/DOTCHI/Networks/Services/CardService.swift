@@ -10,6 +10,7 @@ import Moya
 
 internal protocol CardServiceProtocol {
     func getAllCards(sort: CardSortType, completion: @escaping (NetworkResult<Any>) -> (Void))
+    func getTodayCards(completion: @escaping (NetworkResult<Any>) -> (Void))
 }
 
 final class CardService: BaseService {
@@ -27,6 +28,22 @@ extension CardService: CardServiceProtocol {
         self.provider.request(.getAllCards(sort: sort)) { result in
             switch result {
                 case .success(let response):
+                let statusCode = response.statusCode
+                let data = response.data
+                let networkResult = self.judgeStatus(by: statusCode, data, CardListResponseDTO.self)
+                completion(networkResult)
+            case .failure(let error):
+                debugPrint(error)
+            }
+        }
+    }
+    
+    // [GET] 오늘의 카드 조회
+    
+    func getTodayCards(completion: @escaping (NetworkResult<Any>) -> (Void)) {
+        self.provider.request(.getTodayCards) { result in
+            switch result {
+            case .success(let response):
                 let statusCode = response.statusCode
                 let data = response.data
                 let networkResult = self.judgeStatus(by: statusCode, data, CardListResponseDTO.self)

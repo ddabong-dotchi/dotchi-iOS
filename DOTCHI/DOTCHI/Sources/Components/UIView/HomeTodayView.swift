@@ -64,6 +64,10 @@ final class HomeTodayView: UIView {
     private var secondDotchiImage = HomeRankDotchiImageView(rank: .other)
     private var thirdDotchiImage = HomeRankDotchiImageView(rank: .other)
     
+    // MARK: Properties
+    
+    private var cards: [CardFrontEntity] = []
+    
     // MARK: Initializer
     
     override init(frame: CGRect) {
@@ -80,6 +84,7 @@ final class HomeTodayView: UIView {
         if self.superview != nil {
             self.setLayout()
             self.setUI()
+            self.fetchCards()
         }
     }
     
@@ -91,10 +96,6 @@ final class HomeTodayView: UIView {
         
         self.secondDotchiImage.rankLabel.text = "2위"
         self.thirdDotchiImage.rankLabel.text = "3위"
-        
-        self.firstDotchiImage.nicknameLabelView.setNickname(nickname: "일곱글자따봉닉")
-        self.secondDotchiImage.nicknameLabelView.setNickname(nickname: "따봉도치")
-        self.thirdDotchiImage.nicknameLabelView.setNickname(nickname: "따봉")
     }
     
     private func setParticleAnimationView() {
@@ -109,6 +110,32 @@ final class HomeTodayView: UIView {
         let formattedDate = dateFormatter.string(from: currentDate)
 
         return "\(formattedDate) 기준"
+    }
+    
+    private func setData() {
+        self.firstDotchiImage.nicknameLabelView.setNickname(nickname: self.cards[0].dotchiName)
+        self.secondDotchiImage.nicknameLabelView.setNickname(nickname: self.cards[1].dotchiName)
+        self.thirdDotchiImage.nicknameLabelView.setNickname(nickname: self.cards[2].dotchiName)
+        
+        self.firstDotchiImage.imageView.setImageUrl(self.cards[0].imageUrl)
+        self.secondDotchiImage.imageView.setImageUrl(self.cards[1].imageUrl)
+        self.thirdDotchiImage.imageView.setImageUrl(self.cards[2].imageUrl)
+    }
+}
+
+// MARK: - Network
+
+extension HomeTodayView {
+    private func fetchCards() {
+        CardService.shared.getTodayCards { result in
+            if case .success(let cards) = result {
+                self.cards = (cards as? CardListResponseDTO)?.toCardFrontEntity() ?? []
+                self.setData()
+            }
+            else {
+                debugPrint("Error fetching cards: \(result)")
+            }
+        }
     }
 }
 
