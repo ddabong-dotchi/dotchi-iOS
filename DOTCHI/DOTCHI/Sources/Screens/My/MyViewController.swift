@@ -66,12 +66,8 @@ class MyViewController: BaseViewController {
         navigationController.showNavigationBar()
         navigationItem.title = ""
         
-        if let image = UIImage(named: "icnSetting") {
-            let settingButton = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(settingButtonTapped))
-            navigationItem.rightBarButtonItem = settingButton
-        } else {
-            print("이미지를 찾을 수 없습니다.")
-        }
+        let settingButton = UIBarButtonItem(image: UIImage(named: "icnSetting"), style: .plain, target: self, action: #selector(settingButtonTapped))
+        navigationItem.rightBarButtonItem = settingButton
     }
     
     // MARK: - Setup Subviews

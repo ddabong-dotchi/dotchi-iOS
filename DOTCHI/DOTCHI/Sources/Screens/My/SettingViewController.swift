@@ -60,12 +60,8 @@ class SettingViewController: BaseViewController {
     private func setupNavigationBar() {
         navigationItem.title = "설정"
         
-        if let image = UIImage(named: "icnBack") {
-            let settingButton = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(backButtonTapped))
-            navigationItem.leftBarButtonItem = settingButton
-        } else {
-            print("이미지를 찾을 수 없습니다.")
-        }
+        let backButton = UIBarButtonItem(image: UIImage(named: "icnBack"), style: .plain, target: self, action: #selector(backButtonTapped))
+        navigationItem.leftBarButtonItem = backButton
     }
     
     // MARK: - Setup Subviews
