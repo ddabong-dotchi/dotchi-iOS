@@ -117,6 +117,7 @@
 		FFCD60C12C2D9DBC007785FF /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = FFCD60C02C2D9DBC007785FF /* Lottie */; };
 		FFCD60C52C2D9E66007785FF /* DotchiTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD60C42C2D9E66007785FF /* DotchiTabBarController.swift */; };
 		FFDAE3312CA0762D00509227 /* HomeThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDAE3302CA0762800509227 /* HomeThemeView.swift */; };
+		FFDAE3332CA0790000509227 /* HomeThemeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDAE3322CA078F300509227 /* HomeThemeButtonView.swift */; };
 		FFFB88872C7B216A00ACB0C6 /* SignupEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFB88862C7B216A00ACB0C6 /* SignupEntity.swift */; };
 		FFFB88892C7E1BA100ACB0C6 /* SignupResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFB88882C7E1BA100ACB0C6 /* SignupResponseDTO.swift */; };
 		FFFB888D2C7F79C500ACB0C6 /* HomeTodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFB888C2C7F79C500ACB0C6 /* HomeTodayView.swift */; };
@@ -229,6 +230,7 @@
 		FFCD60992C2D9920007785FF /* KeychainKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainKeys.swift; sourceTree = "<group>"; };
 		FFCD60C42C2D9E66007785FF /* DotchiTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotchiTabBarController.swift; sourceTree = "<group>"; };
 		FFDAE3302CA0762800509227 /* HomeThemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeThemeView.swift; sourceTree = "<group>"; };
+		FFDAE3322CA078F300509227 /* HomeThemeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeThemeButtonView.swift; sourceTree = "<group>"; };
 		FFFB88862C7B216A00ACB0C6 /* SignupEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupEntity.swift; sourceTree = "<group>"; };
 		FFFB88882C7E1BA100ACB0C6 /* SignupResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupResponseDTO.swift; sourceTree = "<group>"; };
 		FFFB888C2C7F79C500ACB0C6 /* HomeTodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTodayView.swift; sourceTree = "<group>"; };
@@ -596,6 +598,7 @@
 		FFCD60502C2D9468007785FF /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				FFDAE3322CA078F300509227 /* HomeThemeButtonView.swift */,
 				FFDAE3302CA0762800509227 /* HomeThemeView.swift */,
 				FFC7BB6F2C3460BF000EA7B5 /* HomeViewController.swift */,
 				FFFB888C2C7F79C500ACB0C6 /* HomeTodayView.swift */,
@@ -818,6 +821,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFCD60622C2D95AA007785FF /* BaseUINavigationController.swift in Sources */,
+				FFDAE3332CA0790000509227 /* HomeThemeButtonView.swift in Sources */,
 				FFC7BB762C35ADD4000EA7B5 /* SigninTextField.swift in Sources */,
 				FF6230382C9F36A9002029A6 /* CardRouter.swift in Sources */,
 				FFCD60812C2D980F007785FF /* UINavigationController+.swift in Sources */,
