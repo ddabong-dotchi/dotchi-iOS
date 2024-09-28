@@ -75,7 +75,7 @@ extension HomeViewController {
         self.themeView.snp.makeConstraints { make in
             make.top.equalTo(self.discoverView.snp.bottom)
             make.horizontalEdges.equalToSuperview()
-            make.height.equalTo(500)
+            make.height.equalTo(560)
             make.bottom.equalToSuperview()
         }
     }
