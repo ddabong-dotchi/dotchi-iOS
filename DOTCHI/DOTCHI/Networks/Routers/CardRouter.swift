@@ -11,6 +11,7 @@ import Moya
 enum CardRouter {
     case getAllCards(sort: CardSortType)
     case getTodayCards
+    case getCardLastTime(luckyType: LuckyType)
 }
 
 extension CardRouter: TargetType {
@@ -23,12 +24,13 @@ extension CardRouter: TargetType {
         switch self {
         case .getAllCards: return "/cards"
         case .getTodayCards: return "/cards/top"
+        case .getCardLastTime: return "/cards/last"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .getAllCards, .getTodayCards:
+        case .getAllCards, .getTodayCards, .getCardLastTime:
             return .get
         }
     }
@@ -40,6 +42,8 @@ extension CardRouter: TargetType {
                 "sort": sort.rawValue,
             ]
             return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
+        case .getCardLastTime(let luckyType):
+            return .requestParameters(parameters: ["type": luckyType.rawValue], encoding: URLEncoding.queryString)
         default: return .requestPlain
         }
     }

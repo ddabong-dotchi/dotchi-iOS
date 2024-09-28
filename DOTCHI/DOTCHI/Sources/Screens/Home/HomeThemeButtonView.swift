@@ -46,11 +46,16 @@ final class HomeThemeButtonView: UIView {
         return button
     }()
     
+    // MARK: Properties
+    
+    private var luckyType: LuckyType = .lucky
+    
     // MARK: Initializer
     
     init(luckyType: LuckyType) {
         super.init(frame: .zero)
         
+        self.luckyType = luckyType
         self.setUI(luckyType: luckyType)
         self.setLayout()
     }
@@ -61,12 +66,35 @@ final class HomeThemeButtonView: UIView {
     
     // MARK: Methods
     
+    override func didMoveToSuperview() {
+        super.didMoveToSuperview()
+        
+        if superview != nil {
+            self.fetchData(luckyType: self.luckyType)
+        }
+    }
+    
     private func setUI(luckyType: LuckyType) {
         self.backgroundColor = .dotchiBlack80
         self.titleLabel.text = "\(luckyType.name())을\n나누는 도치들"
         self.titleLabel.setColor(to: "\(luckyType.name())", with: luckyType.uiColorNormal())
         self.backgroundImageView.image = UIImage(named: "imgThemeButton\(luckyType.rawValue)")
         self.makeRounded(cornerRadius: 12)
+    }
+}
+
+// MARK: - Network
+
+extension HomeThemeButtonView {
+    private func fetchData(luckyType: LuckyType) {
+        CardService.shared.getCardLastTime(luckyType: luckyType) { result in
+            if case .success(let time) = result {
+                self.timeLabel.text = time as? String
+            }
+            else {
+                self.timeLabel.text = nil
+            }
+        }
     }
 }
 
@@ -88,8 +116,6 @@ extension HomeThemeButtonView {
         
         self.titleLabel.snp.makeConstraints { make in
             make.top.left.equalToSuperview().inset(24.adjustedW)
-//            make.width.equalTo(87)
-//            make.height.equalTo(44)
         }
         
         self.timeLabel.snp.makeConstraints { make in

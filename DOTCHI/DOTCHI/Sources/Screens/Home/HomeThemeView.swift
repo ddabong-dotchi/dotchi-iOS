@@ -82,7 +82,6 @@ final class HomeThemeView: UIView {
         
         if superview != nil {
             self.setLayout()
-//            self.fetchCards()
         }
     }
     
