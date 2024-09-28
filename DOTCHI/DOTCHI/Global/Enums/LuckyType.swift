@@ -8,11 +8,11 @@
 import UIKit
 import SwiftUI
 
-enum LuckyType: Int {
-    case health = 1
-    case lucky
-    case money
-    case love
+enum LuckyType: String {
+    case health = "HEALTH"
+    case lucky = "LUCK"
+    case money = "MONEY"
+    case love = "LOVE"
 }
 
 extension LuckyType {

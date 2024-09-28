@@ -17,7 +17,7 @@ class HomeRankDotchiImageView: UIView {
     
     // MARK: Properties
     
-    private let imageView = {
+    let imageView = {
         let imageView = UIImageView(image: .imgDefaultProfile)
         imageView.contentMode = .scaleAspectFill
         return imageView
