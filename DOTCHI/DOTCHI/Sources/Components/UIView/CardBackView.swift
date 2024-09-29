@@ -134,7 +134,7 @@ final class CardBackView: UIView {
             data: .init(
                 userId: 0,
                 profileImageUrl: UserInfo.shared.profileImageUrl,
-                username: UserInfo.shared.username
+                username: UserInfo.shared.nickname
             ),
             luckyType: makeDotchiData.luckyType,
             headType: .front

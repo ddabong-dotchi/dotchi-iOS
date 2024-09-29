@@ -18,4 +18,5 @@ final class UserInfo {
     var deviceToken: String = ""
     var username: String = ""
     var profileImageUrl: String = ""
+    var nickname: String = ""
 }
