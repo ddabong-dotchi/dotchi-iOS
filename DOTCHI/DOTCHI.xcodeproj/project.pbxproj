@@ -120,6 +120,8 @@
 		FFD3D1962CA928520025F32B /* CardFrontView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD3D1952CA928520025F32B /* CardFrontView.swift */; };
 		FFD3D1982CA9286E0025F32B /* CardBackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD3D1972CA9286E0025F32B /* CardBackView.swift */; };
 		FFD3D19A2CA928F60025F32B /* CardProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD3D1992CA928F60025F32B /* CardProfileView.swift */; };
+		FFD3D19D2CA9308D0025F32B /* PostCardRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD3D19C2CA930860025F32B /* PostCardRequestDTO.swift */; };
+		FFD3D19F2CA9345F0025F32B /* PostCardResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD3D19E2CA9345F0025F32B /* PostCardResponseDTO.swift */; };
 		FFDAE3312CA0762D00509227 /* HomeThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDAE3302CA0762800509227 /* HomeThemeView.swift */; };
 		FFDAE3332CA0790000509227 /* HomeThemeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDAE3322CA078F300509227 /* HomeThemeButtonView.swift */; };
 		FFDAE3372CA8826000509227 /* MakeDotchiLuckyTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDAE3362CA8826000509227 /* MakeDotchiLuckyTitleView.swift */; };
@@ -243,6 +245,8 @@
 		FFD3D1952CA928520025F32B /* CardFrontView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFrontView.swift; sourceTree = "<group>"; };
 		FFD3D1972CA9286E0025F32B /* CardBackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBackView.swift; sourceTree = "<group>"; };
 		FFD3D1992CA928F60025F32B /* CardProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardProfileView.swift; sourceTree = "<group>"; };
+		FFD3D19C2CA930860025F32B /* PostCardRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCardRequestDTO.swift; sourceTree = "<group>"; };
+		FFD3D19E2CA9345F0025F32B /* PostCardResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCardResponseDTO.swift; sourceTree = "<group>"; };
 		FFDAE3302CA0762800509227 /* HomeThemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeThemeView.swift; sourceTree = "<group>"; };
 		FFDAE3322CA078F300509227 /* HomeThemeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeThemeButtonView.swift; sourceTree = "<group>"; };
 		FFDAE3362CA8826000509227 /* MakeDotchiLuckyTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeDotchiLuckyTitleView.swift; sourceTree = "<group>"; };
@@ -375,6 +379,7 @@
 		FF62303B2C9FCE7C002029A6 /* Card */ = {
 			isa = PBXGroup;
 			children = (
+				FFD3D19B2CA930820025F32B /* Request */,
 				FF62303C2C9FCE84002029A6 /* Response */,
 			);
 			path = Card;
@@ -383,6 +388,7 @@
 		FF62303C2C9FCE84002029A6 /* Response */ = {
 			isa = PBXGroup;
 			children = (
+				FFD3D19E2CA9345F0025F32B /* PostCardResponseDTO.swift */,
 				FF62303D2C9FE404002029A6 /* CardListResponseDTO.swift */,
 			);
 			path = Response;
@@ -747,6 +753,14 @@
 			path = UITabBarViewController;
 			sourceTree = "<group>";
 		};
+		FFD3D19B2CA930820025F32B /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				FFD3D19C2CA930860025F32B /* PostCardRequestDTO.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
 		FFFB888E2C875DD700ACB0C6 /* GIFs */ = {
 			isa = PBXGroup;
 			children = (
@@ -887,6 +901,8 @@
 				FF328DC72C4D6FBC00007CD5 /* ProgressBarView.swift in Sources */,
 				FFD3D1942CA926620025F32B /* MakeDotchiPreviewViewController.swift in Sources */,
 				FF3344742C8E6844002F2640 /* HomeDiscoverView.swift in Sources */,
+				FFD3D19D2CA9308D0025F32B /* PostCardRequestDTO.swift in Sources */,
+				FFD3D19F2CA9345F0025F32B /* PostCardResponseDTO.swift in Sources */,
 				FFDAE3372CA8826000509227 /* MakeDotchiLuckyTitleView.swift in Sources */,
 				FF62303E2C9FE41A002029A6 /* CardListResponseDTO.swift in Sources */,
 				FFCD60792C2D97C3007785FF /* String+.swift in Sources */,

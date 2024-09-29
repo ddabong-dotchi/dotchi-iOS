@@ -12,6 +12,7 @@ enum CardRouter {
     case getAllCards(sort: CardSortType)
     case getTodayCards
     case getCardLastTime(luckyType: LuckyType)
+    case postCard(data: PostCardRequestDTO)
 }
 
 extension CardRouter: TargetType {
@@ -25,6 +26,7 @@ extension CardRouter: TargetType {
         case .getAllCards: return "/cards"
         case .getTodayCards: return "/cards/top"
         case .getCardLastTime: return "/cards/last"
+        case .postCard: return "/cards"
         }
     }
     
@@ -32,6 +34,7 @@ extension CardRouter: TargetType {
         switch self {
         case .getAllCards, .getTodayCards, .getCardLastTime:
             return .get
+        case .postCard: return .post
         }
     }
     
@@ -44,6 +47,23 @@ extension CardRouter: TargetType {
             return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
         case .getCardLastTime(let luckyType):
             return .requestParameters(parameters: ["type": luckyType.rawValue], encoding: URLEncoding.queryString)
+        case .postCard(let data):
+            var formData = [MultipartFormData]()
+            
+            let encoder = JSONEncoder()
+            encoder.outputFormatting = .prettyPrinted
+            
+            if let jsonData = try? encoder.encode(data),
+               let jsonString = String(data: jsonData, encoding: .utf8) {
+                
+                let requestData = MultipartFormData(provider: .data(jsonString.data(using: .utf8)!), name: "request")
+                formData.append(requestData)
+            }
+            
+            let imageMultipart = MultipartFormData(provider: .data(data.cardImage), name: "cardImage", fileName: "card.jpg", mimeType: "image/jpeg")
+            formData.append(imageMultipart)
+            
+            return .uploadMultipart(formData)
         default: return .requestPlain
         }
     }
