@@ -113,13 +113,15 @@ final class HomeTodayView: UIView {
     }
     
     private func setData() {
-        self.firstDotchiImage.nicknameLabelView.setNickname(nickname: self.cards[0].dotchiName)
-        self.secondDotchiImage.nicknameLabelView.setNickname(nickname: self.cards[1].dotchiName)
-        self.thirdDotchiImage.nicknameLabelView.setNickname(nickname: self.cards[2].dotchiName)
-        
-        self.firstDotchiImage.imageView.setImageUrl(self.cards[0].imageUrl)
-        self.secondDotchiImage.imageView.setImageUrl(self.cards[1].imageUrl)
-        self.thirdDotchiImage.imageView.setImageUrl(self.cards[2].imageUrl)
+        if self.cards.count > 2 {
+            self.firstDotchiImage.nicknameLabelView.setNickname(nickname: self.cards[0].dotchiName)
+            self.secondDotchiImage.nicknameLabelView.setNickname(nickname: self.cards[1].dotchiName)
+            self.thirdDotchiImage.nicknameLabelView.setNickname(nickname: self.cards[2].dotchiName)
+            
+            self.firstDotchiImage.imageView.setImageUrl(self.cards[0].imageUrl)
+            self.secondDotchiImage.imageView.setImageUrl(self.cards[1].imageUrl)
+            self.thirdDotchiImage.imageView.setImageUrl(self.cards[2].imageUrl)
+        }
     }
 }
 

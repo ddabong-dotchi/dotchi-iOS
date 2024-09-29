@@ -25,6 +25,21 @@ final class UserService: BaseService {
     private lazy var provider = DotchiMoyaProvider<UserRouter>(isLoggingOn: true)
     
     private override init() {}
+    
+    private func request<T: Decodable>(_ target: UserRouter, decodingType: T.Type, completion: @escaping (NetworkResult<Any>) -> Void) {
+        self.provider.request(target) { result in
+            switch result {
+            case .success(let response):
+                let statusCode = response.statusCode
+                let data = response.data
+                let networkResult = self.judgeStatus(by: statusCode, data, decodingType)
+                completion(networkResult)
+            case .failure(let error):
+                debugPrint(error)
+                completion(.networkFail)
+            }
+        }
+    }
 }
 
 extension UserService: UserServiceProtocol {
@@ -144,20 +159,5 @@ extension UserService: UserServiceProtocol {
     
     func requestSignup(data: SignupRequestDTO, completion: @escaping (NetworkResult<Any>) -> (Void)) {
         self.request(.requestSignup(data: data), decodingType: SignupResponseDTO.self, completion: completion)
-    }
-    
-    private func request<T: Decodable>(_ target: UserRouter, decodingType: T.Type, completion: @escaping (NetworkResult<Any>) -> Void) {
-        self.provider.request(target) { result in
-            switch result {
-            case .success(let response):
-                let statusCode = response.statusCode
-                let data = response.data
-                let networkResult = self.judgeStatus(by: statusCode, data, decodingType)
-                completion(networkResult)
-            case .failure(let error):
-                debugPrint(error)
-                completion(.networkFail)
-            }
-        }
     }
 }

@@ -82,7 +82,7 @@
 		FFCD60562C2D9501007785FF /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD60552C2D9501007785FF /* UIFont+.swift */; };
 		FFCD60582C2D9515007785FF /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD60572C2D9515007785FF /* UIColor+.swift */; };
 		FFCD605B2C2D953F007785FF /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD605A2C2D953F007785FF /* BaseViewController.swift */; };
-		FFCD60622C2D95AA007785FF /* BaseUINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD60612C2D95AA007785FF /* BaseUINavigationController.swift */; };
+		FFCD60622C2D95AA007785FF /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD60612C2D95AA007785FF /* BaseNavigationController.swift */; };
 		FFCD60652C2D96D8007785FF /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD60642C2D96D8007785FF /* UIViewController+.swift */; };
 		FFCD60672C2D96F8007785FF /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD60662C2D96F8007785FF /* UIView+.swift */; };
 		FFCD60692C2D9718007785FF /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD60682C2D9718007785FF /* UIButton+.swift */; };
@@ -116,8 +116,20 @@
 		FFCD60BE2C2D9B29007785FF /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = FFCD60BD2C2D9B29007785FF /* RxMoya */; };
 		FFCD60C12C2D9DBC007785FF /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = FFCD60C02C2D9DBC007785FF /* Lottie */; };
 		FFCD60C52C2D9E66007785FF /* DotchiTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD60C42C2D9E66007785FF /* DotchiTabBarController.swift */; };
+		FFD3D1942CA926620025F32B /* MakeDotchiPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD3D1932CA926620025F32B /* MakeDotchiPreviewViewController.swift */; };
+		FFD3D1962CA928520025F32B /* CardFrontView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD3D1952CA928520025F32B /* CardFrontView.swift */; };
+		FFD3D1982CA9286E0025F32B /* CardBackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD3D1972CA9286E0025F32B /* CardBackView.swift */; };
+		FFD3D19A2CA928F60025F32B /* CardProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD3D1992CA928F60025F32B /* CardProfileView.swift */; };
+		FFD3D19D2CA9308D0025F32B /* PostCardRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD3D19C2CA930860025F32B /* PostCardRequestDTO.swift */; };
+		FFD3D19F2CA9345F0025F32B /* PostCardResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD3D19E2CA9345F0025F32B /* PostCardResponseDTO.swift */; };
 		FFDAE3312CA0762D00509227 /* HomeThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDAE3302CA0762800509227 /* HomeThemeView.swift */; };
 		FFDAE3332CA0790000509227 /* HomeThemeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDAE3322CA078F300509227 /* HomeThemeButtonView.swift */; };
+		FFDAE3372CA8826000509227 /* MakeDotchiLuckyTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDAE3362CA8826000509227 /* MakeDotchiLuckyTitleView.swift */; };
+		FFDAE3392CA885DF00509227 /* MakeDotchiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDAE3382CA885DF00509227 /* MakeDotchiCollectionViewCell.swift */; };
+		FFDAE33B2CA8860100509227 /* LoadPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDAE33A2CA8860100509227 /* LoadPhotoView.swift */; };
+		FFDAE33D2CA886CF00509227 /* Int+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDAE33C2CA886CD00509227 /* Int+.swift */; };
+		FFDAE33F2CA8880B00509227 /* MakeDotchiContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDAE33E2CA8880B00509227 /* MakeDotchiContentViewController.swift */; };
+		FFDAE3412CA90A9600509227 /* DotchiTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDAE3402CA90A9600509227 /* DotchiTextField.swift */; };
 		FFFB88872C7B216A00ACB0C6 /* SignupEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFB88862C7B216A00ACB0C6 /* SignupEntity.swift */; };
 		FFFB88892C7E1BA100ACB0C6 /* SignupResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFB88882C7E1BA100ACB0C6 /* SignupResponseDTO.swift */; };
 		FFFB888D2C7F79C500ACB0C6 /* HomeTodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFB888C2C7F79C500ACB0C6 /* HomeTodayView.swift */; };
@@ -202,7 +214,7 @@
 		FFCD60552C2D9501007785FF /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		FFCD60572C2D9515007785FF /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		FFCD605A2C2D953F007785FF /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		FFCD60612C2D95AA007785FF /* BaseUINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUINavigationController.swift; sourceTree = "<group>"; };
+		FFCD60612C2D95AA007785FF /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		FFCD60642C2D96D8007785FF /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		FFCD60662C2D96F8007785FF /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		FFCD60682C2D9718007785FF /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
@@ -229,8 +241,20 @@
 		FFCD60972C2D991A007785FF /* Messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
 		FFCD60992C2D9920007785FF /* KeychainKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainKeys.swift; sourceTree = "<group>"; };
 		FFCD60C42C2D9E66007785FF /* DotchiTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotchiTabBarController.swift; sourceTree = "<group>"; };
+		FFD3D1932CA926620025F32B /* MakeDotchiPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeDotchiPreviewViewController.swift; sourceTree = "<group>"; };
+		FFD3D1952CA928520025F32B /* CardFrontView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFrontView.swift; sourceTree = "<group>"; };
+		FFD3D1972CA9286E0025F32B /* CardBackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBackView.swift; sourceTree = "<group>"; };
+		FFD3D1992CA928F60025F32B /* CardProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardProfileView.swift; sourceTree = "<group>"; };
+		FFD3D19C2CA930860025F32B /* PostCardRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCardRequestDTO.swift; sourceTree = "<group>"; };
+		FFD3D19E2CA9345F0025F32B /* PostCardResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCardResponseDTO.swift; sourceTree = "<group>"; };
 		FFDAE3302CA0762800509227 /* HomeThemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeThemeView.swift; sourceTree = "<group>"; };
 		FFDAE3322CA078F300509227 /* HomeThemeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeThemeButtonView.swift; sourceTree = "<group>"; };
+		FFDAE3362CA8826000509227 /* MakeDotchiLuckyTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeDotchiLuckyTitleView.swift; sourceTree = "<group>"; };
+		FFDAE3382CA885DF00509227 /* MakeDotchiCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeDotchiCollectionViewCell.swift; sourceTree = "<group>"; };
+		FFDAE33A2CA8860100509227 /* LoadPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadPhotoView.swift; sourceTree = "<group>"; };
+		FFDAE33C2CA886CD00509227 /* Int+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+.swift"; sourceTree = "<group>"; };
+		FFDAE33E2CA8880B00509227 /* MakeDotchiContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeDotchiContentViewController.swift; sourceTree = "<group>"; };
+		FFDAE3402CA90A9600509227 /* DotchiTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotchiTextField.swift; sourceTree = "<group>"; };
 		FFFB88862C7B216A00ACB0C6 /* SignupEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupEntity.swift; sourceTree = "<group>"; };
 		FFFB88882C7E1BA100ACB0C6 /* SignupResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupResponseDTO.swift; sourceTree = "<group>"; };
 		FFFB888C2C7F79C500ACB0C6 /* HomeTodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTodayView.swift; sourceTree = "<group>"; };
@@ -281,6 +305,10 @@
 		FF328DC32C4D4D8C00007CD5 /* UIView */ = {
 			isa = PBXGroup;
 			children = (
+				FFD3D1992CA928F60025F32B /* CardProfileView.swift */,
+				FFD3D1972CA9286E0025F32B /* CardBackView.swift */,
+				FFD3D1952CA928520025F32B /* CardFrontView.swift */,
+				FFDAE33A2CA8860100509227 /* LoadPhotoView.swift */,
 				FF328DC42C4D4DA300007CD5 /* DotchiNavigationView.swift */,
 				FF328DC62C4D6FBC00007CD5 /* ProgressBarView.swift */,
 			);
@@ -290,6 +318,9 @@
 		FF4BF6A72C2DAC9500B6DEB2 /* Make */ = {
 			isa = PBXGroup;
 			children = (
+				FFD3D1932CA926620025F32B /* MakeDotchiPreviewViewController.swift */,
+				FFDAE33E2CA8880B00509227 /* MakeDotchiContentViewController.swift */,
+				FFDAE3362CA8826000509227 /* MakeDotchiLuckyTitleView.swift */,
 				FF4BF6A82C2DACCB00B6DEB2 /* MakeDotchiPhotoViewController.swift */,
 			);
 			path = Make;
@@ -348,6 +379,7 @@
 		FF62303B2C9FCE7C002029A6 /* Card */ = {
 			isa = PBXGroup;
 			children = (
+				FFD3D19B2CA930820025F32B /* Request */,
 				FF62303C2C9FCE84002029A6 /* Response */,
 			);
 			path = Card;
@@ -356,6 +388,7 @@
 		FF62303C2C9FCE84002029A6 /* Response */ = {
 			isa = PBXGroup;
 			children = (
+				FFD3D19E2CA9345F0025F32B /* PostCardResponseDTO.swift */,
 				FF62303D2C9FE404002029A6 /* CardListResponseDTO.swift */,
 			);
 			path = Response;
@@ -409,6 +442,7 @@
 		FFC7BB742C35AD66000EA7B5 /* UITextField */ = {
 			isa = PBXGroup;
 			children = (
+				FFDAE3402CA90A9600509227 /* DotchiTextField.swift */,
 				FFC7BB752C35ADD4000EA7B5 /* SigninTextField.swift */,
 				FF328DC82C5A25A500007CD5 /* SignupTextField.swift */,
 				1ED0A92D2C8CC92500D78F4E /* PasswordTextField.swift */,
@@ -497,6 +531,7 @@
 		FFCB11F92C9E59C600892966 /* UICollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				FFDAE3382CA885DF00509227 /* MakeDotchiCollectionViewCell.swift */,
 				FFCB11FA2C9E5AFC00892966 /* DotchiSmallCardCollectionViewCell.swift */,
 			);
 			path = UICollectionViewCell;
@@ -625,6 +660,7 @@
 		FFCD60542C2D94F6007785FF /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				FFDAE33C2CA886CD00509227 /* Int+.swift */,
 				FFCD60642C2D96D8007785FF /* UIViewController+.swift */,
 				FFCD60552C2D9501007785FF /* UIFont+.swift */,
 				FFCD60572C2D9515007785FF /* UIColor+.swift */,
@@ -651,7 +687,7 @@
 			isa = PBXGroup;
 			children = (
 				FFCD605A2C2D953F007785FF /* BaseViewController.swift */,
-				FFCD60612C2D95AA007785FF /* BaseUINavigationController.swift */,
+				FFCD60612C2D95AA007785FF /* BaseNavigationController.swift */,
 			);
 			path = Bases;
 			sourceTree = "<group>";
@@ -715,6 +751,14 @@
 				FFCD60C42C2D9E66007785FF /* DotchiTabBarController.swift */,
 			);
 			path = UITabBarViewController;
+			sourceTree = "<group>";
+		};
+		FFD3D19B2CA930820025F32B /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				FFD3D19C2CA930860025F32B /* PostCardRequestDTO.swift */,
+			);
+			path = Request;
 			sourceTree = "<group>";
 		};
 		FFFB888E2C875DD700ACB0C6 /* GIFs */ = {
@@ -820,7 +864,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FFCD60622C2D95AA007785FF /* BaseUINavigationController.swift in Sources */,
+				FFCD60622C2D95AA007785FF /* BaseNavigationController.swift in Sources */,
 				FFDAE3332CA0790000509227 /* HomeThemeButtonView.swift in Sources */,
 				FFC7BB762C35ADD4000EA7B5 /* SigninTextField.swift in Sources */,
 				FF6230382C9F36A9002029A6 /* CardRouter.swift in Sources */,
@@ -833,13 +877,16 @@
 				FFFB88872C7B216A00ACB0C6 /* SignupEntity.swift in Sources */,
 				1E9727652C44FCA600252CA6 /* BlacklistResponseDTO.swift in Sources */,
 				FFCD606D2C2D9742007785FF /* UILabel+.swift in Sources */,
+				FFDAE3392CA885DF00509227 /* MakeDotchiCollectionViewCell.swift in Sources */,
 				FFC7BB872C3D9562000EA7B5 /* DotchiMoyaProvider.swift in Sources */,
 				FFC7BBA32C45765A000EA7B5 /* SignupProfileImageViewController.swift in Sources */,
 				FFCD60982C2D991A007785FF /* Messages.swift in Sources */,
+				FFDAE33D2CA886CF00509227 /* Int+.swift in Sources */,
 				FF3344702C8D86F8002F2640 /* HomeRankDotchiImageView.swift in Sources */,
 				FFC7BBA12C45764E000EA7B5 /* SignupIntroduceViewController.swift in Sources */,
 				1E9727462C3C3C6F00252CA6 /* SettingViewController.swift in Sources */,
 				FFB7F9BA2C5A430700650238 /* UITapGestureRecognizer+.swift in Sources */,
+				FFD3D19A2CA928F60025F32B /* CardProfileView.swift in Sources */,
 				1E9727582C43924F00252CA6 /* UserRouter.swift in Sources */,
 				1ED0A92E2C8CC92500D78F4E /* PasswordTextField.swift in Sources */,
 				FFC7BB922C3EDFCB000EA7B5 /* AuthRouter.swift in Sources */,
@@ -852,14 +899,20 @@
 				FFC7BB7E2C3D8A38000EA7B5 /* SignupUserInfoViewController.swift in Sources */,
 				FFCD60732C2D977F007785FF /* UIImageView+.swift in Sources */,
 				FF328DC72C4D6FBC00007CD5 /* ProgressBarView.swift in Sources */,
+				FFD3D1942CA926620025F32B /* MakeDotchiPreviewViewController.swift in Sources */,
 				FF3344742C8E6844002F2640 /* HomeDiscoverView.swift in Sources */,
+				FFD3D19D2CA9308D0025F32B /* PostCardRequestDTO.swift in Sources */,
+				FFD3D19F2CA9345F0025F32B /* PostCardResponseDTO.swift in Sources */,
+				FFDAE3372CA8826000509227 /* MakeDotchiLuckyTitleView.swift in Sources */,
 				FF62303E2C9FE41A002029A6 /* CardListResponseDTO.swift in Sources */,
 				FFCD60792C2D97C3007785FF /* String+.swift in Sources */,
 				1E3A1E612C71EEA50096708D /* EditUserRequestDTO.swift in Sources */,
 				FFCD602A2C21D9F2007785FF /* AppDelegate.swift in Sources */,
 				FFB7F9B62C5A396F00650238 /* WarningLabel.swift in Sources */,
 				FF4BF6C22C2DB72700B6DEB2 /* APIConstants.swift in Sources */,
+				FFDAE33B2CA8860100509227 /* LoadPhotoView.swift in Sources */,
 				FFCD60882C2D9884007785FF /* UIViewControllerToSwiftUI.swift in Sources */,
+				FFDAE3412CA90A9600509227 /* DotchiTextField.swift in Sources */,
 				FFC7BBA52C45766D000EA7B5 /* SignupCompleteViewController.swift in Sources */,
 				FF4BF6BF2C2DB6F900B6DEB2 /* NetworkLoggerPlugin.swift in Sources */,
 				FFC7BB9F2C457616000EA7B5 /* SignupNicknameViewController.swift in Sources */,
@@ -877,11 +930,13 @@
 				FFFB888D2C7F79C500ACB0C6 /* HomeTodayView.swift in Sources */,
 				FFCD60922C2D98F7007785FF /* LuckyType.swift in Sources */,
 				FF4BF6B42C2DB64A00B6DEB2 /* CardUserEntity.swift in Sources */,
+				FFD3D1982CA9286E0025F32B /* CardBackView.swift in Sources */,
 				1E3A1E5F2C71EE740096708D /* EditUserResponseDTO.swift in Sources */,
 				FFCD602C2C21D9F2007785FF /* SceneDelegate.swift in Sources */,
 				FFC7BB6E2C345EBC000EA7B5 /* SigninViewController.swift in Sources */,
 				FFCD60712C2D976E007785FF /* Adjusted+.swift in Sources */,
 				FFCD60942C2D990D007785FF /* CardSortType.swift in Sources */,
+				FFD3D1962CA928520025F32B /* CardFrontView.swift in Sources */,
 				FFC7BB702C3460BF000EA7B5 /* HomeViewController.swift in Sources */,
 				1E97274A2C3DA24100252CA6 /* EditProfileViewController.swift in Sources */,
 				1E3A1E632C7422580096708D /* EditAccountInfoViewController.swift in Sources */,
@@ -908,6 +963,7 @@
 				FF3344722C8DA2DF002F2640 /* HomeNicknameView.swift in Sources */,
 				FFCD607F2C2D97FB007785FF /* UserDefaults+.swift in Sources */,
 				1E97275C2C43986B00252CA6 /* UserResponseDTO.swift in Sources */,
+				FFDAE33F2CA8880B00509227 /* MakeDotchiContentViewController.swift in Sources */,
 				FFB7F9BD2C5BE35900650238 /* SignupRequestDTO.swift in Sources */,
 				FFC7BB852C3D943E000EA7B5 /* BaseResponseType.swift in Sources */,
 				FF4BF6BC2C2DB69300B6DEB2 /* CardBackEntity.swift in Sources */,

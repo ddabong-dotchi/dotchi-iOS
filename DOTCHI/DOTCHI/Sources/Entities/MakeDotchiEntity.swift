@@ -16,19 +16,19 @@ struct MakeDotchiEntity {
     
     init() {
         self.image = UIImage()
-        self.luckyType = .health
+        self.luckyType = .lucky
         self.dotchiName = ""
         self.dotchiMood = ""
         self.dotchiContent = ""
     }
     
-//    func toPostCardRequestData() -> PostCardRequestDTO {
-//        return .init(
-//            cardImage: self.image,
-//            themeID: self.luckyType.rawValue,
-//            backName: self.dotchiName,
-//            backMood: self.dotchiMood,
-//            backContent: self.dotchiContent
-//        )
-//    }
+    func toPostCardRequestData() -> PostCardRequestDTO {
+        return PostCardRequestDTO(
+            title: self.dotchiName,
+            mood: self.dotchiMood,
+            content: self.dotchiContent,
+            type: self.luckyType.rawValue,
+            cardImage: self.image.jpegData(compressionQuality: 0.8) ?? Data()
+        )
+    }
 }

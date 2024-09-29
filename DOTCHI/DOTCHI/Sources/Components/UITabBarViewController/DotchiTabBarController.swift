@@ -63,7 +63,7 @@ final class DotchiTabBarController: UITabBarController {
         self.delegate = self
         
         let homeTab = self.makeTabBarItem(
-            viewController: BaseUINavigationController(rootViewController: HomeViewController()), title: "홈",
+            viewController: BaseNavigationController(rootViewController: HomeViewController()), title: "홈",
             image: .icnHome,
             selectedImage: .icnHomeSelected
         )
@@ -71,7 +71,7 @@ final class DotchiTabBarController: UITabBarController {
         homeTab.tabBarItem.tag = 0
         
         let writeTab = self.makeTabBarItem(
-            viewController: BaseUINavigationController(rootViewController: BaseViewController()),
+            viewController: BaseNavigationController(rootViewController: BaseViewController()),
             title: "",
             image: .icnPlus,
             selectedImage: .icnPlus
@@ -81,7 +81,7 @@ final class DotchiTabBarController: UITabBarController {
         writeTab.tabBarItem.imageInsets = UIEdgeInsets(top: 16.adjustedH, left: 0, bottom: 0, right: 0)
         
         let myTab = self.makeTabBarItem(
-            viewController: BaseUINavigationController(rootViewController: MyViewController()),
+            viewController: BaseNavigationController(rootViewController: MyViewController()),
             title: "마이",
             image: .icnMy,
             selectedImage: .icnMySelected
@@ -152,7 +152,7 @@ extension DotchiTabBarController: UITabBarControllerDelegate {
         let writeIndex: Int = 1
         if viewController.tabBarItem.tag != writeIndex { return true }
         
-        self.present(MakeDotchiPhotoViewController(), animated: true)
+        self.present(BaseNavigationController(rootViewController: MakeDotchiPhotoViewController()), animated: true)
         return false
     }
 }

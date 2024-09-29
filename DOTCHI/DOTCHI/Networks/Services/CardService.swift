@@ -12,6 +12,7 @@ internal protocol CardServiceProtocol {
     func getAllCards(sort: CardSortType, completion: @escaping (NetworkResult<Any>) -> (Void))
     func getTodayCards(completion: @escaping (NetworkResult<Any>) -> (Void))
     func getCardLastTime(luckyType: LuckyType, completion: @escaping (NetworkResult<Any>) -> (Void))
+    func postCard(data: PostCardRequestDTO, completion: @escaping (NetworkResult<Any>) -> (Void))
 }
 
 final class CardService: BaseService {
@@ -19,6 +20,21 @@ final class CardService: BaseService {
     private lazy var provider = DotchiMoyaProvider<CardRouter>(isLoggingOn: true)
     
     private override init() {}
+    
+    private func request<T: Decodable>(_ target: CardRouter, decodingType: T.Type, completion: @escaping (NetworkResult<Any>) -> Void) {
+        self.provider.request(target) { result in
+            switch result {
+            case .success(let response):
+                let statusCode = response.statusCode
+                let data = response.data
+                let networkResult = self.judgeStatus(by: statusCode, data, decodingType)
+                completion(networkResult)
+            case .failure(let error):
+                debugPrint(error)
+                completion(.networkFail)
+            }
+        }
+    }
 }
 
 extension CardService: CardServiceProtocol {
@@ -69,5 +85,11 @@ extension CardService: CardServiceProtocol {
                 debugPrint(error)
             }
         }
+    }
+    
+    // [POST] 카드 생성
+    
+    func postCard(data: PostCardRequestDTO, completion: @escaping (NetworkResult<Any>) -> (Void)) {
+        self.request(.postCard(data: data), decodingType: PostCardResponseDTO.self, completion: completion)
     }
 }
