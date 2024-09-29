@@ -33,7 +33,6 @@ final class HomeThemeView: UIView {
         return label
     }()
     
-    private let allButton = MoreButton()
     private let luckyButton = HomeThemeButtonView(luckyType: .lucky)
     private let loveButton = HomeThemeButtonView(luckyType: .love)
     private let healthButton = HomeThemeButtonView(luckyType: .health)
@@ -82,11 +81,30 @@ final class HomeThemeView: UIView {
         
         if superview != nil {
             self.setLayout()
+            self.setThemeButtonAction()
         }
     }
     
     private func setUI() {
         self.backgroundColor = .dotchiBlack
+    }
+    
+    private func setThemeButtonAction() {
+        self.luckyButton.button.setAction {
+            self.findViewController()?.navigationController?.pushViewController(ThemeViewController(luckyType: .lucky), animated: true)
+        }
+        
+        self.loveButton.button.setAction {
+            self.findViewController()?.navigationController?.pushViewController(ThemeViewController(luckyType: .love), animated: true)
+        }
+        
+        self.moneyButton.button.setAction {
+            self.findViewController()?.navigationController?.pushViewController(ThemeViewController(luckyType: .money), animated: true)
+        }
+        
+        self.healthButton.button.setAction {
+            self.findViewController()?.navigationController?.pushViewController(ThemeViewController(luckyType: .health), animated: true)
+        }
     }
 }
 
@@ -112,7 +130,6 @@ extension HomeThemeView {
         self.addSubviews([
             titleLabel,
             descriptionLabel,
-            allButton,
             verStackView
         ])
         
@@ -125,12 +142,6 @@ extension HomeThemeView {
         self.descriptionLabel.snp.makeConstraints { make in
             make.top.equalTo(self.titleLabel.snp.bottom).offset(14)
             make.left.equalToSuperview().inset(28)
-            make.height.equalTo(14)
-        }
-        
-        self.allButton.snp.makeConstraints { make in
-            make.centerY.equalTo(self.titleLabel)
-            make.right.equalToSuperview().inset(25)
             make.height.equalTo(14)
         }
         
