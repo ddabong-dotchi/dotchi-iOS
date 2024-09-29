@@ -49,7 +49,7 @@ final class CardBackView: UIView {
     private let dotchiContentLabel: UILabel = {
         let label: UILabel = UILabel()
         label.text = "일이삼사오육칠팔구십\n일이삼사오육칠팔구십"
-        label.setStyle(.head, .dotchiBlack)
+        label.setStyle(.body, .dotchiBlack)
         label.numberOfLines = 2
         return label
     }()
