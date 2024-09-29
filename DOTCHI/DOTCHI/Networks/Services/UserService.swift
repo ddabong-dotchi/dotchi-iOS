@@ -14,6 +14,7 @@ internal protocol UserServiceProtocol {
     func editUser(nickname: String, description: String, profileImage: UIImage?, completion: @escaping (NetworkResult<Any>) -> (Void))
     func changePassword(data: String, completion: @escaping (NetworkResult<Any>) -> (Void))
     func getBlacklists(completion: @escaping (NetworkResult<Any>) -> (Void))
+    func deleteBlacklists(targetId: Int, completion: @escaping (NetworkResult<Any>) -> (Void))
     func checkUsernameDuplicate(data: String, completion: @escaping (NetworkResult<Any>) -> (Void))
     func checkNicknameDuplicate(data: String, completion: @escaping (NetworkResult<Any>) -> (Void))
     func requestSignup(data: SignupRequestDTO, completion: @escaping (NetworkResult<Any>) -> (Void))
@@ -24,6 +25,21 @@ final class UserService: BaseService {
     private lazy var provider = DotchiMoyaProvider<UserRouter>(isLoggingOn: true)
     
     private override init() {}
+    
+    private func request<T: Decodable>(_ target: UserRouter, decodingType: T.Type, completion: @escaping (NetworkResult<Any>) -> Void) {
+        self.provider.request(target) { result in
+            switch result {
+            case .success(let response):
+                let statusCode = response.statusCode
+                let data = response.data
+                let networkResult = self.judgeStatus(by: statusCode, data, decodingType)
+                completion(networkResult)
+            case .failure(let error):
+                debugPrint(error)
+                completion(.networkFail)
+            }
+        }
+    }
 }
 
 extension UserService: UserServiceProtocol {
@@ -111,6 +127,22 @@ extension UserService: UserServiceProtocol {
         }
     }
     
+    // [DELETE] 차단 해제
+    
+    func deleteBlacklists(targetId: Int, completion: @escaping (NetworkResult<Any>) -> Void) {
+        self.provider.request(.deleteBlacklists(targetId: targetId)) { result in
+            switch result {
+            case .success(let response):
+                let statusCode = response.statusCode
+                let data = response.data
+                let networkResult = self.judgeStatus(by: statusCode, data, String.self)
+                completion(networkResult)
+            case .failure(let error):
+                debugPrint(error)
+            }
+        }
+    }
+    
     // [GET] 중복 아이디 조회
     
     func checkUsernameDuplicate(data: String, completion: @escaping (NetworkResult<Any>) -> (Void)) {
@@ -127,20 +159,5 @@ extension UserService: UserServiceProtocol {
     
     func requestSignup(data: SignupRequestDTO, completion: @escaping (NetworkResult<Any>) -> (Void)) {
         self.request(.requestSignup(data: data), decodingType: SignupResponseDTO.self, completion: completion)
-    }
-    
-    private func request<T: Decodable>(_ target: UserRouter, decodingType: T.Type, completion: @escaping (NetworkResult<Any>) -> Void) {
-        self.provider.request(target) { result in
-            switch result {
-            case .success(let response):
-                let statusCode = response.statusCode
-                let data = response.data
-                let networkResult = self.judgeStatus(by: statusCode, data, decodingType)
-                completion(networkResult)
-            case .failure(let error):
-                debugPrint(error)
-                completion(.networkFail)
-            }
-        }
     }
 }

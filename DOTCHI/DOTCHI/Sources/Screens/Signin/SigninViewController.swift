@@ -140,7 +140,7 @@ final class SigninViewController: BaseViewController {
     
     private func setSignupButtonAction() {
         self.signupButton.button.setAction {
-            self.present(BaseUINavigationController(rootViewController: SignupUserInfoViewController()), animated: true)
+            self.present(BaseNavigationController(rootViewController: SignupUserInfoViewController()), animated: true)
         }
     }
     
@@ -165,7 +165,7 @@ final class SigninViewController: BaseViewController {
     }
     
     private func presentHomeViewController() {
-        let tabBarController = DotchiTabBarController(nibName: nil, bundle: nil)
+        let tabBarController = DotchiTabBarController()
         self.present(tabBarController, animated: true)
     }
 }
@@ -210,7 +210,7 @@ extension SigninViewController {
         self.view.addSubviews([logoImageView, titleLabel, subTitleLabel, signupInfoLabel, signupButton, usernameTextField, passwordTextField, signinButton, contactStackView])
         
         self.logoImageView.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(193.adjustedH)
+            make.top.equalToSuperview().inset(140.adjustedH)
             make.left.equalToSuperview().inset(32)
             make.width.height.equalTo(48)
         }
@@ -240,7 +240,7 @@ extension SigninViewController {
         }
         
         self.usernameTextField.snp.makeConstraints { make in
-            make.top.equalTo(self.signupInfoLabel.snp.bottom).offset(56)
+            make.top.equalTo(self.signupInfoLabel.snp.bottom).offset(42.adjustedH)
             make.horizontalEdges.equalToSuperview().inset(32)
             make.height.equalTo(48)
         }
@@ -258,7 +258,7 @@ extension SigninViewController {
         }
         
         self.contactStackView.snp.makeConstraints { make in
-            make.bottom.equalTo(self.signinButton.snp.top).offset(-18)
+            make.bottom.equalTo(self.signinButton.snp.top).offset(-36)
             make.centerX.equalToSuperview()
             make.height.equalTo(16)
         }
