@@ -59,7 +59,7 @@ class BlacklistViewController: BaseViewController {
         }
     }
     
-    private func createBlockedAccountView(profileImageURL: String?, nickname: String) -> UIView {
+    private func createBlockedAccountView(profileImageURL: String?, nickname: String, index: Int) -> UIView {
         let containerView = UIView()
         
         let profileImageView = UIImageView()
@@ -87,7 +87,8 @@ class BlacklistViewController: BaseViewController {
         unblockButton.titleLabel?.font = UIFont.sub
         containerView.addSubview(unblockButton)
         
-        unblockButton.addTarget(self, action: #selector(unblockButtonTapped), for: .touchUpInside)
+        unblockButton.tag = index
+        unblockButton.addTarget(self, action: #selector(unblockButtonTapped(_:)), for: .touchUpInside)
         
         profileImageView.snp.makeConstraints { make in
             make.leading.equalToSuperview()
@@ -96,7 +97,7 @@ class BlacklistViewController: BaseViewController {
         }
         
         targetNicknameLabel.snp.makeConstraints { make in
-            make.leading.equalTo(profileImageView.snp.trailing).offset(28)
+            make.leading.equalTo(profileImageView.snp.trailing).offset(20)
             make.centerY.equalToSuperview()
         }
         
@@ -113,8 +114,8 @@ class BlacklistViewController: BaseViewController {
     private func addBlockedAccountViews() {
         contentView.subviews.forEach { $0.removeFromSuperview() }
         
-        for account in blockedAccounts {
-            let blockedAccountView = createBlockedAccountView(profileImageURL: account.targetImageUrl, nickname: account.targetNickname)
+        for (index, account) in blockedAccounts.enumerated() {
+            let blockedAccountView = createBlockedAccountView(profileImageURL: account.targetImageUrl, nickname: account.targetNickname, index: index)
             contentView.addSubview(blockedAccountView)
         }
         
@@ -144,30 +145,46 @@ class BlacklistViewController: BaseViewController {
         navigationController?.popViewController(animated: true)
     }
     
-    @objc private func unblockButtonTapped() {
+    @objc private func unblockButtonTapped(_ sender: UIButton) {
+        let index = sender.tag
+        let targetId = blockedAccounts[index].targetId
         
+        makeAlertWithCancel(
+            title: "차단 해제하시겠습니까?",
+            okTitle: "해제하기",
+            okStyle: .destructive,
+            cancelTitle: "취소",
+            okAction: { _ in
+                self.fetchUnblock(targetId: targetId)
+            }
+        )
     }
     
     // MARK: - Network
     
     private func fetchBlacklistData() {
-        userService.getBlacklists { [weak self] result in
-            switch result {
+        userService.getBlacklists { networkResult in
+            switch networkResult {
             case .success(let data):
                 if let blacklistResponse = data as? [BlacklistResponseDTO] {
-                    self?.blockedAccounts = blacklistResponse
-                    self?.addBlockedAccountViews()
+                    self.blockedAccounts = blacklistResponse
+                    self.addBlockedAccountViews()
                 } else {
-                    print("Invalid data format received: \(data)")
+                    print("Invalid data format received")
                 }
-            case .requestErr(let message):
-                print("Request error: \(message)")
-            case .pathErr:
-                print("Path error")
-            case .serverErr:
-                print("Server error")
-            case .networkFail:
-                print("Network failure")
+            default:
+                self.showNetworkErrorAlert()
+            }
+        }
+    }
+    
+    private func fetchUnblock(targetId: Int) {
+        userService.deleteBlacklists(targetId: targetId) { networkResult in
+            switch networkResult {
+            case .success:
+                self.fetchBlacklistData()
+            default:
+                self.showNetworkErrorAlert()
             }
         }
     }
