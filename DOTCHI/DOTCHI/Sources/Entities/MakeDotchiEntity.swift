@@ -16,7 +16,7 @@ struct MakeDotchiEntity {
     
     init() {
         self.image = UIImage()
-        self.luckyType = .health
+        self.luckyType = .lucky
         self.dotchiName = ""
         self.dotchiMood = ""
         self.dotchiContent = ""
