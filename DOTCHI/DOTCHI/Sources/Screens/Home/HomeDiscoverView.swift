@@ -116,7 +116,7 @@ extension HomeDiscoverView: UICollectionViewDataSource {
 extension HomeDiscoverView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
-        print("cell clicked")
+        self.findViewController()?.present(DotchiDetailViewController(cardId: self.cards[indexPath.row].cardId), animated: true)
     }
 }
 

@@ -11,7 +11,7 @@ import SwiftUI
 enum LuckyType: String {
     case health = "HEALTH"
     case lucky = "LUCK"
-    case money = "MONEY"
+    case money = "WEALTH"
     case love = "LOVE"
 }
 

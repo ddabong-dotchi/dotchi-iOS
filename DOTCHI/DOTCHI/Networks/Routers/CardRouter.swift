@@ -13,6 +13,8 @@ enum CardRouter {
     case getTodayCards
     case getCardLastTime(luckyType: LuckyType)
     case postCard(data: PostCardRequestDTO)
+    case getCardDetail(cardId: Int)
+    case deleteCard(cardId: Int)
 }
 
 extension CardRouter: TargetType {
@@ -27,14 +29,17 @@ extension CardRouter: TargetType {
         case .getTodayCards: return "/cards/top"
         case .getCardLastTime: return "/cards/last"
         case .postCard: return "/cards"
+        case .getCardDetail(let cardId): return "/cards/\(cardId)"
+        case .deleteCard(let cardId): return "/cards/\(cardId)"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .getAllCards, .getTodayCards, .getCardLastTime:
+        case .getAllCards, .getTodayCards, .getCardLastTime, .getCardDetail:
             return .get
         case .postCard: return .post
+        case .deleteCard: return .delete
         }
     }
     

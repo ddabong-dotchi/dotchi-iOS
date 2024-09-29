@@ -42,6 +42,8 @@
 		FF62303A2C9FCD9E002029A6 /* CardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6230392C9FCD96002029A6 /* CardService.swift */; };
 		FF62303E2C9FE41A002029A6 /* CardListResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF62303D2C9FE404002029A6 /* CardListResponseDTO.swift */; };
 		FF843BDF2C7A4967007B14A8 /* PlaceholderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF843BDE2C7A4967007B14A8 /* PlaceholderTextView.swift */; };
+		FFA86D1F2CA94C9900F3BB5C /* PostCommentResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA86D1E2CA94C9500F3BB5C /* PostCommentResponseDTO.swift */; };
+		FFA86D212CA9524300F3BB5C /* CardDetailResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA86D202CA9524300F3BB5C /* CardDetailResponseDTO.swift */; };
 		FFB7F9B62C5A396F00650238 /* WarningLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB7F9B52C5A396F00650238 /* WarningLabel.swift */; };
 		FFB7F9B82C5A42E700650238 /* TermsLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB7F9B72C5A42E700650238 /* TermsLabel.swift */; };
 		FFB7F9BA2C5A430700650238 /* UITapGestureRecognizer+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB7F9B92C5A430700650238 /* UITapGestureRecognizer+.swift */; };
@@ -122,6 +124,12 @@
 		FFD3D19A2CA928F60025F32B /* CardProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD3D1992CA928F60025F32B /* CardProfileView.swift */; };
 		FFD3D19D2CA9308D0025F32B /* PostCardRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD3D19C2CA930860025F32B /* PostCardRequestDTO.swift */; };
 		FFD3D19F2CA9345F0025F32B /* PostCardResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD3D19E2CA9345F0025F32B /* PostCardResponseDTO.swift */; };
+		FFD3D1A22CA93BE30025F32B /* DotchiDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD3D1A12CA93BE30025F32B /* DotchiDetailViewController.swift */; };
+		FFD3D1A52CA93DA60025F32B /* BrowseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD3D1A42CA93DA60025F32B /* BrowseViewController.swift */; };
+		FFD3D1A82CA944BB0025F32B /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD3D1A72CA944BB0025F32B /* CommentTableViewCell.swift */; };
+		FFD3D1AA2CA945CF0025F32B /* CommentRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD3D1A92CA945CA0025F32B /* CommentRouter.swift */; };
+		FFD3D1AC2CA946340025F32B /* CommentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD3D1AB2CA946310025F32B /* CommentService.swift */; };
+		FFD3D1AE2CA947170025F32B /* GetCommentsResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD3D1AD2CA947170025F32B /* GetCommentsResponseDTO.swift */; };
 		FFDAE3312CA0762D00509227 /* HomeThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDAE3302CA0762800509227 /* HomeThemeView.swift */; };
 		FFDAE3332CA0790000509227 /* HomeThemeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDAE3322CA078F300509227 /* HomeThemeButtonView.swift */; };
 		FFDAE3372CA8826000509227 /* MakeDotchiLuckyTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDAE3362CA8826000509227 /* MakeDotchiLuckyTitleView.swift */; };
@@ -173,6 +181,8 @@
 		FF843BD92C7A2F79007B14A8 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		FF843BDB2C7A2F88007B14A8 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		FF843BDE2C7A4967007B14A8 /* PlaceholderTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderTextView.swift; sourceTree = "<group>"; };
+		FFA86D1E2CA94C9500F3BB5C /* PostCommentResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCommentResponseDTO.swift; sourceTree = "<group>"; };
+		FFA86D202CA9524300F3BB5C /* CardDetailResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailResponseDTO.swift; sourceTree = "<group>"; };
 		FFB7F9B52C5A396F00650238 /* WarningLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningLabel.swift; sourceTree = "<group>"; };
 		FFB7F9B72C5A42E700650238 /* TermsLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsLabel.swift; sourceTree = "<group>"; };
 		FFB7F9B92C5A430700650238 /* UITapGestureRecognizer+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITapGestureRecognizer+.swift"; sourceTree = "<group>"; };
@@ -247,6 +257,12 @@
 		FFD3D1992CA928F60025F32B /* CardProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardProfileView.swift; sourceTree = "<group>"; };
 		FFD3D19C2CA930860025F32B /* PostCardRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCardRequestDTO.swift; sourceTree = "<group>"; };
 		FFD3D19E2CA9345F0025F32B /* PostCardResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCardResponseDTO.swift; sourceTree = "<group>"; };
+		FFD3D1A12CA93BE30025F32B /* DotchiDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotchiDetailViewController.swift; sourceTree = "<group>"; };
+		FFD3D1A42CA93DA60025F32B /* BrowseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseViewController.swift; sourceTree = "<group>"; };
+		FFD3D1A72CA944BB0025F32B /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
+		FFD3D1A92CA945CA0025F32B /* CommentRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentRouter.swift; sourceTree = "<group>"; };
+		FFD3D1AB2CA946310025F32B /* CommentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentService.swift; sourceTree = "<group>"; };
+		FFD3D1AD2CA947170025F32B /* GetCommentsResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCommentsResponseDTO.swift; sourceTree = "<group>"; };
 		FFDAE3302CA0762800509227 /* HomeThemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeThemeView.swift; sourceTree = "<group>"; };
 		FFDAE3322CA078F300509227 /* HomeThemeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeThemeButtonView.swift; sourceTree = "<group>"; };
 		FFDAE3362CA8826000509227 /* MakeDotchiLuckyTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeDotchiLuckyTitleView.swift; sourceTree = "<group>"; };
@@ -388,6 +404,7 @@
 		FF62303C2C9FCE84002029A6 /* Response */ = {
 			isa = PBXGroup;
 			children = (
+				FFA86D202CA9524300F3BB5C /* CardDetailResponseDTO.swift */,
 				FFD3D19E2CA9345F0025F32B /* PostCardResponseDTO.swift */,
 				FF62303D2C9FE404002029A6 /* CardListResponseDTO.swift */,
 			);
@@ -400,6 +417,23 @@
 				FF843BDE2C7A4967007B14A8 /* PlaceholderTextView.swift */,
 			);
 			path = UITextView;
+			sourceTree = "<group>";
+		};
+		FFA86D1C2CA94C8300F3BB5C /* Comment */ = {
+			isa = PBXGroup;
+			children = (
+				FFA86D1D2CA94C8A00F3BB5C /* Response */,
+			);
+			path = Comment;
+			sourceTree = "<group>";
+		};
+		FFA86D1D2CA94C8A00F3BB5C /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				FFA86D1E2CA94C9500F3BB5C /* PostCommentResponseDTO.swift */,
+				FFD3D1AD2CA947170025F32B /* GetCommentsResponseDTO.swift */,
+			);
+			path = Response;
 			sourceTree = "<group>";
 		};
 		FFB7F9B42C5A396300650238 /* UILabel */ = {
@@ -465,6 +499,7 @@
 		FFC7BB812C3D93FE000EA7B5 /* DTO */ = {
 			isa = PBXGroup;
 			children = (
+				FFA86D1C2CA94C8300F3BB5C /* Comment */,
 				FF62303B2C9FCE7C002029A6 /* Card */,
 				FFC7BB8E2C3EDFA2000EA7B5 /* Auth */,
 				1E9727592C43982300252CA6 /* User */,
@@ -475,6 +510,7 @@
 		FFC7BB822C3D941B000EA7B5 /* Routers */ = {
 			isa = PBXGroup;
 			children = (
+				FFD3D1A92CA945CA0025F32B /* CommentRouter.swift */,
 				FF6230372C9F36A0002029A6 /* CardRouter.swift */,
 				FFC7BB912C3EDFCB000EA7B5 /* AuthRouter.swift */,
 				1E9727572C43924F00252CA6 /* UserRouter.swift */,
@@ -485,6 +521,7 @@
 		FFC7BB832C3D9423000EA7B5 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				FFD3D1AB2CA946310025F32B /* CommentService.swift */,
 				FF6230392C9FCD96002029A6 /* CardService.swift */,
 				FFC7BB8A2C3D95BA000EA7B5 /* BaseService.swift */,
 				FFC7BB8C2C3EDF95000EA7B5 /* AuthService.swift */,
@@ -603,6 +640,8 @@
 		FFCD604D2C2D940F007785FF /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				FFD3D1A32CA93D930025F32B /* Browse */,
+				FFD3D1A02CA93BD50025F32B /* Detail */,
 				FFC7BB7C2C3D88A6000EA7B5 /* Signup */,
 				FFC7BB6C2C345EAC000EA7B5 /* Signin */,
 				FF4BF6AD2C2DB38900B6DEB2 /* My */,
@@ -734,6 +773,7 @@
 		FFCD60C22C2D9E36007785FF /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				FFD3D1A62CA944B50025F32B /* UITableViewCell */,
 				FFCB11F92C9E59C600892966 /* UICollectionViewCell */,
 				FF843BDD2C7A495A007B14A8 /* UITextView */,
 				FFB7F9B42C5A396300650238 /* UILabel */,
@@ -759,6 +799,30 @@
 				FFD3D19C2CA930860025F32B /* PostCardRequestDTO.swift */,
 			);
 			path = Request;
+			sourceTree = "<group>";
+		};
+		FFD3D1A02CA93BD50025F32B /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				FFD3D1A12CA93BE30025F32B /* DotchiDetailViewController.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		FFD3D1A32CA93D930025F32B /* Browse */ = {
+			isa = PBXGroup;
+			children = (
+				FFD3D1A42CA93DA60025F32B /* BrowseViewController.swift */,
+			);
+			path = Browse;
+			sourceTree = "<group>";
+		};
+		FFD3D1A62CA944B50025F32B /* UITableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				FFD3D1A72CA944BB0025F32B /* CommentTableViewCell.swift */,
+			);
+			path = UITableViewCell;
 			sourceTree = "<group>";
 		};
 		FFFB888E2C875DD700ACB0C6 /* GIFs */ = {
@@ -870,7 +934,9 @@
 				FF6230382C9F36A9002029A6 /* CardRouter.swift in Sources */,
 				FFCD60812C2D980F007785FF /* UINavigationController+.swift in Sources */,
 				FF843BDF2C7A4967007B14A8 /* PlaceholderTextView.swift in Sources */,
+				FFD3D1A52CA93DA60025F32B /* BrowseViewController.swift in Sources */,
 				FFC7BB892C3D956F000EA7B5 /* NetworkResult.swift in Sources */,
+				FFD3D1AC2CA946340025F32B /* CommentService.swift in Sources */,
 				FFCD60832C2D9832007785FF /* Encodable+.swift in Sources */,
 				FFC7BB7B2C35BA89000EA7B5 /* DoneButton.swift in Sources */,
 				FFCD60652C2D96D8007785FF /* UIViewController+.swift in Sources */,
@@ -887,11 +953,13 @@
 				1E9727462C3C3C6F00252CA6 /* SettingViewController.swift in Sources */,
 				FFB7F9BA2C5A430700650238 /* UITapGestureRecognizer+.swift in Sources */,
 				FFD3D19A2CA928F60025F32B /* CardProfileView.swift in Sources */,
+				FFD3D1A82CA944BB0025F32B /* CommentTableViewCell.swift in Sources */,
 				1E9727582C43924F00252CA6 /* UserRouter.swift in Sources */,
 				1ED0A92E2C8CC92500D78F4E /* PasswordTextField.swift in Sources */,
 				FFC7BB922C3EDFCB000EA7B5 /* AuthRouter.swift in Sources */,
 				FFCD609A2C2D9920007785FF /* KeychainKeys.swift in Sources */,
 				FF4BF6B22C2DB63900B6DEB2 /* CardEntity.swift in Sources */,
+				FFA86D212CA9524300F3BB5C /* CardDetailResponseDTO.swift in Sources */,
 				1E9727622C44F62000252CA6 /* BlacklistViewController.swift in Sources */,
 				FF4BF6BA2C2DB68000B6DEB2 /* CommentEntity.swift in Sources */,
 				FF328DC52C4D4DA300007CD5 /* DotchiNavigationView.swift in Sources */,
@@ -900,6 +968,7 @@
 				FFCD60732C2D977F007785FF /* UIImageView+.swift in Sources */,
 				FF328DC72C4D6FBC00007CD5 /* ProgressBarView.swift in Sources */,
 				FFD3D1942CA926620025F32B /* MakeDotchiPreviewViewController.swift in Sources */,
+				FFA86D1F2CA94C9900F3BB5C /* PostCommentResponseDTO.swift in Sources */,
 				FF3344742C8E6844002F2640 /* HomeDiscoverView.swift in Sources */,
 				FFD3D19D2CA9308D0025F32B /* PostCardRequestDTO.swift in Sources */,
 				FFD3D19F2CA9345F0025F32B /* PostCardResponseDTO.swift in Sources */,
@@ -917,6 +986,7 @@
 				FF4BF6BF2C2DB6F900B6DEB2 /* NetworkLoggerPlugin.swift in Sources */,
 				FFC7BB9F2C457616000EA7B5 /* SignupNicknameViewController.swift in Sources */,
 				FFCD60672C2D96F8007785FF /* UIView+.swift in Sources */,
+				FFD3D1AE2CA947170025F32B /* GetCommentsResponseDTO.swift in Sources */,
 				FF4BF6AF2C2DB39300B6DEB2 /* MyViewController.swift in Sources */,
 				FF328DC92C5A25A500007CD5 /* SignupTextField.swift in Sources */,
 				FFCD60C52C2D9E66007785FF /* DotchiTabBarController.swift in Sources */,
@@ -932,6 +1002,7 @@
 				FF4BF6B42C2DB64A00B6DEB2 /* CardUserEntity.swift in Sources */,
 				FFD3D1982CA9286E0025F32B /* CardBackView.swift in Sources */,
 				1E3A1E5F2C71EE740096708D /* EditUserResponseDTO.swift in Sources */,
+				FFD3D1A22CA93BE30025F32B /* DotchiDetailViewController.swift in Sources */,
 				FFCD602C2C21D9F2007785FF /* SceneDelegate.swift in Sources */,
 				FFC7BB6E2C345EBC000EA7B5 /* SigninViewController.swift in Sources */,
 				FFCD60712C2D976E007785FF /* Adjusted+.swift in Sources */,
@@ -946,6 +1017,7 @@
 				1E9727602C43AE2D00252CA6 /* MyCardResponseDTO.swift in Sources */,
 				FFB7F9B82C5A42E700650238 /* TermsLabel.swift in Sources */,
 				FFCD607B2C2D97D1007785FF /* UITableView+.swift in Sources */,
+				FFD3D1AA2CA945CF0025F32B /* CommentRouter.swift in Sources */,
 				1ED0A9262C80F44400D78F4E /* ChangePasswordViewController.swift in Sources */,
 				FFCD605B2C2D953F007785FF /* BaseViewController.swift in Sources */,
 				FFCB11FB2C9E5AFC00892966 /* DotchiSmallCardCollectionViewCell.swift in Sources */,
