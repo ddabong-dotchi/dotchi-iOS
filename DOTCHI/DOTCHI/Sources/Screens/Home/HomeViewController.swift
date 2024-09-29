@@ -16,7 +16,7 @@ final class HomeViewController: BaseViewController {
     private let contentView = UIView()
     
     private let todayView = HomeTodayView()
-    private let discoverView = HomeDiscoverView()
+    private let discoverView = HomeBrowseView()
     private let themeView = HomeThemeView()
     
     // MARK: Properties
