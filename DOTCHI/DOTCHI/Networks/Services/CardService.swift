@@ -13,6 +13,8 @@ internal protocol CardServiceProtocol {
     func getTodayCards(completion: @escaping (NetworkResult<Any>) -> (Void))
     func getCardLastTime(luckyType: LuckyType, completion: @escaping (NetworkResult<Any>) -> (Void))
     func postCard(data: PostCardRequestDTO, completion: @escaping (NetworkResult<Any>) -> (Void))
+    func getCardDetail(cardId: Int, completion: @escaping (NetworkResult<Any>) -> (Void))
+    func deleteCard(cardId: Int, completion: @escaping (NetworkResult<Any>) -> (Void))
 }
 
 final class CardService: BaseService {
@@ -91,5 +93,17 @@ extension CardService: CardServiceProtocol {
     
     func postCard(data: PostCardRequestDTO, completion: @escaping (NetworkResult<Any>) -> (Void)) {
         self.request(.postCard(data: data), decodingType: PostCardResponseDTO.self, completion: completion)
+    }
+    
+    // [GET] 카드 상세정보 조회
+    
+    func getCardDetail(cardId: Int, completion: @escaping (NetworkResult<Any>) -> (Void)) {
+        self.request(.getCardDetail(cardId: cardId), decodingType: CardDetailResponseDTO.self, completion: completion)
+    }
+    
+    // [DELETE] 카드 삭제
+    
+    func deleteCard(cardId: Int, completion: @escaping (NetworkResult<Any>) -> (Void)) {
+        self.request(.deleteCard(cardId: cardId), decodingType: String.self, completion: completion)
     }
 }
