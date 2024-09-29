@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class BaseUINavigationController: UINavigationController {
+final class BaseNavigationController: UINavigationController {
     
     // MARK: Initializer
     

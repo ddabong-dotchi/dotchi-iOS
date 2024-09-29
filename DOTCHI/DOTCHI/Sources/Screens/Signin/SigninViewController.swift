@@ -140,7 +140,7 @@ final class SigninViewController: BaseViewController {
     
     private func setSignupButtonAction() {
         self.signupButton.button.setAction {
-            self.present(BaseUINavigationController(rootViewController: SignupUserInfoViewController()), animated: true)
+            self.present(BaseNavigationController(rootViewController: SignupUserInfoViewController()), animated: true)
         }
     }
     

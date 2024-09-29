@@ -129,10 +129,10 @@ final class MakeDotchiPhotoViewController: BaseViewController {
     
     private func setNextButtonAction() {
         self.nextButton.setAction { [weak self] in
-//            self?.navigationController?.pushViewController(
-//                MakeDotchiContentViewController(makeDotchiData: self?.makeDotchiData ?? .init()),
-//                animated: true
-//            )
+            self?.navigationController?.pushViewController(
+                MakeDotchiContentViewController(makeDotchiData: self?.makeDotchiData ?? .init()),
+                animated: true
+            )
         }
     }
 }
