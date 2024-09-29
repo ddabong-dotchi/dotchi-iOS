@@ -11,6 +11,7 @@ import Moya
 internal protocol CardServiceProtocol {
     func getAllCards(sort: CardSortType, completion: @escaping (NetworkResult<Any>) -> (Void))
     func getTodayCards(completion: @escaping (NetworkResult<Any>) -> (Void))
+    func getCardLastTime(luckyType: LuckyType, completion: @escaping (NetworkResult<Any>) -> (Void))
 }
 
 final class CardService: BaseService {
@@ -47,6 +48,22 @@ extension CardService: CardServiceProtocol {
                 let statusCode = response.statusCode
                 let data = response.data
                 let networkResult = self.judgeStatus(by: statusCode, data, CardListResponseDTO.self)
+                completion(networkResult)
+            case .failure(let error):
+                debugPrint(error)
+            }
+        }
+    }
+    
+    // [GET] 타입별 최신 카드 업로드 시간
+    
+    func getCardLastTime(luckyType: LuckyType, completion: @escaping (NetworkResult<Any>) -> (Void)) {
+        self.provider.request(.getCardLastTime(luckyType: luckyType)) { result in
+            switch result {
+            case .success(let response):
+                let statusCode = response.statusCode
+                let data = response.data
+                let networkResult = self.judgeStatus(by: statusCode, data, String.self)
                 completion(networkResult)
             case .failure(let error):
                 debugPrint(error)
