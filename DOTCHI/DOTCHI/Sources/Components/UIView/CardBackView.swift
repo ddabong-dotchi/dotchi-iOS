@@ -34,14 +34,14 @@ final class CardBackView: UIView {
     private let dotchiNameLabel: UILabel = {
         let label: UILabel = UILabel()
         label.text = Text.nameGuide
-        label.setStyle(.head, .dotchiBlack)
+        label.setStyle(.body, .dotchiBlack)
         return label
     }()
     
     private let dotchiMoodLabel: UILabel = {
         let label: UILabel = UILabel()
         label.text = Text.moodGuide
-        label.setStyle(.head, .dotchiBlack)
+        label.setStyle(.body, .dotchiBlack)
         label.numberOfLines = 2
         return label
     }()
@@ -57,13 +57,13 @@ final class CardBackView: UIView {
     private let dotchiToYouLabel: UILabel = {
         let label: UILabel = UILabel()
         label.text = Text.toYouGuide
-        label.setStyle(.head, .dotchiBlack)
+        label.setStyle(.body, .dotchiBlack)
         return label
     }()
     
     private let dotchiLuckyTypeLabel: UILabel = {
         let label: UILabel = UILabel()
-        label.font = .head
+        label.font = .body
         return label
     }()
     
