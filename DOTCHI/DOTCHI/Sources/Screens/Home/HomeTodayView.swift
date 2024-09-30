@@ -121,6 +121,22 @@ final class HomeTodayView: UIView {
             self.firstDotchiImage.imageView.setImageUrl(self.cards[0].imageUrl)
             self.secondDotchiImage.imageView.setImageUrl(self.cards[1].imageUrl)
             self.thirdDotchiImage.imageView.setImageUrl(self.cards[2].imageUrl)
+            
+            self.firstDotchiImage.isUserInteractionEnabled = true
+            self.secondDotchiImage.isUserInteractionEnabled = true
+            self.thirdDotchiImage.isUserInteractionEnabled = true
+            
+            self.firstDotchiImage.setViewAction {
+                self.findViewController()?.present(DotchiDetailViewController(cardId: self.cards[0].cardId), animated: true)
+            }
+            
+            self.secondDotchiImage.setViewAction {
+                self.findViewController()?.present(DotchiDetailViewController(cardId: self.cards[1].cardId), animated: true)
+            }
+            
+            self.thirdDotchiImage.setViewAction {
+                self.findViewController()?.present(DotchiDetailViewController(cardId: self.cards[2].cardId), animated: true)
+            }
         }
     }
 }

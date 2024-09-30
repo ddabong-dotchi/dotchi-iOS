@@ -128,4 +128,27 @@ extension UIView {
             return nil
         }
     }
+    
+    // UIView에 터치 이벤트를 설정하는 메서드
+    func setViewAction(_ action: @escaping () -> Void) {
+        // 터치 제스처 인식기
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+        self.addGestureRecognizer(tapGesture)
+        
+        // 터치 이벤트를 받을 수 있도록 설정
+        self.isUserInteractionEnabled = true
+        
+        // 터치 이벤트 실행 시 동작할 액션을 저장
+        objc_setAssociatedObject(self, &UIView.actionKey, action, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+    }
+    
+    // 터치가 발생했을 때 실행되는 메서드
+    @objc private func handleTap() {
+        if let action = objc_getAssociatedObject(self, &UIView.actionKey) as? () -> Void {
+            action()
+        }
+    }
+    
+    // AssociatedObject Key 저장소
+    private static var actionKey: UInt8 = 0
 }
