@@ -84,6 +84,13 @@ final class HomeTodayView: UIView {
         if self.superview != nil {
             self.setLayout()
             self.setUI()
+        }
+    }
+    
+    override func didMoveToWindow() {
+        super.didMoveToWindow()
+        
+        if self.window != nil {
             self.fetchCards()
         }
     }
