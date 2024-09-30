@@ -103,7 +103,7 @@ extension UserService: UserServiceProtocol {
             case .success(let response):
                 let statusCode = response.statusCode
                 let data = response.data
-                let networkResult = self.judgeStatus(by: statusCode, data, MyCardResponseDTO.self)
+                let networkResult = self.judgeStatus(by: statusCode, data, [MyCardResponseDTO].self)
                 completion(networkResult)
             case .failure(let error):
                 debugPrint(error)

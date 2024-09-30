@@ -10,6 +10,7 @@ import SnapKit
 
 class MyViewController: BaseViewController {
     private let userService = UserService.shared
+    private var myCardData: [MyCardResponseDTO] = []
     
     private var profileImageView = UIImageView()
     private var nameLabel = UILabel()
@@ -65,12 +66,8 @@ class MyViewController: BaseViewController {
         navigationController.showNavigationBar()
         navigationItem.title = ""
         
-        if let image = UIImage(named: "icnSetting") {
-            let settingButton = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(settingButtonTapped))
-            navigationItem.rightBarButtonItem = settingButton
-        } else {
-            print("이미지를 찾을 수 없습니다.")
-        }
+        let settingButton = UIBarButtonItem(image: UIImage(named: "icnSetting"), style: .plain, target: self, action: #selector(settingButtonTapped))
+        navigationItem.rightBarButtonItem = settingButton
     }
     
     // MARK: - Setup Subviews
@@ -124,7 +121,10 @@ class MyViewController: BaseViewController {
         collectionView.backgroundColor = UIColor.clear
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.register(MyCollectionViewCell.self, forCellWithReuseIdentifier: "MyCollectionViewCell")
+        collectionView.register(cell: DotchiSmallCardCollectionViewCell.self, forCellWithReuseIdentifier: "DotchiSmallCardCollectionViewCell")
+        
+        collectionView.showsVerticalScrollIndicator = false
+        collectionView.showsHorizontalScrollIndicator = false
         
         setupZeroView()
         
@@ -143,9 +143,7 @@ class MyViewController: BaseViewController {
         zeroView.addSubview(imageView)
         imageView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.centerY.equalToSuperview().offset(-50)
-            make.width.equalTo(155.9)
-            make.height.equalTo(132)
+            make.centerY.equalToSuperview().offset(-55)
         }
         
         let messageLabel = UILabel()
@@ -182,7 +180,7 @@ class MyViewController: BaseViewController {
         containerView.snp.makeConstraints { make in
             make.top.equalTo(descriptionLabel.snp.bottom).offset(31)
             make.leading.trailing.equalToSuperview().inset(0)
-            make.bottom.equalTo(view.safeAreaLayoutGuide).inset(0)
+            make.bottom.equalToSuperview()
         }
         
         stackView.snp.makeConstraints { make in
@@ -191,9 +189,9 @@ class MyViewController: BaseViewController {
         }
         
         collectionView.snp.makeConstraints { make in
-            make.top.equalTo(stackView.snp.bottom).offset(15)
-            make.leading.trailing.equalToSuperview().inset(10)
-            make.bottom.equalToSuperview().inset(10)
+            make.top.equalTo(stackView.snp.bottom).offset(20)
+            make.leading.trailing.equalToSuperview().inset(isScreenSmallerThanIPhone13Mini() ? 19 : 28.adjustedH)
+            make.bottom.equalToSuperview()
         }
         
         zeroView.snp.makeConstraints { make in
@@ -208,7 +206,21 @@ class MyViewController: BaseViewController {
             switch networkResult {
             case .success(let data):
                 if let userResponse = data as? UserResponseDTO {
-                    self.updateUI(with: userResponse)
+                    self.updateProfileUI(with: userResponse)
+                } else {
+                    print("Invalid data format received")
+                }
+            default:
+                self.showNetworkErrorAlert()
+            }
+        }
+        
+        userService.getMyCard { networkResult in
+            switch networkResult {
+            case .success(let data):
+                if let myCardResponse = data as? [MyCardResponseDTO] {
+                    self.myCardData = myCardResponse
+                    self.updateCardUI(with: self.myCardData)
                 } else {
                     print("Invalid data format received")
                 }
@@ -218,7 +230,7 @@ class MyViewController: BaseViewController {
         }
     }
     
-    private func updateUI(with userData: UserResponseDTO) {
+    private func updateProfileUI(with userData: UserResponseDTO) {
         DispatchQueue.main.async { [weak self] in
             self?.nameLabel.text = userData.nickname
             self?.descriptionLabel.text = userData.description
@@ -226,6 +238,22 @@ class MyViewController: BaseViewController {
                 self?.profileImageView.loadImage(from: url)
             } else {
                 print("Invalid image URL: \(userData.imageUrl)")
+            }
+        }
+    }
+    
+    private func updateCardUI(with cardData: [MyCardResponseDTO]) {
+        DispatchQueue.main.async { [weak self] in
+            let count = cardData.count
+            self?.countLabel.text = String(count)
+            
+            if count == 0 {
+                self?.zeroView.isHidden = false
+                self?.collectionView.isHidden = true
+            } else {
+                self?.zeroView.isHidden = true
+                self?.collectionView.isHidden = false
+                self?.collectionView.reloadData()
             }
         }
     }
@@ -238,37 +266,33 @@ class MyViewController: BaseViewController {
 
 extension MyViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
+        return myCardData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyCollectionViewCell", for: indexPath) as? MyCollectionViewCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DotchiSmallCardCollectionViewCell", for: indexPath) as? DotchiSmallCardCollectionViewCell else {
             return UICollectionViewCell()
         }
         
+        let cardFrontEntities = myCardData.toCardFrontEntity()
+        let frontEntity = cardFrontEntities[indexPath.row]
+        
+        cell.setData(frontData: frontEntity)
+        
         return cell
     }
-}
-
-class MyCollectionViewCell: UICollectionViewCell {
-    private let cardImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
-        imageView.clipsToBounds = true
-        imageView.layer.cornerRadius = 12
-        return imageView
-    }()
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        contentView.addSubview(cardImageView)
-        cardImageView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-        }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 163, height: 241)
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+        
+        let cardId = myCardData[indexPath.row].cardId
+        let detailVC = DotchiDetailViewController(cardId: cardId)
+        
+        self.present(detailVC, animated: true)
     }
 }
 
