@@ -176,10 +176,10 @@ final class DotchiDetailViewController: BaseViewController {
                     style: .default,
                     handler: { _ in
                         self.makeAlertWithCancel(
-                            title: "\(self.user.username) 님을 신고합니다.",
+                            title: "\(self.user.nickname) 님을 신고합니다.",
                             okTitle: "신고") { _ in
                                 // TODO: Report User
-//                                self.present(self.reportActionSheet(userId: self.user.userId), animated: true)
+                                self.present(self.reportActionSheet(username: self.user.username), animated: true)
                             }
                     }
                 )

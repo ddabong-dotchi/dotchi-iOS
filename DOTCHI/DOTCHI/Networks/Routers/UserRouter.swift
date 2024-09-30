@@ -18,6 +18,8 @@ enum UserRouter {
     case checkUsernameDuplicate(data: String)
     case checkNicknameDuplicate(data: String)
     case requestSignup(data: SignupRequestDTO)
+    case reportUser(data: ReportUserRequestDTO)
+//    case requestBlockUser(targetId: Int)
 }
 
 extension UserRouter: TargetType {
@@ -42,6 +44,8 @@ extension UserRouter: TargetType {
             return "/user/nickname"
         case .requestSignup:
             return "/user/join"
+        case .reportUser:
+            return "/reports"
         }
     }
 
@@ -51,7 +55,7 @@ extension UserRouter: TargetType {
             return .get
         case .editUser, .changePassword:
             return .patch
-        case .requestSignup:
+        case .requestSignup, .reportUser:
             return .post
         case .deleteBlacklists:
             return .delete
@@ -109,6 +113,8 @@ extension UserRouter: TargetType {
             formData.append(imageMultipart)
             
             return .uploadMultipart(formData)
+        case .reportUser(let data):
+            return .requestJSONEncodable(data)
         }
     }
 
