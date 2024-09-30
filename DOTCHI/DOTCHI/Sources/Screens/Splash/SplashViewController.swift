@@ -57,7 +57,7 @@ final class SplashViewController: BaseViewController {
     }
     
     private func presentSigninViewController() {
-        self.present(SigninViewController(), animated: true)
+        self.present(OnboardingViewController(), animated: true)
     }
 }
 
