@@ -42,6 +42,7 @@
 		FF62303A2C9FCD9E002029A6 /* CardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6230392C9FCD96002029A6 /* CardService.swift */; };
 		FF62303E2C9FE41A002029A6 /* CardListResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF62303D2C9FE404002029A6 /* CardListResponseDTO.swift */; };
 		FF843BDF2C7A4967007B14A8 /* PlaceholderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF843BDE2C7A4967007B14A8 /* PlaceholderTextView.swift */; };
+		FF911C232CAAE3FE0070F1E7 /* FacebookShare in Frameworks */ = {isa = PBXBuildFile; productRef = FF911C222CAAE3FE0070F1E7 /* FacebookShare */; };
 		FFA86D1F2CA94C9900F3BB5C /* PostCommentResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA86D1E2CA94C9500F3BB5C /* PostCommentResponseDTO.swift */; };
 		FFA86D212CA9524300F3BB5C /* CardDetailResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA86D202CA9524300F3BB5C /* CardDetailResponseDTO.swift */; };
 		FFA86D232CA99EAB00F3BB5C /* DotchiSortButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA86D222CA99EAB00F3BB5C /* DotchiSortButton.swift */; };
@@ -302,6 +303,7 @@
 				FFC7BB792C35B905000EA7B5 /* IQKeyboardManagerSwift in Frameworks */,
 				FFCD60B82C2D9B29007785FF /* CombineMoya in Frameworks */,
 				FFCD60BA2C2D9B29007785FF /* Moya in Frameworks */,
+				FF911C232CAAE3FE0070F1E7 /* FacebookShare in Frameworks */,
 				FFCD60B52C2D9B10007785FF /* KeychainSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -893,6 +895,7 @@
 				FFCD60C02C2D9DBC007785FF /* Lottie */,
 				FF4BF6AB2C2DB15500B6DEB2 /* SnapKit */,
 				FFC7BB782C35B905000EA7B5 /* IQKeyboardManagerSwift */,
+				FF911C222CAAE3FE0070F1E7 /* FacebookShare */,
 			);
 			productName = DOTCHI;
 			productReference = FFCD60262C21D9F2007785FF /* DOTCHI.app */;
@@ -929,6 +932,7 @@
 				FFCD60BF2C2D9DBC007785FF /* XCRemoteSwiftPackageReference "lottie-spm" */,
 				FF4BF6AA2C2DB15500B6DEB2 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				FFC7BB772C35B905000EA7B5 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				FF911C212CAAE3FE0070F1E7 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
 			);
 			productRefGroup = FFCD60272C21D9F2007785FF /* Products */;
 			projectDirPath = "";
@@ -1318,6 +1322,14 @@
 				minimumVersion = 5.7.1;
 			};
 		};
+		FF911C212CAAE3FE0070F1E7 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 14.1.0;
+			};
+		};
 		FFC7BB772C35B905000EA7B5 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
@@ -1365,6 +1377,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FF4BF6AA2C2DB15500B6DEB2 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		FF911C222CAAE3FE0070F1E7 /* FacebookShare */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FF911C212CAAE3FE0070F1E7 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookShare;
 		};
 		FFC7BB782C35B905000EA7B5 /* IQKeyboardManagerSwift */ = {
 			isa = XCSwiftPackageProductDependency;
