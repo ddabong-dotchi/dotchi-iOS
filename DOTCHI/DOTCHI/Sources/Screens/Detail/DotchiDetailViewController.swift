@@ -151,7 +151,7 @@ final class DotchiDetailViewController: BaseViewController {
             preferredStyle: .actionSheet
         )
         
-        if UserInfo.shared.userID != self.user.userId {
+        if UserInfo.shared.username != self.user.username {
             actionSheet.addAction(
                 UIAlertAction(
                     title: "차단하기",
@@ -186,7 +186,7 @@ final class DotchiDetailViewController: BaseViewController {
             )
         }
         
-        if UserInfo.shared.userID == self.user.userId {
+        if UserInfo.shared.username == self.user.username {
             actionSheet.addAction(
                 UIAlertAction(
                     title: "삭제하기",
