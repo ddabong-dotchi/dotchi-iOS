@@ -56,6 +56,11 @@ class MyViewController: BaseViewController {
         fetchMyData()
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 28, right: 0)
+    }
+
     // MARK: - Setup NavigationBar
     
     private func setupNavigationBar() {
@@ -179,7 +184,7 @@ class MyViewController: BaseViewController {
         
         containerView.snp.makeConstraints { make in
             make.top.equalTo(descriptionLabel.snp.bottom).offset(31)
-            make.leading.trailing.equalToSuperview().inset(0)
+            make.leading.trailing.equalToSuperview()
             make.bottom.equalToSuperview()
         }
         
