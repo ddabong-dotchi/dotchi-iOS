@@ -43,6 +43,7 @@
 		FF62303E2C9FE41A002029A6 /* CardListResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF62303D2C9FE404002029A6 /* CardListResponseDTO.swift */; };
 		FF843BDF2C7A4967007B14A8 /* PlaceholderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF843BDE2C7A4967007B14A8 /* PlaceholderTextView.swift */; };
 		FF911C232CAAE3FE0070F1E7 /* FacebookShare in Frameworks */ = {isa = PBXBuildFile; productRef = FF911C222CAAE3FE0070F1E7 /* FacebookShare */; };
+		FF911C262CAAF42A0070F1E7 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF911C252CAAF42A0070F1E7 /* OnboardingViewController.swift */; };
 		FFA86D1F2CA94C9900F3BB5C /* PostCommentResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA86D1E2CA94C9500F3BB5C /* PostCommentResponseDTO.swift */; };
 		FFA86D212CA9524300F3BB5C /* CardDetailResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA86D202CA9524300F3BB5C /* CardDetailResponseDTO.swift */; };
 		FFA86D232CA99EAB00F3BB5C /* DotchiSortButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA86D222CA99EAB00F3BB5C /* DotchiSortButton.swift */; };
@@ -188,6 +189,7 @@
 		FF843BD92C7A2F79007B14A8 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		FF843BDB2C7A2F88007B14A8 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		FF843BDE2C7A4967007B14A8 /* PlaceholderTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderTextView.swift; sourceTree = "<group>"; };
+		FF911C252CAAF42A0070F1E7 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		FFA86D1E2CA94C9500F3BB5C /* PostCommentResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCommentResponseDTO.swift; sourceTree = "<group>"; };
 		FFA86D202CA9524300F3BB5C /* CardDetailResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailResponseDTO.swift; sourceTree = "<group>"; };
 		FFA86D222CA99EAB00F3BB5C /* DotchiSortButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotchiSortButton.swift; sourceTree = "<group>"; };
@@ -434,6 +436,14 @@
 			path = UITextView;
 			sourceTree = "<group>";
 		};
+		FF911C242CAAF4240070F1E7 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				FF911C252CAAF42A0070F1E7 /* OnboardingViewController.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 		FFA86D1C2CA94C8300F3BB5C /* Comment */ = {
 			isa = PBXGroup;
 			children = (
@@ -674,6 +684,7 @@
 		FFCD604D2C2D940F007785FF /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				FF911C242CAAF4240070F1E7 /* Onboarding */,
 				FFA86D2D2CA9CD6B00F3BB5C /* Theme */,
 				FFD3D1A32CA93D930025F32B /* Browse */,
 				FFD3D1A02CA93BD50025F32B /* Detail */,
@@ -683,17 +694,9 @@
 				FF4BF6A72C2DAC9500B6DEB2 /* Make */,
 				FFCD60502C2D9468007785FF /* Home */,
 				FFCD604F2C2D9463007785FF /* Splash */,
-				FFCD604E2C2D9446007785FF /* Onboarding */,
 				FFCD60342C21D9F3007785FF /* LaunchScreen.storyboard */,
 			);
 			path = Screens;
-			sourceTree = "<group>";
-		};
-		FFCD604E2C2D9446007785FF /* Onboarding */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Onboarding;
 			sourceTree = "<group>";
 		};
 		FFCD604F2C2D9463007785FF /* Splash */ = {
@@ -1003,6 +1006,7 @@
 				FF4BF6B22C2DB63900B6DEB2 /* CardEntity.swift in Sources */,
 				FFA86D212CA9524300F3BB5C /* CardDetailResponseDTO.swift in Sources */,
 				1E9727622C44F62000252CA6 /* BlacklistViewController.swift in Sources */,
+				FF911C262CAAF42A0070F1E7 /* OnboardingViewController.swift in Sources */,
 				FF4BF6BA2C2DB68000B6DEB2 /* CommentEntity.swift in Sources */,
 				FF328DC52C4D4DA300007CD5 /* DotchiNavigationView.swift in Sources */,
 				FFC7BB962C3EE055000EA7B5 /* ServiceEnvironment.swift in Sources */,

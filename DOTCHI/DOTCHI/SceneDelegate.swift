@@ -17,7 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(windowScene: windowScene)
         window?.backgroundColor = .dotchiBlack
-        window?.rootViewController = SplashViewController()
+        window?.rootViewController = OnboardingViewController()
         window?.makeKeyAndVisible()
     }
 
