@@ -29,9 +29,16 @@ final class ThemeViewController: BaseViewController {
     
     private let popularButton: DotchiSortButton = DotchiSortButton(sortType: .popular)
     
+    private let collectionView: UICollectionView = {
+        let collectionView: UICollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+        collectionView.backgroundColor = .clear
+        return collectionView
+    }()
+    
     // MARK: Properties
     
     private var luckyType: LuckyType = .lucky
+    private var cards: [CardEntity] = []
     
     // MARK: Initializer
     
@@ -50,9 +57,13 @@ final class ThemeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.setBackButtonAction(self.navigationView.backButton)
         self.setUI()
         self.setLayout()
         self.setButtonToggle()
+        self.setCollectionView()
+        self.setTwoColumnCollectionViewLayout()
+        self.fetchCards(sort: self.latestButton.isSelected ? .recent : .popular)
     }
     
     // MARK: Methods
@@ -68,8 +79,77 @@ final class ThemeViewController: BaseViewController {
             button.setAction { [weak self] in
                 self?.latestButton.isSelected = button == self?.latestButton
                 self?.popularButton.isSelected = button == self?.popularButton
+                self?.cards = []
+                self?.collectionView.reloadData()
+                self?.fetchCards(sort: self?.latestButton.isSelected ?? true ? .recent : .popular)
             }
         })
+    }
+    
+    private func setTwoColumnCollectionViewLayout() {
+        let collectionViewLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+
+        // 컬렉션 뷰의 너비에서 2열을 만들기 위한 셀 너비 계산
+        let padding: CGFloat = 28 // 좌우 패딩
+        let minimumInteritemSpacing: CGFloat = 12 // 열 간의 간격
+        let availableWidth = self.view.frame.width - (padding * 2) - minimumInteritemSpacing
+        let cellWidth = availableWidth / 2
+        
+        // 셀 크기 및 간격 설정
+        collectionViewLayout.itemSize = CGSize(width: cellWidth, height: cellWidth * 241 / 163) // 1:1 비율로 설정
+        collectionViewLayout.minimumInteritemSpacing = minimumInteritemSpacing
+        collectionViewLayout.minimumLineSpacing = 12 // 행 간의 간격 설정
+        
+        // 컬렉션 뷰의 섹션 인셋 설정
+        collectionViewLayout.sectionInset = UIEdgeInsets(top: 0, left: padding, bottom: 16, right: padding)
+        
+        // 스크롤 방향 설정 (세로 스크롤)
+        collectionViewLayout.scrollDirection = .vertical
+        
+        // 레이아웃 적용
+        self.collectionView.collectionViewLayout = collectionViewLayout
+    }
+    
+    private func setCollectionView() {
+        self.collectionView.register(cell: DotchiSmallCardCollectionViewCell.self)
+        
+        self.collectionView.dataSource = self
+        self.collectionView.delegate = self
+    }
+}
+
+extension ThemeViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.cards.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DotchiSmallCardCollectionViewCell.className, for: indexPath) as! DotchiSmallCardCollectionViewCell
+        
+        cell.setData(frontData: self.cards[indexPath.row].front)
+        
+        return cell
+    }
+}
+
+extension ThemeViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.present(DotchiDetailViewController(cardId: self.cards[indexPath.row].front.cardId), animated: true)
+    }
+}
+
+// MARK: - Network
+
+extension ThemeViewController {
+    private func fetchCards(sort: CardSortType) {
+        CardService.shared.getCardsByTheme(luckyType: self.luckyType, sort: sort) { result in
+            if case .success(let cards) = result {
+                self.cards = (cards as? CardListResponseDTO)?.toCardEntity() ?? []
+                self.collectionView.reloadData()
+            } else {
+                self.showNetworkErrorAlert()
+            }
+        }
     }
 }
 
@@ -81,7 +161,8 @@ extension ThemeViewController {
             navigationView,
             titleLabel,
             latestButton,
-            popularButton
+            popularButton,
+            collectionView
         ])
         
         self.navigationView.snp.makeConstraints { make in
@@ -104,6 +185,12 @@ extension ThemeViewController {
         self.popularButton.snp.makeConstraints { make in
             make.top.width.height.equalTo(self.latestButton)
             make.leading.equalTo(self.latestButton.snp.trailing).offset(9)
+        }
+        
+        self.collectionView.snp.makeConstraints { make in
+            make.top.equalTo(self.latestButton.snp.bottom).offset(24)
+            make.horizontalEdges.equalToSuperview()
+            make.bottom.equalTo(self.view.safeAreaLayoutGuide)
         }
     }
 }
