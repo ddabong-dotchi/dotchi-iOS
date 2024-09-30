@@ -1,5 +1,5 @@
 //
-//  HomeDiscoverView.swift
+//  HomeBrowseView.swift
 //  DOTCHI
 //
 //  Created by Jungbin Jung on 9/9/24.
@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-final class HomeDiscoverView: UIView {
+final class HomeBrowseView: UIView {
     
     private enum Text {
         static let title = "따봉도치 둘러보기"
@@ -67,6 +67,7 @@ final class HomeDiscoverView: UIView {
         self.setUI()
         self.setLayout()
         self.setCollectionView()
+        self.setAllButtonAction()
     }
     
     required init?(coder: NSCoder) {
@@ -93,11 +94,17 @@ final class HomeDiscoverView: UIView {
         
         self.cardCollectionView.register(cell: DotchiSmallCardCollectionViewCell.self)
     }
+    
+    private func setAllButtonAction() {
+        self.allButton.setAction {
+            self.findViewController()?.navigationController?.pushViewController(BrowseViewController(), animated: true)
+        }
+    }
 }
 
 // MARK: - UICollectionViewDataSource
 
-extension HomeDiscoverView: UICollectionViewDataSource {
+extension HomeBrowseView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.cards.count
     }
@@ -113,7 +120,7 @@ extension HomeDiscoverView: UICollectionViewDataSource {
 
 // MARK: - UICollectionViewDelegateFlowLayout
 
-extension HomeDiscoverView: UICollectionViewDelegateFlowLayout {
+extension HomeBrowseView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
         self.findViewController()?.present(DotchiDetailViewController(cardId: self.cards[indexPath.row].cardId), animated: true)
@@ -122,7 +129,7 @@ extension HomeDiscoverView: UICollectionViewDelegateFlowLayout {
 
 // MARK: - Network
 
-extension HomeDiscoverView {
+extension HomeBrowseView {
     private func fetchCards() {
         CardService.shared.getAllCards(sort: .recent) { result in
             if case .success(let cards) = result {
@@ -138,7 +145,7 @@ extension HomeDiscoverView {
 
 // MARK: - Layout
 
-extension HomeDiscoverView {
+extension HomeBrowseView {
     private func setLayout() {
         self.addSubviews([
             titleLabel,

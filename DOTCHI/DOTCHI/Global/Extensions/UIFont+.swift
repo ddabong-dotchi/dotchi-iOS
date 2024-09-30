@@ -9,6 +9,10 @@ import UIKit.UIFont
 
 extension UIFont {
     
+    static var adjustedFontSize: CGFloat {
+        return isScreenSmallerThanIPhone13Mini() ? -4 : 0
+    }
+    
     class var bigTitle: UIFont {
         return UIFont(name: "Pretendard-Bold", size: 32.0)!
     }
@@ -26,7 +30,7 @@ extension UIFont {
     }
     
     class var body: UIFont {
-        return UIFont(name: "Pretendard-Bold", size: 22.0)!
+        return UIFont(name: "Pretendard-Bold", size: 22.0 + adjustedFontSize)!
     }
     
     class var bigButton: UIFont {
@@ -50,7 +54,7 @@ extension UIFont {
     }
     
     class var subSbold: UIFont {
-        return UIFont(name: "Pretendard-SemiBold", size: 14.0)!
+        return UIFont(name: "Pretendard-SemiBold", size: isScreenSmallerThanIPhone13Mini() ? 12.0 : 14.0)!
     }
     
     class var subSbold2: UIFont {
@@ -62,7 +66,7 @@ extension UIFont {
     }
     
     class var sSub: UIFont {
-        return UIFont(name: "Pretendard-SemiBold", size: 12.0)!
+        return UIFont(name: "Pretendard-SemiBold", size: isScreenSmallerThanIPhone13Mini() ? 11.0 : 12.0)!
     }
     
 }

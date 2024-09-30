@@ -46,7 +46,7 @@ final class SplashViewController: BaseViewController {
         let signinRequestData: SigninRequestDTO = self.getSigninDataFromKeychain()
         
         self.requestSignin(data: signinRequestData) { response in
-            self.setUserInfo(data: response)
+            self.setUserToken(data: response)
             self.presentHomeViewController()
         }
     }

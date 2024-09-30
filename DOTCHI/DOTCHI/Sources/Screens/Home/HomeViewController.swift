@@ -16,7 +16,7 @@ final class HomeViewController: BaseViewController {
     private let contentView = UIView()
     
     private let todayView = HomeTodayView()
-    private let discoverView = HomeDiscoverView()
+    private let discoverView = HomeBrowseView()
     private let themeView = HomeThemeView()
     
     // MARK: Properties
@@ -30,6 +30,7 @@ final class HomeViewController: BaseViewController {
         
         self.setLayout()
         self.setUI()
+        self.fetchUserData()
     }
     
     // MARK: Methods
@@ -38,6 +39,25 @@ final class HomeViewController: BaseViewController {
         self.view.backgroundColor = .dotchiHomeBackgroundGray
     }
     
+}
+
+// MARK: - Network
+
+extension HomeViewController {
+    private func fetchUserData() {
+        UserService.shared.getUser { networkResult in
+            switch networkResult {
+            case .success(let data):
+                if let userResponse = data as? UserResponseDTO {
+                    self.setUserInfo(data: userResponse)
+                } else {
+                    print("Invalid data format received")
+                }
+            default:
+                self.showNetworkErrorAlert()
+            }
+        }
+    }
 }
 
 // MARK: - Layout

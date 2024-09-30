@@ -34,14 +34,14 @@ final class CardBackView: UIView {
     private let dotchiNameLabel: UILabel = {
         let label: UILabel = UILabel()
         label.text = Text.nameGuide
-        label.setStyle(.head, .dotchiBlack)
+        label.setStyle(.body, .dotchiBlack)
         return label
     }()
     
     private let dotchiMoodLabel: UILabel = {
         let label: UILabel = UILabel()
         label.text = Text.moodGuide
-        label.setStyle(.head, .dotchiBlack)
+        label.setStyle(.body, .dotchiBlack)
         label.numberOfLines = 2
         return label
     }()
@@ -49,7 +49,7 @@ final class CardBackView: UIView {
     private let dotchiContentLabel: UILabel = {
         let label: UILabel = UILabel()
         label.text = "일이삼사오육칠팔구십\n일이삼사오육칠팔구십"
-        label.setStyle(.head, .dotchiBlack)
+        label.setStyle(.body, .dotchiBlack)
         label.numberOfLines = 2
         return label
     }()
@@ -57,13 +57,13 @@ final class CardBackView: UIView {
     private let dotchiToYouLabel: UILabel = {
         let label: UILabel = UILabel()
         label.text = Text.toYouGuide
-        label.setStyle(.head, .dotchiBlack)
+        label.setStyle(.body, .dotchiBlack)
         return label
     }()
     
     private let dotchiLuckyTypeLabel: UILabel = {
         let label: UILabel = UILabel()
-        label.font = .head
+        label.font = .body
         return label
     }()
     
@@ -134,7 +134,7 @@ final class CardBackView: UIView {
             data: .init(
                 userId: 0,
                 profileImageUrl: UserInfo.shared.profileImageUrl,
-                username: UserInfo.shared.username
+                username: UserInfo.shared.nickname
             ),
             luckyType: makeDotchiData.luckyType,
             headType: .front
