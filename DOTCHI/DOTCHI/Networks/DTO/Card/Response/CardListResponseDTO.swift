@@ -44,7 +44,8 @@ extension CardListResponseDTO {
                 user: CardUserEntity(
                     userId: -1,
                     profileImageUrl: card.userImageURL,
-                    username: card.nickname
+                    username: "",
+                    nickname: card.nickname
                 ),
                 front: CardFrontEntity(
                     cardId: card.id,
