@@ -106,4 +106,10 @@ extension CardService: CardServiceProtocol {
     func deleteCard(cardId: Int, completion: @escaping (NetworkResult<Any>) -> (Void)) {
         self.request(.deleteCard(cardId: cardId), decodingType: String.self, completion: completion)
     }
+    
+    // [GET] 카드 타입별 최신/인기순 조회
+    
+    func getCardsByTheme(luckyType: LuckyType, sort: CardSortType, completion: @escaping (NetworkResult<Any>) -> (Void)) {
+        self.request(.getCardsByTheme(luckyType: luckyType, sort: sort), decodingType: CardListResponseDTO.self, completion: completion)
+    }
 }
