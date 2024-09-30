@@ -190,7 +190,7 @@ class MyViewController: BaseViewController {
         
         collectionView.snp.makeConstraints { make in
             make.top.equalTo(stackView.snp.bottom).offset(20)
-            make.leading.trailing.equalToSuperview().inset(19)
+            make.leading.trailing.equalToSuperview().inset(isScreenSmallerThanIPhone13Mini() ? 19 : 28.adjustedH)
             make.bottom.equalToSuperview()
         }
         
