@@ -103,6 +103,18 @@ final class SigninViewController: BaseViewController {
         }
     }
     
+    // MARK: Initializer
+    
+    init() {
+        super.init(nibName: nil, bundle: nil)
+        
+        self.modalPresentationStyle = .fullScreen
+    }
+    
+    @MainActor required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     // MARK: View Life Cycle
     
     override func viewDidLoad() {
