@@ -84,11 +84,18 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
         self.makeAlert(title: Messages.networkError.text)
     }
     
-    func setUserInfo(data: SigninResponseDTO) {
+    func setUserToken(data: SigninResponseDTO) {
         UserInfo.shared.accessToken = data.accessToken
         UserInfo.shared.refreshToken = data.refreshToken
         
         self.setUserDataToKeychain(data: data)
+    }
+    
+    func setUserInfo(data: UserResponseDTO) {
+        UserInfo.shared.userID = data.id
+        UserInfo.shared.username = data.username
+        UserInfo.shared.nickname = data.nickname
+        UserInfo.shared.profileImageUrl = data.imageUrl
     }
     
     private func setUserDataToKeychain(data: SigninResponseDTO) {

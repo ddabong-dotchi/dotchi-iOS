@@ -11,7 +11,7 @@ import SnapKit
 final class MakeDotchiPhotoViewController: BaseViewController {
     
     private enum Number {
-        static let cellHorizonInset = 49.0
+        static let cellHorizonInset = isScreenSmallerThanIPhone13Mini() ? 70.0 : 49.0
         static let scale = 0.925
     }
     
@@ -32,7 +32,7 @@ final class MakeDotchiPhotoViewController: BaseViewController {
     private var collectionView: UICollectionView = {
         let collectionView: UICollectionView = UICollectionView(frame: .zero, collectionViewLayout: .init())
         collectionView.isPagingEnabled = false
-        collectionView.contentInset = .init(top: 0, left: 49.adjustedH, bottom: 0, right: 49.adjustedH)
+        collectionView.contentInset = .init(top: 0, left: Number.cellHorizonInset.adjustedW, bottom: 0, right: Number.cellHorizonInset.adjustedW)
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.showsVerticalScrollIndicator = false
         collectionView.backgroundColor = .clear
@@ -100,12 +100,26 @@ final class MakeDotchiPhotoViewController: BaseViewController {
     
     private func setCollectionViewLayout() {
         let collectionViewLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        collectionViewLayout.itemSize = .init(
-            width: (self.view.frame.width - (Number.cellHorizonInset.adjustedH * 2)),
-            height: (self.view.frame.width - (Number.cellHorizonInset.adjustedH * 2)) * 1.476014
-        )
-        collectionViewLayout.minimumLineSpacing = 12.adjustedH
+        
+        let cellWidth = self.view.frame.width - (Number.cellHorizonInset.adjustedW * 2)
+        let cellHeight = cellWidth * 1.476014
+        collectionViewLayout.itemSize = CGSize(width: cellWidth, height: cellHeight)
+        
+        // 셀 간의 간격 및 스크롤 방향 설정
+        collectionViewLayout.minimumLineSpacing = 12.adjustedW
         collectionViewLayout.scrollDirection = .horizontal
+        
+        // 컬렉션 뷰의 높이에서 셀 높이를 뺀 값을 계산해 중앙 배치
+        let collectionViewHeight = self.collectionView.frame.height
+        
+        // 셀이 컬렉션 뷰의 높이보다 크거나 같아야 한 줄로 고정됩니다.
+        if collectionViewHeight >= cellHeight {
+            let verticalInset = (collectionViewHeight - cellHeight) / 2
+            collectionViewLayout.sectionInset = UIEdgeInsets(top: verticalInset, left: 0, bottom: verticalInset, right: 0)
+        } else {
+            // 셀 높이가 컬렉션 뷰 높이를 초과할 경우 위아래 여백 없이 중앙 배치
+            collectionViewLayout.sectionInset = .zero
+        }
         
         self.collectionView.collectionViewLayout = collectionViewLayout
     }
@@ -220,13 +234,14 @@ extension MakeDotchiPhotoViewController {
         }
         
         self.collectionView.snp.makeConstraints { make in
-            make.top.equalTo(self.navigationView.snp.bottom).offset(70)
+            make.centerY.equalTo(self.view.safeAreaLayoutGuide).offset(-84.adjustedH)
+//            make.top.equalTo(self.navigationView)
             make.horizontalEdges.equalToSuperview()
             make.height.equalTo(440)
         }
         
         self.luckyTitleView.snp.makeConstraints { make in
-            make.top.equalTo(self.collectionView.snp.bottom).offset(22)
+            make.top.equalTo(self.collectionView.snp.bottom).offset(isScreenSmallerThanIPhone13Mini() ? -10 : 22.adjustedH)
             make.centerX.equalToSuperview()
         }
         
@@ -238,7 +253,7 @@ extension MakeDotchiPhotoViewController {
         
         self.infoLabel.snp.makeConstraints { make in
             make.horizontalEdges.equalToSuperview()
-            make.bottom.equalTo(self.nextButton.snp.top).offset(-20)
+            make.bottom.equalTo(self.nextButton.snp.top).offset(-20.adjustedH)
             make.height.equalTo(14)
         }
     }

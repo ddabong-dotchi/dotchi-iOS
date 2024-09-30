@@ -283,49 +283,49 @@ extension MakeDotchiContentViewController {
         }
         
         self.dotchiNameInfoLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(32)
+            make.top.equalToSuperview().offset(32.adjustedH)
             make.horizontalEdges.equalToSuperview().inset(28)
             make.height.equalTo(14)
         }
         
         self.dotchiNameGuideLabel.snp.makeConstraints { make in
-            make.top.equalTo(self.dotchiNameInfoLabel.snp.bottom).offset(16)
+            make.top.equalTo(self.dotchiNameInfoLabel.snp.bottom).offset(16.adjustedH)
             make.horizontalEdges.equalToSuperview().inset(28)
             make.height.equalTo(22)
         }
         
         self.dotchiNameTextField.snp.makeConstraints { make in
-            make.top.equalTo(self.dotchiNameGuideLabel.snp.bottom).offset(14)
+            make.top.equalTo(self.dotchiNameGuideLabel.snp.bottom).offset(14.adjustedH)
             make.horizontalEdges.equalToSuperview().inset(28)
             make.height.equalTo(40)
         }
         
         self.dotchiMoodInfoLabel.snp.makeConstraints { make in
-            make.top.equalTo(self.dotchiNameTextField.snp.bottom).offset(40)
+            make.top.equalTo(self.dotchiNameTextField.snp.bottom).offset(40.adjustedH)
             make.horizontalEdges.equalToSuperview().inset(28)
             make.height.equalTo(14)
         }
         
         self.dotchiMoodGuideLabel.snp.makeConstraints { make in
-            make.top.equalTo(self.dotchiMoodInfoLabel.snp.bottom).offset(16)
+            make.top.equalTo(self.dotchiMoodInfoLabel.snp.bottom).offset(16.adjustedH)
             make.horizontalEdges.equalToSuperview().inset(28)
             make.height.equalTo(22)
         }
         
         self.dotchiMoodTextField.snp.makeConstraints { make in
-            make.top.equalTo(self.dotchiMoodGuideLabel.snp.bottom).offset(14)
+            make.top.equalTo(self.dotchiMoodGuideLabel.snp.bottom).offset(14.adjustedH)
             make.horizontalEdges.equalToSuperview().inset(28)
             make.height.equalTo(40)
         }
         
         self.dotchiContentInfoLabel.snp.makeConstraints { make in
-            make.top.equalTo(self.dotchiMoodTextField.snp.bottom).offset(40)
+            make.top.equalTo(self.dotchiMoodTextField.snp.bottom).offset(40.adjustedH)
             make.horizontalEdges.equalToSuperview().inset(28)
             make.height.equalTo(14)
         }
         
         self.dotchiContentTextView.snp.makeConstraints { make in
-            make.top.equalTo(self.dotchiContentInfoLabel.snp.bottom).offset(16)
+            make.top.equalTo(self.dotchiContentInfoLabel.snp.bottom).offset(16.adjustedH)
             make.horizontalEdges.equalToSuperview().inset(28)
             make.height.equalTo(104)
         }
@@ -336,7 +336,7 @@ extension MakeDotchiContentViewController {
         }
         
         self.luckyDescriptionLabel.snp.makeConstraints { make in
-            make.top.equalTo(self.dotchiContentTextView.snp.bottom).offset(40)
+            make.top.equalTo(self.dotchiContentTextView.snp.bottom).offset(40.adjustedH)
             make.horizontalEdges.equalToSuperview().inset(28)
             make.height.equalTo(22)
             make.bottom.equalToSuperview().inset(32)

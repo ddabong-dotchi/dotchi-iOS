@@ -343,21 +343,21 @@ extension DotchiDetailViewController {
         }
         
         self.totalLuckyLabel.snp.makeConstraints { make in
-            make.top.equalTo(self.commentBackgroundView).inset(24)
+            make.top.equalTo(self.commentBackgroundView).inset(24.adjustedH)
             make.centerX.equalToSuperview()
             make.height.equalTo(22)
         }
         
         self.commentButton.snp.makeConstraints { make in
-            make.bottom.equalToSuperview().inset(32)
+            make.bottom.equalToSuperview().inset(32.adjustedH)
             make.horizontalEdges.equalToSuperview().inset(28)
             make.height.equalTo(52)
         }
         
         self.commentTableView.snp.makeConstraints { make in
-            make.top.equalTo(self.totalLuckyLabel.snp.bottom).offset(8)
+            make.top.equalTo(self.totalLuckyLabel.snp.bottom).offset(8.adjustedH)
             make.horizontalEdges.equalToSuperview()
-            make.bottom.equalTo(self.commentButton.snp.top).offset(-16)
+            make.bottom.equalTo(self.commentButton.snp.top).offset(-12.adjustedH)
         }
     }
 }

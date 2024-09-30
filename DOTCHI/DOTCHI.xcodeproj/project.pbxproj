@@ -26,7 +26,7 @@
 		FF328DCB2C5A280500007CD5 /* IconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF328DCA2C5A280500007CD5 /* IconButton.swift */; };
 		FF3344702C8D86F8002F2640 /* HomeRankDotchiImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF33446F2C8D86F8002F2640 /* HomeRankDotchiImageView.swift */; };
 		FF3344722C8DA2DF002F2640 /* HomeNicknameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3344712C8DA2DF002F2640 /* HomeNicknameView.swift */; };
-		FF3344742C8E6844002F2640 /* HomeDiscoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3344732C8E6844002F2640 /* HomeDiscoverView.swift */; };
+		FF3344742C8E6844002F2640 /* HomeBrowseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3344732C8E6844002F2640 /* HomeBrowseView.swift */; };
 		FF4BF6A92C2DACCB00B6DEB2 /* MakeDotchiPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4BF6A82C2DACCB00B6DEB2 /* MakeDotchiPhotoViewController.swift */; };
 		FF4BF6AC2C2DB15500B6DEB2 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FF4BF6AB2C2DB15500B6DEB2 /* SnapKit */; };
 		FF4BF6AF2C2DB39300B6DEB2 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4BF6AE2C2DB39300B6DEB2 /* MyViewController.swift */; };
@@ -44,6 +44,11 @@
 		FF843BDF2C7A4967007B14A8 /* PlaceholderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF843BDE2C7A4967007B14A8 /* PlaceholderTextView.swift */; };
 		FFA86D1F2CA94C9900F3BB5C /* PostCommentResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA86D1E2CA94C9500F3BB5C /* PostCommentResponseDTO.swift */; };
 		FFA86D212CA9524300F3BB5C /* CardDetailResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA86D202CA9524300F3BB5C /* CardDetailResponseDTO.swift */; };
+		FFA86D232CA99EAB00F3BB5C /* DotchiSortButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA86D222CA99EAB00F3BB5C /* DotchiSortButton.swift */; };
+		FFA86D252CA99EDB00F3BB5C /* BrowseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA86D242CA99EDB00F3BB5C /* BrowseCollectionViewCell.swift */; };
+		FFA86D272CA99F0600F3BB5C /* DotchiCircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA86D262CA99F0600F3BB5C /* DotchiCircleButton.swift */; };
+		FFA86D292CA99F2C00F3BB5C /* InstagramShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA86D282CA99F2C00F3BB5C /* InstagramShareView.swift */; };
+		FFA86D2C2CA9B9D300F3BB5C /* isScreenSmallerThanIPhone13Mini.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA86D2B2CA9B9CC00F3BB5C /* isScreenSmallerThanIPhone13Mini.swift */; };
 		FFB7F9B62C5A396F00650238 /* WarningLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB7F9B52C5A396F00650238 /* WarningLabel.swift */; };
 		FFB7F9B82C5A42E700650238 /* TermsLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB7F9B72C5A42E700650238 /* TermsLabel.swift */; };
 		FFB7F9BA2C5A430700650238 /* UITapGestureRecognizer+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB7F9B92C5A430700650238 /* UITapGestureRecognizer+.swift */; };
@@ -164,7 +169,7 @@
 		FF328DCA2C5A280500007CD5 /* IconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButton.swift; sourceTree = "<group>"; };
 		FF33446F2C8D86F8002F2640 /* HomeRankDotchiImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRankDotchiImageView.swift; sourceTree = "<group>"; };
 		FF3344712C8DA2DF002F2640 /* HomeNicknameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNicknameView.swift; sourceTree = "<group>"; };
-		FF3344732C8E6844002F2640 /* HomeDiscoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDiscoverView.swift; sourceTree = "<group>"; };
+		FF3344732C8E6844002F2640 /* HomeBrowseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBrowseView.swift; sourceTree = "<group>"; };
 		FF4BF6A82C2DACCB00B6DEB2 /* MakeDotchiPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeDotchiPhotoViewController.swift; sourceTree = "<group>"; };
 		FF4BF6AE2C2DB39300B6DEB2 /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
 		FF4BF6B12C2DB63900B6DEB2 /* CardEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardEntity.swift; sourceTree = "<group>"; };
@@ -183,6 +188,11 @@
 		FF843BDE2C7A4967007B14A8 /* PlaceholderTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderTextView.swift; sourceTree = "<group>"; };
 		FFA86D1E2CA94C9500F3BB5C /* PostCommentResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCommentResponseDTO.swift; sourceTree = "<group>"; };
 		FFA86D202CA9524300F3BB5C /* CardDetailResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailResponseDTO.swift; sourceTree = "<group>"; };
+		FFA86D222CA99EAB00F3BB5C /* DotchiSortButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotchiSortButton.swift; sourceTree = "<group>"; };
+		FFA86D242CA99EDB00F3BB5C /* BrowseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseCollectionViewCell.swift; sourceTree = "<group>"; };
+		FFA86D262CA99F0600F3BB5C /* DotchiCircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotchiCircleButton.swift; sourceTree = "<group>"; };
+		FFA86D282CA99F2C00F3BB5C /* InstagramShareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramShareView.swift; sourceTree = "<group>"; };
+		FFA86D2B2CA9B9CC00F3BB5C /* isScreenSmallerThanIPhone13Mini.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = isScreenSmallerThanIPhone13Mini.swift; sourceTree = "<group>"; };
 		FFB7F9B52C5A396F00650238 /* WarningLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningLabel.swift; sourceTree = "<group>"; };
 		FFB7F9B72C5A42E700650238 /* TermsLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsLabel.swift; sourceTree = "<group>"; };
 		FFB7F9B92C5A430700650238 /* UITapGestureRecognizer+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITapGestureRecognizer+.swift"; sourceTree = "<group>"; };
@@ -321,6 +331,7 @@
 		FF328DC32C4D4D8C00007CD5 /* UIView */ = {
 			isa = PBXGroup;
 			children = (
+				FFA86D282CA99F2C00F3BB5C /* InstagramShareView.swift */,
 				FFD3D1992CA928F60025F32B /* CardProfileView.swift */,
 				FFD3D1972CA9286E0025F32B /* CardBackView.swift */,
 				FFD3D1952CA928520025F32B /* CardFrontView.swift */,
@@ -436,6 +447,14 @@
 			path = Response;
 			sourceTree = "<group>";
 		};
+		FFA86D2A2CA9B9C000F3BB5C /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				FFA86D2B2CA9B9CC00F3BB5C /* isScreenSmallerThanIPhone13Mini.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		FFB7F9B42C5A396300650238 /* UILabel */ = {
 			isa = PBXGroup;
 			children = (
@@ -465,6 +484,8 @@
 		FFC7BB712C359E19000EA7B5 /* UIButton */ = {
 			isa = PBXGroup;
 			children = (
+				FFA86D262CA99F0600F3BB5C /* DotchiCircleButton.swift */,
+				FFA86D222CA99EAB00F3BB5C /* DotchiSortButton.swift */,
 				FFC7BB722C35A770000EA7B5 /* TextUnderlineButtonView.swift */,
 				FFC7BB7A2C35BA89000EA7B5 /* DoneButton.swift */,
 				FF328DCA2C5A280500007CD5 /* IconButton.swift */,
@@ -568,6 +589,7 @@
 		FFCB11F92C9E59C600892966 /* UICollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				FFA86D242CA99EDB00F3BB5C /* BrowseCollectionViewCell.swift */,
 				FFDAE3382CA885DF00509227 /* MakeDotchiCollectionViewCell.swift */,
 				FFCB11FA2C9E5AFC00892966 /* DotchiSmallCardCollectionViewCell.swift */,
 			);
@@ -678,7 +700,7 @@
 				FFFB888C2C7F79C500ACB0C6 /* HomeTodayView.swift */,
 				FF33446F2C8D86F8002F2640 /* HomeRankDotchiImageView.swift */,
 				FF3344712C8DA2DF002F2640 /* HomeNicknameView.swift */,
-				FF3344732C8E6844002F2640 /* HomeDiscoverView.swift */,
+				FF3344732C8E6844002F2640 /* HomeBrowseView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -686,6 +708,7 @@
 		FFCD60532C2D94E9007785FF /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				FFA86D2A2CA9B9C000F3BB5C /* Utils */,
 				FFCD60902C2D98E9007785FF /* Enums */,
 				FFCD60892C2D988D007785FF /* Singletons */,
 				FFCD60862C2D987B007785FF /* Structs */,
@@ -931,6 +954,7 @@
 				FFCD60622C2D95AA007785FF /* BaseNavigationController.swift in Sources */,
 				FFDAE3332CA0790000509227 /* HomeThemeButtonView.swift in Sources */,
 				FFC7BB762C35ADD4000EA7B5 /* SigninTextField.swift in Sources */,
+				FFA86D232CA99EAB00F3BB5C /* DotchiSortButton.swift in Sources */,
 				FF6230382C9F36A9002029A6 /* CardRouter.swift in Sources */,
 				FFCD60812C2D980F007785FF /* UINavigationController+.swift in Sources */,
 				FF843BDF2C7A4967007B14A8 /* PlaceholderTextView.swift in Sources */,
@@ -945,12 +969,15 @@
 				FFCD606D2C2D9742007785FF /* UILabel+.swift in Sources */,
 				FFDAE3392CA885DF00509227 /* MakeDotchiCollectionViewCell.swift in Sources */,
 				FFC7BB872C3D9562000EA7B5 /* DotchiMoyaProvider.swift in Sources */,
+				FFA86D2C2CA9B9D300F3BB5C /* isScreenSmallerThanIPhone13Mini.swift in Sources */,
+				FFA86D252CA99EDB00F3BB5C /* BrowseCollectionViewCell.swift in Sources */,
 				FFC7BBA32C45765A000EA7B5 /* SignupProfileImageViewController.swift in Sources */,
 				FFCD60982C2D991A007785FF /* Messages.swift in Sources */,
 				FFDAE33D2CA886CF00509227 /* Int+.swift in Sources */,
 				FF3344702C8D86F8002F2640 /* HomeRankDotchiImageView.swift in Sources */,
 				FFC7BBA12C45764E000EA7B5 /* SignupIntroduceViewController.swift in Sources */,
 				1E9727462C3C3C6F00252CA6 /* SettingViewController.swift in Sources */,
+				FFA86D292CA99F2C00F3BB5C /* InstagramShareView.swift in Sources */,
 				FFB7F9BA2C5A430700650238 /* UITapGestureRecognizer+.swift in Sources */,
 				FFD3D19A2CA928F60025F32B /* CardProfileView.swift in Sources */,
 				FFD3D1A82CA944BB0025F32B /* CommentTableViewCell.swift in Sources */,
@@ -969,7 +996,7 @@
 				FF328DC72C4D6FBC00007CD5 /* ProgressBarView.swift in Sources */,
 				FFD3D1942CA926620025F32B /* MakeDotchiPreviewViewController.swift in Sources */,
 				FFA86D1F2CA94C9900F3BB5C /* PostCommentResponseDTO.swift in Sources */,
-				FF3344742C8E6844002F2640 /* HomeDiscoverView.swift in Sources */,
+				FF3344742C8E6844002F2640 /* HomeBrowseView.swift in Sources */,
 				FFD3D19D2CA9308D0025F32B /* PostCardRequestDTO.swift in Sources */,
 				FFD3D19F2CA9345F0025F32B /* PostCardResponseDTO.swift in Sources */,
 				FFDAE3372CA8826000509227 /* MakeDotchiLuckyTitleView.swift in Sources */,
@@ -1046,6 +1073,7 @@
 				FFCD60582C2D9515007785FF /* UIColor+.swift in Sources */,
 				FF4BF6A92C2DACCB00B6DEB2 /* MakeDotchiPhotoViewController.swift in Sources */,
 				FFC7BB8D2C3EDF95000EA7B5 /* AuthService.swift in Sources */,
+				FFA86D272CA99F0600F3BB5C /* DotchiCircleButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

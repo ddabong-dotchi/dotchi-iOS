@@ -89,7 +89,7 @@ extension CommentTableViewCell {
         
         self.profileImageView.snp.makeConstraints { make in
             make.leading.equalToSuperview().inset(28)
-            make.verticalEdges.equalToSuperview().inset(10)
+            make.verticalEdges.equalToSuperview().inset(isScreenSmallerThanIPhone13Mini() ? 5 : 10)
             make.width.equalTo(self.profileImageView.snp.height)
         }
         

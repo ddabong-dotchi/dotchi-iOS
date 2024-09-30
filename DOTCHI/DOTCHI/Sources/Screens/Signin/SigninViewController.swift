@@ -156,7 +156,7 @@ final class SigninViewController: BaseViewController {
             let password = self.passwordTextField.text {
                 let data: SigninRequestDTO = .init(username: username, password: password)
                 self.requestSignin(data: data) { response in
-                    self.setUserInfo(data: response)
+                    self.setUserToken(data: response)
                     self.setSigninDataToKeychain(username: username, password: password)
                     self.presentHomeViewController()
                 }
