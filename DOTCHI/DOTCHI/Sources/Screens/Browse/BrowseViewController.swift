@@ -62,11 +62,14 @@ final class BrowseViewController: BaseViewController {
         self.setLayout()
         self.setBackButtonAction(self.navigationView.backButton)
         self.setButtonToggle()
-        self.fetchData(
-            isLatest: self.latestButton.isSelected
-        )
         self.setCollectionViewLayout()
         self.setCollectionView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.resetAndFetchData()
     }
     
     // MARK: Methods
