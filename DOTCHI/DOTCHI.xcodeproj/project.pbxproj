@@ -49,6 +49,7 @@
 		FFA86D272CA99F0600F3BB5C /* DotchiCircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA86D262CA99F0600F3BB5C /* DotchiCircleButton.swift */; };
 		FFA86D292CA99F2C00F3BB5C /* InstagramShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA86D282CA99F2C00F3BB5C /* InstagramShareView.swift */; };
 		FFA86D2C2CA9B9D300F3BB5C /* isScreenSmallerThanIPhone13Mini.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA86D2B2CA9B9CC00F3BB5C /* isScreenSmallerThanIPhone13Mini.swift */; };
+		FFA86D2F2CA9CD8A00F3BB5C /* ThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA86D2E2CA9CD7D00F3BB5C /* ThemeViewController.swift */; };
 		FFB7F9B62C5A396F00650238 /* WarningLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB7F9B52C5A396F00650238 /* WarningLabel.swift */; };
 		FFB7F9B82C5A42E700650238 /* TermsLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB7F9B72C5A42E700650238 /* TermsLabel.swift */; };
 		FFB7F9BA2C5A430700650238 /* UITapGestureRecognizer+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB7F9B92C5A430700650238 /* UITapGestureRecognizer+.swift */; };
@@ -193,6 +194,7 @@
 		FFA86D262CA99F0600F3BB5C /* DotchiCircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotchiCircleButton.swift; sourceTree = "<group>"; };
 		FFA86D282CA99F2C00F3BB5C /* InstagramShareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramShareView.swift; sourceTree = "<group>"; };
 		FFA86D2B2CA9B9CC00F3BB5C /* isScreenSmallerThanIPhone13Mini.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = isScreenSmallerThanIPhone13Mini.swift; sourceTree = "<group>"; };
+		FFA86D2E2CA9CD7D00F3BB5C /* ThemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeViewController.swift; sourceTree = "<group>"; };
 		FFB7F9B52C5A396F00650238 /* WarningLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningLabel.swift; sourceTree = "<group>"; };
 		FFB7F9B72C5A42E700650238 /* TermsLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsLabel.swift; sourceTree = "<group>"; };
 		FFB7F9B92C5A430700650238 /* UITapGestureRecognizer+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITapGestureRecognizer+.swift"; sourceTree = "<group>"; };
@@ -455,6 +457,14 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		FFA86D2D2CA9CD6B00F3BB5C /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				FFA86D2E2CA9CD7D00F3BB5C /* ThemeViewController.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
 		FFB7F9B42C5A396300650238 /* UILabel */ = {
 			isa = PBXGroup;
 			children = (
@@ -662,6 +672,7 @@
 		FFCD604D2C2D940F007785FF /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				FFA86D2D2CA9CD6B00F3BB5C /* Theme */,
 				FFD3D1A32CA93D930025F32B /* Browse */,
 				FFD3D1A02CA93BD50025F32B /* Detail */,
 				FFC7BB7C2C3D88A6000EA7B5 /* Signup */,
@@ -1053,6 +1064,7 @@
 				FFC7BB902C3EDFAC000EA7B5 /* SigninRequestDTO.swift in Sources */,
 				FFCB11F82C9AED1600892966 /* MoreButton.swift in Sources */,
 				1E97275E2C43996D00252CA6 /* UserService.swift in Sources */,
+				FFA86D2F2CA9CD8A00F3BB5C /* ThemeViewController.swift in Sources */,
 				FFC7BB8B2C3D95BA000EA7B5 /* BaseService.swift in Sources */,
 				FFCD608F2C2D98BF007785FF /* UserDefaultsManager.swift in Sources */,
 				FFC7BB9D2C3EE151000EA7B5 /* SigninResponseDTO.swift in Sources */,

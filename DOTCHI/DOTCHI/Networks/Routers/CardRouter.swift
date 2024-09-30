@@ -15,6 +15,7 @@ enum CardRouter {
     case postCard(data: PostCardRequestDTO)
     case getCardDetail(cardId: Int)
     case deleteCard(cardId: Int)
+    case getCardsByTheme(luckyType: LuckyType, sort: CardSortType)
 }
 
 extension CardRouter: TargetType {
@@ -31,12 +32,13 @@ extension CardRouter: TargetType {
         case .postCard: return "/cards"
         case .getCardDetail(let cardId): return "/cards/\(cardId)"
         case .deleteCard(let cardId): return "/cards/\(cardId)"
+        case .getCardsByTheme: return "/cards/type"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .getAllCards, .getTodayCards, .getCardLastTime, .getCardDetail:
+        case .getAllCards, .getTodayCards, .getCardLastTime, .getCardDetail, .getCardsByTheme:
             return .get
         case .postCard: return .post
         case .deleteCard: return .delete
@@ -69,6 +71,12 @@ extension CardRouter: TargetType {
             formData.append(imageMultipart)
             
             return .uploadMultipart(formData)
+        case .getCardsByTheme(let luckyType, let sort):
+            let parameters: [String: Any] = [
+                "type": luckyType.rawValue,
+                "sort": sort.rawValue,
+            ]
+            return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
         default: return .requestPlain
         }
     }
