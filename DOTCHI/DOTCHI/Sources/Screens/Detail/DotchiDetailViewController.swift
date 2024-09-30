@@ -275,7 +275,7 @@ extension DotchiDetailViewController {
                         comment.toCommentEntity()
                     })
 
-                    self.commentButton.isEnabled = !result.hasComment(userId: UserInfo.shared.userID)
+                    self.commentButton.isEnabled = !result.hasComment(nickname: UserInfo.shared.nickname)
                     self.setTotalCommentCount()
                     self.commentTableView.reloadData()
                 }

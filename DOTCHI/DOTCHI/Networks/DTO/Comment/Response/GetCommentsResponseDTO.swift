@@ -29,8 +29,8 @@ struct GetCommentsResponseDTOElement: Codable {
 typealias GetCommentsResponseDTO = [GetCommentsResponseDTOElement]
 
 extension GetCommentsResponseDTO {
-    func hasComment(userId: Int) -> Bool {
-        let hasComment = self.contains(where: { $0.id == userId })
+    func hasComment(nickname: String) -> Bool {
+        let hasComment = self.contains(where: { $0.nickname == nickname })
         return hasComment
     }
 }
