@@ -14,6 +14,7 @@ final class InstagramShareView: UIView {
     
     private let cardFrontView: CardFrontView = CardFrontView()
     private let cardBackView: CardBackView = CardBackView()
+    private let logoView: UIImageView = UIImageView(image: .imgLogo)
     
     // MARK: Properties
     
@@ -49,16 +50,26 @@ final class InstagramShareView: UIView {
 
 extension InstagramShareView {
     private func setLayout() {
-        self.addSubviews([cardFrontView, cardBackView])
+        self.addSubviews([cardFrontView, cardBackView, logoView])
         
         self.cardFrontView.snp.makeConstraints { make in
-            make.top.leading.bottom.equalToSuperview().inset(12)
+            make.top.leading.equalToSuperview().inset(12)
             make.width.equalToSuperview().multipliedBy(0.470383)
         }
         
         self.cardBackView.snp.makeConstraints { make in
-            make.top.trailing.bottom.equalToSuperview().inset(12)
+            make.top.trailing.equalToSuperview().inset(12)
+            make.left.equalTo(self.cardFrontView.snp.right).offset(8)
             make.width.equalToSuperview().multipliedBy(0.470383)
+            make.bottom.equalTo(self.cardFrontView)
+        }
+        
+        self.logoView.snp.makeConstraints { make in
+            make.top.equalTo(self.cardBackView.snp.bottom).offset(4)
+            make.right.equalTo(self.cardBackView).inset(2)
+            make.width.equalToSuperview().multipliedBy(0.2)
+            make.height.equalTo(self.logoView.snp.width).multipliedBy(23.94 / 72)
+            make.bottom.equalToSuperview().inset(12)
         }
     }
 }

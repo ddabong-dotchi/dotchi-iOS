@@ -139,7 +139,7 @@ final class BrowseViewController: BaseViewController {
      }
     
     private func shareInstagram(data: CardEntity) {
-        let instagramShareView: InstagramShareView = InstagramShareView(frame: CGRect(x: 0, y: 0, width: 570, height: 424))
+        let instagramShareView: InstagramShareView = InstagramShareView(frame: CGRect(x: 0, y: 0, width: 590, height: 480))
         instagramShareView.setData(data: data)
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             if let storiesUrl = URL(string: "instagram-stories://share?source_application=\(APIConstants.facebookAppId)") {
