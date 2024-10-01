@@ -50,6 +50,7 @@ final class SignupUserInfoViewController: BaseViewController {
     private let usernameDuplicateButton = {
         let button: DoneButton = DoneButton()
         button.setTitle(Text.checkDuplicate, for: .normal)
+        button.isEnabled = false
         return button
     }()
     
@@ -78,6 +79,7 @@ final class SignupUserInfoViewController: BaseViewController {
     private let nextButton: DoneButton = {
         let button: DoneButton = DoneButton(type: .system)
         button.setTitle(Text.next, for: .normal)
+        button.isEnabled = false
         return button
     }()
     
@@ -118,11 +120,11 @@ final class SignupUserInfoViewController: BaseViewController {
     
     private func setTermsLabelAction() {
         self.termsLabel.onTermsTap = {
-            self.openSafariInApp(url: "https://www.google.com/search?q=이용약관")
+            self.openSafariInApp(url: "http://madilyn.notion.site")
         }
         
         self.termsLabel.onPrivacyTap = {
-            self.openSafariInApp(url: "https://www.google.com/search?q=개인정보처리방침")
+            self.openSafariInApp(url: "https://madilyn.notion.site/1115b5694e8b80f9a596f0f0d2681bb9?pvs=4")
         }
     }
     
@@ -141,7 +143,7 @@ final class SignupUserInfoViewController: BaseViewController {
             .withLatestFrom(self.usernameTextField.rx.text.orEmpty)
             .distinctUntilChanged()
             .subscribe(onNext: { [weak self] text in
-                self?.isNextButtonEnabled[0] = false
+                self?.usernameDuplicateButton.isEnabled = self?.isValidUsername(input: text) ?? false
             })
             .disposed(by: self.disposeBag)
     }
@@ -154,6 +156,18 @@ final class SignupUserInfoViewController: BaseViewController {
                 self?.isNextButtonEnabled[1] = self?.isValidPassword(input: text) ?? false
             })
             .disposed(by: self.disposeBag)
+    }
+    
+    private func isValidUsername(input: String) -> Bool {
+        let pattern = "^(?=.*[ㄱ-ㅎㅏ-ㅣ가-힣A-Za-z0-9]).{3,}$"
+        let regex = try? NSRegularExpression(pattern: pattern)
+        let range = NSRange(location: 0, length: input.utf16.count)
+        
+        if let regex = regex {
+            return regex.firstMatch(in: input, options: [], range: range) != nil
+        }
+        
+        return false
     }
     
     private func isValidPassword(input: String) -> Bool {
