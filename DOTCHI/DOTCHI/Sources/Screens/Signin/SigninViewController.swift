@@ -137,7 +137,7 @@ final class SigninViewController: BaseViewController {
             .orEmpty
             .asDriver(onErrorJustReturn: "")
             .drive(with: self, onNext: { owner, changedText in
-                owner.isSigninButtonEnable[0] = changedText.count >= 5
+                owner.isSigninButtonEnable[0] = changedText.count >= 3
             })
             .disposed(by: self.disposeBag)
         
