@@ -53,6 +53,7 @@ class MyViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         fetchMyData()
     }
     
@@ -296,6 +297,7 @@ extension MyViewController: UICollectionViewDelegateFlowLayout, UICollectionView
         
         let cardId = myCardData[indexPath.row].cardId
         let detailVC = DotchiDetailViewController(cardId: cardId)
+        detailVC.modalPresentationStyle = .fullScreen
         
         self.present(detailVC, animated: true)
     }
