@@ -56,11 +56,6 @@ class MyViewController: BaseViewController {
         
         fetchMyData()
     }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 28, right: 0)
-    }
 
     // MARK: - Setup NavigationBar
     
@@ -121,18 +116,9 @@ class MyViewController: BaseViewController {
         stackView.addArrangedSubview(titleLabel)
         stackView.addArrangedSubview(countLabel)
         
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
-        collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.backgroundColor = UIColor.clear
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        collectionView.register(cell: DotchiSmallCardCollectionViewCell.self, forCellWithReuseIdentifier: "DotchiSmallCardCollectionViewCell")
-        
-        collectionView.showsVerticalScrollIndicator = false
-        collectionView.showsHorizontalScrollIndicator = false
-        
         setupZeroView()
+        
+        setupCollectionViewLayout()
         
         containerView.addSubviews([
             stackView,
@@ -163,6 +149,33 @@ class MyViewController: BaseViewController {
             make.top.equalTo(imageView.snp.bottom).offset(20)
         }
     }
+    
+    private func setupCollectionViewLayout() {
+        let collectionViewLayout = UICollectionViewFlowLayout()
+        collectionViewLayout.scrollDirection = .vertical
+
+        collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
+        collectionView.backgroundColor = UIColor.clear
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.register(cell: DotchiSmallCardCollectionViewCell.self, forCellWithReuseIdentifier: "DotchiSmallCardCollectionViewCell")
+
+        collectionView.showsVerticalScrollIndicator = false
+        collectionView.showsHorizontalScrollIndicator = false
+
+        let padding: CGFloat = 28
+        let minimumInteritemSpacing: CGFloat = 12
+        let availableWidth = self.view.frame.width - (padding * 2)
+        let cellWidth = (availableWidth - minimumInteritemSpacing) / 2
+
+        collectionViewLayout.itemSize = CGSize(width: cellWidth, height: cellWidth * 241 / 163)
+        collectionViewLayout.minimumInteritemSpacing = minimumInteritemSpacing
+        collectionViewLayout.minimumLineSpacing = 12
+        collectionViewLayout.sectionInset = UIEdgeInsets(top: 0, left: padding, bottom: 28, right: padding)
+
+        collectionView.collectionViewLayout = collectionViewLayout
+    }
+
     
     // MARK: - Setup Constraints
     
@@ -196,8 +209,7 @@ class MyViewController: BaseViewController {
         
         collectionView.snp.makeConstraints { make in
             make.top.equalTo(stackView.snp.bottom).offset(20)
-            make.leading.trailing.equalToSuperview().inset(isScreenSmallerThanIPhone13Mini() ? 19 : 28.adjustedH)
-            make.bottom.equalToSuperview()
+            make.leading.trailing.bottom.equalToSuperview()
         }
         
         zeroView.snp.makeConstraints { make in
@@ -286,10 +298,6 @@ extension MyViewController: UICollectionViewDelegateFlowLayout, UICollectionView
         cell.setData(frontData: frontEntity)
         
         return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 163, height: 241)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
