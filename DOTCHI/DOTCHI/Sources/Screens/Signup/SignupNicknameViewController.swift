@@ -48,6 +48,7 @@ final class SignupNicknameViewController: BaseViewController {
     private let nicknameDuplicateButton = {
         let button: DoneButton = DoneButton()
         button.setTitle(Text.checkDuplicate, for: .normal)
+        button.isEnabled = false
         return button
     }()
     
@@ -56,6 +57,7 @@ final class SignupNicknameViewController: BaseViewController {
     private let nextButton: DoneButton = {
         let button: DoneButton = DoneButton(type: .system)
         button.setTitle(Text.next, for: .normal)
+        button.isEnabled = false
         return button
     }()
     
@@ -116,6 +118,7 @@ final class SignupNicknameViewController: BaseViewController {
             .distinctUntilChanged()
             .subscribe(onNext: { [weak self] text in
                 self?.nextButton.isEnabled = false
+                self?.nicknameDuplicateButton.isEnabled = self?.isValidNickname(input: text) ?? false
             })
             .disposed(by: self.disposeBag)
     }
@@ -126,6 +129,18 @@ final class SignupNicknameViewController: BaseViewController {
             
             self.navigationController?.pushViewController(SignupIntroduceViewController(signupRequestData: self.signupRequestData), animated: true)
         }
+    }
+    
+    private func isValidNickname(input: String) -> Bool {
+        let pattern = "^(?=.*[ㄱ-ㅎㅏ-ㅣ가-힣]).{2,7}$"
+        let regex = try? NSRegularExpression(pattern: pattern)
+        let range = NSRange(location: 0, length: input.utf16.count)
+        
+        if let regex = regex {
+            return regex.firstMatch(in: input, options: [], range: range) != nil
+        }
+        
+        return false
     }
 }
 

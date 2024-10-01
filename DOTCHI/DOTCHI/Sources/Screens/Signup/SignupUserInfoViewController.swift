@@ -143,6 +143,7 @@ final class SignupUserInfoViewController: BaseViewController {
             .withLatestFrom(self.usernameTextField.rx.text.orEmpty)
             .distinctUntilChanged()
             .subscribe(onNext: { [weak self] text in
+                self?.nextButton.isEnabled = false
                 self?.usernameDuplicateButton.isEnabled = self?.isValidUsername(input: text) ?? false
             })
             .disposed(by: self.disposeBag)
