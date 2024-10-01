@@ -53,9 +53,10 @@ class MyViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         fetchMyData()
     }
-    
+
     // MARK: - Setup NavigationBar
     
     private func setupNavigationBar() {
@@ -115,18 +116,9 @@ class MyViewController: BaseViewController {
         stackView.addArrangedSubview(titleLabel)
         stackView.addArrangedSubview(countLabel)
         
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
-        collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.backgroundColor = UIColor.clear
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        collectionView.register(cell: DotchiSmallCardCollectionViewCell.self, forCellWithReuseIdentifier: "DotchiSmallCardCollectionViewCell")
-        
-        collectionView.showsVerticalScrollIndicator = false
-        collectionView.showsHorizontalScrollIndicator = false
-        
         setupZeroView()
+        
+        setupCollectionViewLayout()
         
         containerView.addSubviews([
             stackView,
@@ -158,6 +150,33 @@ class MyViewController: BaseViewController {
         }
     }
     
+    private func setupCollectionViewLayout() {
+        let collectionViewLayout = UICollectionViewFlowLayout()
+        collectionViewLayout.scrollDirection = .vertical
+
+        collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
+        collectionView.backgroundColor = UIColor.clear
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.register(cell: DotchiSmallCardCollectionViewCell.self, forCellWithReuseIdentifier: "DotchiSmallCardCollectionViewCell")
+
+        collectionView.showsVerticalScrollIndicator = false
+        collectionView.showsHorizontalScrollIndicator = false
+
+        let padding: CGFloat = 28
+        let minimumInteritemSpacing: CGFloat = 12
+        let availableWidth = self.view.frame.width - (padding * 2)
+        let cellWidth = (availableWidth - minimumInteritemSpacing) / 2
+
+        collectionViewLayout.itemSize = CGSize(width: cellWidth, height: cellWidth * 241 / 163)
+        collectionViewLayout.minimumInteritemSpacing = minimumInteritemSpacing
+        collectionViewLayout.minimumLineSpacing = 12
+        collectionViewLayout.sectionInset = UIEdgeInsets(top: 0, left: padding, bottom: 28, right: padding)
+
+        collectionView.collectionViewLayout = collectionViewLayout
+    }
+
+    
     // MARK: - Setup Constraints
     
     private func setupConstraints() {
@@ -179,7 +198,7 @@ class MyViewController: BaseViewController {
         
         containerView.snp.makeConstraints { make in
             make.top.equalTo(descriptionLabel.snp.bottom).offset(31)
-            make.leading.trailing.equalToSuperview().inset(0)
+            make.leading.trailing.equalToSuperview()
             make.bottom.equalToSuperview()
         }
         
@@ -190,8 +209,7 @@ class MyViewController: BaseViewController {
         
         collectionView.snp.makeConstraints { make in
             make.top.equalTo(stackView.snp.bottom).offset(20)
-            make.leading.trailing.equalToSuperview().inset(isScreenSmallerThanIPhone13Mini() ? 19 : 28.adjustedH)
-            make.bottom.equalToSuperview()
+            make.leading.trailing.bottom.equalToSuperview()
         }
         
         zeroView.snp.makeConstraints { make in
@@ -282,15 +300,12 @@ extension MyViewController: UICollectionViewDelegateFlowLayout, UICollectionView
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 163, height: 241)
-    }
-    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
         
         let cardId = myCardData[indexPath.row].cardId
         let detailVC = DotchiDetailViewController(cardId: cardId)
+        detailVC.modalPresentationStyle = .fullScreen
         
         self.present(detailVC, animated: true)
     }
