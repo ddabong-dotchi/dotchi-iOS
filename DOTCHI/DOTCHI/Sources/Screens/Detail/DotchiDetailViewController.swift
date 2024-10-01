@@ -151,7 +151,7 @@ final class DotchiDetailViewController: BaseViewController {
             preferredStyle: .actionSheet
         )
         
-        if UserInfo.shared.userID != self.user.userId {
+        if UserInfo.shared.username != self.user.username {
             actionSheet.addAction(
                 UIAlertAction(
                     title: "차단하기",
@@ -176,17 +176,17 @@ final class DotchiDetailViewController: BaseViewController {
                     style: .default,
                     handler: { _ in
                         self.makeAlertWithCancel(
-                            title: "\(self.user.username) 님을 신고합니다.",
+                            title: "\(self.user.nickname) 님을 신고합니다.",
                             okTitle: "신고") { _ in
                                 // TODO: Report User
-//                                self.present(self.reportActionSheet(userId: self.user.userId), animated: true)
+                                self.present(self.reportActionSheet(username: self.user.username), animated: true)
                             }
                     }
                 )
             )
         }
         
-        if UserInfo.shared.userID == self.user.userId {
+        if UserInfo.shared.username == self.user.username {
             actionSheet.addAction(
                 UIAlertAction(
                     title: "삭제하기",
@@ -275,7 +275,7 @@ extension DotchiDetailViewController {
                         comment.toCommentEntity()
                     })
 
-                    self.commentButton.isEnabled = !result.hasComment(userId: UserInfo.shared.userID)
+                    self.commentButton.isEnabled = !result.hasComment(nickname: UserInfo.shared.nickname)
                     self.setTotalCommentCount()
                     self.commentTableView.reloadData()
                 }

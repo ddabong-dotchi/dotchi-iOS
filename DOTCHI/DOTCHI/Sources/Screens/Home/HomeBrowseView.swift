@@ -76,10 +76,10 @@ final class HomeBrowseView: UIView {
     
     // MARK: Methods
     
-    override func didMoveToSuperview() {
-        super.didMoveToSuperview()
+    override func didMoveToWindow() {
+        super.didMoveToWindow()
         
-        if superview != nil {
+        if self.window != nil {
             self.fetchCards()
         }
     }

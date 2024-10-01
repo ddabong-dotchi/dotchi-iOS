@@ -83,7 +83,8 @@ final class CardFrontView: UIView {
             data: .init(
                 userId: 0,
                 profileImageUrl: UserInfo.shared.profileImageUrl,
-                username: UserInfo.shared.nickname
+                username: UserInfo.shared.nickname,
+                nickname: UserInfo.shared.nickname
             ),
             luckyType: makeDotchiData.luckyType,
             headType: .front

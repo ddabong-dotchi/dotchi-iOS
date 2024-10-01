@@ -139,39 +139,40 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     /// 신고 사유 선택 action sheet
-//    func reportActionSheet(userId: Int) -> UIAlertController {
-//        let reportActionSheet: UIAlertController = UIAlertController(
-//            title: "신고 사유를 선택해 주세요.",
-//            message: nil,
-//            preferredStyle: .actionSheet
-//        )
-//        
-//        var reportUserRequestDTO: ReportUserRequestDTO = ReportUserRequestDTO()
-//        
-//        self.reportReasons.forEach { reason in
-//            reportActionSheet.addAction(
-//                UIAlertAction(
-//                    title: reason,
-//                    style: .default,
-//                    handler: { action in
-//                        reportUserRequestDTO.reason = reason
-//                        self.requestReportUser(userId: userId, data: reportUserRequestDTO) {
-//                            self.makeAlert(title: "", message: Message.completedReport.text)
-//                        }
-//                    }
-//                )
-//            )
-//        }
-//        
-//        reportActionSheet.addAction(
-//            UIAlertAction(
-//                title: Text.cancel,
-//                style: .cancel
-//            )
-//        )
-//        
-//        return reportActionSheet
-//    }
+    func reportActionSheet(username: String) -> UIAlertController {
+        let reportActionSheet: UIAlertController = UIAlertController(
+            title: "신고 사유를 선택해 주세요.",
+            message: nil,
+            preferredStyle: .actionSheet
+        )
+        
+        var reportUserRequestDTO: ReportUserRequestDTO = ReportUserRequestDTO()
+        
+        self.reportReasons.forEach { reason in
+            reportActionSheet.addAction(
+                UIAlertAction(
+                    title: reason,
+                    style: .default,
+                    handler: { action in
+                        reportUserRequestDTO.reportReason = reason.toReportReason().rawValue
+                        reportUserRequestDTO.target = username
+                        self.requestReportUser(data: reportUserRequestDTO) {
+                            self.makeAlert(title: "", message: Messages.completedReport.text)
+                        }
+                    }
+                )
+            )
+        }
+        
+        reportActionSheet.addAction(
+            UIAlertAction(
+                title: Text.cancel,
+                style: .cancel
+            )
+        )
+        
+        return reportActionSheet
+    }
 }
 
 // MARK: - MFMailComposeViewControllerDelegate
@@ -271,9 +272,9 @@ OS Version: \(UIDevice.current.systemVersion)
 
 extension BaseViewController {
     
-    /// 유저 차단
+//    / 유저 차단
 //    func requestBlockUser(userId: Int, completion: @escaping () -> ()) {
-//        MemberService.shared.blockUser(userId: userId) { networkResult in
+//        UserService.shared.blockUser(userId: userId) { networkResult in
 //            switch networkResult {
 //            case .success:
 //                completion()
@@ -283,15 +284,14 @@ extension BaseViewController {
 //        }
 //    }
     
-    /// 유저 신고
-//    func requestReportUser(userId: Int, data: ReportUserRequestDTO, completion: @escaping () -> ()) {
-//        MemberService.shared.reportUser(userId: userId, data: data) { networkResult in
-//            switch networkResult {
-//            case .success:
-//                completion()
-//            default:
-//                self.showNetworkErrorAlert()
-//            }
-//        }
-//    }
+    func requestReportUser(data: ReportUserRequestDTO, completion: @escaping () -> ()) {
+        UserService.shared.reportUser(data: data) { networkResult in
+            switch networkResult {
+            case .success:
+                completion()
+            default:
+                self.showNetworkErrorAlert()
+            }
+        }
+    }
 }
