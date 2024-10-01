@@ -307,13 +307,13 @@ class SettingViewController: BaseViewController {
     }
     
     @objc private func openTerms() {
-        if let url = URL(string: "https://www.dnd.ac/projects/74") {
+        if let url = URL(string: "https://madilyn.notion.site/1115b5694e8b80938758c9d5fad9cdba?pvs=4") {
             UIApplication.shared.open(url)
         }
     }
     
     @objc private func openPrivacyPolicy() {
-        if let url = URL(string: "https://www.dnd.ac/projects/74") {
+        if let url = URL(string: "https://madilyn.notion.site/1115b5694e8b80f9a596f0f0d2681bb9?pvs=4") {
             UIApplication.shared.open(url)
         }
     }
