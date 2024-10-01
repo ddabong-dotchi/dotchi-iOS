@@ -58,7 +58,7 @@ final class CardProfileView: UIView {
     
     func setData(data: CardUserEntity, luckyType: LuckyType, headType: CardHeadType) {
         self.profileImageView.setImageUrl(data.profileImageUrl)
-        self.usernameLabel.text = data.username
+        self.usernameLabel.text = data.nickname
         self.userId = data.userId
         
         self.setUI(luckyType: luckyType, headType: headType)

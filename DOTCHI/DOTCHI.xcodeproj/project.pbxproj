@@ -44,6 +44,9 @@
 		FF843BDF2C7A4967007B14A8 /* PlaceholderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF843BDE2C7A4967007B14A8 /* PlaceholderTextView.swift */; };
 		FF911C232CAAE3FE0070F1E7 /* FacebookShare in Frameworks */ = {isa = PBXBuildFile; productRef = FF911C222CAAE3FE0070F1E7 /* FacebookShare */; };
 		FF911C262CAAF42A0070F1E7 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF911C252CAAF42A0070F1E7 /* OnboardingViewController.swift */; };
+		FF911C282CAB1C870070F1E7 /* ReportUserRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF911C272CAB1C800070F1E7 /* ReportUserRequestDTO.swift */; };
+		FF911C2A2CAB20400070F1E7 /* ReportUserResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF911C292CAB20390070F1E7 /* ReportUserResponseDTO.swift */; };
+		FF911C2E2CAB22100070F1E7 /* ReportReason.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF911C2D2CAB220B0070F1E7 /* ReportReason.swift */; };
 		FFA86D1F2CA94C9900F3BB5C /* PostCommentResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA86D1E2CA94C9500F3BB5C /* PostCommentResponseDTO.swift */; };
 		FFA86D212CA9524300F3BB5C /* CardDetailResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA86D202CA9524300F3BB5C /* CardDetailResponseDTO.swift */; };
 		FFA86D232CA99EAB00F3BB5C /* DotchiSortButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA86D222CA99EAB00F3BB5C /* DotchiSortButton.swift */; };
@@ -190,6 +193,9 @@
 		FF843BDB2C7A2F88007B14A8 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		FF843BDE2C7A4967007B14A8 /* PlaceholderTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderTextView.swift; sourceTree = "<group>"; };
 		FF911C252CAAF42A0070F1E7 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		FF911C272CAB1C800070F1E7 /* ReportUserRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportUserRequestDTO.swift; sourceTree = "<group>"; };
+		FF911C292CAB20390070F1E7 /* ReportUserResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportUserResponseDTO.swift; sourceTree = "<group>"; };
+		FF911C2D2CAB220B0070F1E7 /* ReportReason.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportReason.swift; sourceTree = "<group>"; };
 		FFA86D1E2CA94C9500F3BB5C /* PostCommentResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCommentResponseDTO.swift; sourceTree = "<group>"; };
 		FFA86D202CA9524300F3BB5C /* CardDetailResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailResponseDTO.swift; sourceTree = "<group>"; };
 		FFA86D222CA99EAB00F3BB5C /* DotchiSortButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotchiSortButton.swift; sourceTree = "<group>"; };
@@ -325,6 +331,7 @@
 		1E97275A2C43983700252CA6 /* Response */ = {
 			isa = PBXGroup;
 			children = (
+				FF911C292CAB20390070F1E7 /* ReportUserResponseDTO.swift */,
 				1E97275B2C43986B00252CA6 /* UserResponseDTO.swift */,
 				1E3A1E5E2C71EE740096708D /* EditUserResponseDTO.swift */,
 				1E97275F2C43AE2D00252CA6 /* MyCardResponseDTO.swift */,
@@ -489,6 +496,7 @@
 		FFB7F9BB2C5BE34B00650238 /* Request */ = {
 			isa = PBXGroup;
 			children = (
+				FF911C272CAB1C800070F1E7 /* ReportUserRequestDTO.swift */,
 				FFB7F9BC2C5BE35900650238 /* SignupRequestDTO.swift */,
 				1E3A1E602C71EEA50096708D /* EditUserRequestDTO.swift */,
 			);
@@ -800,6 +808,7 @@
 		FFCD60902C2D98E9007785FF /* Enums */ = {
 			isa = PBXGroup;
 			children = (
+				FF911C2D2CAB220B0070F1E7 /* ReportReason.swift */,
 				FFCD60912C2D98F7007785FF /* LuckyType.swift */,
 				FFCD60932C2D990D007785FF /* CardSortType.swift */,
 				FFCD60952C2D9915007785FF /* CardHeadType.swift */,
@@ -985,6 +994,7 @@
 				FFFB88872C7B216A00ACB0C6 /* SignupEntity.swift in Sources */,
 				1E9727652C44FCA600252CA6 /* BlacklistResponseDTO.swift in Sources */,
 				FFCD606D2C2D9742007785FF /* UILabel+.swift in Sources */,
+				FF911C2A2CAB20400070F1E7 /* ReportUserResponseDTO.swift in Sources */,
 				FFDAE3392CA885DF00509227 /* MakeDotchiCollectionViewCell.swift in Sources */,
 				FFC7BB872C3D9562000EA7B5 /* DotchiMoyaProvider.swift in Sources */,
 				FFA86D2C2CA9B9D300F3BB5C /* isScreenSmallerThanIPhone13Mini.swift in Sources */,
@@ -1049,6 +1059,7 @@
 				FFD3D1982CA9286E0025F32B /* CardBackView.swift in Sources */,
 				1E3A1E5F2C71EE740096708D /* EditUserResponseDTO.swift in Sources */,
 				FFD3D1A22CA93BE30025F32B /* DotchiDetailViewController.swift in Sources */,
+				FF911C2E2CAB22100070F1E7 /* ReportReason.swift in Sources */,
 				FFCD602C2C21D9F2007785FF /* SceneDelegate.swift in Sources */,
 				FFC7BB6E2C345EBC000EA7B5 /* SigninViewController.swift in Sources */,
 				FFCD60712C2D976E007785FF /* Adjusted+.swift in Sources */,
@@ -1085,6 +1096,7 @@
 				FFDAE33F2CA8880B00509227 /* MakeDotchiContentViewController.swift in Sources */,
 				FFB7F9BD2C5BE35900650238 /* SignupRequestDTO.swift in Sources */,
 				FFC7BB852C3D943E000EA7B5 /* BaseResponseType.swift in Sources */,
+				FF911C282CAB1C870070F1E7 /* ReportUserRequestDTO.swift in Sources */,
 				FF4BF6BC2C2DB69300B6DEB2 /* CardBackEntity.swift in Sources */,
 				FFCD60772C2D97AA007785FF /* UITextField+.swift in Sources */,
 				FFC7BB802C3D8D62000EA7B5 /* AppInfo.swift in Sources */,

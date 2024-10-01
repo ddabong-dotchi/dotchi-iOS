@@ -27,7 +27,8 @@ struct CardDetailResponseDTO: Codable {
         return CardUserEntity(
             userId: -1,
             profileImageUrl: self.userImageURL,
-            username: self.nickname
+            username: self.username,
+            nickname: self.nickname
         )
     }
     
