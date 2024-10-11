@@ -131,16 +131,22 @@ extension DotchiTabBarController {
     
     /// TabBar의 UI를 지정하는 메서드
     private func setTabBarUI() {
-        let appearance = self.tabBar.standardAppearance
-        appearance.shadowColor = nil
+        let appearance = UITabBarAppearance()
+        appearance.configureWithTransparentBackground()
         appearance.shadowImage = nil
-        appearance.backgroundImage = nil
-        appearance.backgroundEffect = nil
+        appearance.shadowColor = nil
         appearance.backgroundColor = .clear
+
         self.tabBar.standardAppearance = appearance
+        self.tabBar.isTranslucent = true
         
-        self.backgroundView.addShadow(location: .top)
-        self.view.addSubviews([self.backgroundView])
+        if #available(iOS 15.0, *) {
+            self.tabBar.scrollEdgeAppearance = appearance
+        }
+        
+        self.backgroundView.backgroundColor = .clear
+
+        self.view.addSubview(self.backgroundView)
         self.view.bringSubviewToFront(self.tabBar)
     }
 }
