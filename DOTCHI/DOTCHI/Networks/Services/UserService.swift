@@ -19,6 +19,7 @@ internal protocol UserServiceProtocol {
     func checkNicknameDuplicate(data: String, completion: @escaping (NetworkResult<Any>) -> (Void))
     func requestSignup(data: SignupRequestDTO, completion: @escaping (NetworkResult<Any>) -> (Void))
     func reportUser(data: ReportUserRequestDTO, completion: @escaping (NetworkResult<Any>) -> (Void))
+    func requestBlockUser(targetUsername: String, completion: @escaping (NetworkResult<Any>) -> (Void))
 }
 
 final class UserService: BaseService {
@@ -166,5 +167,11 @@ extension UserService: UserServiceProtocol {
     
     func reportUser(data: ReportUserRequestDTO, completion: @escaping (NetworkResult<Any>) -> (Void)) {
         self.request(.reportUser(data: data), decodingType: ReportUserResponseDTO.self, completion: completion)
+    }
+    
+    // [POST] 유저 차단
+    
+    func requestBlockUser(targetUsername: String, completion: @escaping (NetworkResult<Any>) -> (Void)) {
+        self.request(.requestBlockUser(targetUsername: targetUsername), decodingType: RequestBlockUserResponseDTO.self, completion: completion)
     }
 }
