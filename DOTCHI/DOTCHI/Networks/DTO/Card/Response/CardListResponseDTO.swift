@@ -9,12 +9,10 @@ struct CardListResponseDTOElement: Codable {
     let id: Int
     let nickname: String
     let userImageURL: String
-    let title, type: String
+    let title, type, mood, content: String
     let commentCount: Int
     let createdAt: String
     let imageURL: String
-    let mood: String = ""
-    let content: String = ""
 
     enum CodingKeys: String, CodingKey {
         case id, nickname

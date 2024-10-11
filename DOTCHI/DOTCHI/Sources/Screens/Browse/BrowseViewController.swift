@@ -95,8 +95,6 @@ final class BrowseViewController: BaseViewController {
                 self?.collectionView.reloadData()
                 self?.fetchData(
                     isLatest: self?.latestButton.isSelected ?? true
-//                    lastCardId: self?.cards.last?.front.cardId ?? APIConstants.pagingDefaultValue,
-//                    lastCommentCount: self?.cards.last?.commentsCount ?? APIConstants.pagingDefaultValue
                 )
             }
         })
