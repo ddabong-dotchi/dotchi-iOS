@@ -28,7 +28,7 @@ class OnboardingViewController: BaseViewController, UIScrollViewDelegate {
     init() {
         super.init(nibName: nil, bundle: nil)
         
-        self.modalPresentationStyle = .fullScreen
+        self.modalPresentationStyle = .overFullScreen
     }
     
     @MainActor required init?(coder: NSCoder) {
