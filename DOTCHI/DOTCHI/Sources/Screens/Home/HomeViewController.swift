@@ -36,7 +36,10 @@ final class HomeViewController: BaseViewController {
     // MARK: Methods
     
     private func setUI() {
-        self.view.backgroundColor = .dotchiHomeBackgroundGray
+        self.view.setGradientBackground(
+            topColor: .dotchiMgray,
+            bottomColor: .dotchiScreenBackground
+        )
     }
     
 }

@@ -158,13 +158,14 @@ final class DotchiDetailViewController: BaseViewController {
                     style: .default,
                     handler: { _ in
                         self.makeAlertWithCancel(
-                            title: "\(self.user.username) 님을 차단합니다.",
+                            title: "\(self.user.nickname) 님을 차단합니다.",
                             message: nil,
                             okTitle: "차단") { _ in
-                                // TODO: Block User
-//                                self.requestBlockUser(userId: self.user.userId) {
-//                                    self.dismiss(animated: true)
-//                                }
+                                self.requestBlockUser(targetUsername: self.user.username) {
+                                    self.dismiss(animated: true) {
+                                        self.browseViewController?.resetAndFetchData()
+                                    }
+                                }
                             }
                     }
                 )
@@ -178,7 +179,6 @@ final class DotchiDetailViewController: BaseViewController {
                         self.makeAlertWithCancel(
                             title: "\(self.user.nickname) 님을 신고합니다.",
                             okTitle: "신고") { _ in
-                                // TODO: Report User
                                 self.present(self.reportActionSheet(username: self.user.username), animated: true)
                             }
                     }

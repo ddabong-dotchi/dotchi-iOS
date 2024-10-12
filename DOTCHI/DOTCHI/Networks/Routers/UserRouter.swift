@@ -19,7 +19,7 @@ enum UserRouter {
     case checkNicknameDuplicate(data: String)
     case requestSignup(data: SignupRequestDTO)
     case reportUser(data: ReportUserRequestDTO)
-//    case requestBlockUser(targetId: Int)
+    case requestBlockUser(targetUsername: String)
 }
 
 extension UserRouter: TargetType {
@@ -36,7 +36,7 @@ extension UserRouter: TargetType {
             return "/user/password"
         case .getMyCard:
             return "/user/me/card"
-        case .getBlacklists, .deleteBlacklists:
+        case .getBlacklists, .deleteBlacklists, .requestBlockUser:
             return "/blacklists"
         case .checkUsernameDuplicate:
             return "/user/username"
@@ -55,7 +55,7 @@ extension UserRouter: TargetType {
             return .get
         case .editUser, .changePassword:
             return .patch
-        case .requestSignup, .reportUser:
+        case .requestSignup, .reportUser, .requestBlockUser:
             return .post
         case .deleteBlacklists:
             return .delete
@@ -115,6 +115,8 @@ extension UserRouter: TargetType {
             return .uploadMultipart(formData)
         case .reportUser(let data):
             return .requestJSONEncodable(data)
+        case .requestBlockUser(let targetUsername):
+            return .requestParameters(parameters: ["targetUsername": targetUsername], encoding: URLEncoding.queryString)
         }
     }
 

@@ -151,4 +151,20 @@ extension UIView {
     
     // AssociatedObject Key 저장소
     private static var actionKey: UInt8 = 0
+    
+    /// UIView에 그라데이션 배경을 설정하는 메서드
+    func setGradientBackground(topColor: UIColor, bottomColor: UIColor) {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [topColor.cgColor, bottomColor.cgColor]
+        gradientLayer.startPoint = CGPoint(x: 0.5, y: 0.0) // 위쪽 중앙에서 시작
+        gradientLayer.endPoint = CGPoint(x: 0.5, y: 1.0) // 아래쪽 중앙에서 끝남
+        gradientLayer.frame = self.bounds
+
+        // 기존 그라데이션 레이어 제거 (중복 방지)
+        if let existingGradientLayer = self.layer.sublayers?.first(where: { $0 is CAGradientLayer }) {
+            existingGradientLayer.removeFromSuperlayer()
+        }
+
+        self.layer.insertSublayer(gradientLayer, at: 0)
+    }
 }

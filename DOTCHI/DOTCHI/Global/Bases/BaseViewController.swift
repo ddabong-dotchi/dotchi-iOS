@@ -272,17 +272,16 @@ OS Version: \(UIDevice.current.systemVersion)
 
 extension BaseViewController {
     
-//    / 유저 차단
-//    func requestBlockUser(userId: Int, completion: @escaping () -> ()) {
-//        UserService.shared.blockUser(userId: userId) { networkResult in
-//            switch networkResult {
-//            case .success:
-//                completion()
-//            default:
-//                self.showNetworkErrorAlert()
-//            }
-//        }
-//    }
+    func requestBlockUser(targetUsername: String, completion: @escaping () -> ()) {
+        UserService.shared.requestBlockUser(targetUsername: targetUsername) { networkResult in
+            switch networkResult {
+            case .success:
+                completion()
+            default:
+                self.showNetworkErrorAlert()
+            }
+        }
+    }
     
     func requestReportUser(data: ReportUserRequestDTO, completion: @escaping () -> ()) {
         UserService.shared.reportUser(data: data) { networkResult in
