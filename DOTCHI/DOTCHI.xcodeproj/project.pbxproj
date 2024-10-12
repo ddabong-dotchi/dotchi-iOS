@@ -47,6 +47,7 @@
 		FF911C282CAB1C870070F1E7 /* ReportUserRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF911C272CAB1C800070F1E7 /* ReportUserRequestDTO.swift */; };
 		FF911C2A2CAB20400070F1E7 /* ReportUserResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF911C292CAB20390070F1E7 /* ReportUserResponseDTO.swift */; };
 		FF911C2E2CAB22100070F1E7 /* ReportReason.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF911C2D2CAB220B0070F1E7 /* ReportReason.swift */; };
+		FF911C332CBA94F30070F1E7 /* RequestBlockUserResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF911C322CBA94F30070F1E7 /* RequestBlockUserResponseDTO.swift */; };
 		FFA86D1F2CA94C9900F3BB5C /* PostCommentResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA86D1E2CA94C9500F3BB5C /* PostCommentResponseDTO.swift */; };
 		FFA86D212CA9524300F3BB5C /* CardDetailResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA86D202CA9524300F3BB5C /* CardDetailResponseDTO.swift */; };
 		FFA86D232CA99EAB00F3BB5C /* DotchiSortButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA86D222CA99EAB00F3BB5C /* DotchiSortButton.swift */; };
@@ -196,6 +197,7 @@
 		FF911C272CAB1C800070F1E7 /* ReportUserRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportUserRequestDTO.swift; sourceTree = "<group>"; };
 		FF911C292CAB20390070F1E7 /* ReportUserResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportUserResponseDTO.swift; sourceTree = "<group>"; };
 		FF911C2D2CAB220B0070F1E7 /* ReportReason.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportReason.swift; sourceTree = "<group>"; };
+		FF911C322CBA94F30070F1E7 /* RequestBlockUserResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBlockUserResponseDTO.swift; sourceTree = "<group>"; };
 		FFA86D1E2CA94C9500F3BB5C /* PostCommentResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCommentResponseDTO.swift; sourceTree = "<group>"; };
 		FFA86D202CA9524300F3BB5C /* CardDetailResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailResponseDTO.swift; sourceTree = "<group>"; };
 		FFA86D222CA99EAB00F3BB5C /* DotchiSortButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotchiSortButton.swift; sourceTree = "<group>"; };
@@ -497,6 +499,7 @@
 			isa = PBXGroup;
 			children = (
 				FF911C272CAB1C800070F1E7 /* ReportUserRequestDTO.swift */,
+				FF911C322CBA94F30070F1E7 /* RequestBlockUserResponseDTO.swift */,
 				FFB7F9BC2C5BE35900650238 /* SignupRequestDTO.swift */,
 				1E3A1E602C71EEA50096708D /* EditUserRequestDTO.swift */,
 			);
@@ -991,6 +994,7 @@
 				FFCD60832C2D9832007785FF /* Encodable+.swift in Sources */,
 				FFC7BB7B2C35BA89000EA7B5 /* DoneButton.swift in Sources */,
 				FFCD60652C2D96D8007785FF /* UIViewController+.swift in Sources */,
+				FF911C332CBA94F30070F1E7 /* RequestBlockUserResponseDTO.swift in Sources */,
 				FFFB88872C7B216A00ACB0C6 /* SignupEntity.swift in Sources */,
 				1E9727652C44FCA600252CA6 /* BlacklistResponseDTO.swift in Sources */,
 				FFCD606D2C2D9742007785FF /* UILabel+.swift in Sources */,
