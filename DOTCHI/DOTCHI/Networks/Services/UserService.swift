@@ -14,7 +14,7 @@ internal protocol UserServiceProtocol {
     func editUser(nickname: String, description: String, profileImage: UIImage?, completion: @escaping (NetworkResult<Any>) -> (Void))
     func changePassword(data: String, completion: @escaping (NetworkResult<Any>) -> (Void))
     func getBlacklists(completion: @escaping (NetworkResult<Any>) -> (Void))
-    func deleteBlacklists(targetId: Int, completion: @escaping (NetworkResult<Any>) -> (Void))
+    func deleteBlacklists(targetUsername: String, completion: @escaping (NetworkResult<Any>) -> (Void))
     func checkUsernameDuplicate(data: String, completion: @escaping (NetworkResult<Any>) -> (Void))
     func checkNicknameDuplicate(data: String, completion: @escaping (NetworkResult<Any>) -> (Void))
     func requestSignup(data: SignupRequestDTO, completion: @escaping (NetworkResult<Any>) -> (Void))
@@ -131,8 +131,8 @@ extension UserService: UserServiceProtocol {
     
     // [DELETE] 차단 해제
     
-    func deleteBlacklists(targetId: Int, completion: @escaping (NetworkResult<Any>) -> Void) {
-        self.provider.request(.deleteBlacklists(targetId: targetId)) { result in
+    func deleteBlacklists(targetUsername: String, completion: @escaping (NetworkResult<Any>) -> Void) {
+        self.provider.request(.deleteBlacklists(targetUsername: targetUsername)) { result in
             switch result {
             case .success(let response):
                 let statusCode = response.statusCode
