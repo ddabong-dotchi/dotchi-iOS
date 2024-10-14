@@ -147,7 +147,7 @@ class BlacklistViewController: BaseViewController {
     
     @objc private func unblockButtonTapped(_ sender: UIButton) {
         let index = sender.tag
-        let targetId = blockedAccounts[index].targetId
+        let targetUsername = blockedAccounts[index].targetUsername
         
         makeAlertWithCancel(
             title: "차단 해제하시겠습니까?",
@@ -155,7 +155,7 @@ class BlacklistViewController: BaseViewController {
             okStyle: .destructive,
             cancelTitle: "취소",
             okAction: { _ in
-                self.fetchUnblock(targetId: targetId)
+                self.fetchUnblock(targetUsername: targetUsername)
             }
         )
     }
@@ -178,8 +178,8 @@ class BlacklistViewController: BaseViewController {
         }
     }
     
-    private func fetchUnblock(targetId: Int) {
-        userService.deleteBlacklists(targetId: targetId) { networkResult in
+    private func fetchUnblock(targetUsername: String) {
+        userService.deleteBlacklists(targetUsername: targetUsername) { networkResult in
             switch networkResult {
             case .success:
                 self.fetchBlacklistData()

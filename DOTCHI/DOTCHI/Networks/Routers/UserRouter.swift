@@ -14,7 +14,7 @@ enum UserRouter {
     case changePassword(data: String)
     case getMyCard
     case getBlacklists
-    case deleteBlacklists(targetId: Int)
+    case deleteBlacklists(targetUsername: String)
     case checkUsernameDuplicate(data: String)
     case checkNicknameDuplicate(data: String)
     case requestSignup(data: SignupRequestDTO)
@@ -90,8 +90,8 @@ extension UserRouter: TargetType {
             return .uploadMultipart(formData)
         case .changePassword(let data):
             return .requestParameters(parameters: ["password": data], encoding: JSONEncoding.default)
-        case .deleteBlacklists(let targetId):
-            return .requestParameters(parameters: ["targetId": targetId], encoding: URLEncoding.queryString)
+        case .deleteBlacklists(let targetUsername):
+            return .requestParameters(parameters: ["targetUsername": targetUsername], encoding: URLEncoding.queryString)
         case .checkUsernameDuplicate(let data):
             return .requestParameters(parameters: ["username": data], encoding: URLEncoding.queryString)
         case .checkNicknameDuplicate(let data):
