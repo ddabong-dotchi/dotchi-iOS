@@ -10,6 +10,9 @@
 		1E3A1E5F2C71EE740096708D /* EditUserResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3A1E5E2C71EE740096708D /* EditUserResponseDTO.swift */; };
 		1E3A1E612C71EEA50096708D /* EditUserRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3A1E602C71EEA50096708D /* EditUserRequestDTO.swift */; };
 		1E3A1E632C7422580096708D /* EditAccountInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3A1E622C7422580096708D /* EditAccountInfoViewController.swift */; };
+		1E9131422CC400CF00A553BC /* ImageRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9131412CC400C800A553BC /* ImageRouter.swift */; };
+		1E9131442CC4041F00A553BC /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9131432CC4041700A553BC /* ImageService.swift */; };
+		1E91314A2CC4DC7400A553BC /* ImageResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9131492CC4DC7300A553BC /* ImageResponseDTO.swift */; };
 		1E9727462C3C3C6F00252CA6 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9727452C3C3C6F00252CA6 /* SettingViewController.swift */; };
 		1E97274A2C3DA24100252CA6 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9727492C3DA24100252CA6 /* EditProfileViewController.swift */; };
 		1E9727582C43924F00252CA6 /* UserRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9727572C43924F00252CA6 /* UserRouter.swift */; };
@@ -160,6 +163,9 @@
 		1E3A1E5E2C71EE740096708D /* EditUserResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserResponseDTO.swift; sourceTree = "<group>"; };
 		1E3A1E602C71EEA50096708D /* EditUserRequestDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserRequestDTO.swift; sourceTree = "<group>"; };
 		1E3A1E622C7422580096708D /* EditAccountInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAccountInfoViewController.swift; sourceTree = "<group>"; };
+		1E9131412CC400C800A553BC /* ImageRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRouter.swift; sourceTree = "<group>"; };
+		1E9131432CC4041700A553BC /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
+		1E9131492CC4DC7300A553BC /* ImageResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResponseDTO.swift; sourceTree = "<group>"; };
 		1E9727452C3C3C6F00252CA6 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		1E9727492C3DA24100252CA6 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		1E9727572C43924F00252CA6 /* UserRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRouter.swift; sourceTree = "<group>"; };
@@ -322,6 +328,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E9131472CC4DC5C00A553BC /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				1E9131482CC4DC6500A553BC /* Response */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		1E9131482CC4DC6500A553BC /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				1E9131492CC4DC7300A553BC /* ImageResponseDTO.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
 		1E9727592C43982300252CA6 /* User */ = {
 			isa = PBXGroup;
 			children = (
@@ -558,6 +580,7 @@
 				FF62303B2C9FCE7C002029A6 /* Card */,
 				FFC7BB8E2C3EDFA2000EA7B5 /* Auth */,
 				1E9727592C43982300252CA6 /* User */,
+				1E9131472CC4DC5C00A553BC /* Image */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -569,6 +592,7 @@
 				FF6230372C9F36A0002029A6 /* CardRouter.swift */,
 				FFC7BB912C3EDFCB000EA7B5 /* AuthRouter.swift */,
 				1E9727572C43924F00252CA6 /* UserRouter.swift */,
+				1E9131412CC400C800A553BC /* ImageRouter.swift */,
 			);
 			path = Routers;
 			sourceTree = "<group>";
@@ -581,6 +605,7 @@
 				FFC7BB8A2C3D95BA000EA7B5 /* BaseService.swift */,
 				FFC7BB8C2C3EDF95000EA7B5 /* AuthService.swift */,
 				1E97275D2C43996D00252CA6 /* UserService.swift */,
+				1E9131432CC4041700A553BC /* ImageService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1021,6 +1046,7 @@
 				FFCD609A2C2D9920007785FF /* KeychainKeys.swift in Sources */,
 				FF4BF6B22C2DB63900B6DEB2 /* CardEntity.swift in Sources */,
 				FFA86D212CA9524300F3BB5C /* CardDetailResponseDTO.swift in Sources */,
+				1E91314A2CC4DC7400A553BC /* ImageResponseDTO.swift in Sources */,
 				1E9727622C44F62000252CA6 /* BlacklistViewController.swift in Sources */,
 				FF911C262CAAF42A0070F1E7 /* OnboardingViewController.swift in Sources */,
 				FF4BF6BA2C2DB68000B6DEB2 /* CommentEntity.swift in Sources */,
@@ -1056,6 +1082,7 @@
 				FFC7BB732C35A770000EA7B5 /* TextUnderlineButtonView.swift in Sources */,
 				FF4BF6B62C2DB65B00B6DEB2 /* CardFrontEntity.swift in Sources */,
 				FF328DCB2C5A280500007CD5 /* IconButton.swift in Sources */,
+				1E9131442CC4041F00A553BC /* ImageService.swift in Sources */,
 				FFCD608B2C2D98A5007785FF /* ImageCacheManager.swift in Sources */,
 				FFCD608D2C2D98B1007785FF /* UserInfo.swift in Sources */,
 				FFCD60562C2D9501007785FF /* UIFont+.swift in Sources */,
@@ -1093,6 +1120,7 @@
 				FFC7BB8B2C3D95BA000EA7B5 /* BaseService.swift in Sources */,
 				FFCD608F2C2D98BF007785FF /* UserDefaultsManager.swift in Sources */,
 				FFC7BB9D2C3EE151000EA7B5 /* SigninResponseDTO.swift in Sources */,
+				1E9131422CC400CF00A553BC /* ImageRouter.swift in Sources */,
 				FFCD60852C2D9860007785FF /* ClassNameProtocol.swift in Sources */,
 				FFCD60962C2D9915007785FF /* CardHeadType.swift in Sources */,
 				FFDAE3312CA0762D00509227 /* HomeThemeView.swift in Sources */,
