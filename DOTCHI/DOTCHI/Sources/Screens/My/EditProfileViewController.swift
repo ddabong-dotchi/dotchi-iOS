@@ -361,44 +361,18 @@ class EditProfileViewController: BaseViewController, UITextFieldDelegate, UIText
     }
     
     @objc private func saveProfile() {
+        DispatchQueue.main.async {
+            self.startActivityIndicator()
+        }
+
         guard let newImage = imageView.image else {
             updateUserProfile(imageUrl: nil)
             return
         }
 
-        let fileName = "profileImage.jpg"
-        
-        imageService.getPreSigned(fileName: fileName) { [weak self] result in
+        uploadImage(image: newImage) { [weak self] imageUrl in
             guard let self = self else { return }
-
-            switch result {
-            case .success(let response):
-                if let imageResponse = response as? ImageResponseDTO {
-                    let preSignedUrl = imageResponse.preSignedUrl
-                    let imageUrl = imageResponse.imageUrl
-
-                    guard let imageData = newImage.jpegData(compressionQuality: 0.8) else {
-                        debugPrint("Failed to convert image to data")
-                        self.showNetworkErrorAlert()
-                        return
-                    }
-                    
-                    self.imageService.uploadImageWithPreSignedUrl(preSignedUrl: preSignedUrl, imageData: imageData) { uploadResult in
-                        switch uploadResult {
-                        case .success:
-                            self.updateUserProfile(imageUrl: imageUrl)
-                        default:
-                            self.showNetworkErrorAlert()
-                        }
-                    }
-                } else {
-                    print("Failed to cast response to ImageResponseDTO. Response: \(response)")
-                    self.showNetworkErrorAlert()
-                }
-
-            default:
-                self.showNetworkErrorAlert()
-            }
+            self.updateUserProfile(imageUrl: imageUrl)
         }
     }
 
@@ -406,14 +380,16 @@ class EditProfileViewController: BaseViewController, UITextFieldDelegate, UIText
         let nickname = DispatchQueue.main.sync { nicknameTextField.text ?? "" }
         let description = DispatchQueue.main.sync { descriptionTextView.text ?? "" }
 
-        userService.editUser(nickname: nickname, description: description, imageUrl: imageUrl) { result in
-            switch result {
-            case .success:
-                DispatchQueue.main.async {
+        userService.editUser(nickname: nickname, description: description, imageUrl: imageUrl) { [weak self] result in
+            guard let self = self else { return }
+
+            DispatchQueue.main.async {
+                self.stopActivityIndicator()
+
+                switch result {
+                case .success:
                     self.dismiss(animated: true, completion: nil)
-                }
-            default:
-                DispatchQueue.main.async {
+                default:
                     self.showNetworkErrorAlert()
                 }
             }
