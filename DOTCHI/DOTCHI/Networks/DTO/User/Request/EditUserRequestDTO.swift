@@ -10,5 +10,5 @@ import Foundation
 struct EditUserRequestDTO: Encodable {
     var nickname: String
     var description: String
-    var profileImage: Data?
+    var imageUrl: String?
 }
