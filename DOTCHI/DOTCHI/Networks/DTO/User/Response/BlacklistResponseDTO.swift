@@ -11,7 +11,7 @@ struct BlacklistResponseDTO: Codable {
     let id: Int
     let username: String
     let targetId: Int
-    let target: String
+    let targetUsername: String
     let targetNickname: String
     let targetImageUrl: String
 }
