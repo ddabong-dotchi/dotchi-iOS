@@ -18,6 +18,13 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
     
     // MARK: UIComponents
     
+    lazy var activityIndicator: DotchiActivityIndicatorView = {
+        let activityIndicator: DotchiActivityIndicatorView = DotchiActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+        activityIndicator.center = self.view.center
+        
+        return activityIndicator
+    }()
+    
     lazy private var keychainManager: KeychainSwift = KeychainSwift()
     
     // MARK: Properties
@@ -172,6 +179,18 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
         )
         
         return reportActionSheet
+    }
+    
+    /// 서버 통신 시작 시 Activity Indicator를 시작하는 메서드
+    func startActivityIndicator() {
+        self.view.addSubview(self.activityIndicator)
+        self.activityIndicator.startAnimating()
+    }
+    
+    /// 서버 통신이 끝나면 Activity Indicator를 종료하는 메서드
+    func stopActivityIndicator() {
+        self.activityIndicator.stopAnimating()
+        self.activityIndicator.removeFromSuperview()
     }
 }
 
