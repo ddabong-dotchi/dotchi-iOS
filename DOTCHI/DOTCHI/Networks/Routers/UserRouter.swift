@@ -67,27 +67,16 @@ extension UserRouter: TargetType {
         case .getUser, .getMyCard, .getBlacklists:
             return .requestPlain
         case .editUser(let data):
-            var formData = [MultipartFormData]()
+            var parameters: [String: Any] = [
+                "nickname": data.nickname,
+                "description": data.description
+            ]
             
-            if let jsonData = try? JSONEncoder().encode(data) {
-                formData.append(MultipartFormData(
-                    provider: .data(jsonData),
-                    name: "request",
-                    fileName: "request.json",
-                    mimeType: "application/json"
-                ))
+            if let imageUrl = data.imageUrl {
+                parameters["imageUrl"] = imageUrl
             }
             
-            if let imageData = data.profileImage {
-                formData.append(MultipartFormData(
-                    provider: .data(imageData),
-                    name: "profileImage",
-                    fileName: "profileImage.jpg",
-                    mimeType: "image/jpeg"
-                ))
-            }
-            
-            return .uploadMultipart(formData)
+            return .requestParameters(parameters: parameters, encoding: JSONEncoding.default)
         case .changePassword(let data):
             return .requestParameters(parameters: ["password": data], encoding: JSONEncoding.default)
         case .deleteBlacklists(let targetUsername):

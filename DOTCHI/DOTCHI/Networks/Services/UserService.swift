@@ -11,7 +11,7 @@ import UIKit
 
 internal protocol UserServiceProtocol {
     func getUser(completion: @escaping (NetworkResult<Any>) -> (Void))
-    func editUser(nickname: String, description: String, profileImage: UIImage?, completion: @escaping (NetworkResult<Any>) -> (Void))
+    func editUser(nickname: String, description: String, imageUrl: String?, completion: @escaping (NetworkResult<Any>) -> (Void))
     func changePassword(data: String, completion: @escaping (NetworkResult<Any>) -> (Void))
     func getBlacklists(completion: @escaping (NetworkResult<Any>) -> (Void))
     func deleteBlacklists(targetUsername: String, completion: @escaping (NetworkResult<Any>) -> (Void))
@@ -64,9 +64,8 @@ extension UserService: UserServiceProtocol {
     
     // [PATCH] 내 정보 수정
     
-    func editUser(nickname: String, description: String, profileImage: UIImage?, completion: @escaping (NetworkResult<Any>) -> Void) {
-        let imageData = profileImage?.jpegData(compressionQuality: 0.1)
-        let requestData = EditUserRequestDTO(nickname: nickname, description: description, profileImage: imageData)
+    func editUser(nickname: String, description: String, imageUrl: String?, completion: @escaping (NetworkResult<Any>) -> Void) {
+        let requestData = EditUserRequestDTO(nickname: nickname, description: description, imageUrl: imageUrl)
         
         self.provider.request(.editUser(data: requestData)) { result in
             switch result {
