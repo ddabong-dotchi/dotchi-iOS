@@ -18,6 +18,13 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
     
     // MARK: UIComponents
     
+    lazy var activityIndicator: DotchiActivityIndicatorView = {
+        let activityIndicator: DotchiActivityIndicatorView = DotchiActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+        activityIndicator.center = self.view.center
+        
+        return activityIndicator
+    }()
+    
     lazy private var keychainManager: KeychainSwift = KeychainSwift()
     
     // MARK: Properties
@@ -173,6 +180,18 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate {
         
         return reportActionSheet
     }
+    
+    /// 서버 통신 시작 시 Activity Indicator를 시작하는 메서드
+    func startActivityIndicator() {
+        self.view.addSubview(self.activityIndicator)
+        self.activityIndicator.startAnimating()
+    }
+    
+    /// 서버 통신이 끝나면 Activity Indicator를 종료하는 메서드
+    func stopActivityIndicator() {
+        self.activityIndicator.stopAnimating()
+        self.activityIndicator.removeFromSuperview()
+    }
 }
 
 // MARK: - MFMailComposeViewControllerDelegate
@@ -288,6 +307,41 @@ extension BaseViewController {
             switch networkResult {
             case .success:
                 completion()
+            default:
+                self.showNetworkErrorAlert()
+            }
+        }
+    }
+    
+    func uploadImage(image: UIImage, URL: @escaping (String) -> ()) {
+        ImageService.shared.getPreSigned(fileName: "\(Date())_image.jpg") { result in
+            switch result {
+            case .success(let response):
+                if let imageResponse = response as? ImageResponseDTO {
+                    let preSignedUrl = imageResponse.preSignedUrl
+                    let imageUrl = imageResponse.imageUrl
+                    
+                    guard let imageData = image.jpegData(compressionQuality: 0.8)
+                    else {
+                        debugPrint("Failed to convert image to data")
+                        self.showNetworkErrorAlert()
+                        return
+                    }
+                    
+                    ImageService.shared.uploadImageWithPreSignedUrl(preSignedUrl: preSignedUrl, imageData: imageData) { uploadResult in
+                        switch uploadResult {
+                        case .success:
+                            URL(imageUrl)
+                        default:
+                            self.showNetworkErrorAlert()
+                        }
+                    }
+                }
+                
+                else {
+                    print("Failed to cast response to ImageResponseDTO. Response: \(response)")
+                    self.showNetworkErrorAlert()
+                }
             default:
                 self.showNetworkErrorAlert()
             }

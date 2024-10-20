@@ -12,5 +12,5 @@ struct SignupRequestDTO: Encodable {
     var password: String = ""
     var nickname: String = ""
     var description: String = ""
-    var profileImage: Data = Data()
+    var imageUrl: String = ""
 }

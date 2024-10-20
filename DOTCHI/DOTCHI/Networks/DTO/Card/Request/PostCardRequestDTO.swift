@@ -12,5 +12,5 @@ struct PostCardRequestDTO: Encodable {
     var mood: String = ""
     var content: String = ""
     var type: String = ""
-    var cardImage: Data = Data()
+    var imageUrl: String = ""
 }

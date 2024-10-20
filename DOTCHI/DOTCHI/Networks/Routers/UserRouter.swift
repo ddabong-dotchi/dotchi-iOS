@@ -86,22 +86,7 @@ extension UserRouter: TargetType {
         case .checkNicknameDuplicate(let data):
             return .requestParameters(parameters: ["nickname": data], encoding: URLEncoding.queryString)
         case .requestSignup(let data):
-            var formData = [MultipartFormData]()
-            
-            let encoder = JSONEncoder()
-            encoder.outputFormatting = .prettyPrinted
-            
-            if let jsonData = try? encoder.encode(data),
-               let jsonString = String(data: jsonData, encoding: .utf8) {
-                
-                let requestData = MultipartFormData(provider: .data(jsonString.data(using: .utf8)!), name: "request")
-                formData.append(requestData)
-            }
-            
-            let imageMultipart = MultipartFormData(provider: .data(data.profileImage), name: "profileImage", fileName: "profile.jpg", mimeType: "image/jpeg")
-            formData.append(imageMultipart)
-            
-            return .uploadMultipart(formData)
+            return .requestJSONEncodable(data)
         case .reportUser(let data):
             return .requestJSONEncodable(data)
         case .requestBlockUser(let targetUsername):
@@ -111,12 +96,10 @@ extension UserRouter: TargetType {
 
     var headers: [String: String]? {
         switch self {
-        case .checkUsernameDuplicate, .checkNicknameDuplicate:
+        case .checkUsernameDuplicate, .checkNicknameDuplicate, .requestSignup:
             return [
                 "Content-Type": "application/json"
             ]
-        case .requestSignup:
-            return ["Content-Type": "multipart/form-data"]
         default:
             return [
                 "Content-Type": "application/json",

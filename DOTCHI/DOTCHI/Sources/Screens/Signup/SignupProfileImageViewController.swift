@@ -103,7 +103,7 @@ final class SignupProfileImageViewController: BaseViewController {
         self.nextButton.setAction {
             self.signupRequestData.profileImage = self.profileImageView.image ?? .imgDefaultProfile
             
-            self.requestSignup(data: self.signupRequestData.toSignupRequestDTO()) { signupResponseData in
+            self.requestSignup(profileImage: self.signupRequestData.profileImage, data: self.signupRequestData.toSignupRequestDTO()) { signupResponseData in
                 self.navigationController?.pushViewController(SignupCompleteViewController(signupRequestData: self.signupRequestData), animated: true)
             }
         }
@@ -149,14 +149,22 @@ extension SignupProfileImageViewController: UIImagePickerControllerDelegate, UIN
 // MARK: - Network
 
 extension SignupProfileImageViewController {
-    private func requestSignup(data: SignupRequestDTO, completion: @escaping (SignupResponseDTO) -> ()) {
-        UserService.shared.requestSignup(data: data) { networkResult in
-            switch networkResult {
-            case .success(let responseData):
-                if let result = responseData as? SignupResponseDTO {
-                    completion(result)
+    private func requestSignup(profileImage: UIImage, data: SignupRequestDTO, completion: @escaping (SignupResponseDTO) -> ()) {
+        self.startActivityIndicator()
+        var signupRequestData = data
+        
+        self.uploadImage(image: profileImage) { url in
+            signupRequestData.imageUrl = url
+            
+            UserService.shared.requestSignup(data: signupRequestData) { networkResult in
+                switch networkResult {
+                case .success(let responseData):
+                    if let result = responseData as? SignupResponseDTO {
+                        completion(result)
+                    }
+                default: self.showNetworkErrorAlert()
                 }
-            default: self.showNetworkErrorAlert()
+                self.stopActivityIndicator()
             }
         }
     }
