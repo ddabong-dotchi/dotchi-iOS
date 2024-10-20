@@ -312,4 +312,39 @@ extension BaseViewController {
             }
         }
     }
+    
+    func uploadImage(image: UIImage, URL: @escaping (String) -> ()) {
+        ImageService.shared.getPreSigned(fileName: "\(Date())_image.jpg") { result in
+            switch result {
+            case .success(let response):
+                if let imageResponse = response as? ImageResponseDTO {
+                    let preSignedUrl = imageResponse.preSignedUrl
+                    let imageUrl = imageResponse.imageUrl
+                    
+                    guard let imageData = image.jpegData(compressionQuality: 0.8)
+                    else {
+                        debugPrint("Failed to convert image to data")
+                        self.showNetworkErrorAlert()
+                        return
+                    }
+                    
+                    ImageService.shared.uploadImageWithPreSignedUrl(preSignedUrl: preSignedUrl, imageData: imageData) { uploadResult in
+                        switch uploadResult {
+                        case .success:
+                            URL(imageUrl)
+                        default:
+                            self.showNetworkErrorAlert()
+                        }
+                    }
+                }
+                
+                else {
+                    print("Failed to cast response to ImageResponseDTO. Response: \(response)")
+                    self.showNetworkErrorAlert()
+                }
+            default:
+                self.showNetworkErrorAlert()
+            }
+        }
+    }
 }

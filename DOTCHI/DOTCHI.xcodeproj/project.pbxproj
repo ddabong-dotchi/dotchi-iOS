@@ -153,6 +153,7 @@
 		FFDAE33D2CA886CF00509227 /* Int+.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDAE33C2CA886CD00509227 /* Int+.swift */; };
 		FFDAE33F2CA8880B00509227 /* MakeDotchiContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDAE33E2CA8880B00509227 /* MakeDotchiContentViewController.swift */; };
 		FFDAE3412CA90A9600509227 /* DotchiTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDAE3402CA90A9600509227 /* DotchiTextField.swift */; };
+		FFF6F2DD2CC51C9000F51CB5 /* DotchiActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF6F2DC2CC51C8900F51CB5 /* DotchiActivityIndicatorView.swift */; };
 		FFFB88872C7B216A00ACB0C6 /* SignupEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFB88862C7B216A00ACB0C6 /* SignupEntity.swift */; };
 		FFFB88892C7E1BA100ACB0C6 /* SignupResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFB88882C7E1BA100ACB0C6 /* SignupResponseDTO.swift */; };
 		FFFB888D2C7F79C500ACB0C6 /* HomeTodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFB888C2C7F79C500ACB0C6 /* HomeTodayView.swift */; };
@@ -301,6 +302,7 @@
 		FFDAE33C2CA886CD00509227 /* Int+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+.swift"; sourceTree = "<group>"; };
 		FFDAE33E2CA8880B00509227 /* MakeDotchiContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeDotchiContentViewController.swift; sourceTree = "<group>"; };
 		FFDAE3402CA90A9600509227 /* DotchiTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotchiTextField.swift; sourceTree = "<group>"; };
+		FFF6F2DC2CC51C8900F51CB5 /* DotchiActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotchiActivityIndicatorView.swift; sourceTree = "<group>"; };
 		FFFB88862C7B216A00ACB0C6 /* SignupEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupEntity.swift; sourceTree = "<group>"; };
 		FFFB88882C7E1BA100ACB0C6 /* SignupResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupResponseDTO.swift; sourceTree = "<group>"; };
 		FFFB888C2C7F79C500ACB0C6 /* HomeTodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTodayView.swift; sourceTree = "<group>"; };
@@ -369,6 +371,7 @@
 		FF328DC32C4D4D8C00007CD5 /* UIView */ = {
 			isa = PBXGroup;
 			children = (
+				FFF6F2DC2CC51C8900F51CB5 /* DotchiActivityIndicatorView.swift */,
 				FFA86D282CA99F2C00F3BB5C /* InstagramShareView.swift */,
 				FFD3D1992CA928F60025F32B /* CardProfileView.swift */,
 				FFD3D1972CA9286E0025F32B /* CardBackView.swift */,
@@ -1132,6 +1135,7 @@
 				FFC7BB852C3D943E000EA7B5 /* BaseResponseType.swift in Sources */,
 				FF911C282CAB1C870070F1E7 /* ReportUserRequestDTO.swift in Sources */,
 				FF4BF6BC2C2DB69300B6DEB2 /* CardBackEntity.swift in Sources */,
+				FFF6F2DD2CC51C9000F51CB5 /* DotchiActivityIndicatorView.swift in Sources */,
 				FFCD60772C2D97AA007785FF /* UITextField+.swift in Sources */,
 				FFC7BB802C3D8D62000EA7B5 /* AppInfo.swift in Sources */,
 				FFCD60752C2D9792007785FF /* UIStackView+.swift in Sources */,
@@ -1289,7 +1293,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = R62RZ89ZRU;
+				DEVELOPMENT_TEAM = N4RT4KGQK9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DOTCHI/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "따봉도치";
@@ -1320,7 +1324,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = R62RZ89ZRU;
+				DEVELOPMENT_TEAM = N4RT4KGQK9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DOTCHI/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "따봉도치";
