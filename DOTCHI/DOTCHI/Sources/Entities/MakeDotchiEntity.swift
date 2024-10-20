@@ -28,7 +28,7 @@ struct MakeDotchiEntity {
             mood: self.dotchiMood,
             content: self.dotchiContent,
             type: self.luckyType.rawValue,
-            cardImage: self.image.jpegData(compressionQuality: 0.8) ?? Data()
+            imageUrl: ""
         )
     }
 }

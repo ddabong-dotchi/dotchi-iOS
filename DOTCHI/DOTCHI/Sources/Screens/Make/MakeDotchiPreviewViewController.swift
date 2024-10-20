@@ -116,12 +116,19 @@ final class MakeDotchiPreviewViewController: BaseViewController {
 
 extension MakeDotchiPreviewViewController {
     private func postCard(data: MakeDotchiEntity, completion: @escaping () -> (Void)) {
-        CardService.shared.postCard(data: data.toPostCardRequestData()) { networkResult in
-            switch networkResult {
-            case .success:
-                completion()
-            default:
-                self.showNetworkErrorAlert()
+        self.startActivityIndicator()
+        var makeDotchiRequestData = data.toPostCardRequestData()
+        
+        self.uploadImage(image: data.image) { url in
+            makeDotchiRequestData.imageUrl = url
+            
+            CardService.shared.postCard(data: makeDotchiRequestData) { networkResult in
+                switch networkResult {
+                case .success:
+                    completion()
+                default:
+                    self.showNetworkErrorAlert()
+                }
             }
         }
     }

@@ -55,22 +55,7 @@ extension CardRouter: TargetType {
         case .getCardLastTime(let luckyType):
             return .requestParameters(parameters: ["type": luckyType.rawValue], encoding: URLEncoding.queryString)
         case .postCard(let data):
-            var formData = [MultipartFormData]()
-            
-            let encoder = JSONEncoder()
-            encoder.outputFormatting = .prettyPrinted
-            
-            if let jsonData = try? encoder.encode(data),
-               let jsonString = String(data: jsonData, encoding: .utf8) {
-                
-                let requestData = MultipartFormData(provider: .data(jsonString.data(using: .utf8)!), name: "request")
-                formData.append(requestData)
-            }
-            
-            let imageMultipart = MultipartFormData(provider: .data(data.cardImage), name: "cardImage", fileName: "card.jpg", mimeType: "image/jpeg")
-            formData.append(imageMultipart)
-            
-            return .uploadMultipart(formData)
+            return .requestJSONEncodable(data)
         case .getCardsByTheme(let luckyType, let sort):
             let parameters: [String: Any] = [
                 "type": luckyType.rawValue,
