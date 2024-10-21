@@ -132,7 +132,7 @@ final class SignupNicknameViewController: BaseViewController {
     }
     
     private func isValidNickname(input: String) -> Bool {
-        let pattern = "^(?=.*[ㄱ-ㅎㅏ-ㅣ가-힣]).{2,7}$"
+        let pattern = "^[ㄱ-ㅎㅏ-ㅣ가-힣]{2,7}$"
         let regex = try? NSRegularExpression(pattern: pattern)
         let range = NSRange(location: 0, length: input.utf16.count)
         

@@ -241,7 +241,11 @@ class EditProfileViewController: BaseViewController, UITextFieldDelegate, UIText
         }
         
         let isNicknameChanged = (nickname != originalNickname)
-        nicknameDuplicateButton.isEnabled = isNicknameChanged && nickname.count >= 2
+        let regex = "^[ㄱ-ㅎㅏ-ㅣ가-힣]{2,7}$"
+        let predicate = NSPredicate(format: "SELF MATCHES %@", regex)
+        let isNicknameValid = predicate.evaluate(with: nickname)
+        
+        nicknameDuplicateButton.isEnabled = isNicknameChanged && isNicknameValid
         updateNicknameDuplicateButtonAppearance()
         
         if isNicknameChanged || nickname == originalNickname {
